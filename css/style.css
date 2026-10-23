@@ -350,6 +350,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 /* Sound */
 .play.playing { background: var(--silk); color: var(--paper); }
 .quiz-card .play { margin-left: 0; }
+.play.small { margin-left: 6px; padding: 0 10px; font-size: var(--step--1); border-width: 1px; vertical-align: 1px; }
 
 /* Record words */
 .steps { padding-left: 1.3em; max-width: 40em; }

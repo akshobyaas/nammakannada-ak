@@ -54,12 +54,31 @@ function playFile(src, button) {
   });
 }
 
+// Play several clips one after another (for entries with variant forms).
+function playClips(list, button) {
+  if (current) current.pause();
+  window.speechSynthesis?.cancel();
+  let i = 0;
+  button.classList.add("playing");
+  const next = () => {
+    if (i >= list.length) { button.classList.remove("playing"); return; }
+    const a = new Audio(list[i++]);
+    current = a;
+    a.onended = () => setTimeout(next, 250);
+    a.play().catch(() => button.classList.remove("playing"));
+  };
+  next();
+}
+
 // Wire every sound button inside root. Buttons for the computer voice are hidden
 // when this browser has no Kannada voice.
 export async function wireSound(root) {
   await initSpeech();
   root.querySelectorAll("[data-audio]").forEach((b) => {
     b.addEventListener("click", () => playFile(b.dataset.audio, b));
+  });
+  root.querySelectorAll("[data-clips]").forEach((b) => {
+    b.addEventListener("click", () => playClips(b.dataset.clips.split("|"), b));
   });
   root.querySelectorAll("[data-say]").forEach((b) => {
     if (!knVoice) { b.hidden = true; return; }

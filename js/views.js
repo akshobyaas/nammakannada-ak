@@ -34,7 +34,7 @@ export function wordCard(e, { showPlace = false } = {}) {
   const zone = zoneOf(e.place);
   const src = sourceUrl(e.source);
   const std = e.standard
-    ? `<p class="standard">Standard Kannada: ${e.standard.kn ? `<span lang="kn">${esc(e.standard.kn)}</span> ` : ""}${esc(e.standard.tr || "")}</p>`
+    ? `<p class="standard">Standard Kannada: ${e.standard.kn ? `<span lang="kn">${esc(e.standard.kn)}</span> ` : ""}${esc(e.standard.tr || "")} ${soundButton(e, "standard").replace('class="play"', 'class="play small"')}</p>`
     : "";
   return `
   <article class="word" style="--zone:${zone?.color || "#999"}">
@@ -54,13 +54,20 @@ export function wordCard(e, { showPlace = false } = {}) {
   </article>`;
 }
 
-// A recording if there is one, otherwise the browser's Kannada voice (hidden if absent).
-function soundButton(e) {
-  if (e.audio) return `<button class="play" type="button" data-audio="${esc(e.audio)}">Play recording</button>`;
-  if (!e.dialect?.kn) return "";
-  const text = e.dialect.kn.replace(/\s*[/;]\s*/g, ", ");
+// Sound, best first: a speaker's recording, then a dictionary audio clip,
+// then the browser's own Kannada voice (hidden when the browser has none).
+function soundButton(e, side = "dialect") {
+  if (side === "dialect" && e.audio)
+    return `<button class="play" type="button" data-audio="${esc(e.audio)}">Play recording</button>`;
+  const clips = e.tts?.[side];
+  if (clips?.length)
+    return `<button class="play" type="button" data-clips="${esc(clips.join("|"))}"
+      title="Computer voice from the Alar dictionary audio, reading the spelling">Listen</button>`;
+  const kn = e[side]?.kn;
+  if (!kn) return "";
+  const text = kn.replace(/\s*[/;]\s*/g, ", ");
   return `<button class="play" type="button" data-say="${esc(text)}" hidden
-    title="Computer voice reading the Kannada spelling, not the local accent">Listen</button>`;
+    title="Your browser's Kannada voice, reading the spelling">Listen</button>`;
 }
 
 export const wireAudio = wireSound;
@@ -417,6 +424,7 @@ const SOURCE_NOTES = {
   mandya_quora: "Mandya greeting compared with Bengaluru (forum)",
   mandya_thesis: "University of Mysore thesis on a Mandya dialect",
   mysuru_blog: "Mysuru Kannada as the prestige spoken variety",
+  alar_voice: "Alar voice corpus: dictionary audio clips (GPL-2.0, generated with Google TTS)",
 };
 
 export function renderSources(root) {
@@ -431,7 +439,7 @@ export function renderSources(root) {
         <span class="muted">${counts[k] ? `, ${plural(counts[k], "word", "words")}` : ""}</span></li>`).join("")}
     </ol>
     <h2>Sound</h2>
-    <p>“Play recording” plays a clip recorded by a Kannada speaker. “Listen” uses your browser’s built-in Kannada voice, which reads the spelling in a standard accent, so it gives the shape of a word but not its local tune. Microsoft Edge on Windows and Chrome on Android have a Kannada voice; some other browsers do not, and the Listen button is hidden there.</p>
+    <p>“Play recording” plays a clip recorded by a Kannada speaker. “Listen” is a computer voice reading the spelling in a standard accent, so it gives the shape of a word but not its local tune. Where the <a href="https://github.com/Aditya-ds-1806/Alar-voice-corpus" target="_blank" rel="noopener">Alar voice corpus</a> has the word, its audio clip is used and plays in any browser. Otherwise the browser’s own Kannada voice is used: Microsoft Edge on Windows and Chrome on Android have one, other browsers may not, and the button is hidden there.</p>
     <p><a href="#/record">Record words</a> to add real voices.</p>
     <h2>Map</h2>
     <p>District boundaries from <a href="https://github.com/udit-001/india-maps-data" target="_blank" rel="noopener">india-maps-data</a> (2011 census districts). Regions are approximate cultural zones, not official divisions.</p>`;

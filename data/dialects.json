@@ -21,7 +21,8 @@
   "kolar_wiki": "https://en.wikipedia.org/wiki/Kolar_district",
   "mandya_quora": "https://www.quora.com/What-are-some-words-in-local-slang-to-address-people-in-Bengaluru",
   "mandya_thesis": "https://indcat.inflibnet.ac.in/index.php/thesesrequest?id=th_866",
-  "mysuru_blog": "https://speakfluentli.com/kannada/blog/bangalore-tech-kannada"
+  "mysuru_blog": "https://speakfluentli.com/kannada/blog/bangalore-tech-kannada",
+  "alar_voice": "https://github.com/Aditya-ds-1806/Alar-voice-corpus"
  },
  "zones": [
   {
@@ -249,7 +250,12 @@
    },
    "source": "havyaka",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "standard": [
+     "audio/alar/125762.mp3"
+    ]
+   }
   },
   {
    "id": "sir-02",
@@ -266,7 +272,15 @@
    },
    "source": "havyaka",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "dialect": [
+     "audio/alar/155273.mp3"
+    ],
+    "standard": [
+     "audio/alar/155282.mp3"
+    ]
+   }
   },
   {
    "id": "sir-03",
@@ -284,7 +298,12 @@
    "note": "Also entu, ensu.",
    "source": "havyaka",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "standard": [
+     "audio/alar/28484.mp3"
+    ]
+   }
   },
   {
    "id": "sir-04",
@@ -302,7 +321,12 @@
    "note": "Also batti.",
    "source": "havyaka",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "dialect": [
+     "audio/alar/106961.mp3"
+    ]
+   }
   },
   {
    "id": "sir-05",
@@ -355,7 +379,12 @@
    },
    "source": "havyaka",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "standard": [
+     "audio/alar/20013.mp3"
+    ]
+   }
   },
   {
    "id": "sir-08",
@@ -393,7 +422,12 @@
    "note": "Inherited from Old Kannada kūsu; not found in other dialects.",
    "source": "havyaka",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "dialect": [
+     "audio/alar/47020.mp3"
+    ]
+   }
   },
   {
    "id": "sir-10",
@@ -412,7 +446,15 @@
    "note": "From Old Kannada oṟagu. Compare Tamil urangu.",
    "source": "havyaka",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "dialect": [
+     "audio/alar/30151.mp3"
+    ],
+    "standard": [
+     "audio/alar/117905.mp3"
+    ]
+   }
   },
   {
    "id": "sir-11",
@@ -430,7 +472,12 @@
    "note": "Similar to Malayalam and Tamil forms – a sign of the old coastal language contact zone.",
    "source": "havyaka",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "standard": [
+     "audio/alar/87367.mp3"
+    ]
+   }
   },
   {
    "id": "sir-12",
@@ -447,7 +494,15 @@
    },
    "source": "havyaka",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "dialect": [
+     "audio/alar/87511.mp3"
+    ],
+    "standard": [
+     "audio/alar/91026.mp3"
+    ]
+   }
   },
   {
    "id": "sir-13",
@@ -464,7 +519,15 @@
    },
    "source": "havyaka",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "dialect": [
+     "audio/alar/16742.mp3"
+    ],
+    "standard": [
+     "audio/alar/86926.mp3"
+    ]
+   }
   },
   {
    "id": "sir-14",
@@ -482,7 +545,14 @@
    "note": "Initial o becomes 'wa' and e becomes 'ye': stove, leaf, one.",
    "source": "havyaka",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "standard": [
+     "audio/alar/30368.mp3",
+     "audio/alar/27379.mp3",
+     "audio/alar/29078.mp3"
+    ]
+   }
   },
   {
    "id": "sir-15",
@@ -500,7 +570,13 @@
    "note": "Konkani influence seen around Gokarna.",
    "source": "havyaka",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "standard": [
+     "audio/alar/10000.mp3",
+     "audio/alar/129917.mp3"
+    ]
+   }
   },
   {
    "id": "kun-01",
@@ -536,7 +612,15 @@
    },
    "source": "kundapura_blog",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "dialect": [
+     "audio/alar/39302.mp3"
+    ],
+    "standard": [
+     "audio/alar/39394.mp3"
+    ]
+   }
   },
   {
    "id": "kun-03",
@@ -554,7 +638,15 @@
    },
    "source": "kundapura_blog",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "dialect": [
+     "audio/alar/58225.mp3"
+    ],
+    "standard": [
+     "audio/alar/58776.mp3"
+    ]
+   }
   },
   {
    "id": "kun-04",
@@ -628,7 +720,12 @@
    "note": "Source spells it 'bathi'.",
    "source": "kundapura_blog",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "dialect": [
+     "audio/alar/106944.mp3"
+    ]
+   }
   },
   {
    "id": "kun-08",
@@ -683,7 +780,12 @@
    "note": "Final e shifts to i across North Karnataka.",
    "source": "tnm_north",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "standard": [
+     "audio/alar/117080.mp3"
+    ]
+   }
   },
   {
    "id": "dwd-02",
@@ -702,7 +804,12 @@
    "note": "Long e becomes 'yae' (like the a in cat).",
    "source": "tnm_north",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "standard": [
+     "audio/alar/112371.mp3"
+    ]
+   }
   },
   {
    "id": "dwd-03",
@@ -740,7 +847,15 @@
    "note": "o changes to a.",
    "source": "ciil_dharwad",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "dialect": [
+     "audio/alar/106614.mp3"
+    ],
+    "standard": [
+     "audio/alar/112857.mp3"
+    ]
+   }
   },
   {
    "id": "dwd-05",
@@ -759,7 +874,12 @@
    "note": "Kinship terms starting with 'a' take a 'ya' sound.",
    "source": "ciil_dharwad",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "standard": [
+     "audio/alar/1750.mp3"
+    ]
+   }
   },
   {
    "id": "bgm-01",
@@ -778,7 +898,15 @@
    "note": "From Marathi.",
    "source": "tnm_north",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "dialect": [
+     "audio/alar/53783.mp3"
+    ],
+    "standard": [
+     "audio/alar/51159.mp3"
+    ]
+   }
   },
   {
    "id": "bgm-02",
@@ -797,7 +925,15 @@
    "note": "From Marathi.",
    "source": "tnm_north",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "dialect": [
+     "audio/alar/39293.mp3"
+    ],
+    "standard": [
+     "audio/alar/63305.mp3"
+    ]
+   }
   },
   {
    "id": "bgm-03",
@@ -816,7 +952,12 @@
    "note": "From Marathi.",
    "source": "tnm_north",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "dialect": [
+     "audio/alar/53459.mp3"
+    ]
+   }
   },
   {
    "id": "bgm-04",
@@ -835,7 +976,13 @@
    "note": "Rural speakers near the Maharashtra border count large numbers in Marathi.",
    "source": "tnm_north",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "standard": [
+     "audio/alar/28968.mp3",
+     "audio/alar/91379.mp3"
+    ]
+   }
   },
   {
    "id": "bdr-01",
@@ -854,7 +1001,15 @@
    "note": "From Dakhni Urdu.",
    "source": "tnm_north",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "dialect": [
+     "audio/alar/114412.mp3"
+    ],
+    "standard": [
+     "audio/alar/46693.mp3"
+    ]
+   }
   },
   {
    "id": "blr-01",
@@ -887,7 +1042,12 @@
    },
    "source": "bengaluru",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "standard": [
+     "audio/alar/75688.mp3"
+    ]
+   }
   },
   {
    "id": "blr-03",
@@ -917,7 +1077,12 @@
    },
    "source": "bengaluru",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "dialect": [
+     "audio/alar/137701.mp3"
+    ]
+   }
   },
   {
    "id": "blr-05",
@@ -932,7 +1097,12 @@
    },
    "source": "bengaluru",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "dialect": [
+     "audio/alar/63233.mp3"
+    ]
+   }
   },
   {
    "id": "blr-06",
@@ -948,7 +1118,12 @@
    "note": "Borrowed from Telugu.",
    "source": "bengaluru",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "tts": {
+    "dialect": [
+     "audio/alar/112997.mp3"
+    ]
+   }
   },
   {
    "id": "blr-07",

@@ -16,7 +16,7 @@ Built for the Kannada Digital Innovation Hackathon 2026, problem statement 4: Re
 ## Sound
 
 - **Play recording:** a clip recorded by a Kannada speaker, with the real local accent.
-- **Listen:** the browser's built-in Kannada voice reading the spelling in a standard accent. Microsoft Edge on Windows and Chrome on Android have one; the button is hidden in browsers without a Kannada voice. **Demo in Edge.**
+- **Listen:** a computer voice reading the spelling in a standard accent. Where the [Alar voice corpus](https://github.com/Aditya-ds-1806/Alar-voice-corpus) (GPL-2.0, generated with Google TTS) has the word, its clip in `audio/alar/` plays in any browser; this covers 17 dialect words and 21 standard forms. Otherwise the browser's built-in Kannada voice is used, which Microsoft Edge on Windows and Chrome on Android have; the button is hidden in browsers without one. **Demo in Edge.**
 
 To add recordings, open `#/record` in the site (also linked from Sources), record and save each word, move the files into `audio/`, then run:
 
