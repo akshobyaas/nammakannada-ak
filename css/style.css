@@ -347,6 +347,29 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 .empty-state p { margin: 0 0 12px; }
 
+/* Sound */
+.play.playing { background: var(--silk); color: var(--paper); }
+.quiz-card .play { margin-left: 0; }
+
+/* Record words */
+.steps { padding-left: 1.3em; max-width: 40em; }
+.steps li { margin-bottom: 6px; }
+.rec-list { display: grid; gap: 10px; }
+.rec {
+  display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; align-items: center;
+  background: #fff; border: 1px solid var(--paper-2); border-radius: 10px; padding: 12px 14px;
+}
+.rec-word { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+.rec-word [lang="kn"] { font-family: var(--f-word); font-size: var(--step-2); color: var(--silk); }
+.rec-word .t { font-weight: 600; }
+.rec-btns { display: flex; gap: 6px; }
+.rec-btns .btn { padding: 6px 14px; }
+.rec-btns .btn:disabled { opacity: 0.4; cursor: default; }
+.rec-btns .live { background: var(--kumkum); border-color: var(--kumkum); color: #fff; }
+.rec-status { grid-column: 1 / -1; margin: 0; font-size: var(--step--1); }
+.rec-status:empty { display: none; }
+@media (max-width: 860px) { .rec { grid-template-columns: 1fr; } }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
   .layout { grid-template-columns: 1fr; min-height: 0; }

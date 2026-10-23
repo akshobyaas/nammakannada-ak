@@ -5,6 +5,7 @@ import {
 } from "./store.js";
 import { CONFIG } from "./config.js";
 import * as map from "./map.js";
+import { wireSound } from "./speech.js";
 
 const ZONE_ORDER = ["south", "malnad", "coast", "north", "kalyana"];
 
@@ -48,19 +49,21 @@ export function wordCard(e, { showPlace = false } = {}) {
       ${checkHtml(e)}
       ${src ? `<a href="${esc(src)}" target="_blank" rel="noopener">Source: ${esc(sourceLabel(e.source))}</a>` : ""}
       ${e.confidence === "informal" ? `<span>Blog or forum source</span>` : ""}
-      ${e.audio ? `<button class="play" type="button" data-audio="${esc(e.audio)}">Play</button>` : ""}
+      ${soundButton(e)}
     </footer>
   </article>`;
 }
 
-export function wireAudio(root) {
-  root.querySelectorAll("[data-audio]").forEach((b) => {
-    b.addEventListener("click", () => {
-      const a = new Audio(b.dataset.audio);
-      a.play().catch(() => { b.textContent = "Audio missing"; b.disabled = true; });
-    });
-  });
+// A recording if there is one, otherwise the browser's Kannada voice (hidden if absent).
+function soundButton(e) {
+  if (e.audio) return `<button class="play" type="button" data-audio="${esc(e.audio)}">Play recording</button>`;
+  if (!e.dialect?.kn) return "";
+  const text = e.dialect.kn.replace(/\s*[/;]\s*/g, ", ");
+  return `<button class="play" type="button" data-say="${esc(text)}" hidden
+    title="Computer voice reading the Kannada spelling, not the local accent">Listen</button>`;
 }
+
+export const wireAudio = wireSound;
 
 // ---------- Explore (home) ----------
 export function renderExplore(root, { zone } = {}) {
@@ -234,10 +237,12 @@ export function renderQuiz(root, { restart = false } = {}) {
       ${dialectHtml(e)}
       ${e.dialect?.kn && e.dialect?.tr ? `<p class="tr">${esc(e.dialect.tr)}</p>` : ""}
       <p class="meaning">means “${esc(e.english)}”</p>
+      <p>${soundButton(e)}</p>
       <div class="options">${q.options.map((p) => `<button type="button" data-place="${p.id}">${esc(p.name)}</button>`).join("")}</div>
       <div id="result"></div>
     </div>`;
 
+  wireSound(root);
   root.querySelectorAll(".options button").forEach((b) => {
     b.addEventListener("click", () => {
       if (quiz.answered) return;
@@ -425,6 +430,9 @@ export function renderSources(root) {
         <li><a href="${esc(url)}" target="_blank" rel="noopener">${esc(SOURCE_NOTES[k] || k)}</a>
         <span class="muted">${counts[k] ? `, ${plural(counts[k], "word", "words")}` : ""}</span></li>`).join("")}
     </ol>
+    <h2>Sound</h2>
+    <p>“Play recording” plays a clip recorded by a Kannada speaker. “Listen” uses your browser’s built-in Kannada voice, which reads the spelling in a standard accent, so it gives the shape of a word but not its local tune. Microsoft Edge on Windows and Chrome on Android have a Kannada voice; some other browsers do not, and the Listen button is hidden there.</p>
+    <p><a href="#/record">Record words</a> to add real voices.</p>
     <h2>Map</h2>
     <p>District boundaries from <a href="https://github.com/udit-001/india-maps-data" target="_blank" rel="noopener">india-maps-data</a> (2011 census districts). Regions are approximate cultural zones, not official divisions.</p>`;
   map.setActive(null);

@@ -13,6 +13,19 @@ Built for the Kannada Digital Innovation Hackathon 2026, problem statement 4: Re
 - **Guess the region:** a quiz built from the dataset that marks the answer on the map.
 - **Add a word:** visitors add a word from their town. It is saved on their device, can be copied as JSON, and can be sent to you through a Google Form (set `GOOGLE_FORM_URL` in `js/config.js`).
 
+## Sound
+
+- **Play recording:** a clip recorded by a Kannada speaker, with the real local accent.
+- **Listen:** the browser's built-in Kannada voice reading the spelling in a standard accent. Microsoft Edge on Windows and Chrome on Android have one; the button is hidden in browsers without a Kannada voice. **Demo in Edge.**
+
+To add recordings, open `#/record` in the site (also linked from Sources), record and save each word, move the files into `audio/`, then run:
+
+```bash
+node scripts/link-audio.mjs
+```
+
+It matches files to entries by name (`kun-02.webm` → entry `kun-02`) and adds the `audio` field.
+
 ## Run it
 
 The site is plain HTML, CSS and JavaScript with no build step. It loads `data/dialects.json`, so it needs a local server; double-clicking `index.html` will not work.

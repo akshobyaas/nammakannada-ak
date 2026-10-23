@@ -2,6 +2,7 @@
 import { loadData, store } from "./store.js";
 import { renderMap } from "./map.js";
 import * as views from "./views.js";
+import { renderRecord } from "./recorder.js";
 
 const view = document.getElementById("view");
 const panel = document.getElementById("panel");
@@ -45,6 +46,8 @@ function route({ fromUser = false } = {}) {
       setNav("add"); views.renderAdd(view, { place: store.places.has(params.place) ? params.place : null }); break;
     case "sources":
       setNav("sources"); views.renderSources(view); break;
+    case "record":
+      setNav(null); renderRecord(view); break;
     default:
       setNav(null); views.renderNotFound(view);
   }
