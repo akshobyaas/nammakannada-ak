@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Namma Kannada</title>
+  <meta name="description" content="Explore how spoken Kannada changes across Karnataka: regional words, phrases and sounds on an interactive map, with sources.">
+  <meta name="theme-color" content="#4A0E1F">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234A0E1F'/%3E%3Ctext x='32' y='46' font-size='38' text-anchor='middle' fill='%23F2C230' font-family='sans-serif'%3E%E0%B2%95%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Kannada:wdth,wght@75..100,300..800&family=Tiro+Kannada&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#panel">Skip to content</a>
+
+  <header class="top">
+    <a class="brand" href="#/" aria-label="Namma Kannada, home">
+      <span class="brand-kn" lang="kn">ನಮ್ಮ ಕನ್ನಡ</span>
+      <span class="brand-en">One language, many voices across Karnataka</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#/" data-nav="explore">Explore</a>
+      <a href="#/compare" data-nav="compare">Compare</a>
+      <a href="#/quiz" data-nav="quiz">Guess the region</a>
+      <a href="#/add" data-nav="add">Add a word</a>
+      <a href="#/sources" data-nav="sources">Sources</a>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="map-pane" aria-label="Map of Karnataka">
+      <div id="map" class="map"></div>
+      <ul id="legend" class="legend" aria-label="Regions"></ul>
+      <p class="map-note">Regions are approximate cultural zones. A hollow pin means no words yet.</p>
+    </section>
+
+    <section id="panel" class="panel" tabindex="-1">
+      <div class="search">
+        <label for="q" class="visually-hidden">Search words</label>
+        <input id="q" type="search" placeholder="Search in Kannada or English, like ಮನೆ or come" autocomplete="off">
+      </div>
+      <div id="view" class="view" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <noscript><p class="noscript">Namma Kannada needs JavaScript to show the map and words.</p></noscript>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1087 @@
+{
+ "meta": {
+  "project": "Namma Kannada – Regional Language Explorer",
+  "compiled": "2026-10-23",
+  "note": "Every entry is drawn from the linked source. 'verified' is false until a native speaker confirms it. confidence: 'reference' = Wikipedia/academic/news; 'informal' = blog/forum, check before demo. Kannada script marked kn_check:true was transliterated by the compiler, not given in the source.",
+  "fields": "english = meaning; standard = standard Kannada; dialect = regional form; type = word | phrase | grammar | sound | loanword"
+ },
+ "sources": {
+  "havyaka": "https://en.wikipedia.org/wiki/Havigannada_dialect",
+  "bengaluru": "https://en.wikipedia.org/wiki/Bengaluru_Kannada",
+  "kanglish": "https://en.wikipedia.org/wiki/Kanglish",
+  "tnm_north": "https://www.thenewsminute.com/karnataka/marathi-lambadi-north-karnataka-has-rich-linguistic-diversity-145391",
+  "ciil_dharwad": "https://sanchika.ciil.org/items/8afba685-6185-4702-9d9a-7db3f867a8fb",
+  "kundapura_wiki": "https://en.wikipedia.org/wiki/Kundagannada_dialect",
+  "kundapura_dictionary": "https://web.archive.org/web/20211129135033/https://issuu.com/kundapradotcom/docs/kundapura_kannada_dictionary_kundap",
+  "kundapura_blog": "https://ellakavi.wordpress.com/2007/06/18/kundapra-kannadada-artha/",
+  "kundapura_prajavani": "https://www.prajavani.net/art-culture/article-features/language-dictionary-for-kannada-kundapra-kannada-796885.html",
+  "mangaluru_wiki": "https://en.wikipedia.org/wiki/Mangaluru_Kannada",
+  "deccan_herald": "https://www.deccanherald.com/amp/story/specials/one-language-many-voices-3779637",
+  "kannada_dialects_list": "https://en.wikipedia.org/wiki/Kannadoid_languages",
+  "kolar_wiki": "https://en.wikipedia.org/wiki/Kolar_district",
+  "mandya_quora": "https://www.quora.com/What-are-some-words-in-local-slang-to-address-people-in-Bengaluru",
+  "mandya_thesis": "https://indcat.inflibnet.ac.in/index.php/thesesrequest?id=th_866",
+  "mysuru_blog": "https://speakfluentli.com/kannada/blog/bangalore-tech-kannada"
+ },
+ "zones": [
+  {
+   "id": "south",
+   "name": "Old Mysuru & South",
+   "name_kn": "ಹಳೇ ಮೈಸೂರು",
+   "color": "#F2C230"
+  },
+  {
+   "id": "malnad",
+   "name": "Malnad",
+   "name_kn": "ಮಲೆನಾಡು",
+   "color": "#8CC665"
+  },
+  {
+   "id": "coast",
+   "name": "Coast",
+   "name_kn": "ಕರಾವಳಿ",
+   "color": "#63B7DE"
+  },
+  {
+   "id": "north",
+   "name": "North Karnataka",
+   "name_kn": "ಉತ್ತರ ಕರ್ನಾಟಕ",
+   "color": "#F08A4B"
+  },
+  {
+   "id": "kalyana",
+   "name": "Kalyana Karnataka",
+   "name_kn": "ಕಲ್ಯಾಣ ಕರ್ನಾಟಕ",
+   "color": "#C9A3F0"
+  }
+ ],
+ "places": [
+  {
+   "id": "mysuru",
+   "name": "Mysuru",
+   "name_kn": "ಮೈಸೂರು",
+   "zone": "south",
+   "lat": 12.2958,
+   "lng": 76.6394,
+   "about": "Often described as the prestige spoken variety, closer to written Kannada than Bengaluru speech and linked with the Wadiyar court.",
+   "source": "mysuru_blog",
+   "needs_native_input": true
+  },
+  {
+   "id": "mandya",
+   "name": "Mandya",
+   "name_kn": "ಮಂಡ್ಯ",
+   "zone": "south",
+   "lat": 12.5223,
+   "lng": 76.897,
+   "about": "Sits between Bengaluru and Mysuru but has its own rural-flavoured speech; studied academically (University of Mysore PhD, 1991).",
+   "source": "mandya_thesis",
+   "needs_native_input": true
+  },
+  {
+   "id": "nanjangud",
+   "name": "Nanjangud",
+   "name_kn": "ನಂಜನಗೂಡು",
+   "zone": "south",
+   "lat": 12.12,
+   "lng": 76.68,
+   "about": "Nanjangudu Kannada is listed as a distinct variety in Kannada dialect classifications.",
+   "source": "kannada_dialects_list",
+   "needs_native_input": true
+  },
+  {
+   "id": "gundlupet",
+   "name": "Gundlupet",
+   "name_kn": "ಗುಂಡ್ಲುಪೇಟೆ",
+   "zone": "south",
+   "lat": 11.81,
+   "lng": 76.69,
+   "about": "No online source found yet. Fill from speakers.",
+   "source": null,
+   "needs_native_input": true
+  },
+  {
+   "id": "bengaluru",
+   "name": "Bengaluru",
+   "name_kn": "ಬೆಂಗಳೂರು",
+   "zone": "south",
+   "lat": 12.9716,
+   "lng": 77.5946,
+   "about": "Youth-driven vernacular full of slang and Kanglish, popularised by radio stations and picked up quickly by newcomers.",
+   "source": "bengaluru",
+   "needs_native_input": false
+  },
+  {
+   "id": "kolar",
+   "name": "Kolar",
+   "name_kn": "ಕೋಲಾರ",
+   "zone": "south",
+   "lat": 13.136,
+   "lng": 78.129,
+   "about": "Part of Morasu Nadu, where Kannada, Telugu and Tamil cultures blend; large Telugu, Urdu and Tamil speaking minorities.",
+   "source": "kolar_wiki",
+   "needs_native_input": true
+  },
+  {
+   "id": "chikkamagaluru",
+   "name": "Chikkamagaluru",
+   "name_kn": "ಚಿಕ್ಕಮಗಳೂರು",
+   "zone": "malnad",
+   "lat": 13.3153,
+   "lng": 75.7754,
+   "about": "Coffee country of Malnad. Entries to be added first-hand by the project author (native speaker).",
+   "source": null,
+   "needs_native_input": true
+  },
+  {
+   "id": "shivamogga",
+   "name": "Shivamogga",
+   "name_kn": "ಶಿವಮೊಗ್ಗ",
+   "zone": "malnad",
+   "lat": 13.9299,
+   "lng": 75.5681,
+   "about": "Gateway to Malnad. Havyaka Kannada is common around Thirthahalli, Sagara and Hosanagara (see Sirsi entries).",
+   "source": "havyaka",
+   "needs_native_input": true
+  },
+  {
+   "id": "sirsi",
+   "name": "Sirsi",
+   "name_kn": "ಶಿರಸಿ",
+   "zone": "malnad",
+   "lat": 14.6195,
+   "lng": 74.8354,
+   "about": "A centre of Havyaka Kannada (Havigannada), a dialect that preserves Old Kannada features lost elsewhere. Uttara Kannada Havigannada resembles Kundapura Kannada.",
+   "source": "havyaka",
+   "needs_native_input": false
+  },
+  {
+   "id": "udupi",
+   "name": "Udupi",
+   "name_kn": "ಉಡುಪಿ",
+   "zone": "coast",
+   "lat": 13.3409,
+   "lng": 74.7421,
+   "about": "Coastal Kannada blends influences from Tulu, Konkani and Beary and is tied to Yakshagana.",
+   "source": "deccan_herald",
+   "needs_native_input": true
+  },
+  {
+   "id": "mangaluru",
+   "name": "Mangaluru",
+   "name_kn": "ಮಂಗಳೂರು",
+   "zone": "coast",
+   "lat": 12.9141,
+   "lng": 74.856,
+   "about": "Spoken with clear diction, close to how Kannada is taught in schools; used in historical and mythological films and plays. Fun fact: the city has different names in Tulu (Kudla), Konkani (Kodial) and Beary (Maikala).",
+   "source": "mangaluru_wiki",
+   "needs_native_input": true
+  },
+  {
+   "id": "kundapura",
+   "name": "Kundapura",
+   "name_kn": "ಕುಂದಾಪುರ",
+   "zone": "coast",
+   "lat": 13.6283,
+   "lng": 74.6889,
+   "about": "Kundagannada is spoken in Kundapura, Byndoor, Brahmavar and Hebri taluks, with Tulu influence. A Kundapura Kannada dictionary exists. Shortening words is its standout feature.",
+   "source": "kundapura_wiki",
+   "needs_native_input": false
+  },
+  {
+   "id": "belagavi",
+   "name": "Belagavi",
+   "name_kn": "ಬೆಳಗಾವಿ",
+   "zone": "north",
+   "lat": 15.8497,
+   "lng": 74.4977,
+   "about": "Border region with heavy Marathi influence: Marathi loanwords for rooms, relatives and eateries, and Marathi numbers in rural counting.",
+   "source": "tnm_north",
+   "needs_native_input": false
+  },
+  {
+   "id": "dharwad",
+   "name": "Dharwad",
+   "name_kn": "ಧಾರವಾಡ",
+   "zone": "north",
+   "lat": 15.4589,
+   "lng": 75.0078,
+   "about": "Birthplace of Kannada linguistic nationalism. Described by CIIL as 'like jackfruit' – rough outside, sweet inside.",
+   "source": "ciil_dharwad",
+   "needs_native_input": false
+  },
+  {
+   "id": "kalaburagi",
+   "name": "Kalaburagi",
+   "name_kn": "ಕಲಬುರಗಿ",
+   "zone": "kalyana",
+   "lat": 17.3297,
+   "lng": 76.8343,
+   "about": "Kalyana Karnataka speech incorporates Telugu, Urdu and Marathi elements, reflecting multicultural borderlands.",
+   "source": "deccan_herald",
+   "needs_native_input": true
+  },
+  {
+   "id": "bidar",
+   "name": "Bidar",
+   "name_kn": "ಬೀದರ್",
+   "zone": "kalyana",
+   "lat": 17.9104,
+   "lng": 77.5199,
+   "about": "Dakhni Urdu has influenced local Kannada here more than anywhere else.",
+   "source": "tnm_north",
+   "needs_native_input": true
+  }
+ ],
+ "entries": [
+  {
+   "id": "sir-01",
+   "place": "sirsi",
+   "type": "word",
+   "english": "why",
+   "standard": {
+    "kn": "ಯಾಕೆ",
+    "tr": "yaake"
+   },
+   "dialect": {
+    "kn": "ಎಂತಕೆ",
+    "tr": "entakke"
+   },
+   "source": "havyaka",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "sir-02",
+   "place": "sirsi",
+   "type": "word",
+   "english": "how",
+   "standard": {
+    "kn": "ಹೇಗೆ",
+    "tr": "hege"
+   },
+   "dialect": {
+    "kn": "ಹೇಂಗೆ",
+    "tr": "henge"
+   },
+   "source": "havyaka",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "sir-03",
+   "place": "sirsi",
+   "type": "word",
+   "english": "what",
+   "standard": {
+    "kn": "ಏನು",
+    "tr": "enu"
+   },
+   "dialect": {
+    "kn": "ಎಂತ / ಎಂತದು",
+    "tr": "enta / entadu"
+   },
+   "note": "Also entu, ensu.",
+   "source": "havyaka",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "sir-04",
+   "place": "sirsi",
+   "type": "phrase",
+   "english": "(I) will come",
+   "standard": {
+    "kn": "ಬರುತ್ತೇನೆ",
+    "tr": "baruttene"
+   },
+   "dialect": {
+    "kn": "ಬತ್ತೆ",
+    "tr": "batte"
+   },
+   "note": "Also batti.",
+   "source": "havyaka",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "sir-05",
+   "place": "sirsi",
+   "type": "phrase",
+   "english": "(I) will go",
+   "standard": {
+    "kn": "ಹೋಗುತ್ತೇನೆ",
+    "tr": "hoguttene"
+   },
+   "dialect": {
+    "kn": "ಹೋಗ್ತೆ",
+    "tr": "hogte"
+   },
+   "note": "Also hogti, hovthe.",
+   "source": "havyaka",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "sir-06",
+   "place": "sirsi",
+   "type": "phrase",
+   "english": "(I) will do",
+   "standard": {
+    "kn": "ಮಾಡುತ್ತೇನೆ",
+    "tr": "maaduttene"
+   },
+   "dialect": {
+    "kn": "ಮಾಡ್ತೆ",
+    "tr": "maadte"
+   },
+   "source": "havyaka",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "sir-07",
+   "place": "sirsi",
+   "type": "grammar",
+   "english": "(it) is",
+   "standard": {
+    "kn": "ಇದೆ",
+    "tr": "ide"
+   },
+   "dialect": {
+    "kn": "ಇದ್ದು",
+    "tr": "iddu",
+    "kn_check": true
+   },
+   "source": "havyaka",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "sir-08",
+   "place": "sirsi",
+   "type": "phrase",
+   "english": "she has come",
+   "standard": {
+    "kn": "ಅವಳು ಬಂದಿದ್ದಾಳೆ",
+    "tr": "avaḷu bandiddāḷe"
+   },
+   "dialect": {
+    "kn": "ಅದು ಬಂಜು",
+    "tr": "adu banju",
+    "kn_check": true
+   },
+   "note": "Uttara Kannada Havyakas say banju; Dakshina Kannada Havyakas say baindu. Women are referred to with 'adu' (neuter) in parts of Uttara Kannada.",
+   "source": "havyaka",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "sir-09",
+   "place": "sirsi",
+   "type": "word",
+   "english": "little girl",
+   "standard": {
+    "kn": "ಚಿಕ್ಕ ಹುಡುಗಿ",
+    "tr": "chikka hudugi"
+   },
+   "dialect": {
+    "kn": "ಕೂಸು",
+    "tr": "kūsu",
+    "kn_check": true
+   },
+   "note": "Inherited from Old Kannada kūsu; not found in other dialects.",
+   "source": "havyaka",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "sir-10",
+   "place": "sirsi",
+   "type": "word",
+   "english": "to sleep",
+   "standard": {
+    "kn": "ಮಲಗು",
+    "tr": "malagu"
+   },
+   "dialect": {
+    "kn": "ಒರಗು",
+    "tr": "oragu",
+    "kn_check": true
+   },
+   "note": "From Old Kannada oṟagu. Compare Tamil urangu.",
+   "source": "havyaka",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "sir-11",
+   "place": "sirsi",
+   "type": "word",
+   "english": "we",
+   "standard": {
+    "kn": "ನಾವು",
+    "tr": "naavu"
+   },
+   "dialect": {
+    "kn": "ನಂಗ / ಎಂಗ",
+    "tr": "nanga / yanga"
+   },
+   "note": "Similar to Malayalam and Tamil forms – a sign of the old coastal language contact zone.",
+   "source": "havyaka",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "sir-12",
+   "place": "sirsi",
+   "type": "word",
+   "english": "you (plural / respectful)",
+   "standard": {
+    "kn": "ನೀವು",
+    "tr": "neevu"
+   },
+   "dialect": {
+    "kn": "ನಿಂಗ",
+    "tr": "ninga"
+   },
+   "source": "havyaka",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "sir-13",
+   "place": "sirsi",
+   "type": "word",
+   "english": "I",
+   "standard": {
+    "kn": "ನಾನು",
+    "tr": "naanu"
+   },
+   "dialect": {
+    "kn": "ಆನು",
+    "tr": "aanu"
+   },
+   "source": "havyaka",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "sir-14",
+   "place": "sirsi",
+   "type": "sound",
+   "english": "words starting with o / e",
+   "standard": {
+    "kn": "ಒಲೆ, ಎಲೆ, ಒಂದು",
+    "tr": "ole, ele, ondu"
+   },
+   "dialect": {
+    "kn": null,
+    "tr": "wale, yele, wandu"
+   },
+   "note": "Initial o becomes 'wa' and e becomes 'ye': stove, leaf, one.",
+   "source": "havyaka",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "sir-15",
+   "place": "sirsi",
+   "type": "loanword",
+   "english": "mother; drinking glass",
+   "standard": {
+    "kn": "ಅಮ್ಮ; ಲೋಟ",
+    "tr": "amma; lota"
+   },
+   "dialect": {
+    "kn": null,
+    "tr": "āi; pyele"
+   },
+   "note": "Konkani influence seen around Gokarna.",
+   "source": "havyaka",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "kun-01",
+   "place": "kundapura",
+   "type": "grammar",
+   "english": "I'll go / I'll eat / I'll do",
+   "standard": {
+    "kn": "ಹೋಗುತ್ತೇನೆ / ಉಣ್ಣುತ್ತೇನೆ / ಮಾಡುತ್ತೇನೆ",
+    "tr": "hoguttene / uṇṇuttene / maaduttene"
+   },
+   "dialect": {
+    "kn": "ಹೋತೆ / ಉಂತೆ / ಮಾಡ್ತೆ",
+    "tr": "hote / unte / maadte"
+   },
+   "note": "Shortening words is the most striking feature of Kundapura Kannada.",
+   "source": "kundapura_prajavani",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "kun-02",
+   "place": "kundapura",
+   "type": "word",
+   "english": "crow",
+   "standard": {
+    "kn": "ಕಾಗೆ",
+    "tr": "kaage"
+   },
+   "dialect": {
+    "kn": "ಕಾಕಿ",
+    "tr": "kaaki",
+    "kn_check": true
+   },
+   "source": "kundapura_blog",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "kun-03",
+   "place": "kundapura",
+   "type": "word",
+   "english": "owl",
+   "standard": {
+    "kn": "ಗೂಬೆ",
+    "tr": "goobe"
+   },
+   "dialect": {
+    "kn": "ಗುಮ್ಮ",
+    "tr": "gumma",
+    "kn_check": true
+   },
+   "source": "kundapura_blog",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "kun-04",
+   "place": "kundapura",
+   "type": "phrase",
+   "english": "(you) must come",
+   "standard": {
+    "kn": "ಬರಬೇಕು",
+    "tr": "barabeku"
+   },
+   "dialect": {
+    "kn": "ಬರ್ಕ್",
+    "tr": "barka",
+    "kn_check": true
+   },
+   "source": "kundapura_blog",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "kun-05",
+   "place": "kundapura",
+   "type": "phrase",
+   "english": "(you) must go",
+   "standard": {
+    "kn": "ಹೋಗಬೇಕು",
+    "tr": "hogabeku"
+   },
+   "dialect": {
+    "kn": "ಹೋಯ್ಕ್",
+    "tr": "hoyk",
+    "kn_check": true
+   },
+   "source": "kundapura_blog",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "kun-06",
+   "place": "kundapura",
+   "type": "phrase",
+   "english": "it's okay / never mind",
+   "standard": {
+    "kn": "ಪರವಾಗಿಲ್ಲ",
+    "tr": "paravaagilla"
+   },
+   "dialect": {
+    "kn": "ಅಡ್ಡಿಲ್ಲ",
+    "tr": "addilla",
+    "kn_check": true
+   },
+   "note": "Source spells it 'adilla'.",
+   "source": "kundapura_blog",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "kun-07",
+   "place": "kundapura",
+   "type": "phrase",
+   "english": "(I) will come",
+   "standard": {
+    "kn": "ಬರುತ್ತೇನೆ",
+    "tr": "baruttene"
+   },
+   "dialect": {
+    "kn": "ಬತ್ತಿ",
+    "tr": "batti",
+    "kn_check": true
+   },
+   "note": "Source spells it 'bathi'.",
+   "source": "kundapura_blog",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "kun-08",
+   "place": "kundapura",
+   "type": "phrase",
+   "english": "let's go",
+   "standard": {
+    "kn": "ಹೋಗೋಣ",
+    "tr": "hogona"
+   },
+   "dialect": {
+    "kn": "ಹೋಪ",
+    "tr": "hopa",
+    "kn_check": true
+   },
+   "source": "kundapura_blog",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "kun-09",
+   "place": "kundapura",
+   "type": "phrase",
+   "english": "let's see",
+   "standard": {
+    "kn": "ನೋಡೋಣ",
+    "tr": "nodona"
+   },
+   "dialect": {
+    "kn": "ಕಾಂಬ",
+    "tr": "kaamba",
+    "kn_check": true
+   },
+   "source": "kundapura_blog",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "dwd-01",
+   "place": "dharwad",
+   "type": "sound",
+   "english": "house",
+   "standard": {
+    "kn": "ಮನೆ",
+    "tr": "mane"
+   },
+   "dialect": {
+    "kn": "ಮನಿ",
+    "tr": "mani",
+    "kn_check": true
+   },
+   "note": "Final e shifts to i across North Karnataka.",
+   "source": "tnm_north",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "dwd-02",
+   "place": "dharwad",
+   "type": "sound",
+   "english": "don't want",
+   "standard": {
+    "kn": "ಬೇಡ",
+    "tr": "beda"
+   },
+   "dialect": {
+    "kn": "ಬ್ಯಾಡ",
+    "tr": "byaeda",
+    "kn_check": true
+   },
+   "note": "Long e becomes 'yae' (like the a in cat).",
+   "source": "tnm_north",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "dwd-03",
+   "place": "dharwad",
+   "type": "sound",
+   "english": "hotel",
+   "standard": {
+    "kn": "ಹೋಟೆಲ್",
+    "tr": "hotel"
+   },
+   "dialect": {
+    "kn": "ಹೋಟೆಲಾ",
+    "tr": "hotela",
+    "kn_check": true
+   },
+   "note": "An 'a' is added after words.",
+   "source": "ciil_dharwad",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "dwd-04",
+   "place": "dharwad",
+   "type": "sound",
+   "english": "dot / bindi",
+   "standard": {
+    "kn": "ಬೊಟ್ಟು",
+    "tr": "bottu"
+   },
+   "dialect": {
+    "kn": "ಬಟ್ಟು",
+    "tr": "battu",
+    "kn_check": true
+   },
+   "note": "o changes to a.",
+   "source": "ciil_dharwad",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "dwd-05",
+   "place": "dharwad",
+   "type": "sound",
+   "english": "elder sister",
+   "standard": {
+    "kn": "ಅಕ್ಕ",
+    "tr": "akka"
+   },
+   "dialect": {
+    "kn": "ಯಕ್ಕ",
+    "tr": "yakka",
+    "kn_check": true
+   },
+   "note": "Kinship terms starting with 'a' take a 'ya' sound.",
+   "source": "ciil_dharwad",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "bgm-01",
+   "place": "belagavi",
+   "type": "loanword",
+   "english": "room",
+   "standard": {
+    "kn": "ಕೋಣೆ",
+    "tr": "kone"
+   },
+   "dialect": {
+    "kn": "ಖೋಲಿ",
+    "tr": "khōli",
+    "kn_check": true
+   },
+   "note": "From Marathi.",
+   "source": "tnm_north",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "bgm-02",
+   "place": "belagavi",
+   "type": "loanword",
+   "english": "paternal uncle",
+   "standard": {
+    "kn": "ಚಿಕ್ಕಪ್ಪ",
+    "tr": "chikkappa"
+   },
+   "dialect": {
+    "kn": "ಕಾಕಾ",
+    "tr": "kākā",
+    "kn_check": true
+   },
+   "note": "From Marathi.",
+   "source": "tnm_north",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "bgm-03",
+   "place": "belagavi",
+   "type": "loanword",
+   "english": "mess serving meals",
+   "standard": {
+    "kn": "ಊಟದ ಹೋಟೆಲ್",
+    "tr": "oota hotel"
+   },
+   "dialect": {
+    "kn": "ಖಾನಾವಳಿ",
+    "tr": "khānāvaḷi",
+    "kn_check": true
+   },
+   "note": "From Marathi.",
+   "source": "tnm_north",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "bgm-04",
+   "place": "belagavi",
+   "type": "loanword",
+   "english": "fifty; hundred",
+   "standard": {
+    "kn": "ಐವತ್ತು; ನೂರು",
+    "tr": "aivattu; nooru"
+   },
+   "dialect": {
+    "kn": "ಪನ್ನಾಸ್; ಶಂಭರ್",
+    "tr": "pannās; shambhar",
+    "kn_check": true
+   },
+   "note": "Rural speakers near the Maharashtra border count large numbers in Marathi.",
+   "source": "tnm_north",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "bdr-01",
+   "place": "bidar",
+   "type": "loanword",
+   "english": "also",
+   "standard": {
+    "kn": "ಕೂಡ",
+    "tr": "kooda"
+   },
+   "dialect": {
+    "kn": "ಭೀ",
+    "tr": "bhi",
+    "kn_check": true
+   },
+   "note": "From Dakhni Urdu.",
+   "source": "tnm_north",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "blr-01",
+   "place": "bengaluru",
+   "type": "word",
+   "english": "awesome / cool",
+   "standard": null,
+   "dialect": {
+    "kn": "ಬೊಂಬಾಟ್ / ಸಕ್ಕತ್",
+    "tr": "bombaat / sakkath",
+    "kn_check": true
+   },
+   "source": "bengaluru",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "blr-02",
+   "place": "bengaluru",
+   "type": "word",
+   "english": "a lot",
+   "standard": {
+    "kn": "ತುಂಬಾ",
+    "tr": "tumba"
+   },
+   "dialect": {
+    "kn": "ಬೇಜಾನ್",
+    "tr": "bejaan",
+    "kn_check": true
+   },
+   "source": "bengaluru",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "blr-03",
+   "place": "bengaluru",
+   "type": "word",
+   "english": "bookworm",
+   "standard": null,
+   "dialect": {
+    "kn": "ಕುಡುಮಿ",
+    "tr": "kudumi",
+    "kn_check": true
+   },
+   "source": "bengaluru",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "blr-04",
+   "place": "bengaluru",
+   "type": "word",
+   "english": "trusted buddy",
+   "standard": null,
+   "dialect": {
+    "kn": "ಶಿಷ್ಯ",
+    "tr": "sishya",
+    "kn_check": true
+   },
+   "source": "bengaluru",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "blr-05",
+   "place": "bengaluru",
+   "type": "word",
+   "english": "amazing",
+   "standard": null,
+   "dialect": {
+    "kn": "ಚಿಂದಿ",
+    "tr": "chindi",
+    "kn_check": true
+   },
+   "source": "bengaluru",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "blr-06",
+   "place": "bengaluru",
+   "type": "loanword",
+   "english": "first sale of the day",
+   "standard": null,
+   "dialect": {
+    "kn": "ಬೋಣಿ",
+    "tr": "boni",
+    "kn_check": true
+   },
+   "note": "Borrowed from Telugu.",
+   "source": "bengaluru",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "blr-07",
+   "place": "bengaluru",
+   "type": "word",
+   "english": "a measure of someone's guts",
+   "standard": null,
+   "dialect": {
+    "kn": "ಮೀಟರ್",
+    "tr": "meter",
+    "kn_check": true
+   },
+   "source": "bengaluru",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "blr-08",
+   "place": "bengaluru",
+   "type": "phrase",
+   "english": "a fight is breaking out",
+   "standard": null,
+   "dialect": {
+    "kn": "ಕಿರಿಕ್ ಆಗ್ತಿದೆ",
+    "tr": "kirik aagthide",
+    "kn_check": true
+   },
+   "source": "bengaluru",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "blr-09",
+   "place": "bengaluru",
+   "type": "phrase",
+   "english": "please adjust a little",
+   "standard": null,
+   "dialect": {
+    "kn": "ಸ್ವಲ್ಪ ಅಡ್ಜಸ್ಟ್ ಮಾಡಿ",
+    "tr": "swalpa adjust maadi",
+    "kn_check": true
+   },
+   "note": "Classic Kanglish.",
+   "source": "bengaluru",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "blr-10",
+   "place": "bengaluru",
+   "type": "phrase",
+   "english": "chill out",
+   "standard": null,
+   "dialect": {
+    "kn": "ಜಸ್ಟ್ ಮಜಾ ಮಾಡಿ",
+    "tr": "just maja maadi",
+    "kn_check": true
+   },
+   "note": "Popularised by a Bengaluru radio station.",
+   "source": "bengaluru",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "blr-11",
+   "place": "bengaluru",
+   "type": "grammar",
+   "english": "English words get a -u ending",
+   "standard": null,
+   "dialect": {
+    "kn": "ಕಾರು, ಲೈಫು",
+    "tr": "car-u, life-u"
+   },
+   "source": "kanglish",
+   "confidence": "reference",
+   "verified": false
+  },
+  {
+   "id": "mdy-01",
+   "place": "mandya",
+   "type": "phrase",
+   "english": "hey, how are you?",
+   "standard": {
+    "kn": "ಏನೋ ಹೆಂಗಿದ್ದೀಯೋ",
+    "tr": "ēnō heṅgidiyō (Bengaluru)"
+   },
+   "dialect": {
+    "kn": "ಏನ್ಲಾ ಎಂಗಿದಿಯಾ",
+    "tr": "ēnlā eṅgidiyā"
+   },
+   "note": "Mandya speech described as having a rural touch with native words.",
+   "source": "mandya_quora",
+   "confidence": "informal",
+   "verified": false
+  }
+ ],
+ "compare_sets": [
+  {
+   "id": "cmp-will-come",
+   "english": "I will come",
+   "entries": [
+    "sir-04",
+    "kun-07"
+   ]
+  },
+  {
+   "id": "cmp-will-go",
+   "english": "I will go",
+   "entries": [
+    "sir-05",
+    "kun-01"
+   ]
+  },
+  {
+   "id": "cmp-final-vowel",
+   "english": "How North Karnataka changes sounds",
+   "entries": [
+    "dwd-01",
+    "dwd-02",
+    "dwd-03",
+    "dwd-05"
+   ]
+  },
+  {
+   "id": "cmp-borrowed",
+   "english": "Words borrowed from neighbours",
+   "entries": [
+    "bgm-01",
+    "bgm-04",
+    "blr-06",
+    "bdr-01",
+    "sir-15"
+   ]
+  }
+ ]
+}
