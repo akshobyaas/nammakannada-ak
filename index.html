@@ -7,8 +7,8 @@
   <meta name="description" content="Explore how spoken Kannada changes across Karnataka: regional words, phrases and sounds on an interactive map, with sources.">
   <meta name="theme-color" content="#C8102E">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FFD21F' stroke='black' stroke-width='4'/%3E%3Ctext x='32' y='46' font-size='38' text-anchor='middle' fill='%23E8202A' font-family='sans-serif'%3E%E0%B2%95%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="css/fonts.css?v=4">
-  <link rel="stylesheet" href="css/style.css?v=4">
+  <link rel="stylesheet" href="css/fonts.css?v=5">
+  <link rel="stylesheet" href="css/style.css?v=5">
 </head>
 <body>
   <a class="skip" href="#panel">Skip to content</a>
@@ -18,7 +18,11 @@
       <span class="brand-kn" lang="kn">ನಮ್ಮ ಕನ್ನಡ</span>
       <span class="brand-en">One language, many voices across Karnataka</span>
     </a>
-    <nav class="nav" aria-label="Main">
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+      <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="menu-txt">Menu</span>
+    </button>
+    <nav class="nav" id="nav" aria-label="Main">
       <a href="#/" data-nav="explore">Explore</a>
       <a href="#/compare" data-nav="compare">Compare</a>
       <a href="#/guide" data-nav="guide">How to say it</a>
@@ -44,7 +48,11 @@
     </section>
   </main>
 
+  <div class="sticky-cta" id="sticky-cta">
+    <a class="btn" id="cta-main" href="#/add">Add a word from your town</a>
+  </div>
+
   <noscript><p class="noscript">Namma Kannada needs JavaScript to show the map and words.</p></noscript>
-  <script type="module" src="js/app.js?v=4"></script>
+  <script type="module" src="js/app.js?v=5"></script>
 </body>
 </html>

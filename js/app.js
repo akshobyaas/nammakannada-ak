@@ -23,10 +23,47 @@ function setNav(name) {
   });
 }
 
+// ---------- Mobile menu ----------
+const menuBtn = document.querySelector(".menu-btn");
+const nav = document.getElementById("nav");
+function setMenu(open) {
+  nav.classList.toggle("open", open);
+  menuBtn.setAttribute("aria-expanded", String(open));
+  menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+}
+menuBtn.addEventListener("click", () => setMenu(!nav.classList.contains("open")));
+nav.addEventListener("click", (e) => { if (e.target.closest("a")) setMenu(false); });
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && nav.classList.contains("open")) { setMenu(false); menuBtn.focus(); }
+});
+document.addEventListener("click", (e) => {
+  if (nav.classList.contains("open") && !e.target.closest(".top")) setMenu(false);
+});
+window.matchMedia("(max-width: 860px)").addEventListener("change", () => setMenu(false));
+
+// ---------- Sticky main action on phones ----------
+const cta = document.getElementById("sticky-cta");
+const ctaLink = document.getElementById("cta-main");
+function syncCta(section, id) {
+  const hide = section === "add" || section === "record";
+  cta.hidden = hide;
+  document.body.classList.toggle("has-cta", !hide);
+  const place = section === "place" ? store.places.get(id) : null;
+  ctaLink.href = place ? `#/add?place=${place.id}` : "#/add";
+  ctaLink.textContent = place ? `Add a word from ${place.name.replace(/\s*\(.*\)/, "")}` : "Add a word from your town";
+}
+// Hide the bar while typing so it does not sit on top of the phone keyboard
+document.addEventListener("focusin", (e) => {
+  if (e.target.matches("input, textarea, select")) cta.classList.add("typing");
+});
+document.addEventListener("focusout", () => cta.classList.remove("typing"));
+
 function route({ fromUser = false } = {}) {
   const { parts, params } = parseHash();
   const [section, id] = parts;
   q.value = "";
+  setMenu(false);
+  syncCta(section, id);
 
   switch (section) {
     case undefined:
