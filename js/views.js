@@ -545,12 +545,12 @@ const SOUND_CHANGES = [
   ["North Karnataka", "A final e becomes i, and a long e turns into yaa.", ["dwd-01", "dwd-02"]],
   ["Bagalkote", "A final u becomes a, and a long e at the end turns into yaa.", ["bgk-01", "bgk-04"]],
   ["Dharwad", "An a is added after words, and akka becomes yakka.", ["dwd-03", "dwd-05"]],
-  ["Havyaka (Sirsi)", "o and e at the start of a word become wa and ye: ole is said wale.", ["sir-14"]],
+  ["Havyaka (Sirsi)", "o and e at the start of a word become wa and ye: ole is said wale. Short three-syllable words double their last consonant: harake becomes harakke.", ["sir-14", "sir-20"]],
   ["Kundapura", "Long verb endings are cut short: hoguttene becomes hote.", ["kun-01"]],
   ["Halakki (Ankola)", "An r before D turns into y, so eraDu becomes eyDu. Middle vowels drop: bāgilu becomes bāgla.", ["hlk-11", "hlk-04"]],
   ["Malenadu", "Some s and L sounds shift: sappe becomes chappe, kēLu becomes kēNu.", ["mal-04", "mal-05"]],
-  ["Kalaburagi", "Final e and u turn to i or a, and e after a consonant becomes ya: tale is said tyali.", ["klb-04", "klb-01"]],
-  ["Arebhashe", "The final u falls off: nānu becomes nā, nāvu becomes nāv.", ["are-01"]],
+  ["Kalaburagi", "Final e and u turn to i or a, e and o at the start become ya and va (ondu is vandu), and long ē and ō become yā and wā (kōNa is kwāNā).", ["klb-04", "klb-15", "klb-17"]],
+  ["Arebhashe", "The final u falls off (nānu becomes nā), i turns into e (ili is eli), and g hardens to k (kāge is kakke).", ["are-01", "are-12", "are-14"]],
 ];
 
 function guideExample(ref) {

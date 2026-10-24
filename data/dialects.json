@@ -3883,6 +3883,386 @@
     "kind": "violence",
     "why": "Describes an injury."
    }
+  },
+  {
+   "id": "are-11",
+   "place": "arebhashe",
+   "type": "sound",
+   "english": "summer",
+   "standard": {
+    "kn": "ಬೇಸಿಗೆ",
+    "tr": "bēsige"
+   },
+   "dialect": {
+    "kn": "ಬೇಸೆಗೆ",
+    "tr": "bēsege",
+    "kn_check": true
+   },
+   "note": "Vowel change: i becomes e. Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "are-12",
+   "place": "arebhashe",
+   "type": "sound",
+   "english": "rat",
+   "standard": {
+    "kn": "ಇಲಿ",
+    "tr": "ili"
+   },
+   "dialect": {
+    "kn": "ಎಲಿ",
+    "tr": "eli",
+    "kn_check": true
+   },
+   "note": "Vowel change: i becomes e. Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "are-13",
+   "place": "arebhashe",
+   "type": "sound",
+   "english": "tongue",
+   "standard": {
+    "kn": "ನಾಲಗೆ",
+    "tr": "nālage"
+   },
+   "dialect": {
+    "kn": "ನಾಲಿಕೆ",
+    "tr": "nālike",
+    "kn_check": true
+   },
+   "note": "Consonant change: g becomes k. Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "are-14",
+   "place": "arebhashe",
+   "type": "sound",
+   "english": "crow",
+   "standard": {
+    "kn": "ಕಾಗೆ",
+    "tr": "kāge"
+   },
+   "dialect": {
+    "kn": "ಕಕ್ಕೆ",
+    "tr": "kakke",
+    "kn_check": true
+   },
+   "note": "Consonant change: g becomes k. Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "klb-14",
+   "place": "kalaburagi",
+   "type": "sound",
+   "english": "leaf",
+   "standard": {
+    "kn": "ಎಲೆ",
+    "tr": "ele"
+   },
+   "dialect": {
+    "kn": "ಯಲಿ",
+    "tr": "yali",
+    "kn_check": true
+   },
+   "note": "A starting e becomes ya. Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "klb-15",
+   "place": "kalaburagi",
+   "type": "sound",
+   "english": "one",
+   "standard": {
+    "kn": "ಒಂದು",
+    "tr": "ondu"
+   },
+   "dialect": {
+    "kn": "ವಂದು",
+    "tr": "vandu",
+    "kn_check": true
+   },
+   "note": "A starting o becomes va. Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "klb-16",
+   "place": "kalaburagi",
+   "type": "sound",
+   "english": "boredom",
+   "standard": {
+    "kn": "ಬೇಸರಿಕೆ",
+    "tr": "bēsarike"
+   },
+   "dialect": {
+    "kn": "ಬ್ಯಾಸರಿಕೆ",
+    "tr": "byāsarike",
+    "kn_check": true
+   },
+   "note": "Long ē becomes yā. Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "klb-17",
+   "place": "kalaburagi",
+   "type": "sound",
+   "english": "male buffalo",
+   "standard": {
+    "kn": "ಕೋಣ",
+    "tr": "kōNa"
+   },
+   "dialect": {
+    "kn": "ಕ್ವಾಣಾ",
+    "tr": "kwāNā",
+    "kn_check": true
+   },
+   "note": "Long ō becomes wā. Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "kun-21",
+   "place": "kundapura",
+   "type": "sound",
+   "english": "rain",
+   "standard": {
+    "kn": "ಮಳೆ",
+    "tr": "maLe"
+   },
+   "dialect": {
+    "kn": "ಮಳಿ",
+    "tr": "maLi",
+    "kn_check": true
+   },
+   "note": "A final e becomes i. Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "kun-22",
+   "place": "kundapura",
+   "type": "sound",
+   "english": "weekly market",
+   "standard": {
+    "kn": "ಸಂತೆ",
+    "tr": "sante"
+   },
+   "dialect": {
+    "kn": "ಸಂತಿ",
+    "tr": "santi",
+    "kn_check": true
+   },
+   "note": "A final e becomes i. Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "kun-23",
+   "place": "kundapura",
+   "type": "sound",
+   "english": "on top, above",
+   "standard": {
+    "kn": "ಮೇಲೆ",
+    "tr": "mēle"
+   },
+   "dialect": {
+    "kn": "ಮ್ಯಾಲೆ",
+    "tr": "myāle",
+    "kn_check": true
+   },
+   "note": "Long ē becomes yā. Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "kun-24",
+   "place": "kundapura",
+   "type": "sound",
+   "english": "town, bazaar",
+   "standard": {
+    "kn": "ಪೇಟೆ",
+    "tr": "pēTe"
+   },
+   "dialect": {
+    "kn": "ಪ್ಯಾಟಿ",
+    "tr": "pyāTi",
+    "kn_check": true
+   },
+   "note": "Long ē becomes yā, and the final e becomes i. Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "sir-20",
+   "place": "sirsi",
+   "type": "sound",
+   "english": "vow, offering to a deity",
+   "standard": {
+    "kn": "ಹರಕೆ",
+    "tr": "harake"
+   },
+   "dialect": {
+    "kn": "ಹರಕ್ಕೆ",
+    "tr": "harakke",
+    "kn_check": true
+   },
+   "note": "In three-syllable words, the last consonant is doubled. Transcribed from an @aarva_karnaata Instagram post on Havigannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "sir-21",
+   "place": "sirsi",
+   "type": "sound",
+   "english": "to search",
+   "standard": {
+    "kn": "ಹುಡುಕು",
+    "tr": "huDuku"
+   },
+   "dialect": {
+    "kn": "ಹುಡುಕ್ಕು",
+    "tr": "huDukku",
+    "kn_check": true
+   },
+   "note": "In three-syllable words, the last consonant is doubled. Transcribed from an @aarva_karnaata Instagram post on Havigannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "sir-22",
+   "place": "sirsi",
+   "type": "sound",
+   "english": "ball",
+   "standard": {
+    "kn": "ಚಂಡು",
+    "tr": "chanDu"
+   },
+   "dialect": {
+    "kn": "ಚೆಂಡು",
+    "tr": "chenDu",
+    "kn_check": true
+   },
+   "note": "After ch and j, a becomes e. Transcribed from an @aarva_karnaata Instagram post on Havigannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "sir-23",
+   "place": "sirsi",
+   "type": "sound",
+   "english": "pandal, thatched shelter",
+   "standard": {
+    "kn": "ಚಪ್ಪರ",
+    "tr": "chappara"
+   },
+   "dialect": {
+    "kn": "ಚೆಪ್ಪರ",
+    "tr": "cheppara",
+    "kn_check": true
+   },
+   "note": "After ch and j, a becomes e. Transcribed from an @aarva_karnaata Instagram post on Havigannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "dwd-22",
+   "place": "dharwad",
+   "type": "sound",
+   "english": "monkey",
+   "standard": {
+    "kn": "ಮಂಗ",
+    "tr": "manga"
+   },
+   "dialect": {
+    "kn": "ಮಂಗ್ಯಾ",
+    "tr": "mangyā",
+    "kn_check": true
+   },
+   "note": "A final a becomes yā. Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "dwd-23",
+   "place": "dharwad",
+   "type": "sound",
+   "english": "crow",
+   "standard": {
+    "kn": "ಕಾಗೆ",
+    "tr": "kāge"
+   },
+   "dialect": {
+    "kn": "ಕಾಗಿ",
+    "tr": "kāgi",
+    "kn_check": true
+   },
+   "note": "A final e becomes i. Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "dwd-24",
+   "place": "dharwad",
+   "type": "sound",
+   "english": "on top, above",
+   "standard": {
+    "kn": "ಮೇಲೆ",
+    "tr": "mēle"
+   },
+   "dialect": {
+    "kn": "ಮ್ಯಾಲೆ",
+    "tr": "myāle",
+    "kn_check": true
+   },
+   "note": "Long ē becomes yā. Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "dwd-25",
+   "place": "dharwad",
+   "type": "sound",
+   "english": "cloud",
+   "standard": {
+    "kn": "ಮೋಡ",
+    "tr": "mōDa"
+   },
+   "dialect": {
+    "kn": "ಮ್ವಾಡ",
+    "tr": "mwāDa",
+    "kn_check": true
+   },
+   "note": "Long ō becomes wā. Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
   }
  ],
  "compare_sets": [
@@ -3982,6 +4362,23 @@
    "entries": [
     "kun-05",
     "are-04"
+   ]
+  },
+  {
+   "id": "cmp-crow",
+   "english": "crow",
+   "entries": [
+    "kun-02",
+    "are-14",
+    "dwd-23"
+   ]
+  },
+  {
+   "id": "cmp-on-top",
+   "english": "on top, above",
+   "entries": [
+    "kun-23",
+    "dwd-24"
    ]
   }
  ]
