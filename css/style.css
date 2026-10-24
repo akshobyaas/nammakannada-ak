@@ -4,15 +4,13 @@
   --yellow: #FFD21F;
   --yellow-soft: #FFF2B8;
   --red: #E8202A;
-  --green: #0E5E3B;
-  --green-2: #127A4A;
-  --blue: #3BA3F5;
-  --pink: #FF6FA8;
+  --red-deep: #B80F18;
+  --orange: #FF9F1C;
   --ink: #000;
   --paper: #FFF7D6;
   --white: #fff;
   --muted: #5B4F3A;
-  --ok: #19A35B;
+  --ok: #F5A400;
 
   --f-display: "Akaya Kanadaka", "Baloo Tamma 2", system-ui, sans-serif;
   --f-kn: "Baloo Tamma 2", "Noto Sans Kannada", system-ui, sans-serif;
@@ -46,7 +44,7 @@ body {
 [lang="kn"] { font-family: var(--f-kn); line-height: 1.55; }
 a { color: inherit; }
 button, input, select, textarea { font: inherit; color: inherit; }
-:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 6px; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; border-radius: 6px; }
 
 .skip {
   position: absolute; left: 8px; top: -60px; z-index: 10;
@@ -116,8 +114,8 @@ button, input, select, textarea { font: inherit; color: inherit; }
   padding: 18px clamp(12px, 2vw, 28px) 12px;
   display: flex; flex-direction: column; gap: 12px;
   background:
-    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1.2px, transparent 1.4px) 0 0 / 16px 16px,
-    var(--green);
+    radial-gradient(circle at 1px 1px, rgba(255,210,31,0.22) 1.2px, transparent 1.4px) 0 0 / 16px 16px,
+    var(--red);
   border-right: 3px solid var(--ink);
 }
 .map { flex: 1; min-height: 0; display: flex; justify-content: center; }
@@ -142,7 +140,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   stroke-linejoin: round;
   transition: fill-opacity 200ms;
 }
-.map[data-zone] .district { fill: #D5E2D9; fill-opacity: 1; }
+.map[data-zone] .district { fill: #F3B3B0; fill-opacity: 1; }
 .map[data-zone="south"] .district[data-zone="south"],
 .map[data-zone="malnad"] .district[data-zone="malnad"],
 .map[data-zone="coast"] .district[data-zone="coast"],
@@ -164,9 +162,9 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .pin.active .dot { r: 9; }
 .pin.active .halo { opacity: 1; }
 .pin:focus-visible { outline: none; }
-.pin:focus-visible .halo { opacity: 1; fill: var(--blue); }
+.pin:focus-visible .halo { opacity: 1; fill: var(--white); }
 .pin.flash .halo { opacity: 1; }
-.pin.correct .halo { opacity: 1; fill: var(--ok); }
+.pin.correct .halo { opacity: 1; fill: var(--yellow); }
 .pin.wrong .halo { opacity: 1; fill: var(--red); }
 
 /* The one load moment: pins drop in, region by region */
@@ -181,7 +179,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 .legend button[aria-pressed="true"] { background: var(--yellow); }
 .legend .sw { width: 16px; height: 16px; border-radius: 50%; background: var(--zone); border: 2px solid var(--ink); }
-.map-note { margin: 0; text-align: center; font-size: 0.82rem; color: #E9F5EE; }
+.map-note { margin: 0; text-align: center; font-size: 0.82rem; color: var(--yellow-soft); }
 
 /* ---------- Panel text ---------- */
 .search { position: relative; }
@@ -271,7 +269,7 @@ button.dialect:hover { text-decoration-color: var(--zone, var(--red)); }
 .check { display: inline-flex; align-items: center; gap: 6px; }
 .check::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--yellow); border: 2px solid var(--ink); }
 .check.ok::before { background: var(--ok); }
-.check.mine::before { background: var(--pink); }
+.check.mine::before { background: var(--red); }
 .flag-label {
   display: inline-flex; align-items: center; gap: 5px; font-weight: 800; color: var(--red);
   border: 2px solid var(--red); border-radius: 999px; padding: 0 9px; font-size: 0.78rem;
@@ -370,13 +368,13 @@ button.dialect:hover { text-decoration-color: var(--zone, var(--red)); }
   display: inline-grid; place-items: center; font-size: 0.8rem; background: var(--white);
 }
 .options button:disabled { cursor: default; }
-.options button.right { background: var(--ok); color: var(--white); animation: pop 320ms ease; }
+.options button.right { background: var(--yellow); color: var(--ink); animation: pop 320ms ease; }
 .options button.wrong { background: var(--red); color: var(--white); animation: shake 320ms ease; }
 @keyframes pop { 50% { transform: scale(1.05); } }
 @keyframes shake { 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
 .result { margin: 18px 0 0; font-size: var(--s1); }
 .result strong { font-family: var(--f-display); font-weight: 400; font-size: var(--s2); margin-right: 6px; }
-.result.right strong { color: var(--ok); }
+.result.right strong { color: var(--ink); background: var(--yellow); padding: 0 8px; border-radius: 8px; border: 2px solid var(--ink); }
 .result.wrong strong { color: var(--red); }
 .kbd-hint { font-size: 0.8rem; color: var(--muted); margin: 12px 0 0; }
 
@@ -392,7 +390,7 @@ button.dialect:hover { text-decoration-color: var(--zone, var(--red)); }
 .field .err { color: var(--red); font-size: var(--s-1); margin: 0; font-weight: 700; }
 .field [aria-invalid="true"] { border-color: var(--red); box-shadow: 3px 3px 0 var(--red); }
 .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.done { margin-top: 18px; padding: 16px; border-radius: var(--r); background: #D9F5E5; border: var(--line); box-shadow: var(--shadow-sm); }
+.done { margin-top: 18px; padding: 16px; border-radius: var(--r); background: var(--yellow-soft); border: var(--line); box-shadow: var(--shadow-sm); }
 .done p { margin: 0 0 6px; }
 .empty-state { margin-top: 20px; padding: 20px; border: 2.5px dashed var(--ink); border-radius: var(--r); background: var(--white); }
 .empty-state p { margin: 0 0 12px; font-size: var(--s1); }

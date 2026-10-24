@@ -38,25 +38,25 @@
    "id": "malnad",
    "name": "Malnad",
    "name_kn": "ಮಲೆನಾಡು",
-   "color": "#7CD67A"
+   "color": "#FFF3C4"
   },
   {
    "id": "coast",
    "name": "Coast",
    "name_kn": "ಕರಾವಳಿ",
-   "color": "#3BA3F5"
+   "color": "#FF9F1C"
   },
   {
    "id": "north",
    "name": "North Karnataka",
    "name_kn": "ಉತ್ತರ ಕರ್ನಾಟಕ",
-   "color": "#FF6FA8"
+   "color": "#FF6F61"
   },
   {
    "id": "kalyana",
    "name": "Kalyana Karnataka",
    "name_kn": "ಕಲ್ಯಾಣ ಕರ್ನಾಟಕ",
-   "color": "#A98BFF"
+   "color": "#FFB3C1"
   }
  ],
  "places": [
