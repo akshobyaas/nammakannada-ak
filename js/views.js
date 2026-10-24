@@ -145,9 +145,10 @@ export function renderExplore(root, { zone } = {}) {
   let html = "";
   if (!zone) {
     html += `
-      <h1>One language, many ways to say it</h1>
+      <h1 lang="kn">ಒಂದೇ ಭಾಷೆ, ನೂರಾರು ದನಿ</h1>
+      <p class="sub-h">One language, hundreds of voices</p>
       <p class="lede">Kannada sounds different in Sirsi, Kundapura, Dharwad and Bengaluru.
-      Pick a place on the map to hear how people there really talk.</p>
+      Tap a place on the map to hear how people there really talk.</p>
       <p class="muted">${plural(total, "word", "words")} from ${withWords} of ${store.places.size} places so far, each linked to its source.</p>
       ${intro ? compareBlock(intro) : ""}
       <h2>Places</h2>`;
