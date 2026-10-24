@@ -18,6 +18,16 @@ Built for the Kannada Digital Innovation Hackathon 2026, problem statement 4: Re
 - **Play recording:** a clip recorded by a Kannada speaker, with the real local accent.
 - **Listen:** a computer voice reading the spelling in a standard accent. Where the [Alar voice corpus](https://github.com/Aditya-ds-1806/Alar-voice-corpus) (GPL-2.0, generated with Google TTS) has the word, its clip in `audio/alar/` plays in any browser; this covers 17 dialect words and 21 standard forms. Otherwise the browser's built-in Kannada voice is used, which Microsoft Edge on Windows and Chrome on Android have; the button is hidden in browsers without one. **Demo in Edge.**
 
+### Natural AI voice for every word (Sarvam AI)
+
+1. Sign up at [dashboard.sarvam.ai](https://dashboard.sarvam.ai) (free credits, no card) and create an API key.
+2. In this folder, run `python scripts/generate-voice.py` and paste the key when asked.
+3. Reload the site. Every word and its standard form now play the Sarvam Bulbul voice.
+
+Try `python scripts/generate-voice.py --limit 2` first to hear it. Change the voice with `--speaker roopa` (or anand, vijay, shruti...) and add `--force` to remake existing clips. Clips go to `audio/ai/`.
+
+### Real recordings
+
 To add recordings, open `#/record` in the site (also linked from Sources), record and save each word, move the files into `audio/`, then run:
 
 ```bash

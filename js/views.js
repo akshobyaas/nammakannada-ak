@@ -54,11 +54,14 @@ export function wordCard(e, { showPlace = false } = {}) {
   </article>`;
 }
 
-// Sound, best first: a speaker's recording, then a dictionary audio clip,
+// Sound, best first: a speaker's recording, then an AI voice clip, then a dictionary clip,
 // then the browser's own Kannada voice (hidden when the browser has none).
 function soundButton(e, side = "dialect") {
   if (side === "dialect" && e.audio)
     return `<button class="play" type="button" data-audio="${esc(e.audio)}">Play recording</button>`;
+  if (e.voice?.[side])
+    return `<button class="play" type="button" data-clips="${esc(e.voice[side])}"
+      title="AI voice (Sarvam Bulbul) reading the spelling">Listen</button>`;
   const clips = e.tts?.[side];
   if (clips?.length)
     return `<button class="play" type="button" data-clips="${esc(clips.join("|"))}"
@@ -424,6 +427,7 @@ const SOURCE_NOTES = {
   mandya_quora: "Mandya greeting compared with Bengaluru (forum)",
   mandya_thesis: "University of Mysore thesis on a Mandya dialect",
   mysuru_blog: "Mysuru Kannada as the prestige spoken variety",
+  sarvam_voice: "Sarvam AI Bulbul: AI voice clips",
   alar_voice: "Alar voice corpus: dictionary audio clips (GPL-2.0, generated with Google TTS)",
 };
 
@@ -439,7 +443,7 @@ export function renderSources(root) {
         <span class="muted">${counts[k] ? `, ${plural(counts[k], "word", "words")}` : ""}</span></li>`).join("")}
     </ol>
     <h2>Sound</h2>
-    <p>“Play recording” plays a clip recorded by a Kannada speaker. “Listen” is a computer voice reading the spelling in a standard accent, so it gives the shape of a word but not its local tune. Where the <a href="https://github.com/Aditya-ds-1806/Alar-voice-corpus" target="_blank" rel="noopener">Alar voice corpus</a> has the word, its audio clip is used and plays in any browser. Otherwise the browser’s own Kannada voice is used: Microsoft Edge on Windows and Chrome on Android have one, other browsers may not, and the button is hidden there.</p>
+    <p>“Play recording” plays a clip recorded by a Kannada speaker. “Listen” is a computer voice reading the spelling in a standard accent, so it gives the shape of a word but not its local tune. Clips made with <a href="https://www.sarvam.ai/text-to-speech" target="_blank" rel="noopener">Sarvam AI’s Bulbul</a> voice are used first; where there is none and the <a href="https://github.com/Aditya-ds-1806/Alar-voice-corpus" target="_blank" rel="noopener">Alar voice corpus</a> has the word, its clip is used. Both play in any browser. Otherwise the browser’s own Kannada voice is used: Microsoft Edge on Windows and Chrome on Android have one, other browsers may not, and the button is hidden there.</p>
     <p><a href="#/record">Record words</a> to add real voices.</p>
     <h2>Map</h2>
     <p>District boundaries from <a href="https://github.com/udit-001/india-maps-data" target="_blank" rel="noopener">india-maps-data</a> (2011 census districts). Regions are approximate cultural zones, not official divisions.</p>`;
