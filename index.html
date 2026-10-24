@@ -7,8 +7,8 @@
   <meta name="description" content="Explore how spoken Kannada changes across Karnataka: regional words, phrases and sounds on an interactive map, with sources.">
   <meta name="theme-color" content="#C8102E">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FFD21F' stroke='black' stroke-width='4'/%3E%3Ctext x='32' y='46' font-size='38' text-anchor='middle' fill='%23E8202A' font-family='sans-serif'%3E%E0%B2%95%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="css/fonts.css?v=6">
-  <link rel="stylesheet" href="css/style.css?v=6">
+  <link rel="stylesheet" href="css/fonts.css?v=7">
+  <link rel="stylesheet" href="css/style.css?v=7">
 </head>
 <body>
   <a class="skip" href="#panel">Skip to content</a>
@@ -34,6 +34,7 @@
 
   <main class="layout">
     <section class="map-pane" aria-label="Map of Karnataka">
+      <p class="map-prompt">Tap a pin to hear how people talk there</p>
       <div id="map" class="map"></div>
       <ul id="legend" class="legend" aria-label="Regions"></ul>
       <p class="map-note">Regions are approximate cultural zones. A hollow pin means no words yet.</p>
@@ -45,6 +46,18 @@
         <input id="q" type="search" placeholder="Search in Kannada or English, like ಮನೆ or come" autocomplete="off">
       </div>
       <div id="view" class="view" aria-live="polite"></div>
+
+      <footer class="site-foot">
+        <section id="contact" class="contact" aria-labelledby="contact-h" hidden>
+          <h2 id="contact-h">Contact</h2>
+          <address id="contact-body"></address>
+        </section>
+        <p class="foot-line">
+          © <span id="year">2026</span> Namma Kannada ·
+          Built for the Kannada Digital Innovation Hackathon ·
+          <a href="#/sources">Sources and credits</a>
+        </p>
+      </footer>
     </section>
   </main>
 
@@ -53,6 +66,6 @@
   </div>
 
   <noscript><p class="noscript">Namma Kannada needs JavaScript to show the map and words.</p></noscript>
-  <script type="module" src="js/app.js?v=6"></script>
+  <script type="module" src="js/app.js?v=7"></script>
 </body>
 </html>

@@ -3,6 +3,26 @@ import { loadData, store } from "./store.js";
 import { renderMap } from "./map.js";
 import * as views from "./views.js";
 import { renderRecord } from "./recorder.js";
+import { CONFIG } from "./config.js";
+
+// ---------- Footer: year and contact ----------
+document.getElementById("year").textContent = String(new Date().getFullYear());
+
+function renderContact() {
+  const c = CONFIG.CONTACT || {};
+  const esc = views.esc;
+  const rows = [];
+  if (c.email) rows.push(`<p><span class="lbl">Email</span><a href="mailto:${esc(c.email)}">${esc(c.email)}</a></p>`);
+  if (c.phone) rows.push(`<p><span class="lbl">Phone</span><a href="tel:${esc(c.phone.replace(/[^+\d]/g, ""))}">${esc(c.phone)}</a></p>`);
+  if (c.address) rows.push(`<p><span class="lbl">Address</span><span>${esc(c.address).replace(/\n/g, "<br>")}</span></p>`);
+  const links = (c.links || []).filter((l) => l && l.url);
+  if (links.length) rows.push(`<p><span class="lbl">Online</span>${links.map((l) =>
+    `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label || l.url)}</a>`).join(" · ")}</p>`);
+  const box = document.getElementById("contact");
+  document.getElementById("contact-body").innerHTML = rows.join("");
+  box.hidden = rows.length === 0;
+}
+renderContact();
 
 const view = document.getElementById("view");
 const panel = document.getElementById("panel");

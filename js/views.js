@@ -149,6 +149,10 @@ export function renderExplore(root, { zone } = {}) {
       <p class="sub-h">One language, hundreds of voices</p>
       <p class="lede">Kannada sounds different in Sirsi, Kundapura, Dharwad and Bengaluru.
       Tap a place on the map to hear how people there really talk.</p>
+      <div class="actions hero-cta">
+        <a class="btn" href="#/quiz">Play Guess the region</a>
+        <a class="btn ghost" href="#/compare">Compare regions side by side</a>
+      </div>
       <p class="muted">${plural(total, "word", "words")} from ${withWords} of ${store.places.size} places so far, each linked to its source.</p>
       ${intro ? compareBlock(intro) : ""}
       <h2>Places</h2>`;
