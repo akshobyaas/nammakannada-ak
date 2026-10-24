@@ -651,5 +651,16 @@ export function renderSources(root) {
 }
 
 export function renderNotFound(root) {
-  root.innerHTML = `<h1>Page not found</h1><p class="lede">That place or page does not exist.</p><a class="btn" href="#/">Go to the map</a>`;
+  root.innerHTML = `
+    <div class="notfound">
+      <p class="nf-code" aria-hidden="true">404</p>
+      <h1><span lang="kn">ಅಯ್ಯೋ!</span> This page got lost</h1>
+      <p class="lede">There is no place or page at this address. It may have been renamed, or the link has a typo.</p>
+      <div class="actions">
+        <a class="btn" href="#/">Back to the map</a>
+        <a class="btn ghost" href="#/quiz">Play Guess the region</a>
+      </div>
+    </div>`;
+  map.setActive(null);
+  map.highlightZone(null);
 }

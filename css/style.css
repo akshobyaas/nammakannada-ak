@@ -429,6 +429,23 @@ table.guide thead th { background: var(--ink); color: var(--yellow); border-top:
 .rec-status { grid-column: 1 / -1; margin: 0; font-size: var(--s-1); color: var(--ink-muted); }
 .rec-status:empty { display: none; }
 
+/* ---------- 404 ---------- */
+.notfound { padding: 10px 0 20px; }
+.nf-code {
+  display: inline-block; margin: 0 0 6px; padding: 2px 22px 0;
+  font-family: var(--f-display); font-weight: 900; font-size: clamp(4.5rem, 14vw, 8rem); line-height: 1;
+  color: var(--ink); background: var(--yellow); border: var(--line); border-radius: var(--r);
+  box-shadow: var(--shadow); transform: rotate(-3deg);
+}
+.notfound h1 span[lang="kn"] { font-family: var(--f-kn); }
+/* Standalone 404.html (served by the host for unknown paths) */
+.nf-page { min-height: calc(100vh - 86px); display: grid; place-items: center; padding: 32px 16px 60px; }
+.nf-page .notfound { max-width: 40rem; }
+.nf-page .notfound h1 {
+  font-family: var(--f-display); font-weight: 800; font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.1;
+  color: var(--yellow); text-shadow: 4px 4px 0 var(--ink); margin: 18px 0 12px;
+}
+
 /* ---------- Responsive ---------- */
 /* Tablet and small laptop: tighter header so logo and nav fit on one or two lines */
 @media (max-width: 1180px) {
