@@ -1422,7 +1422,11 @@
    "note": "A final u often becomes a. Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/bgk-01-dialect.mp3",
+    "standard": "audio/ai/bgk-01-standard.mp3"
+   }
   },
   {
    "id": "bgk-02",
@@ -1441,7 +1445,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/bgk-02-dialect.mp3",
+    "standard": "audio/ai/bgk-02-standard.mp3"
+   }
   },
   {
    "id": "bgk-03",
@@ -1460,7 +1468,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/bgk-03-dialect.mp3",
+    "standard": "audio/ai/bgk-03-standard.mp3"
+   }
   },
   {
    "id": "bgk-04",
@@ -1479,7 +1491,11 @@
    "note": "The long e turns into yā, as across North Karnataka. Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/bgk-04-dialect.mp3",
+    "standard": "audio/ai/bgk-04-standard.mp3"
+   }
   },
   {
    "id": "bgk-05",
@@ -1498,7 +1514,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/bgk-05-dialect.mp3",
+    "standard": "audio/ai/bgk-05-standard.mp3"
+   }
   },
   {
    "id": "bgk-06",
@@ -1517,7 +1537,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/bgk-06-dialect.mp3",
+    "standard": "audio/ai/bgk-06-standard.mp3"
+   }
   },
   {
    "id": "bgk-07",
@@ -1536,7 +1560,11 @@
    "note": "Close to Marathi khisā. Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/bgk-07-dialect.mp3",
+    "standard": "audio/ai/bgk-07-standard.mp3"
+   }
   },
   {
    "id": "bgk-08",
@@ -1555,7 +1583,11 @@
    "note": "Careful: elsewhere ತಿಂಡಿ means a snack. Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/bgk-08-dialect.mp3",
+    "standard": "audio/ai/bgk-08-standard.mp3"
+   }
   },
   {
    "id": "bgk-09",
@@ -1574,7 +1606,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/bgk-09-dialect.mp3",
+    "standard": "audio/ai/bgk-09-standard.mp3"
+   }
   },
   {
    "id": "bgk-10",
@@ -1593,7 +1629,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/bgk-10-dialect.mp3",
+    "standard": "audio/ai/bgk-10-standard.mp3"
+   }
   },
   {
    "id": "bgk-11",
@@ -1612,7 +1652,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/bgk-11-dialect.mp3",
+    "standard": "audio/ai/bgk-11-standard.mp3"
+   }
   },
   {
    "id": "bgk-12",
@@ -1631,7 +1675,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/bgk-12-dialect.mp3",
+    "standard": "audio/ai/bgk-12-standard.mp3"
+   }
   },
   {
    "id": "bgk-13",
@@ -1650,7 +1698,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/bgk-13-dialect.mp3",
+    "standard": "audio/ai/bgk-13-standard.mp3"
+   }
   },
   {
    "id": "bgk-14",
@@ -1669,7 +1721,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/bgk-14-dialect.mp3",
+    "standard": "audio/ai/bgk-14-standard.mp3"
+   }
   },
   {
    "id": "bgk-15",
@@ -1688,7 +1744,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/bgk-15-dialect.mp3",
+    "standard": "audio/ai/bgk-15-standard.mp3"
+   }
   },
   {
    "id": "bgk-16",
@@ -1707,7 +1767,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/bgk-16-dialect.mp3",
+    "standard": "audio/ai/bgk-16-standard.mp3"
+   }
   },
   {
    "id": "bgk-17",
@@ -1726,7 +1790,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/bgk-17-dialect.mp3",
+    "standard": "audio/ai/bgk-17-standard.mp3"
+   }
   },
   {
    "id": "bgk-18",
@@ -1745,7 +1813,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/bgk-18-dialect.mp3",
+    "standard": "audio/ai/bgk-18-standard.mp3"
+   }
   },
   {
    "id": "bgk-19",
@@ -1764,7 +1836,11 @@
    "note": "ಫೋನೆ means 'a quarter less', like Marathi pāvṇe. Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/bgk-19-dialect.mp3",
+    "standard": "audio/ai/bgk-19-standard.mp3"
+   }
   },
   {
    "id": "bgk-20",
@@ -1783,7 +1859,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/bgk-20-dialect.mp3",
+    "standard": "audio/ai/bgk-20-standard.mp3"
+   }
   },
   {
    "id": "blr-12",
@@ -1799,7 +1879,10 @@
    "note": "Sakkath's sibling. From a @kannada.gothilla Instagram post on Bengaluru slang.",
    "source": "kannada_gothilla",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/blr-12-dialect.mp3"
+   }
   },
   {
    "id": "blr-13",
@@ -1818,7 +1901,11 @@
    "note": "Literally 'son'. Used like bro, the same as macha. From a @kannada.gothilla Instagram post on Bengaluru slang.",
    "source": "kannada_gothilla",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/blr-13-dialect.mp3",
+    "standard": "audio/ai/blr-13-standard.mp3"
+   }
   },
   {
    "id": "blr-14",
@@ -1834,7 +1921,10 @@
    "note": "Say ai-aiyo for double emphasis. Heard across South India. From a @kannada.gothilla Instagram post on Bengaluru slang.",
    "source": "kannada_gothilla",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/blr-14-dialect.mp3"
+   }
   }
  ],
  "compare_sets": [
