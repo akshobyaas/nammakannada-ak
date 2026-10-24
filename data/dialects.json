@@ -155,8 +155,19 @@
    "zone": "malnad",
    "lat": 14.6195,
    "lng": 74.8354,
-   "about": "A centre of Havyaka Kannada (Havigannada), a dialect that preserves Old Kannada features lost elsewhere. Uttara Kannada Havigannada resembles Kundapura Kannada.",
+   "about": "A centre of Havyaka Kannada (Havigannada), a dialect that preserves Old Kannada features lost elsewhere. Uttara Kannada Havigannada resembles Kundapura Kannada. It is also called Havyaka Bhaashe or Haiga Kannada, and about 12 lakh people speak it across the coast and Malenadu.",
    "source": "havyaka",
+   "needs_native_input": false
+  },
+  {
+   "id": "thirthahalli",
+   "name": "Thirthahalli (Malenadu)",
+   "name_kn": "ಮಲೆನಾಡು ಕನ್ನಡ",
+   "zone": "malnad",
+   "lat": 13.6889,
+   "lng": 75.2436,
+   "about": "Malenadu Kannada is spoken by about 7 lakh people in the hill taluks of Hosanagara, Thirthahalli, Narasimharajapura, Koppa and Sringeri. Male means hill and nāDu means land: this is the land of the Western Ghats, and its words for the forest, plantations and areca are its own.",
+   "source": "aarva_karnaata",
    "needs_native_input": false
   },
   {
@@ -188,8 +199,19 @@
    "zone": "coast",
    "lat": 13.6283,
    "lng": 74.6889,
-   "about": "Kundagannada is spoken in Kundapura, Byndoor, Brahmavar and Hebri taluks, with Tulu influence. A Kundapura Kannada dictionary exists. Shortening words is its standout feature.",
+   "about": "Kundagannada is spoken in Kundapura, Byndoor, Brahmavar and Hebri taluks, with Tulu influence. A Kundapura Kannada dictionary exists. Shortening words is its standout feature. About 8 lakh people speak it, in Kundapura, Brahmavara, Byndoor and Hebri taluks and in Bhatkal. Every year Kundāpra Kannada Day is celebrated worldwide on the no-moon day of Āshāḍha (around June–July). The name may come from the Alupa king Kundavarma's Kundeshwara temple, or from kunda, jasmine, which grows everywhere here.",
    "source": "kundapura_wiki",
+   "needs_native_input": false
+  },
+  {
+   "id": "arebhashe",
+   "name": "Sullia (Arebhashe)",
+   "name_kn": "ಅರೆಬಾಸೆ",
+   "zone": "coast",
+   "lat": 12.5584,
+   "lng": 75.3897,
+   "about": "Arebhashe, also called Aregannada or Gowda Kannada, is spoken by about 5 lakh people across Kodagu, Dakshina Kannada around Sullia, and Kasaragod in Kerala. Are means half and bāse means language: it is said to keep Kannada in a 'half' form. The Karnataka Arebhashe Academy was set up in Madikeri on 15 December 2011, and 15 December is celebrated as Arebhashe Day.",
+   "source": "aarva_karnaata",
    "needs_native_input": false
   },
   {
@@ -221,7 +243,7 @@
    "zone": "north",
    "lat": 15.4589,
    "lng": 75.0078,
-   "about": "Birthplace of Kannada linguistic nationalism. Described by CIIL as 'like jackfruit' – rough outside, sweet inside.",
+   "about": "Birthplace of Kannada linguistic nationalism. Described by CIIL as 'like jackfruit' – rough outside, sweet inside. Also called Hubballi Kannada, it is spoken by about 80 lakh people across the plains (Bayalusime). The name is said to come from dvāra (door) + vāṭa (town): for centuries it was a resting place for travellers and the gateway between Malenadu and Bayalusime.",
    "source": "ciil_dharwad",
    "needs_native_input": false
   },
@@ -243,9 +265,9 @@
    "zone": "kalyana",
    "lat": 17.3297,
    "lng": 76.8343,
-   "about": "Kalyana Karnataka speech incorporates Telugu, Urdu and Marathi elements, reflecting multicultural borderlands.",
+   "about": "Kalyana Karnataka speech incorporates Telugu, Urdu and Marathi elements, reflecting multicultural borderlands. Kalaburagi Kannada (also Gulbarga or Kalburgi Kannada) is spoken by about 18 lakh people across Kalaburagi and Bidar districts on the Deccan plateau. The name comes from kallu (stone) + burgi: a land of black stone.",
    "source": "deccan_herald",
-   "needs_native_input": true
+   "needs_native_input": false
   },
   {
    "id": "bidar",
@@ -2354,6 +2376,1431 @@
    "source": "aarva_karnaata",
    "confidence": "informal",
    "verified": false
+  },
+  {
+   "id": "mal-01",
+   "place": "thirthahalli",
+   "type": "sound",
+   "english": "he",
+   "standard": {
+    "kn": "ಅವನು",
+    "tr": "avanu"
+   },
+   "dialect": {
+    "kn": "ಅಂವ",
+    "tr": "amva",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "mal-02",
+   "place": "thirthahalli",
+   "type": "sound",
+   "english": "is, there is",
+   "standard": {
+    "kn": "ಇದೆ",
+    "tr": "ide"
+   },
+   "dialect": {
+    "kn": "ಅದೆ",
+    "tr": "ade",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "mal-03",
+   "place": "thirthahalli",
+   "type": "sound",
+   "english": "forest",
+   "standard": {
+    "kn": "ಕಾಡು",
+    "tr": "kāDu"
+   },
+   "dialect": {
+    "kn": "ಕಾನು",
+    "tr": "kānu",
+    "kn_check": true
+   },
+   "note": "Kānu is also the Malnad word for a protected forest grove. Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "mal-04",
+   "place": "thirthahalli",
+   "type": "sound",
+   "english": "bland, tasteless",
+   "standard": {
+    "kn": "ಸಪ್ಪೆ",
+    "tr": "sappe"
+   },
+   "dialect": {
+    "kn": "ಚಪ್ಪೆ",
+    "tr": "chappe",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "mal-05",
+   "place": "thirthahalli",
+   "type": "sound",
+   "english": "listen",
+   "standard": {
+    "kn": "ಕೇಳು",
+    "tr": "kēLu"
+   },
+   "dialect": {
+    "kn": "ಕೇಣು",
+    "tr": "kēNu",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "mal-06",
+   "place": "thirthahalli",
+   "type": "sound",
+   "english": "bring (it)",
+   "standard": {
+    "kn": "ತನ್ನಿ",
+    "tr": "tanni"
+   },
+   "dialect": {
+    "kn": "ತಲ್ಲಿ",
+    "tr": "talli",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "mal-07",
+   "place": "thirthahalli",
+   "type": "sound",
+   "english": "just, quietly",
+   "standard": {
+    "kn": "ಸುಮ್ಮನೆ",
+    "tr": "summane"
+   },
+   "dialect": {
+    "kn": "ದಿಮ್ಮನೆ",
+    "tr": "dimmane",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "mal-08",
+   "place": "thirthahalli",
+   "type": "sound",
+   "english": "peep",
+   "standard": {
+    "kn": "ಇಣುಕು",
+    "tr": "iNuku"
+   },
+   "dialect": {
+    "kn": "ನಿಣುಕು",
+    "tr": "niNuku",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "mal-09",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "smell",
+   "standard": {
+    "kn": "ವಾಸನೆ",
+    "tr": "vāsane"
+   },
+   "dialect": {
+    "kn": "ಗವಲು",
+    "tr": "gavalu",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "mal-10",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "fool",
+   "standard": {
+    "kn": "ದಡ್ಡ",
+    "tr": "daDDa"
+   },
+   "dialect": {
+    "kn": "ಹೆಪ್ರ",
+    "tr": "hepra",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "mal-11",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "tender coconut",
+   "standard": {
+    "kn": "ಎಳನೀರು",
+    "tr": "eLanīru"
+   },
+   "dialect": {
+    "kn": "ಸಿಂಯ್ಯಾಳ",
+    "tr": "siyyāLa",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "mal-12",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "eyelash",
+   "standard": {
+    "kn": "ಕಣ್ಣು ರೆಪ್ಪೆ",
+    "tr": "kaNNu reppe"
+   },
+   "dialect": {
+    "kn": "ಎವೆ",
+    "tr": "eve",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "mal-13",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "neck",
+   "standard": {
+    "kn": "ಕುತ್ತಿಗೆ",
+    "tr": "kuttige"
+   },
+   "dialect": {
+    "kn": "ಮ್ಯಾಣೆ",
+    "tr": "myāNe",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "mal-14",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "rope",
+   "standard": {
+    "kn": "ಹಗ್ಗ",
+    "tr": "hagga"
+   },
+   "dialect": {
+    "kn": "ಮಿಣಿ",
+    "tr": "miNi",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "mal-15",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "tree branch",
+   "standard": {
+    "kn": "ಕೊಂಬೆ",
+    "tr": "kombe"
+   },
+   "dialect": {
+    "kn": "ಹರೆ",
+    "tr": "hare",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "mal-16",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "roof",
+   "standard": {
+    "kn": "ಸೂರು",
+    "tr": "sūru"
+   },
+   "dialect": {
+    "kn": "ಮಾಡು",
+    "tr": "māDu",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "mal-17",
+   "place": "thirthahalli",
+   "type": "phrase",
+   "english": "dogs are fighting by the road",
+   "standard": {
+    "kn": "ದಾರಿಯಲ್ಲಿ ನಾಯಿಗಳು ಕಚ್ಚಾಡುತ್ತಿವೆ",
+    "tr": "dāriyalli nāyigaLu kachchāDuttive"
+   },
+   "dialect": {
+    "kn": "ದಾರಿ ಬದಿ ನಾಯ್ಗಳು ಮುರ್ಕುತದವೇ",
+    "tr": "dāri badi nāygaLu murkutadavē",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "mal-18",
+   "place": "thirthahalli",
+   "type": "phrase",
+   "english": "the cows jump the slope into the plantation, tell me what to do",
+   "standard": {
+    "kn": "ಹಸುಗಳು ಆಳವಾದ ಪ್ರಪಾತವನ್ನು ಹಾರಿ ತೋಟಕ್ಕೆ ನುಗ್ಗುತ್ತವೆ. ಏನು ಮಾಡಬೇಕು ಹೇಳಿ",
+    "tr": "hasugaLu āLavāda prapātavannu hāri tōTakke nugguttave. ēnu māDabēku hēLi"
+   },
+   "dialect": {
+    "kn": "ಅಲಾ ಆ ದನ್ಗಳು ದರೆ ಹಾರಿ ತ್ವಾಟ ನುಗ್ತವೆ, ಎಂತ ಮಾಡ್ಬಕು ಹೇಳಿ?",
+    "tr": "alā ā dangaLu dare hāri twāTa nugtave, enta māDbaku hēLi?",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "mal-19",
+   "place": "thirthahalli",
+   "type": "phrase",
+   "english": "jackfruit sap is sticky, rub a little coconut oil on your hands",
+   "standard": {
+    "kn": "ಹಲಸಿನ ಮೇಣ ಬಹಳ ಅಂಟು, ಸ್ವಲ್ಪ ಕೊಬ್ಬರಿ ಎಣ್ಣೆ ಹಚ್ಚಿಕೊಳ್ಳಿ ಕೈಯ್ಯಿಗೆ",
+    "tr": "halasina mēNa bahaLa anTu, svalpa kobbari eNNe hachchikoLLi kaiyyige"
+   },
+   "dialect": {
+    "kn": "ಹಲಸಿನ್ ಮ್ಯಾಣ ಅಂಟು, ಒಂಚೂರ್ ಕೊಬ್ರೆಣ್ಣೆ ಹಚ್ಕಳೆ ಕೈಯಿಗೆ",
+    "tr": "halasin myāNa anTu, onchūr kobreNNe hachkaLe kaiyige",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "mal-20",
+   "place": "thirthahalli",
+   "type": "phrase",
+   "english": "I've kept the big needle on the front door frame, fetch it",
+   "standard": {
+    "kn": "ಮುಂಬಾಗಿಲಿನ ನಿಲದ ಮೇಲೆ ದೊಡ್ಡ ಸೂಜಿ ಇಟ್ಟಿದ್ದೇನೆ, ತೆಗೆದುಕೊಂಡು ಬಾ",
+    "tr": "mumbāgilina nilada mēle doDDa sūji iTTiddēne, tegedukonDu bā"
+   },
+   "dialect": {
+    "kn": "ದ್ವಾರ್ಬಾಗ್ಲು ನಿಲುದ್ ಮೇಲೆ ದಬ್ಬಣ ಇಟ್ಟಿನಿ ತಗ ಬಾ",
+    "tr": "dvārbāglu nilud mēle dabbaNa iTTini taga bā",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "mal-21",
+   "place": "thirthahalli",
+   "type": "phrase",
+   "english": "look how that child's face looks after all that crying",
+   "standard": {
+    "kn": "ಆ ಮಗು ಅತ್ತು ಅತ್ತು ಅದರ ಮುಖ ಹೇಗಾಗಿದೆ ನೋಡು",
+    "tr": "ā magu attu attu adara mukha hēgāgide nōDu"
+   },
+   "dialect": {
+    "kn": "ಆ ಬಾಲೆ ಅತ್ತು ಅತ್ತು ಅದ್ರು ಸೊಡ್ ಹೆಂಗಾಗೆದೆ ನೋಡು",
+    "tr": "ā bāle attu attu adru soD hengāgede nōDu",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "mal-22",
+   "place": "thirthahalli",
+   "type": "phrase",
+   "english": "why are you always chewing betel and spitting?",
+   "standard": {
+    "kn": "ಏನು ಯಾವಾಗಲೂ ಎಲೆ ಅಡಿಕೆ ತಿಂದು ಉಗಿಯುತ್ತಾ ಇರುತ್ತೀಯ?",
+    "tr": "ēnu yāvāgalū ele aDike tindu ugiyuttā iruttīya?"
+   },
+   "dialect": {
+    "kn": "ಎಂತದ ಗಳೀಕು ಎಲಡ್ಕೆ ಹಾಕಿ ತುಪ್ತಾ ಇರ್ತಿಯಲ?",
+    "tr": "entada gaLīku elaDke hāki tuptā irtiyala?",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "mal-23",
+   "place": "thirthahalli",
+   "type": "phrase",
+   "english": "why talk to that rude man and get scolded? come this way",
+   "standard": {
+    "kn": "ಆ ಒರಟನ ಜೊತೆ ಮಾತನಾಡಿ ಏತಕೆ ಬಯ್ಯಿಸಿಕೊಳ್ಳುವೆ!? ಈ ಕಡೆ ಬಾ",
+    "tr": "ā oraTana jote mātanāDi ētake bayyisikoLLuve? ī kaDe bā"
+   },
+   "dialect": {
+    "kn": "ಆ ಕುಕ್ರನ್ ಹತ್ರ ಮಾತಾಡಿ ಎಂತಕ್ ಬೈಸ್ಕುತಿಯಾ!? ಬಾರಾ ಈ ಕಡೆ",
+    "tr": "ā kukran hatra mātāDi entak baiskutiyā? bārā ī kaDe",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "mal-24",
+   "place": "thirthahalli",
+   "type": "phrase",
+   "english": "the ippe tree is delicate, climb up and down gently, boys",
+   "standard": {
+    "kn": "ಇಪ್ಪೆ ಮರ ಬಹಳ ನಾಜೂಕು, ಮೆಲ್ಲನೆ ಹತ್ತು ಇಳಿಯಿರಿ ಹುಡುಗರೇ",
+    "tr": "ippe mara bahaLa nājūku, mellane hattu iLiyiri huDugarē"
+   },
+   "dialect": {
+    "kn": "ಇಪ್ಪೆ ಮರ ಬಾರಿ ಸೊಬ್ರ, ನಿದಾನುಕ್ ಹತ್ ಇಳೀರ ಹುಡ್ಗುರಾ",
+    "tr": "ippe mara bāri sobra, nidānuk hat iLīra huDgurā",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "are-01",
+   "place": "arebhashe",
+   "type": "grammar",
+   "english": "I / we / you / you (plural)",
+   "standard": {
+    "kn": "ನಾನು / ನಾವು / ನೀನು / ನೀವು",
+    "tr": "nānu / nāvu / nīnu / nīvu"
+   },
+   "dialect": {
+    "kn": "ನಾ / ನಾವ್ / ನೀ / ನೀವ್",
+    "tr": "nā / nāv / nī / nīv",
+    "kn_check": true
+   },
+   "note": "The final u is dropped. Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "are-02",
+   "place": "arebhashe",
+   "type": "grammar",
+   "english": "he / she / they",
+   "standard": {
+    "kn": "ಅವನು / ಅವಳು / ಅವರು",
+    "tr": "avanu / avaLu / avaru"
+   },
+   "dialect": {
+    "kn": "ಅಂವ / ಅದು / ಅವು",
+    "tr": "amva / adu / avu",
+    "kn_check": true
+   },
+   "note": "She is adu, the same word as 'it', as in Havyaka. Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "are-03",
+   "place": "arebhashe",
+   "type": "phrase",
+   "english": "must come",
+   "standard": {
+    "kn": "ಬರಬೇಕು",
+    "tr": "barabēku"
+   },
+   "dialect": {
+    "kn": "ಬರೊಕು",
+    "tr": "baroku",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "are-04",
+   "place": "arebhashe",
+   "type": "phrase",
+   "english": "must go",
+   "standard": {
+    "kn": "ಹೋಗಬೇಕು",
+    "tr": "hōgabēku"
+   },
+   "dialect": {
+    "kn": "ಹೋಕು",
+    "tr": "hōku",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "are-05",
+   "place": "arebhashe",
+   "type": "phrase",
+   "english": "I eat",
+   "standard": {
+    "kn": "ತಿನ್ನುತ್ತೇನೆ",
+    "tr": "tinnuttēne"
+   },
+   "dialect": {
+    "kn": "ತಿಂದನೆ",
+    "tr": "tindane",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "are-06",
+   "place": "arebhashe",
+   "type": "phrase",
+   "english": "the headman won't drop his airs (proverb)",
+   "standard": {
+    "kn": "ಗೌಡನು ಗತ್ತನ್ನು ಬಿಡಲಾರ",
+    "tr": "gauDanu gattannu biDalāra"
+   },
+   "dialect": {
+    "kn": "ಗೌಡಗತ್ತ್ ಬುಡಿಕೆಲೆ",
+    "tr": "gauDagatt buDikele",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "are-07",
+   "place": "arebhashe",
+   "type": "phrase",
+   "english": "he who owned the paddy field sat and ate (proverb)",
+   "standard": {
+    "kn": "ಗದ್ದೆ ಇದ್ದವನು ಕೂತು ತಿಂದನು",
+    "tr": "gadde iddavanu kūtu tindanu"
+   },
+   "dialect": {
+    "kn": "ಗದ್ದೆ ಇದ್ದಂವ ಕುದ್ದು ತೀಂತ್",
+    "tr": "gadde iddamva kuddu tīnt",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "are-08",
+   "place": "arebhashe",
+   "type": "phrase",
+   "english": "the pot-seller eats from a broken pot (proverb)",
+   "standard": {
+    "kn": "ಮಡಿಕೆ ಮಾರುವವರಿಗೆ ಮಡಿಕೆಗಂಜಿ",
+    "tr": "maDike māruvavarige maDikeganji"
+   },
+   "dialect": {
+    "kn": "ಮಡ್ಕೆ ಮಾರೊವ್ಕೆ ಮಡ್ಕೆಗಂಜಿ",
+    "tr": "maDke mārovke maDkeganji",
+    "kn_check": true
+   },
+   "note": "Like 'the shoemaker's children go barefoot'. Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "klb-01",
+   "place": "kalaburagi",
+   "type": "word",
+   "english": "marriage",
+   "standard": {
+    "kn": "ಮದುವೆ",
+    "tr": "maduve"
+   },
+   "dialect": {
+    "kn": "ಮದಿ",
+    "tr": "madi",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "klb-02",
+   "place": "kalaburagi",
+   "type": "word",
+   "english": "gut",
+   "standard": {
+    "kn": "ಕರಳು",
+    "tr": "karaLu"
+   },
+   "dialect": {
+    "kn": "ಕಳ್ಳ",
+    "tr": "kaLLa",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "klb-03",
+   "place": "kalaburagi",
+   "type": "word",
+   "english": "finger",
+   "standard": {
+    "kn": "ಬೆರಳು",
+    "tr": "beraLu"
+   },
+   "dialect": {
+    "kn": "ಬಳ್ಳ",
+    "tr": "baLLa",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "klb-04",
+   "place": "kalaburagi",
+   "type": "word",
+   "english": "head",
+   "standard": {
+    "kn": "ತಲೆ",
+    "tr": "tale"
+   },
+   "dialect": {
+    "kn": "ತ್ಯಲಿ",
+    "tr": "tyali",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "klb-05",
+   "place": "kalaburagi",
+   "type": "phrase",
+   "english": "sit",
+   "standard": {
+    "kn": "ಕುಳಿತುಕೊ",
+    "tr": "kuLituko"
+   },
+   "dialect": {
+    "kn": "ಕುಂದ್ರ / ಕುಂದುರ್",
+    "tr": "kundra / kundur",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "klb-06",
+   "place": "kalaburagi",
+   "type": "phrase",
+   "english": "stand",
+   "standard": {
+    "kn": "ನಿಂತುಕೊ",
+    "tr": "nintuko"
+   },
+   "dialect": {
+    "kn": "ನಿಂದ್ರ / ನಿಂದುರ್",
+    "tr": "nindra / nindur",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "klb-07",
+   "place": "kalaburagi",
+   "type": "phrase",
+   "english": "after coming",
+   "standard": {
+    "kn": "ಬಂದಮೇಲೆ",
+    "tr": "bandamēle"
+   },
+   "dialect": {
+    "kn": "ಬರಾಣ",
+    "tr": "barāNa",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "klb-08",
+   "place": "kalaburagi",
+   "type": "phrase",
+   "english": "let's go",
+   "standard": {
+    "kn": "ಹೋಗೋಣ",
+    "tr": "hōgōNa"
+   },
+   "dialect": {
+    "kn": "ಹೋಗಾಮಿ",
+    "tr": "hōgāmi",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "klb-09",
+   "place": "kalaburagi",
+   "type": "phrase",
+   "english": "tell elder brother to bring it",
+   "standard": {
+    "kn": "ಅಣ್ಣನಿಗೆ ತರಲು ಹೇಳು",
+    "tr": "aNNanige taralu hēLu"
+   },
+   "dialect": {
+    "kn": "ಅಣ್ಣುಗ ತೊಂವರ್ಲಿಕ್ಕ ಹೇಳ",
+    "tr": "aNNuga tomvarlikka hēLa",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "klb-10",
+   "place": "kalaburagi",
+   "type": "phrase",
+   "english": "mother has gone home",
+   "standard": {
+    "kn": "ಅಮ್ಮ ಮನೆಗೆ ಹೋಗಿದ್ದಾಳೆ",
+    "tr": "amma manege hōgiddāLe"
+   },
+   "dialect": {
+    "kn": "ಅವ್ವ ಮನಿಗಿ ಹೊಗ್ಯಾಳ",
+    "tr": "avva manigi hogyāLa",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "klb-11",
+   "place": "kalaburagi",
+   "type": "phrase",
+   "english": "Kallappa came back from the market",
+   "standard": {
+    "kn": "ಕಲ್ಲಪ್ಪ ಸಂತೆಯಿಂದ ಬಂದನು",
+    "tr": "kallappa santeyinda bandanu"
+   },
+   "dialect": {
+    "kn": "ಕಲ್ಲಪ್ಪ ಸಂತಿಲಿಂದ ಬಂದುನ",
+    "tr": "kallappa santilinda banduna",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "klb-12",
+   "place": "kalaburagi",
+   "type": "phrase",
+   "english": "Sharanappa is at school",
+   "standard": {
+    "kn": "ಶರಣಪ್ಪ ಶಾಲೆಯಲ್ಲಿ ಇದ್ದಾನೆ",
+    "tr": "sharaNappa shāleyalli iddāne"
+   },
+   "dialect": {
+    "kn": "ಶಾಣ್ಯಪ್ಪ ಸಾಲ್ಯಾಗ ಹನಾ",
+    "tr": "shāNyappa sālyāga hanā",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "dwd-06",
+   "place": "dharwad",
+   "type": "word",
+   "english": "very much",
+   "standard": {
+    "kn": "ತುಂಬಾ",
+    "tr": "tumbā"
+   },
+   "dialect": {
+    "kn": "ಅಗದೀ",
+    "tr": "agadī",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "dwd-07",
+   "place": "dharwad",
+   "type": "word",
+   "english": "onion",
+   "standard": {
+    "kn": "ಈರುಳ್ಳಿ",
+    "tr": "īruLLi"
+   },
+   "dialect": {
+    "kn": "ಉಳ್ಳಾಗಡ್ಡಿ",
+    "tr": "uLLāgaDDi",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "dwd-08",
+   "place": "dharwad",
+   "type": "word",
+   "english": "boiling water (for cooking)",
+   "standard": {
+    "kn": "ಕುದಿನೀರು",
+    "tr": "kudinīru"
+   },
+   "dialect": {
+    "kn": "ಎಸರು",
+    "tr": "esaru",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "dwd-09",
+   "place": "dharwad",
+   "type": "word",
+   "english": "don't want",
+   "standard": {
+    "kn": "ಬೇಡ",
+    "tr": "bēDa"
+   },
+   "dialect": {
+    "kn": "ಒಲ್ಲೆ",
+    "tr": "olle",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "dwd-10",
+   "place": "dharwad",
+   "type": "word",
+   "english": "quiet",
+   "standard": {
+    "kn": "ಸುಮ್ಮನೆ",
+    "tr": "summane"
+   },
+   "dialect": {
+    "kn": "ಗಪ್ಪು",
+    "tr": "gappu",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "dwd-11",
+   "place": "dharwad",
+   "type": "word",
+   "english": "cloth, clothes",
+   "standard": {
+    "kn": "ಬಟ್ಟೆ",
+    "tr": "baTTe"
+   },
+   "dialect": {
+    "kn": "ಅರಬಿ",
+    "tr": "arabi",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "dwd-12",
+   "place": "dharwad",
+   "type": "word",
+   "english": "good",
+   "standard": {
+    "kn": "ಒಳ್ಳೆಯ",
+    "tr": "oLLeya"
+   },
+   "dialect": {
+    "kn": "ಚೊಲೊ",
+    "tr": "cholo",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "dwd-13",
+   "place": "dharwad",
+   "type": "word",
+   "english": "true, right",
+   "standard": {
+    "kn": "ದಿಟ / ನಿಜ",
+    "tr": "diTa / nija"
+   },
+   "dialect": {
+    "kn": "ಖರೆ",
+    "tr": "khare",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "dwd-14",
+   "place": "dharwad",
+   "type": "phrase",
+   "english": "lunch is late, lay out the leaves",
+   "standard": {
+    "kn": "ಊಟಕ್ಕೆ ತಡ ಆಗಿದೆ ಎಲೆ ಹಾಕಿ",
+    "tr": "ūTakke taDa āgide ele hāki"
+   },
+   "dialect": {
+    "kn": "ಊಟಕ್ಕ ತಡಾ ಆಗೇತಿ ಎಲಿ ಹಾಕ್ರ್ಯಾಪಾ",
+    "tr": "ūTakka taDā āgēti eli hākryāpā",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "dwd-15",
+   "place": "dharwad",
+   "type": "phrase",
+   "english": "what a fool he is",
+   "standard": {
+    "kn": "ಎಷ್ಟು ದಡ್ಡ ಇದ್ದಾನೆ ಅವನು",
+    "tr": "eShTu daDDa iddāne avanu"
+   },
+   "dialect": {
+    "kn": "ಏನ್ ಎಬಡ ಅದುನಲೇ ಅವಾ",
+    "tr": "ēn ebaDa adunalē avā",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "dwd-16",
+   "place": "dharwad",
+   "type": "phrase",
+   "english": "unseasonal rain has ruined all the crops",
+   "standard": {
+    "kn": "ಅಕಾಲ ಮಳೆ ಸುರಿದು ಬೆಳೆಗಳೆಲ್ಲ ಹಾಳಾಗಿವೆ",
+    "tr": "akāla maLe suridu beLegaLella hāLāgive"
+   },
+   "dialect": {
+    "kn": "ಅಡ್ಡ ಮಳಿ ಹೊಡೆದ ಬೆಳಿ ಎಲ್ಲಾ ಹಾಳಾಗ್ಯಾವ",
+    "tr": "aDDa maLi hoDeda beLi ellā hāLāgyāva",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "dwd-17",
+   "place": "dharwad",
+   "type": "phrase",
+   "english": "is the boss in, or has he gone to play cards?",
+   "standard": {
+    "kn": "ಸಾಹೇಬರು ಇದ್ದಾರೋ ಇಸ್ಪೀಟನ್ನು ಆಡೋದಕ್ಕೆ ಹೋಗಿದ್ದಾರೋ?",
+    "tr": "sāhēbaru iddārō ispīTannu āDōdakke hōgiddārō?"
+   },
+   "dialect": {
+    "kn": "ಸಾಹೇಬ್ರು ಅದಾರೋ ಇಸ್ಪೇಟಾಡಾಕ ಹೋಗ್ಯಾರೋ?",
+    "tr": "sāhēbru adārō ispēTāDāka hōgyārō?",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "dwd-18",
+   "place": "dharwad",
+   "type": "phrase",
+   "english": "why are you shouting in my ear like this?",
+   "standard": {
+    "kn": "ಹೀಗೆ ಯಾಕೆ ಕಿವಿಯಲ್ಲಿ ಕೂಗುತ್ತಿರುವೆ?",
+    "tr": "hīge yāke kiviyalli kūguttiruve?"
+   },
+   "dialect": {
+    "kn": "ಹಿಂಗ್ಯಾಕ ಕಿವ್ಯಾಗ ಒದರಾಕತ್ತೀ?",
+    "tr": "hingyāka kivyāga odarākattī?",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "dwd-19",
+   "place": "dharwad",
+   "type": "phrase",
+   "english": "hey, has your wife gone to the temple?",
+   "standard": {
+    "kn": "ಏ ಇವನೇ, ನಿಮ್ಮವಳು ದೇವಸ್ಥಾನಕ್ಕೆ ಹೋಗಿರುವಳೇನು?",
+    "tr": "ē ivanē, nimmavaLu dēvasthānakke hōgiruvaLēnu?"
+   },
+   "dialect": {
+    "kn": "ಏ ಇವನ, ನಿಮ್ಮಾಕಿ ಗುಡಿಗೆ ಹೋಗ್ಯಾಳೇನು?",
+    "tr": "ē ivana, nimmāki guDige hōgyāLēnu?",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "dwd-20",
+   "place": "dharwad",
+   "type": "phrase",
+   "english": "you don't eat properly, look how thin you've become",
+   "standard": {
+    "kn": "ಉಣ್ಣುವುದಿಲ್ಲ ತಿನ್ನುವುದಿಲ್ಲ, ಹೇಗೆ ಸಣಕಲು ಕಡ್ಡಿ ಆಗಿದ್ದೀಯ ನೋಡು",
+    "tr": "uNNuvudilla tinnuvudilla, hēge saNakalu kaDDi āgiddīya nōDu"
+   },
+   "dialect": {
+    "kn": "ಉಂಬೋದಿಲ್ಲ ತಿಂಬೋದಿಲ್ಲ, ಹೆಂಗ ಸಣಕಲ ಕಡ್ಡಿ ಆಗ್ಯಾನೋಡು",
+    "tr": "umbōdilla timbōdilla, henga saNakala kaDDi āgyānōDu",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "dwd-21",
+   "place": "dharwad",
+   "type": "phrase",
+   "english": "the boy is so naughty there's no catching him",
+   "standard": {
+    "kn": "ಮಗನು ಎಷ್ಟು ತುಂಟನಾಗಿದ್ದಾನೆ ಎಂದರೆ, ಹಿಡಿಯಲು ಆಗುವುದೇ ಇಲ್ಲ",
+    "tr": "maganu eShTu tunTanāgiddāne endare, hiDiyalu āguvudē illa"
+   },
+   "dialect": {
+    "kn": "ಮಗಾ ಏನ ಉಡಾಳ ಆಗ್ಯಾನಂತೀ, ಹಿಡ್ಯೋದ ಆಗೆವಲ್ತು",
+    "tr": "magā ēna uDāLa āgyānantī, hiDyōda āgevaltu",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "kun-10",
+   "place": "kundapura",
+   "type": "word",
+   "english": "to eat",
+   "standard": {
+    "kn": "ತಿನ್ನುವುದಕ್ಕೆ",
+    "tr": "tinnuvudakke"
+   },
+   "dialect": {
+    "kn": "ಉಂಬುಕೆ",
+    "tr": "umbuke",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "kun-11",
+   "place": "kundapura",
+   "type": "word",
+   "english": "it seems, they say",
+   "standard": {
+    "kn": "ಅಂತೆ",
+    "tr": "ante"
+   },
+   "dialect": {
+    "kn": "ಅಂಬ್ರ",
+    "tr": "ambra",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "kun-12",
+   "place": "kundapura",
+   "type": "word",
+   "english": "isn't it?",
+   "standard": {
+    "kn": "ಅಲ್ವಾ",
+    "tr": "alvā"
+   },
+   "dialect": {
+    "kn": "ಅಲ್ಯಾ",
+    "tr": "alyā",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "kun-13",
+   "place": "kundapura",
+   "type": "word",
+   "english": "madness",
+   "standard": {
+    "kn": "ಹುಚ್ಚು",
+    "tr": "huchchu"
+   },
+   "dialect": {
+    "kn": "ಮಳ್",
+    "tr": "maL",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "kun-14",
+   "place": "kundapura",
+   "type": "phrase",
+   "english": "look there",
+   "standard": {
+    "kn": "ಅಲ್ಲಿ ನೋಡು",
+    "tr": "alli nōDu"
+   },
+   "dialect": {
+    "kn": "ಅಕಾ",
+    "tr": "akā",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "kun-15",
+   "place": "kundapura",
+   "type": "phrase",
+   "english": "come (to one person)",
+   "standard": {
+    "kn": "ಬಾ",
+    "tr": "bā"
+   },
+   "dialect": {
+    "kn": "ಬಪ್ಪಿಲೆ",
+    "tr": "bappile",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "kun-16",
+   "place": "kundapura",
+   "type": "phrase",
+   "english": "take a bath",
+   "standard": {
+    "kn": "ಸ್ನಾನ ಮಾಡು",
+    "tr": "snāna māDu"
+   },
+   "dialect": {
+    "kn": "ಮೀ",
+    "tr": "mī",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "kun-17",
+   "place": "kundapura",
+   "type": "phrase",
+   "english": "thick-skinned as a bullock (said of someone shameless)",
+   "standard": {
+    "kn": "ಹೋರಿ ಚರ್ಮದವನು",
+    "tr": "hōri charmadavanu"
+   },
+   "dialect": {
+    "kn": "ಹೋರಿ ಚರ್ಮದನ್",
+    "tr": "hōri charmadan",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "kun-18",
+   "place": "kundapura",
+   "type": "phrase",
+   "english": "do you need to show the leaf to someone who knows the root? (proverb)",
+   "standard": {
+    "kn": "ಬೇರು ಬಲ್ಲವನಿಗೆ ಎಲೆ ತೋರಿಸಬೇಕೇ?",
+    "tr": "bēru ballavanige ele tōrisabēkē?"
+   },
+   "dialect": {
+    "kn": "ಬೇರ್ ಬಲ್ಲಾದನಿಗೆ ಯಲಿ ತೋರ್ಸ್ಕಾ?",
+    "tr": "bēr ballādanige yali tōrskā?",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "kun-19",
+   "place": "kundapura",
+   "type": "phrase",
+   "english": "like honey on a buffalo's horn (proverb)",
+   "standard": {
+    "kn": "ಕೋಣನ ಕೋಡಿನಲ್ಲಿ ಜೇನುತುಪ್ಪ ಇದ್ದಂತೆ",
+    "tr": "kōNana kōDinalli jēnutuppa iddante"
+   },
+   "dialect": {
+    "kn": "ಹೋರಿ ಕೋಡಾಗೆ ಜಿಗಿನ್‌ತುಪ್ಪ ಇದ್ದಾಂಗೆ",
+    "tr": "hōri kōDāge jigintuppa iddānge",
+    "kn_check": true
+   },
+   "note": "Something sweet in a place you can't reach. Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "kun-20",
+   "place": "kundapura",
+   "type": "phrase",
+   "english": "the beggar turned down white rice, they say (proverb)",
+   "standard": {
+    "kn": "ಬೇಡಲು ಬಂದವನು ಬೆಳ್ತಿಗೆ ಅಕ್ಕಿ ಬೇಡ ಅಂದನಂತೆ",
+    "tr": "bēDalu bandavanu beLtige akki bēDa andanante"
+   },
+   "dialect": {
+    "kn": "ಬೇಡುಕ್ ಬಂದನ್ ಬೆಣಕ್ತಿ ಬ್ಯಾಡ ಅಂದ್ನ್ ಅಂಬ್ರ್",
+    "tr": "bēDuk bandan beNakti byāDa andn ambr",
+    "kn_check": true
+   },
+   "note": "Said of someone too choosy for their situation. Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "sir-16",
+   "place": "sirsi",
+   "type": "grammar",
+   "english": "he / she / they",
+   "standard": {
+    "kn": "ಅವನು / ಅವಳು / ಅವರು",
+    "tr": "avanu / avaLu / avaru"
+   },
+   "dialect": {
+    "kn": "ಅಂವ / ಅದು / ಅವು",
+    "tr": "amva / adu / avu",
+    "kn_check": true
+   },
+   "note": "A woman is often referred to as adu, 'it'. Transcribed from an @aarva_karnaata Instagram post on Havigannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "sir-17",
+   "place": "sirsi",
+   "type": "phrase",
+   "english": "after all that, the dog just wandered the market and came back (proverb)",
+   "standard": {
+    "kn": "ಅಂತೂ ಇಂತೂ ನಾಯಿ ಸಂತೆ ತಿರುಗಿ ಬಂತು",
+    "tr": "antū intū nāyi sante tirugi bantu"
+   },
+   "dialect": {
+    "kn": "ಅಂತೂ ಇಂತೂ ನಾಯಿ ಸಂತೆ ತಿರುಗಿಕ್ಕಿ ಬಂತು",
+    "tr": "antū intū nāyi sante tirugikki bantu",
+    "kn_check": true
+   },
+   "note": "All that running around, for nothing. Transcribed from an @aarva_karnaata Instagram post on Havigannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "sir-18",
+   "place": "sirsi",
+   "type": "phrase",
+   "english": "rain in Hubbe season is like mother's milk (proverb)",
+   "standard": {
+    "kn": "ಹುಬ್ಬೆಯ ಮಳೆ ಅಮ್ಮನ ಮೊಲೆ ಹಾಲಿನ ಹಾಗೆ",
+    "tr": "hubbeya maLe ammana mole hālina hāge"
+   },
+   "dialect": {
+    "kn": "ಹುಬ್ಬೆಮಳೆ ಅಬ್ಬೆ ಮಲೆಹಾಲಿನಾಂಗೆ",
+    "tr": "hubbemaLe abbe malehālinānge",
+    "kn_check": true
+   },
+   "note": "Hubbe (Pubba) is a monsoon star season. Abbe, 'mother', is an Old Kannada word. Transcribed from an @aarva_karnaata Instagram post on Havigannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "sir-19",
+   "place": "sirsi",
+   "type": "phrase",
+   "english": "can you climb a hill without first climbing to the loft? (proverb)",
+   "standard": {
+    "kn": "ಅಟ್ಟವನ್ನು ಹತ್ತದೇ ಬೆಟ್ಟವನ್ನು ಹತ್ತಲಾದೀತೇ?",
+    "tr": "aTTavannu hattadē beTTavannu hattalādītē?"
+   },
+   "dialect": {
+    "kn": "ಅಟ್ಟಕ್ಕೆ ಹತ್ತದ್ದೆ ಬೆಟ್ಟಕ್ಕೆ ಹತ್ತಲೆಡಿಗೊ?",
+    "tr": "aTTakke hattadde beTTakke hattaleDigo?",
+    "kn_check": true
+   },
+   "note": "Walk before you run. Transcribed from an @aarva_karnaata Instagram post on Havigannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
   }
  ],
  "compare_sets": [
@@ -2420,6 +3867,39 @@
    "entries": [
     "bgk-10",
     "hlk-04"
+   ]
+  },
+  {
+   "id": "cmp-he",
+   "english": "he / she / they",
+   "entries": [
+    "sir-16",
+    "are-02"
+   ]
+  },
+  {
+   "id": "cmp-dont-want",
+   "english": "don't want",
+   "entries": [
+    "dwd-02",
+    "dwd-09"
+   ]
+  },
+  {
+   "id": "cmp-just",
+   "english": "just, quietly",
+   "entries": [
+    "bgk-05",
+    "mal-07",
+    "dwd-10"
+   ]
+  },
+  {
+   "id": "cmp-go",
+   "english": "must go",
+   "entries": [
+    "kun-05",
+    "are-04"
    ]
   }
  ]
