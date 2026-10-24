@@ -12,9 +12,9 @@
   --on-red-muted: #FFD9D9;
   --ink-muted: rgba(0, 0, 0, 0.66);
 
-  --f-display: "Akaya Kanadaka", "Baloo Tamma 2", system-ui, sans-serif;
+  --f-display: "Gluten", "Baloo Tamma 2", system-ui, sans-serif;
   --f-kn: "Baloo Tamma 2", "Noto Sans Kannada", system-ui, sans-serif;
-  --f-ui: "Bricolage Grotesque", "Baloo Tamma 2", system-ui, sans-serif;
+  --f-ui: "Fredoka", "Baloo Tamma 2", system-ui, sans-serif;
 
   --line: 3px solid var(--ink);
   --shadow: 6px 6px 0 var(--ink);
@@ -84,7 +84,9 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 .brand { text-decoration: none; display: flex; align-items: center; gap: 16px; }
 .brand-kn {
-  font-family: var(--f-display);
+  position: relative;
+  font-family: var(--f-kn); font-weight: 800;
+  margin: 0 30px;
   font-size: clamp(2.4rem, 5vw, 3.4rem);
   line-height: 1;
   color: var(--red);
@@ -92,6 +94,17 @@ button, input, select, textarea { font: inherit; color: inherit; }
   white-space: nowrap;
   padding-top: 6px;
 }
+/* Cartoon speed marks either side of the logo */
+.brand-kn::before, .brand-kn::after {
+  content: ""; position: absolute; top: 50%; width: 22px; height: 26px; margin-top: -11px;
+  background:
+    linear-gradient(var(--ink), var(--ink)) 0 2px / 100% 5px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) 4px 11px / 80% 5px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) 0 20px / 100% 5px no-repeat;
+  border-radius: 3px;
+}
+.brand-kn::before { left: -30px; transform: skewY(-8deg); }
+.brand-kn::after { right: -30px; transform: skewY(8deg) scaleX(-1); }
 .brand-en { font-weight: 700; font-size: var(--s-1); max-width: 12rem; line-height: 1.25; }
 
 .nav { display: flex; gap: 2px 18px; flex-wrap: wrap; align-items: center; }
@@ -179,15 +192,15 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .view { padding-top: 26px; max-width: 50rem; }
 
 .view h1 {
-  font-family: var(--f-display); font-weight: 400;
-  font-size: clamp(2.4rem, 4.6vw, var(--s4)); line-height: 1.05;
+  font-family: var(--f-display); font-weight: 800;
+  font-size: clamp(2.4rem, 4.6vw, var(--s4)); line-height: 1.08; letter-spacing: -0.01em;
   margin: 0 0 8px; color: var(--yellow);
   text-shadow: 4px 4px 0 var(--ink);
 }
-.view h1[lang="kn"] { font-family: var(--f-display); line-height: 1.2; }
+.view h1[lang="kn"] { font-family: var(--f-kn); font-weight: 800; line-height: 1.25; }
 .view h1 .muted { color: var(--yellow-pale); text-shadow: none; font-size: 0.6em; }
 .sub-h { margin: 0 0 14px; font-size: var(--s1); font-weight: 800; color: var(--white); }
-.view h2 { font-family: var(--f-display); font-weight: 400; font-size: var(--s2); margin: 38px 0 14px; color: var(--yellow); }
+.view h2 { font-family: var(--f-display); font-weight: 750; font-size: var(--s2); margin: 38px 0 14px; color: var(--yellow); }
 .view h3 { font-size: var(--s1); margin: 0 0 8px; font-weight: 800; }
 .lede { font-size: var(--s1); margin: 0 0 10px; max-width: 34em; }
 .muted { color: var(--on-red-muted); }
@@ -201,7 +214,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .back:hover { background: var(--yellow); color: var(--ink); }
 
 .place-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 18px; }
-.place-head .kn { font-size: var(--s2); font-weight: 800; color: var(--yellow-pale); }
+.place-head .kn { font-size: var(--s2); font-weight: 800; font-family: var(--f-kn); color: var(--yellow-pale); }
 .zone-chip { display: inline-flex; align-items: center; gap: 6px; }
 .zone-chip::before { content: ""; width: 16px; height: 16px; border-radius: 3px; background: var(--zone); border: 2px solid var(--ink); }
 
@@ -308,7 +321,7 @@ button.dialect:hover { color: var(--red); }
 /* ---------- Compare ---------- */
 .compare { margin-top: 18px; display: grid; gap: 26px; }
 .cmp { background: var(--yellow); color: var(--ink); border: var(--line); border-radius: var(--r); box-shadow: var(--shadow); overflow: hidden; }
-.cmp h3 { padding: 10px 16px; margin: 0; background: var(--ink); color: var(--yellow); font-family: var(--f-display); font-weight: 400; font-size: var(--s2); }
+.cmp h3 { padding: 10px 16px; margin: 0; background: var(--ink); color: var(--yellow); font-family: var(--f-display); font-weight: 750; font-size: var(--s2); }
 .cmp-row { display: grid; grid-template-columns: 10rem 1fr; gap: 4px 16px; align-items: baseline; padding: 12px 16px; border-top: 2px dashed rgba(0,0,0,0.25); }
 .cmp h3 + .cmp-row { border-top: 0; }
 .cmp-row .who { display: flex; align-items: center; gap: 8px; font-weight: 800; }
@@ -339,7 +352,7 @@ button.dialect:hover { color: var(--red); }
 @keyframes pop { 50% { transform: scale(1.05); } }
 @keyframes shake { 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
 .result { margin: 18px 0 0; font-size: var(--s1); }
-.result strong { font-family: var(--f-display); font-weight: 400; font-size: var(--s2); margin-right: 8px; padding: 0 10px; border-radius: 4px; border: 2px solid var(--ink); }
+.result strong { font-family: var(--f-display); font-weight: 750; font-size: var(--s2); margin-right: 8px; padding: 0 10px; border-radius: 4px; border: 2px solid var(--ink); }
 .result.right strong { background: var(--ink); color: var(--yellow); }
 .result.wrong strong { background: var(--red); color: var(--white); }
 .kbd-hint { font-size: 0.8rem; color: var(--ink-muted); margin: 12px 0 0; font-weight: 600; }
@@ -403,7 +416,7 @@ table.guide thead th { background: var(--ink); color: var(--yellow); border-top:
   .panel { padding: 18px 16px 48px; }
   .top { flex-direction: column; align-items: flex-start; padding: 10px 16px; }
   .brand-en { max-width: none; }
-  .brand-kn { font-size: 2.3rem; }
+  .brand-kn { font-size: 2.3rem; margin-left: 28px; }
   .nav { flex-wrap: nowrap; overflow-x: auto; max-width: 100%; margin: 0 -16px; padding: 2px 16px 8px; }
   .nav a { white-space: nowrap; }
   .options { grid-template-columns: 1fr; }
