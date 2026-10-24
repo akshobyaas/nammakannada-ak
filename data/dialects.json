@@ -23,7 +23,9 @@
   "mandya_thesis": "https://indcat.inflibnet.ac.in/index.php/thesesrequest?id=th_866",
   "mysuru_blog": "https://speakfluentli.com/kannada/blog/bangalore-tech-kannada",
   "alar_voice": "https://github.com/Aditya-ds-1806/Alar-voice-corpus",
-  "sarvam_voice": "https://www.sarvam.ai/text-to-speech"
+  "sarvam_voice": "https://www.sarvam.ai/text-to-speech",
+  "aarva_karnaata": "https://www.instagram.com/aarva_karnaata/",
+  "kannada_gothilla": "https://www.instagram.com/kannada.gothilla/"
  },
  "zones": [
   {
@@ -210,6 +212,17 @@
    "lng": 75.0078,
    "about": "Birthplace of Kannada linguistic nationalism. Described by CIIL as 'like jackfruit' – rough outside, sweet inside.",
    "source": "ciil_dharwad",
+   "needs_native_input": false
+  },
+  {
+   "id": "bagalkote",
+   "name": "Bagalkote",
+   "name_kn": "ಬಾಗಲಕೋಟೆ",
+   "zone": "north",
+   "lat": 16.1817,
+   "lng": 75.6958,
+   "about": "Bagalkote Kannada belongs to the North Karnataka group and is spoken across the plains (Bayalusime) by about 16 lakh people, in taluks like Badami, Jamakhandi, Mudhol and Ilkal. The name is said to come from bāgaDi, a bangle: a king of Bijapur gave the town to his daughter as a wedding gift.",
+   "source": "aarva_karnaata",
    "needs_native_input": false
   },
   {
@@ -1391,6 +1404,437 @@
     "dialect": "audio/ai/mdy-01-dialect.mp3",
     "standard": "audio/ai/mdy-01-standard.mp3"
    }
+  },
+  {
+   "id": "bgk-01",
+   "place": "bagalkote",
+   "type": "sound",
+   "english": "this",
+   "standard": {
+    "kn": "ಇದು",
+    "tr": "idu"
+   },
+   "dialect": {
+    "kn": "ಇದ",
+    "tr": "ida",
+    "kn_check": true
+   },
+   "note": "A final u often becomes a. Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "bgk-02",
+   "place": "bagalkote",
+   "type": "sound",
+   "english": "that",
+   "standard": {
+    "kn": "ಅದು",
+    "tr": "adu"
+   },
+   "dialect": {
+    "kn": "ಅದ",
+    "tr": "ada",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "bgk-03",
+   "place": "bagalkote",
+   "type": "sound",
+   "english": "there",
+   "standard": {
+    "kn": "ಅಲ್ಲಿ",
+    "tr": "alli"
+   },
+   "dialect": {
+    "kn": "ಅಲ್ಲೇ",
+    "tr": "allē",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "bgk-04",
+   "place": "bagalkote",
+   "type": "sound",
+   "english": "right there",
+   "standard": {
+    "kn": "ಅಲ್ಲೇ",
+    "tr": "allē"
+   },
+   "dialect": {
+    "kn": "ಅಲ್ಲ್ಯಾ",
+    "tr": "allyā",
+    "kn_check": true
+   },
+   "note": "The long e turns into yā, as across North Karnataka. Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "bgk-05",
+   "place": "bagalkote",
+   "type": "word",
+   "english": "just, simply",
+   "standard": {
+    "kn": "ಸುಮ್ಮನೆ",
+    "tr": "summane"
+   },
+   "dialect": {
+    "kn": "ಸುಮ್ಮ್",
+    "tr": "summ",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "bgk-06",
+   "place": "bagalkote",
+   "type": "word",
+   "english": "man",
+   "standard": {
+    "kn": "ಗಂಡಸು",
+    "tr": "ganDasu"
+   },
+   "dialect": {
+    "kn": "ಗಂಡ್ಸ",
+    "tr": "ganDsa",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "bgk-07",
+   "place": "bagalkote",
+   "type": "loanword",
+   "english": "pocket",
+   "standard": {
+    "kn": "ಜೇಬು",
+    "tr": "jēbu"
+   },
+   "dialect": {
+    "kn": "ಕಿಶೆ",
+    "tr": "kishe",
+    "kn_check": true
+   },
+   "note": "Close to Marathi khisā. Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "bgk-08",
+   "place": "bagalkote",
+   "type": "word",
+   "english": "itch",
+   "standard": {
+    "kn": "ತುರಿಕೆ",
+    "tr": "turike"
+   },
+   "dialect": {
+    "kn": "ತಿಂಡಿ",
+    "tr": "tinDi",
+    "kn_check": true
+   },
+   "note": "Careful: elsewhere ತಿಂಡಿ means a snack. Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "bgk-09",
+   "place": "bagalkote",
+   "type": "word",
+   "english": "morning",
+   "standard": {
+    "kn": "ಮುಂಜಾನೆ",
+    "tr": "munjāne"
+   },
+   "dialect": {
+    "kn": "ಮುಂಜೆಲೆ",
+    "tr": "munjele",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "bgk-10",
+   "place": "bagalkote",
+   "type": "word",
+   "english": "door",
+   "standard": {
+    "kn": "ಬಾಗಿಲು",
+    "tr": "bāgilu"
+   },
+   "dialect": {
+    "kn": "ಕದ",
+    "tr": "kada",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "bgk-11",
+   "place": "bagalkote",
+   "type": "word",
+   "english": "quickly",
+   "standard": {
+    "kn": "ಬೇಗ",
+    "tr": "bēga"
+   },
+   "dialect": {
+    "kn": "ಲಗೂನ",
+    "tr": "lagūna",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "bgk-12",
+   "place": "bagalkote",
+   "type": "word",
+   "english": "memory",
+   "standard": {
+    "kn": "ನೆನಪು",
+    "tr": "nenapu"
+   },
+   "dialect": {
+    "kn": "ದ್ಯಾಸ",
+    "tr": "dyāsa",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "bgk-13",
+   "place": "bagalkote",
+   "type": "phrase",
+   "english": "come slowly",
+   "standard": {
+    "kn": "ನಿಧಾನ ಬನ್ನಿ",
+    "tr": "nidhāna banni"
+   },
+   "dialect": {
+    "kn": "ಹಗರಕ್ ಬರ್ರಿ",
+    "tr": "hagarak barri",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "bgk-14",
+   "place": "bagalkote",
+   "type": "phrase",
+   "english": "I can't remember",
+   "standard": {
+    "kn": "ನೆನಪೇ ಆಗುತ್ತಿಲ್ಲ",
+    "tr": "nenapē āguttilla"
+   },
+   "dialect": {
+    "kn": "ನೆನಪ ಆಗವಲ್ತ",
+    "tr": "nenapa āgavalta",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "bgk-15",
+   "place": "bagalkote",
+   "type": "phrase",
+   "english": "I've just set out",
+   "standard": {
+    "kn": "ಈಗ ಹೊರಟಿದ್ದೇನೆ",
+    "tr": "īga horaTiddēne"
+   },
+   "dialect": {
+    "kn": "ಈಗ್ ಹೊಂಟಿನ್",
+    "tr": "īg honTin",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "bgk-16",
+   "place": "bagalkote",
+   "type": "phrase",
+   "english": "I met him today",
+   "standard": {
+    "kn": "ಇವತ್ತು ಸಿಕ್ಕಿದನು",
+    "tr": "ivattu sikkidanu"
+   },
+   "dialect": {
+    "kn": "ಇವತ್ ಬೆಟ್ಟ್ಯಾದ",
+    "tr": "ivat beTTyāda",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "bgk-17",
+   "place": "bagalkote",
+   "type": "phrase",
+   "english": "he is drinking tea",
+   "standard": {
+    "kn": "ಅವನು ಚಹಾ ಕುಡಿಯುತ್ತಿದ್ದಾನೆ",
+    "tr": "avanu chahā kuDiyuttiddāne"
+   },
+   "dialect": {
+    "kn": "ಅವಾ ಚಾ ಕುಡ್ಯಾಕತಾನ್",
+    "tr": "avā chā kuDyākatān",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "bgk-18",
+   "place": "bagalkote",
+   "type": "phrase",
+   "english": "I'm coming, wait",
+   "standard": {
+    "kn": "ನಾನು ಬಂದೆ ತಡಿ",
+    "tr": "nānu bande taDi"
+   },
+   "dialect": {
+    "kn": "ನಾನು ಬಂದ್ಯಾ ತಡಿ",
+    "tr": "nānu bandyā taDi",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "bgk-19",
+   "place": "bagalkote",
+   "type": "phrase",
+   "english": "it's quarter to two now",
+   "standard": {
+    "kn": "ಇವಾಗ ಹೊತ್ತು ಒಂದು ಮುಕ್ಕಾಲು",
+    "tr": "ivāga hottu ondu mukkālu"
+   },
+   "dialect": {
+    "kn": "ಈಗ್ ಹೊತ್ತು ಫೋನೆ ಎರಡು",
+    "tr": "īg hottu phōne eraDu",
+    "kn_check": true
+   },
+   "note": "ಫೋನೆ means 'a quarter less', like Marathi pāvṇe. Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "bgk-20",
+   "place": "bagalkote",
+   "type": "phrase",
+   "english": "will you sing a song?",
+   "standard": {
+    "kn": "ಒಂದು ಹಾಡನ್ನು ಹಾಡುವೆಯಾ ನೀನು?",
+    "tr": "ondu hāDannu hāDuveyā nīnu?"
+   },
+   "dialect": {
+    "kn": "ಒಂದ್ ಹಾಡಾ ಹಾಡ್ತಿ ಏನ್ ನೀ?",
+    "tr": "ond hāDā hāDti ēn nī?",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Bagalkote Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "blr-12",
+   "place": "bengaluru",
+   "type": "word",
+   "english": "amazing, great",
+   "standard": null,
+   "dialect": {
+    "kn": "ಮಸ್ತ್",
+    "tr": "masth",
+    "kn_check": true
+   },
+   "note": "Sakkath's sibling. From a @kannada.gothilla Instagram post on Bengaluru slang.",
+   "source": "kannada_gothilla",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "blr-13",
+   "place": "bengaluru",
+   "type": "word",
+   "english": "buddy, dude",
+   "standard": {
+    "kn": "ಮಗ",
+    "tr": "maga"
+   },
+   "dialect": {
+    "kn": "ಮಗ",
+    "tr": "maga",
+    "kn_check": true
+   },
+   "note": "Literally 'son'. Used like bro, the same as macha. From a @kannada.gothilla Instagram post on Bengaluru slang.",
+   "source": "kannada_gothilla",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "blr-14",
+   "place": "bengaluru",
+   "type": "word",
+   "english": "oh no!",
+   "standard": null,
+   "dialect": {
+    "kn": "ಅಯ್ಯೋ",
+    "tr": "aiyo",
+    "kn_check": true
+   },
+   "note": "Say ai-aiyo for double emphasis. Heard across South India. From a @kannada.gothilla Instagram post on Bengaluru slang.",
+   "source": "kannada_gothilla",
+   "confidence": "informal",
+   "verified": false
   }
  ],
  "compare_sets": [
@@ -1417,7 +1861,9 @@
     "dwd-01",
     "dwd-02",
     "dwd-03",
-    "dwd-05"
+    "dwd-05",
+    "bgk-01",
+    "bgk-04"
    ]
   },
   {
@@ -1428,7 +1874,17 @@
     "bgm-04",
     "blr-06",
     "bdr-01",
-    "sir-15"
+    "sir-15",
+    "bgk-07"
+   ]
+  },
+  {
+   "id": "cmp-hello",
+   "english": "Calling out to a friend",
+   "entries": [
+    "mdy-01",
+    "blr-13",
+    "blr-04"
    ]
   }
  ]

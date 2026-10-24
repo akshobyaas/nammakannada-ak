@@ -46,6 +46,8 @@ function route({ fromUser = false } = {}) {
       setNav("add"); views.renderAdd(view, { place: store.places.has(params.place) ? params.place : null }); break;
     case "sources":
       setNav("sources"); views.renderSources(view); break;
+    case "guide":
+      setNav("guide"); views.renderGuide(view); break;
     case "record":
       setNav(null); renderRecord(view); break;
     default:

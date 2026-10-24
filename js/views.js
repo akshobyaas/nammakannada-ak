@@ -6,6 +6,7 @@ import {
 import { CONFIG } from "./config.js";
 import * as map from "./map.js";
 import { wireSound } from "./speech.js";
+import { sayIt } from "./pronounce.js";
 
 const ZONE_ORDER = ["south", "malnad", "coast", "north", "kalyana"];
 
@@ -29,6 +30,12 @@ function checkHtml(e) {
   return `<span class="check">Not yet checked by a speaker</span>`;
 }
 
+// "Say it: bat-teh", with a link to the guide that explains the letters.
+function sayLine(kn) {
+  const say = sayIt(kn);
+  return say ? `<p class="say">Say it: <span>${esc(say)}</span> <a href="#/guide">How to read this</a></p>` : "";
+}
+
 export function wordCard(e, { showPlace = false } = {}) {
   const place = store.places.get(e.place);
   const zone = zoneOf(e.place);
@@ -42,6 +49,7 @@ export function wordCard(e, { showPlace = false } = {}) {
     ${showPlace && !place && e.town ? `<p class="where">${esc(e.town)}</p>` : ""}
     ${dialectHtml(e)}
     ${e.dialect?.kn && e.dialect?.tr ? `<p class="tr">${esc(e.dialect.tr)}</p>` : ""}
+    ${sayLine(e.dialect?.kn)}
     <p class="meaning">${esc(e.english)}</p>
     ${std}
     ${e.note ? `<p class="note">${esc(e.note)}</p>` : ""}
@@ -155,7 +163,7 @@ function compareBlock(set) {
     const p = store.places.get(e.place);
     const z = zoneOf(e.place);
     const say = e.dialect?.kn
-      ? `<span lang="kn">${esc(e.dialect.kn)}</span><span class="t">${esc(e.dialect.tr || "")}</span>`
+      ? `<span lang="kn">${esc(e.dialect.kn)}</span><span class="t">${esc(e.dialect.tr || "")}</span><span class="s">${esc(sayIt(e.dialect.kn))}</span>`
       : `<span class="latin">${esc(e.dialect?.tr)}</span>`;
     return `<div class="cmp-row" style="--zone:${z.color}">
       <a class="who" href="#/place/${p.id}">${esc(p.name)}</a>
@@ -246,6 +254,7 @@ export function renderQuiz(root, { restart = false } = {}) {
       <p class="progress">Word ${quiz.i + 1} of ${quiz.questions.length}. Score ${quiz.score}</p>
       ${dialectHtml(e)}
       ${e.dialect?.kn && e.dialect?.tr ? `<p class="tr">${esc(e.dialect.tr)}</p>` : ""}
+      ${sayLine(e.dialect?.kn)}
       <p class="meaning">means “${esc(e.english)}”</p>
       <p>${soundButton(e)}</p>
       <div class="options">${q.options.map((p) => `<button type="button" data-place="${p.id}">${esc(p.name)}</button>`).join("")}</div>
@@ -409,6 +418,88 @@ export function renderAdd(root, { place: preset } = {}) {
   map.highlightZone(preset ? store.places.get(preset)?.zone : null);
 }
 
+// ---------- How to say it ----------
+const VOWEL_GUIDE = [
+  ["a", "a in about", "blr-13", "dialect"],
+  ["aa", "a in father", "kun-02", "dialect"],
+  ["i", "i in sit", "dwd-01", "dialect"],
+  ["ee", "ee in see", "bdr-01", "dialect"],
+  ["u", "u in put", "kun-03", "dialect"],
+  ["oo", "oo in food", "sir-09", "dialect"],
+  ["e / eh", "e in bet", "sir-01", "dialect"],
+  ["ay", "ay in say", "dwd-02", "standard"],
+  ["o", "o in go, but short", "sir-10", "dialect"],
+  ["oh", "o in go, held longer", "blr-14", "dialect"],
+  ["ai", "ai in aisle", "bgm-04", "standard"],
+];
+const CONSONANT_GUIDE = [
+  ["T  D  N  L  Sh", "Capital letters: curl the tip of your tongue back and touch the roof of your mouth. ಡ in ಬೇಡ is not the English d.", ["dwd-02:standard", "dwd-04:dialect", "bgm-03:dialect"]],
+  ["t  d", "Small t and d: touch your tongue to the back of your upper teeth. Softer than English t and d.", ["sir-04:dialect", "bgk-10:dialect"]],
+  ["kh  gh  th  dh  ph  bh", "An h after a letter means a puff of air: say k and breathe out with it. th is never the th in 'the' or 'thin'.", ["bgm-01:dialect", "bdr-01:dialect"]],
+  ["kk  tt  TT  ll", "Doubled letters are held a beat longer, split across syllables: bat-teh, not ba-teh. Getting this wrong can change the word.", ["blr-01:dialect", "bgk-04:dialect"]],
+  ["r", "A quick tap of the tongue, as in Spanish pero. Never silent.", ["sir-10:dialect"]],
+];
+const SOUND_CHANGES = [
+  ["North Karnataka", "A final e becomes i, and a long e turns into yaa.", ["dwd-01", "dwd-02"]],
+  ["Bagalkote", "A final u becomes a, and a long e at the end turns into yaa.", ["bgk-01", "bgk-04"]],
+  ["Dharwad", "An a is added after words, and akka becomes yakka.", ["dwd-03", "dwd-05"]],
+  ["Havyaka (Sirsi)", "o and e at the start of a word become wa and ye: ole is said wale.", ["sir-14"]],
+  ["Kundapura", "Long verb endings are cut short: hoguttene becomes hote.", ["kun-01"]],
+];
+
+function guideExample(ref) {
+  const [id, side = "dialect"] = ref.split(":");
+  const e = entryById(id);
+  if (!e || !e[side]) return "";
+  const p = store.places.get(e.place);
+  const kn = e[side].kn;
+  return `<span class="ex">
+    ${kn ? `<span lang="kn">${esc(kn)}</span>` : ""}
+    <span class="s">${esc(kn ? sayIt(kn) : e[side].tr)}</span>
+    <span class="muted">${esc(e.english)}${side === "standard" ? ", standard" : `, <a href="#/place/${p.id}">${esc(p.name)}</a>`}</span>
+    ${soundButton(e, side).replace('class="play"', 'class="play small"')}
+  </span>`;
+}
+
+export function renderGuide(root) {
+  root.innerHTML = `
+    <h1>How to say it</h1>
+    <p class="lede">Every word has a “Say it” line that spells it the way it sounds, split into syllables. Say each syllable evenly: Kannada doesn't punch one syllable the way English does.</p>
+    <p class="muted">Kannada is written the way it is spoken, so these spellings come straight from the Kannada letters.</p>
+
+    <h2>Vowels</h2>
+    <table class="guide">
+      <thead><tr><th scope="col">Written</th><th scope="col">Sounds like</th><th scope="col">Example</th></tr></thead>
+      <tbody>${VOWEL_GUIDE.map(([w, like, id, side]) => `
+        <tr><td class="w">${esc(w)}</td><td>${esc(like)}</td><td>${guideExample(`${id}:${side}`)}</td></tr>`).join("")}
+      </tbody>
+    </table>
+    <p class="muted">A final e is written eh so you don't drop it: ಬತ್ತೆ is bat-teh, two full syllables.</p>
+
+    <h2>Sounds English doesn't have</h2>
+    <div class="guide-list">${CONSONANT_GUIDE.map(([w, how, refs]) => `
+      <section>
+        <h3 class="w">${esc(w)}</h3>
+        <p>${esc(how)}</p>
+        <div class="exs">${refs.map(guideExample).join("")}</div>
+      </section>`).join("")}
+    </div>
+
+    <h2>How regions change the sound</h2>
+    <p>The same letters can be bent differently from place to place. These patterns are what make a speaker sound like they're from somewhere.</p>
+    <div class="guide-list">${SOUND_CHANGES.map(([where, how, ids]) => `
+      <section>
+        <h3>${esc(where)}</h3>
+        <p>${esc(how)}</p>
+        <div class="exs">${ids.map((id) => guideExample(id)).join("")}</div>
+      </section>`).join("")}
+    </div>
+  `;
+  wireSound(root);
+  map.setActive(null);
+  map.highlightZone(null);
+}
+
 // ---------- Sources ----------
 const SOURCE_NOTES = {
   havyaka: "Havyaka (Havigannada) comparison tables: pronouns, verbs, question words",
@@ -428,6 +519,8 @@ const SOURCE_NOTES = {
   mandya_thesis: "University of Mysore thesis on a Mandya dialect",
   mysuru_blog: "Mysuru Kannada as the prestige spoken variety",
   sarvam_voice: "Sarvam AI Bulbul: AI voice clips",
+  aarva_karnaata: "@aarva_karnaata on Instagram: Bagalkote Kannada words and phrases",
+  kannada_gothilla: "@kannada.gothilla on Instagram: Bengaluru slang",
   alar_voice: "Alar voice corpus: dictionary audio clips (GPL-2.0, generated with Google TTS)",
 };
 
