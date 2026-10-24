@@ -10,7 +10,9 @@ export const CONFIG = {
     email: "",    // e.g. the address people should write to
     phone: "",    // with country code, e.g. +91 ...
     address: "",  // postal address; use \n for line breaks
-    links: [],    // [{ label: "GitHub", url: "https://..." }]
+    links: [      // [{ label: "GitHub", url: "https://..." }]
+      { label: "GitHub", url: "https://github.com/akshobyaas/nammakannada-ak" },
+    ],
   },
 
   // Questions per round in "Guess the region".
