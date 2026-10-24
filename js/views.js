@@ -19,9 +19,29 @@ export function esc(s) {
 const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
 
 // ---------- Word card ----------
-function dialectHtml(e, cls = "dialect") {
-  if (e.dialect?.kn) return `<p class="${cls}" lang="kn">${esc(e.dialect.kn)}</p>`;
-  return `<p class="${cls} latin">${esc(e.dialect?.tr)}</p>`;
+const ICON_SPEAKER = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><path d="M15.5 9a4 4 0 0 1 0 6"/><path d="M18 6.5a7.5 7.5 0 0 1 0 11"/></svg>`;
+
+const TYPE_LABEL = { word: "Word", phrase: "Phrase", sound: "Sound change", grammar: "Grammar", loanword: "Borrowed" };
+export function category(e) {
+  if (e.type === "phrase" && /\((proverb|saying)\)/i.test(e.english)) return "Proverb";
+  return TYPE_LABEL[e.type] || "Word";
+}
+
+// Sensitive entries: some are hidden behind a tap, some only labelled.
+const SENSITIVE_LABEL = {
+  caste: "Mentions caste", community: "Names a community", violence: "Mentions injury",
+  vulgar: "Strong language", insult: "Mild insult",
+};
+const GATED = new Set(["caste", "community", "violence", "vulgar"]);
+export const isGated = (e) => !!e.sensitive && GATED.has(e.sensitive.kind) && e.sensitive.level !== "label";
+
+function dialectHtml(e, { asButton = false } = {}) {
+  if (e.dialect?.kn) {
+    return asButton
+      ? `<button type="button" class="dialect" lang="kn" data-proxy-play title="Tap to hear it">${esc(e.dialect.kn)}</button>`
+      : `<p class="dialect" lang="kn">${esc(e.dialect.kn)}</p>`;
+  }
+  return `<p class="dialect latin">${esc(e.dialect?.tr)}</p>`;
 }
 
 function checkHtml(e) {
@@ -33,55 +53,87 @@ function checkHtml(e) {
 // "Say it: bat-teh", with a link to the guide that explains the letters.
 function sayLine(kn) {
   const say = sayIt(kn);
-  return say ? `<p class="say">Say it: <span>${esc(say)}</span> <a href="#/guide">How to read this</a></p>` : "";
+  return say ? `<p class="say">Say it <span class="say-pill">${esc(say)}</span> <a href="#/guide">How to read this</a></p>` : "";
 }
 
 export function wordCard(e, { showPlace = false } = {}) {
   const place = store.places.get(e.place);
   const zone = zoneOf(e.place);
   const src = sourceUrl(e.source);
+  const gated = isGated(e);
   const std = e.standard
-    ? `<p class="standard">Standard Kannada: ${e.standard.kn ? `<span lang="kn">${esc(e.standard.kn)}</span> ` : ""}${esc(e.standard.tr || "")} ${soundButton(e, "standard").replace('class="play"', 'class="play small"')}</p>`
+    ? `<p class="standard">Standard Kannada: ${e.standard.kn ? `<span lang="kn">${esc(e.standard.kn)}</span>` : ""} ${esc(e.standard.tr || "")} ${soundButton(e, "standard", "small")}</p>`
     : "";
+  const flag = e.sensitive ? `<span class="flag-label" title="${esc(e.sensitive.why || "")}">${esc(SENSITIVE_LABEL[e.sensitive.kind] || "Sensitive")}</span>` : "";
   return `
-  <article class="word" style="--zone:${zone?.color || "#999"}">
+  <article class="word${gated ? " gated" : ""}" data-cat="${category(e)}" style="--zone:${zone?.color || "#999"}">
+    <span class="tag">${category(e)}</span>
     ${showPlace && place ? `<p class="where"><a href="#/place/${place.id}">${esc(place.name)}</a></p>` : ""}
     ${showPlace && !place && e.town ? `<p class="where">${esc(e.town)}</p>` : ""}
-    ${dialectHtml(e)}
-    ${e.dialect?.kn && e.dialect?.tr ? `<p class="tr">${esc(e.dialect.tr)}</p>` : ""}
-    ${sayLine(e.dialect?.kn)}
-    <p class="meaning">${esc(e.english)}</p>
-    ${std}
-    ${e.note ? `<p class="note">${esc(e.note)}</p>` : ""}
+    ${gated ? `<div class="gate"><div class="gate-inner">
+        <p><strong>${esc(SENSITIVE_LABEL[e.sensitive.kind])}.</strong> ${esc(e.sensitive.why || "")}</p>
+        <button type="button" class="reveal">Show it</button>
+      </div></div>` : ""}
+    <div class="gate-body">
+      <div class="word-top">
+        <div class="main">
+          ${dialectHtml(e, { asButton: true })}
+          ${e.dialect?.kn && e.dialect?.tr ? `<p class="tr">${esc(e.dialect.tr)}</p>` : ""}
+        </div>
+        ${soundButton(e, "dialect", "big")}
+      </div>
+      ${sayLine(e.dialect?.kn)}
+      <p class="meaning">${esc(e.english)}</p>
+      ${std}
+      ${e.note ? `<p class="note">${esc(e.note)}</p>` : ""}
+    </div>
     <footer>
+      ${flag}
       ${checkHtml(e)}
       ${src ? `<a href="${esc(src)}" target="_blank" rel="noopener">Source: ${esc(sourceLabel(e.source))}</a>` : ""}
-      ${e.confidence === "informal" ? `<span>Blog or forum source</span>` : ""}
-      ${soundButton(e)}
+      ${e.confidence === "informal" ? `<span>Social media or blog source</span>` : ""}
     </footer>
   </article>`;
 }
 
 // Sound, best first: a speaker's recording, then an AI voice clip, then a dictionary clip,
 // then the browser's own Kannada voice (hidden when the browser has none).
-function soundButton(e, side = "dialect") {
+function soundButton(e, side = "dialect", size = "") {
+  const word = e[side]?.kn || e[side]?.tr || "";
+  const cls = `play${size ? " " + size : ""}`;
+  const label = (text) => (size === "big" ? "" : `<span>${text}</span>`);
+  const aria = `aria-label="${esc((side === "standard" ? "Listen to the standard form " : "Listen to ") + word)}"`;
   if (side === "dialect" && e.audio)
-    return `<button class="play" type="button" data-audio="${esc(e.audio)}">Play recording</button>`;
+    return `<button class="${cls}" type="button" ${aria} data-audio="${esc(e.audio)}" title="Recorded by a speaker">${ICON_SPEAKER}${label("Recording")}</button>`;
   if (e.voice?.[side])
-    return `<button class="play" type="button" data-clips="${esc(e.voice[side])}"
-      title="AI voice (Sarvam Bulbul) reading the spelling">Listen</button>`;
+    return `<button class="${cls}" type="button" ${aria} data-clips="${esc(e.voice[side])}" title="AI voice (Sarvam Bulbul) reading the spelling">${ICON_SPEAKER}${label("Listen")}</button>`;
   const clips = e.tts?.[side];
   if (clips?.length)
-    return `<button class="play" type="button" data-clips="${esc(clips.join("|"))}"
-      title="Computer voice from the Alar dictionary audio, reading the spelling">Listen</button>`;
+    return `<button class="${cls}" type="button" ${aria} data-clips="${esc(clips.join("|"))}" title="Computer voice from the Alar dictionary audio">${ICON_SPEAKER}${label("Listen")}</button>`;
   const kn = e[side]?.kn;
   if (!kn) return "";
   const text = kn.replace(/\s*[/;]\s*/g, ", ");
-  return `<button class="play" type="button" data-say="${esc(text)}" hidden
-    title="Your browser's Kannada voice, reading the spelling">Listen</button>`;
+  return `<button class="${cls}" type="button" ${aria} data-say="${esc(text)}" hidden title="Your browser's Kannada voice">${ICON_SPEAKER}${label("Listen")}</button>`;
 }
 
-export const wireAudio = wireSound;
+// Wires sound, tap-the-word-to-hear-it, and the sensitive-content reveal.
+export function wireAudio(root) {
+  wireSound(root);
+  root.querySelectorAll("[data-proxy-play]").forEach((w) => {
+    w.addEventListener("click", () => {
+      const card = w.closest(".word, .quiz-card");
+      const btn = card?.querySelector(".play.big:not([hidden]), .word-top .play:not([hidden])");
+      if (btn) btn.click();
+    });
+  });
+  root.querySelectorAll(".reveal").forEach((b) => {
+    b.addEventListener("click", () => {
+      const card = b.closest(".word");
+      card.classList.add("revealed");
+      card.querySelector(".gate-body button, .gate-body a")?.focus();
+    });
+  });
+}
 
 // ---------- Explore (home) ----------
 export function renderExplore(root, { zone } = {}) {
@@ -125,12 +177,28 @@ export function renderExplore(root, { zone } = {}) {
 }
 
 // ---------- Place ----------
+const CAT_ORDER = ["Word", "Phrase", "Proverb", "Sound change", "Grammar", "Borrowed"];
+const CAT_PLURAL = { Word: "Words", Phrase: "Phrases", Proverb: "Proverbs", "Sound change": "Sound changes", Grammar: "Grammar", Borrowed: "Borrowed" };
+
+function placesWithWords() {
+  return [...store.places.values()]
+    .filter((p) => entriesFor(p.id).length)
+    .sort((a, b) => ZONE_ORDER.indexOf(a.zone) - ZONE_ORDER.indexOf(b.zone));
+}
+
 export function renderPlace(root, id) {
   const p = store.places.get(id);
   if (!p) { renderNotFound(root); return; }
   const z = store.zones.get(p.zone);
   const words = entriesFor(id);
   const src = sourceUrl(p.source);
+  const counts = {};
+  for (const e of words) counts[category(e)] = (counts[category(e)] || 0) + 1;
+  const cats = CAT_ORDER.filter((c) => counts[c]);
+  const list = placesWithWords();
+  const i = list.findIndex((x) => x.id === id);
+  const prev = i > 0 ? list[i - 1] : null;
+  const next = i >= 0 && i < list.length - 1 ? list[i + 1] : (i < 0 ? list[0] : null);
 
   root.innerHTML = `
     <a class="back" href="#/zone/${z.id}">${esc(z.name)}</a>
@@ -142,13 +210,28 @@ export function renderPlace(root, id) {
     ${src ? `<p class="muted"><a href="${esc(src)}" target="_blank" rel="noopener">Read more on ${esc(sourceLabel(p.source))}</a></p>` : ""}
     ${words.length
       ? `<h2>${plural(words.length, "word", "words")} from ${esc(p.name)}</h2>
+         ${cats.length > 1 ? `<div class="filters" role="group" aria-label="Show">
+            <button type="button" class="chip-btn" data-cat="" aria-pressed="true">All<span class="n">${words.length}</span></button>
+            ${cats.map((c) => `<button type="button" class="chip-btn" data-cat="${c}" aria-pressed="false">${CAT_PLURAL[c] || c}<span class="n">${counts[c]}</span></button>`).join("")}
+          </div>` : ""}
          <div class="words">${words.map((e) => wordCard(e)).join("")}</div>
          <div class="actions"><a class="btn ghost" href="#/add?place=${p.id}">Add a word from ${esc(p.name)}</a></div>`
       : `<div class="empty-state">
            <p>No words from ${esc(p.name)} yet. If you know how people talk here, add the first one.</p>
            <a class="btn" href="#/add?place=${p.id}">Add a word from ${esc(p.name)}</a>
          </div>`}
+    <nav class="place-nav" aria-label="More places">
+      ${prev ? `<a class="btn ghost" href="#/place/${prev.id}">Previous: ${esc(prev.name)}</a>` : "<span></span>"}
+      ${next ? `<a class="btn" href="#/place/${next.id}">Next: ${esc(next.name)}</a>` : ""}
+    </nav>
   `;
+  root.querySelectorAll(".filters .chip-btn").forEach((b) => {
+    b.addEventListener("click", () => {
+      root.querySelectorAll(".filters .chip-btn").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+      const cat = b.dataset.cat;
+      root.querySelectorAll(".words .word").forEach((w) => { w.hidden = !!cat && w.dataset.cat !== cat; });
+    });
+  });
   wireAudio(root);
   map.setActive(id);
   map.highlightZone(p.zone);
@@ -211,7 +294,7 @@ function shuffle(a) {
 function newQuiz() {
   // Only words with a distinct regional form; skip abstract sound rules.
   const pool = shuffle(allEntries().filter((e) =>
-    !e.contributed && e.dialect && (e.dialect.kn || e.dialect.tr) && e.type !== "grammar"
+    !e.contributed && !e.sensitive && e.dialect && (e.dialect.kn || e.dialect.tr) && e.type !== "grammar"
   ));
   // Prefer variety: at most two questions per place.
   const per = {}, picked = [];
@@ -251,17 +334,18 @@ export function renderQuiz(root, { restart = false } = {}) {
     <h1>Guess the region</h1>
     <p class="lede">Where in Karnataka would you hear this?</p>
     <div class="quiz-card">
-      <p class="progress">Word ${quiz.i + 1} of ${quiz.questions.length}. Score ${quiz.score}</p>
-      ${dialectHtml(e)}
+      <p class="progress"><span>Word ${quiz.i + 1} of ${quiz.questions.length}</span><span>Score ${quiz.score}</span></p>
+      <div class="word-top"><div class="main">${dialectHtml(e, { asButton: true })}</div>${soundButton(e, "dialect", "big")}</div>
       ${e.dialect?.kn && e.dialect?.tr ? `<p class="tr">${esc(e.dialect.tr)}</p>` : ""}
       ${sayLine(e.dialect?.kn)}
       <p class="meaning">means “${esc(e.english)}”</p>
-      <p>${soundButton(e)}</p>
-      <div class="options">${q.options.map((p) => `<button type="button" data-place="${p.id}">${esc(p.name)}</button>`).join("")}</div>
+      <div class="options">${q.options.map((p, n) => `<button type="button" data-place="${p.id}"><span class="k" aria-hidden="true">${n + 1}</span>${esc(p.name)}</button>`).join("")}</div>
+      <p class="kbd-hint">Tip: press 1 to 4 to answer, Enter for the next word.</p>
       <div id="result"></div>
     </div>`;
 
-  wireSound(root);
+  wireAudio(root);
+  bindQuizKeys();
   root.querySelectorAll(".options button").forEach((b) => {
     b.addEventListener("click", () => {
       if (quiz.answered) return;
@@ -294,6 +378,23 @@ export function renderQuiz(root, { restart = false } = {}) {
 }
 
 export function resetQuiz() { quiz = null; }
+
+// Number keys answer, Enter moves on. Bound once, only acts on the quiz page.
+let quizKeysBound = false;
+function bindQuizKeys() {
+  if (quizKeysBound) return;
+  quizKeysBound = true;
+  document.addEventListener("keydown", (ev) => {
+    if (!location.hash.startsWith("#/quiz") || ev.target.matches("input, textarea, select")) return;
+    const card = document.querySelector(".quiz-card");
+    if (!card) return;
+    if (/^[1-4]$/.test(ev.key)) {
+      card.querySelectorAll(".options button")[Number(ev.key) - 1]?.click();
+    } else if (ev.key === "Enter" && document.activeElement?.id !== "next") {
+      card.querySelector("#next")?.click();
+    }
+  });
+}
 
 // ---------- Add a word ----------
 export function renderAdd(root, { place: preset } = {}) {
@@ -461,7 +562,7 @@ function guideExample(ref) {
     ${kn ? `<span lang="kn">${esc(kn)}</span>` : ""}
     <span class="s">${esc(kn ? sayIt(kn) : e[side].tr)}</span>
     <span class="muted">${esc(e.english)}${side === "standard" ? ", standard" : `, <a href="#/place/${p.id}">${esc(p.name)}</a>`}</span>
-    ${soundButton(e, side).replace('class="play"', 'class="play small"')}
+    ${soundButton(e, side, "small")}
   </span>`;
 }
 
@@ -499,7 +600,7 @@ export function renderGuide(root) {
       </section>`).join("")}
     </div>
   `;
-  wireSound(root);
+  wireAudio(root);
   map.setActive(null);
   map.highlightZone(null);
 }
@@ -540,7 +641,7 @@ export function renderSources(root) {
         <span class="muted">${counts[k] ? `, ${plural(counts[k], "word", "words")}` : ""}</span></li>`).join("")}
     </ol>
     <h2>Sound</h2>
-    <p>“Play recording” plays a clip recorded by a Kannada speaker. “Listen” is a computer voice reading the spelling in a standard accent, so it gives the shape of a word but not its local tune. Clips made with <a href="https://www.sarvam.ai/text-to-speech" target="_blank" rel="noopener">Sarvam AI’s Bulbul</a> voice are used first; where there is none and the <a href="https://github.com/Aditya-ds-1806/Alar-voice-corpus" target="_blank" rel="noopener">Alar voice corpus</a> has the word, its clip is used. Both play in any browser. Otherwise the browser’s own Kannada voice is used: Microsoft Edge on Windows and Chrome on Android have one, other browsers may not, and the button is hidden there.</p>
+    <p>“Recording” plays a clip recorded by a Kannada speaker. “Listen” is a computer voice reading the spelling in a standard accent, so it gives the shape of a word but not its local tune. Clips made with <a href="https://www.sarvam.ai/text-to-speech" target="_blank" rel="noopener">Sarvam AI’s Bulbul</a> voice are used first; where there is none and the <a href="https://github.com/Aditya-ds-1806/Alar-voice-corpus" target="_blank" rel="noopener">Alar voice corpus</a> has the word, its clip is used. Both play in any browser. Otherwise the browser’s own Kannada voice is used: Microsoft Edge on Windows and Chrome on Android have one, other browsers may not, and the button is hidden there.</p>
     <p><a href="#/record">Record words</a> to add real voices.</p>
     <h2>Map</h2>
     <p>District boundaries from <a href="https://github.com/udit-001/india-maps-data" target="_blank" rel="noopener">india-maps-data</a> (2011 census districts). Regions are approximate cultural zones, not official divisions.</p>`;

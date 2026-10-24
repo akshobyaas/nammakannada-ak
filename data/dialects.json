@@ -32,31 +32,31 @@
    "id": "south",
    "name": "Old Mysuru & South",
    "name_kn": "ಹಳೇ ಮೈಸೂರು",
-   "color": "#F2C230"
+   "color": "#FFD21F"
   },
   {
    "id": "malnad",
    "name": "Malnad",
    "name_kn": "ಮಲೆನಾಡು",
-   "color": "#8CC665"
+   "color": "#7CD67A"
   },
   {
    "id": "coast",
    "name": "Coast",
    "name_kn": "ಕರಾವಳಿ",
-   "color": "#63B7DE"
+   "color": "#3BA3F5"
   },
   {
    "id": "north",
    "name": "North Karnataka",
    "name_kn": "ಉತ್ತರ ಕರ್ನಾಟಕ",
-   "color": "#F08A4B"
+   "color": "#FF6FA8"
   },
   {
    "id": "kalyana",
    "name": "Kalyana Karnataka",
    "name_kn": "ಕಲ್ಯಾಣ ಕರ್ನಾಟಕ",
-   "color": "#C9A3F0"
+   "color": "#A98BFF"
   }
  ],
  "places": [
@@ -2565,7 +2565,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "sensitive": {
+    "kind": "insult",
+    "why": "A mild insult."
+   }
   },
   {
    "id": "mal-11",
@@ -2945,7 +2949,12 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "sensitive": {
+    "kind": "community",
+    "level": "label",
+    "why": "Gowda here means the village headman, which is also a community title."
+   }
   },
   {
    "id": "are-07",
@@ -3401,7 +3410,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "sensitive": {
+    "kind": "insult",
+    "why": "A mild insult."
+   }
   },
   {
    "id": "dwd-16",
@@ -3801,6 +3814,75 @@
    "source": "aarva_karnaata",
    "confidence": "informal",
    "verified": false
+  },
+  {
+   "id": "are-09",
+   "place": "arebhashe",
+   "type": "phrase",
+   "english": "you can't lose your caste just by eating a gnat (proverb)",
+   "standard": {
+    "kn": "ನುಸಿ ತಿಂದು ಜಾತಿ ಬಿಡಲಾಗದು",
+    "tr": "nusi tindu jāti biDalāgadu"
+   },
+   "dialect": {
+    "kn": "ನುಸಿ ತಿಂದ್ ಜಾತಿ ಬುಡಿಕ್ಯಾಗದ್",
+    "tr": "nusi tind jāti buDikyāgad",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false,
+   "sensitive": {
+    "kind": "caste",
+    "why": "This proverb refers to caste. It is shown as recorded, as a record of how the language has been used."
+   }
+  },
+  {
+   "id": "are-10",
+   "place": "arebhashe",
+   "type": "phrase",
+   "english": "the Achari girl is pretty (saying)",
+   "standard": {
+    "kn": "ಆಚಾರ್ತಿ ಹುಡುಗಿ ಚಂದ",
+    "tr": "āchārti huDugi chanda"
+   },
+   "dialect": {
+    "kn": "ಆಚಾರ್ತಿಗೂಡೆ ಪೊರ್ಲು",
+    "tr": "āchārtigūDe porlu",
+    "kn_check": true
+   },
+   "note": "ಪೊರ್ಲು (beautiful) is a Tulu word, a sign of the coastal language mix. Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false,
+   "sensitive": {
+    "kind": "community",
+    "why": "This saying names a community (Achari, traditionally carpenters and smiths) and comments on its women."
+   }
+  },
+  {
+   "id": "klb-13",
+   "place": "kalaburagi",
+   "type": "phrase",
+   "english": "blood was flowing from his head",
+   "standard": {
+    "kn": "ತಲೆಯಿಂದ ರಕ್ತ ಹರಿದು ಹೋಗುತ್ತಿತ್ತು",
+    "tr": "taleyinda rakta haridu hōguttittu"
+   },
+   "dialect": {
+    "kn": "ತಲ್ಯಾಂದ ರಗ್ತಾ ಹರೀಲತಿತು",
+    "tr": "talyānda ragtā harīlatitu",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false,
+   "sensitive": {
+    "kind": "violence",
+    "why": "Describes an injury."
+   }
   }
  ],
  "compare_sets": [

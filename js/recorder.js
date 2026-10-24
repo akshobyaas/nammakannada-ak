@@ -34,7 +34,7 @@ export function renderRecord(root) {
       <li>Press <strong>Record</strong>, say the word clearly once, then press <strong>Stop</strong>.</li>
       <li>Press <strong>Play</strong> to check it. Record again if needed.</li>
       <li>Press <strong>Save</strong>. Move the file into the project's <code>audio</code> folder.</li>
-      <li>When you are done, run <code>node scripts/link-audio.mjs</code> in the project folder. Each word then gets a “Play recording” button.</li>
+      <li>When you are done, run <code>node scripts/link-audio.mjs</code> in the project folder. Each word then plays your recording first.</li>
     </ol>
     <p class="muted">Record in a quiet room, about a hand's width from the microphone.</p>
     ${places.map((p) => `

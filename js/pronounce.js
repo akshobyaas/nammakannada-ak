@@ -20,7 +20,8 @@ const CONS = {
   "ಸ": "s", "ಹ": "h", "ಳ": "L", "ೞ": "zh", "ಱ": "r",
 };
 const NUKTA = { "ಫ": "f", "ಜ": "z" };
-const LABIAL = new Set(["p", "ph", "b", "bh", "m", "f"]);
+// Before these sounds ಂ is said m (ಸಂಸಾರ samsaara, ಅಂವ amva); before other stops it is n.
+const LABIAL = new Set(["p", "ph", "b", "bh", "m", "f", "y", "r", "l", "v", "sh", "Sh", "s", "h", "L"]);
 const VIRAMA = "್", ANUSVARA = "ಂ", VISARGA = "ಃ", NUKTA_MARK = "಼";
 
 // Kannada word -> list of sound units [{c: "k"} | {v: "a"}]
@@ -40,7 +41,7 @@ function units(word) {
     } else if (VOWELS[ch]) {
       out.push({ v: VOWELS[ch] });
     } else if (ch === ANUSVARA) {
-      // ಂ sounds like m before p/b/m and at the end of a word, otherwise n.
+      // ಂ sounds like m before p/b/m, v, y, r, l, s, h and at the end of a word, otherwise n.
       const rest = chars.slice(i + 1).find((x) => CONS[x]);
       const nextIsCons = CONS[chars[i + 1]];
       out.push({ c: nextIsCons ? (LABIAL.has(CONS[chars[i + 1]]) ? "m" : "n") : (rest ? "n" : "m") });
