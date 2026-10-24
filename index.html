@@ -7,8 +7,8 @@
   <meta name="description" content="Explore how spoken Kannada changes across Karnataka: regional words, phrases and sounds on an interactive map, with sources.">
   <meta name="theme-color" content="#C8102E">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FFD21F' stroke='black' stroke-width='4'/%3E%3Ctext x='32' y='46' font-size='38' text-anchor='middle' fill='%23E8202A' font-family='sans-serif'%3E%E0%B2%95%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="css/fonts.css?v=8">
-  <link rel="stylesheet" href="css/style.css?v=8">
+  <link rel="stylesheet" href="css/fonts.css?v=9">
+  <link rel="stylesheet" href="css/style.css?v=9">
 </head>
 <body>
   <a class="skip" href="#panel">Skip to content</a>
@@ -45,7 +45,9 @@
         <label for="q" class="visually-hidden">Search words</label>
         <input id="q" type="search" placeholder="Search in Kannada or English, like ಮನೆ or come" autocomplete="off">
       </div>
-      <div id="view" class="view" aria-live="polite"></div>
+      <div id="view" class="view" aria-live="polite">
+        <div class="state loading" role="status"><span class="spinner" aria-hidden="true"></span><span>Loading words from across Karnataka…</span></div>
+      </div>
 
       <footer class="site-foot">
         <section id="contact" class="contact" aria-labelledby="contact-h" hidden>
@@ -61,11 +63,13 @@
     </section>
   </main>
 
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
   <div class="sticky-cta" id="sticky-cta">
     <a class="btn" id="cta-main" href="#/add">Add a word from your town</a>
   </div>
 
   <noscript><p class="noscript">Namma Kannada needs JavaScript to show the map and words.</p></noscript>
-  <script type="module" src="js/app.js?v=8"></script>
+  <script type="module" src="js/app.js?v=9"></script>
 </body>
 </html>

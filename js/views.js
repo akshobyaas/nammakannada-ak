@@ -7,6 +7,7 @@ import { CONFIG } from "./config.js";
 import * as map from "./map.js";
 import { wireSound } from "./speech.js";
 import { sayIt } from "./pronounce.js";
+import { emptyHtml, toast, copyText, setBusy } from "./ui.js";
 
 const ZONE_ORDER = ["south", "malnad", "coast", "north", "kalyana"];
 
@@ -269,7 +270,9 @@ export function renderCompare(root) {
   root.innerHTML = `
     <h1>Compare</h1>
     <p class="lede">The same idea, said across Karnataka.</p>
-    <div class="compare">${store.data.compare_sets.map(compareBlock).join("")}</div>`;
+    ${(store.data.compare_sets || []).length
+      ? `<div class="compare">${store.data.compare_sets.map(compareBlock).join("")}</div>`
+      : emptyHtml({ title: "No comparisons yet", body: "Comparisons appear once the same word has been collected from several places.", actions: `<a class="btn" href="#/">Explore the map</a>` })}`;
   map.setActive(null);
   map.highlightZone(null);
 }
@@ -277,12 +280,28 @@ export function renderCompare(root) {
 // ---------- Search ----------
 export function renderSearch(root, q) {
   const results = search(q);
-  root.innerHTML = results.length
-    ? `<h1>${plural(results.length, "match", "matches")}</h1>
-       <div class="words">${results.map((e) => wordCard(e, { showPlace: true })).join("")}</div>`
-    : `<h1>No match for “${esc(q)}”</h1>
-       <p class="lede">Try the English meaning, like <em>come</em> or <em>house</em>, or a place name like Sirsi.</p>`;
-  wireAudio(root);
+  if (results.length) {
+    root.innerHTML = `
+      <h1>${plural(results.length, "match", "matches")}</h1>
+      <p class="muted">for “${esc(q.trim())}”</p>
+      <div class="words">${results.map((e) => wordCard(e, { showPlace: true })).join("")}</div>`;
+    wireAudio(root);
+    return;
+  }
+  root.innerHTML = emptyHtml({
+    kn: "ಹುಡುಕಿ",
+    title: `No match for “${esc(q.trim())}”`,
+    body: "Try the English meaning, a word in Kannada script, or a place name. Spelling in English letters can vary, so try a shorter part of the word.",
+    actions: ["come", "house", "ಮನೆ", "Sirsi"].map((s) =>
+      `<button class="btn ghost" type="button" data-try="${esc(s)}" ${/[ಀ-೿]/.test(s) ? 'lang="kn"' : ""}>${esc(s)}</button>`).join("")
+      + `<a class="btn" href="#/">Browse the map</a>`,
+  });
+  root.querySelectorAll("[data-try]").forEach((b) => b.addEventListener("click", () => {
+    const input = document.getElementById("q");
+    input.value = b.dataset.try;
+    input.dispatchEvent(new Event("input"));
+    input.focus();
+  }));
 }
 
 // ---------- Quiz: Guess the region ----------
@@ -322,6 +341,15 @@ export function renderQuiz(root, { restart = false } = {}) {
   map.clearMarks();
   map.setActive(null);
   map.highlightZone(null);
+
+  if (!quiz.questions.length) {
+    root.innerHTML = `<h1>Guess the region</h1>` + emptyHtml({
+      title: "Not enough words to play yet",
+      body: "The quiz needs words from at least a few different regions. Add some words and come back.",
+      actions: `<a class="btn" href="#/add">Add a word</a><a class="btn ghost" href="#/">Explore the map</a>`,
+    });
+    return;
+  }
 
   if (quiz.i >= quiz.questions.length) {
     const n = quiz.questions.length;
@@ -402,82 +430,139 @@ function bindQuizKeys() {
 }
 
 // ---------- Add a word ----------
+const KN = /[ಀ-೿]/;
+const LATIN = /[A-Za-z]/;
+
+// One rule list per field: [test, message]. The first failing rule is shown.
+const RULES = {
+  place: [[(v) => v, "Choose where this word is used."]],
+  town: [[(v, f) => f.place.value !== "other" || v, "Write the name of your town or village."]],
+  kn: [
+    [(v) => v, "Write the word in Kannada script."],
+    [(v) => KN.test(v), "Use Kannada letters here, like ಬತ್ತೆ. Put the English-letter spelling in the next box."],
+    [(v) => !LATIN.test(v), "Keep English letters out of this box. Put them in “How to read it”."],
+  ],
+  tr: [
+    [(v) => v, "Write how it sounds in English letters, like batte."],
+    [(v) => !KN.test(v), "Use English letters here, like batte. The Kannada spelling goes in the box before."],
+    [(v) => LATIN.test(v), "Write it with English letters, like batte."],
+  ],
+  english: [
+    [(v) => v, "Write what the word means in English."],
+    [(v) => LATIN.test(v), "Write the meaning in English, like “I will come”."],
+  ],
+  std: [[(v) => !v || KN.test(v), "Use Kannada script for the standard form, like ಬರುತ್ತೇನೆ, or leave it empty."]],
+};
+
+function fieldError(form, name) {
+  const v = (form[name]?.value || "").trim();
+  for (const [ok, msg] of RULES[name] || []) if (!ok(v, form)) return msg;
+  return "";
+}
+
+function showFieldError(form, name, msg) {
+  const input = form[name];
+  const err = form.querySelector(`#err-${name}`);
+  if (!input || !err) return;
+  input.setAttribute("aria-invalid", msg ? "true" : "false");
+  err.textContent = msg;
+  err.hidden = !msg;
+}
+
+let lastAdded = null; // id of the word just added, for the thank-you page
+
 export function renderAdd(root, { place: preset } = {}) {
   const places = [...store.places.values()].sort((a, b) => a.name.localeCompare(b.name));
   const mine = readContributions();
+  const field = (name, label, input, hint = "") => `
+    <div class="field">
+      <label for="f-${name}">${label}</label>
+      ${input}
+      ${hint ? `<p class="hint" id="hint-${name}">${hint}</p>` : ""}
+      <p class="err" id="err-${name}" hidden></p>
+    </div>`;
+  const desc = (name, hint) => `aria-describedby="err-${name}${hint ? ` hint-${name}` : ""}"`;
+
   root.innerHTML = `
     <h1>Add a word</h1>
     <p class="lede">Know how people talk in your town? Add a word or phrase the way you would say it at home.</p>
     <form class="form" id="add" novalidate>
-      <div class="field">
-        <label for="f-place">Where is it said?</label>
-        <select id="f-place" name="place" required>
+      <div class="form-alert" id="form-alert" role="alert" tabindex="-1" hidden></div>
+      ${field("place", "Where is it said?", `
+        <select id="f-place" name="place" required ${desc("place")}>
           <option value="">Choose a place</option>
           ${places.map((p) => `<option value="${p.id}" ${p.id === preset ? "selected" : ""}>${esc(p.name)}</option>`).join("")}
           <option value="other">My town is not on the map</option>
-        </select>
-        <p class="err" hidden>Choose where this word is used.</p>
-      </div>
-      <div class="field" id="town-field" hidden>
-        <label for="f-town">Your town or village</label>
-        <input id="f-town" name="town" autocomplete="address-level2">
-        <p class="err" hidden>Write the name of your town.</p>
+        </select>`)}
+      <div id="town-field" hidden>
+        ${field("town", "Your town or village", `<input id="f-town" name="town" maxlength="60" autocomplete="address-level2" ${desc("town")}>`)}
       </div>
       <div class="two">
-        <div class="field">
-          <label for="f-kn">The word, in Kannada</label>
-          <input id="f-kn" name="kn" lang="kn" required placeholder="ಬತ್ತೆ">
-          <p class="err" hidden>Write the word in Kannada script.</p>
-        </div>
-        <div class="field">
-          <label for="f-tr">How to read it in English letters</label>
-          <input id="f-tr" name="tr" required placeholder="batte">
-          <p class="err" hidden>Write how it sounds, like batte.</p>
-        </div>
+        ${field("kn", "The word, in Kannada", `<input id="f-kn" name="kn" lang="kn" maxlength="80" required placeholder="ಬತ್ತೆ" ${desc("kn")}>`)}
+        ${field("tr", "How to read it in English letters", `<input id="f-tr" name="tr" maxlength="80" required placeholder="batte" autocapitalize="off" ${desc("tr")}>`)}
       </div>
-      <div class="field">
-        <label for="f-en">What it means in English</label>
-        <input id="f-en" name="english" required placeholder="I will come">
-        <p class="err" hidden>Write what the word means.</p>
-      </div>
-      <div class="field">
-        <label for="f-std">Standard Kannada for the same thing <span class="muted">(optional)</span></label>
-        <input id="f-std" name="std" lang="kn" placeholder="ಬರುತ್ತೇನೆ">
-      </div>
-      <div class="field">
-        <label for="f-note">An example or story behind it <span class="muted">(optional)</span></label>
-        <textarea id="f-note" name="note" placeholder="My grandmother says this when..."></textarea>
-      </div>
-      <div class="field">
-        <label for="f-name">Your name <span class="muted">(optional)</span></label>
-        <input id="f-name" name="name" autocomplete="name">
-        <p class="hint">Shown as the contributor if the word is added to the site.</p>
-      </div>
-      <div class="actions"><button class="btn" type="submit">Add this word</button></div>
+      ${field("english", "What it means in English", `<input id="f-en" name="english" maxlength="120" required placeholder="I will come" ${desc("english")}>`)}
+      ${field("std", `Standard Kannada for the same thing <span class="muted">(optional)</span>`, `<input id="f-std" name="std" lang="kn" maxlength="80" placeholder="ಬರುತ್ತೇನೆ" ${desc("std")}>`)}
+      ${field("note", `An example or story behind it <span class="muted">(optional)</span>`, `<textarea id="f-note" name="note" maxlength="500" placeholder="My grandmother says this when..." ${desc("note", true)}></textarea>`, `<span id="note-count">0</span> of 500 characters`)}
+      ${field("name", `Your name <span class="muted">(optional)</span>`, `<input id="f-name" name="name" maxlength="60" autocomplete="name" ${desc("name", true)}>`, "Shown as the contributor if the word is added to the site.")}
+      <div class="actions"><button class="btn" type="submit" id="add-submit">Add this word</button></div>
     </form>
-    <div id="done"></div>
-    ${mine.length ? `<h2>Words you added on this device</h2><div class="words">${mine.map((e) => wordCard(e, { showPlace: true })).join("")}</div>` : ""}
+    <h2>Words you added on this device</h2>
+    ${mine.length
+      ? `<div class="words">${mine.map((e) => wordCard(e, { showPlace: true })).join("")}</div>`
+      : `<p class="muted empty-line">Nothing yet. Words you add appear here and on the map, marked as added by you.</p>`}
   `;
+  wireAudio(root);
 
   const form = root.querySelector("#add");
-  const placeSel = form.place;
+  const alertBox = root.querySelector("#form-alert");
   const townField = root.querySelector("#town-field");
-  const syncTown = () => { townField.hidden = placeSel.value !== "other"; };
-  placeSel.addEventListener("change", syncTown);
+  const submitBtn = root.querySelector("#add-submit");
+  const noteCount = root.querySelector("#note-count");
+  const syncTown = () => {
+    townField.hidden = form.place.value !== "other";
+    if (townField.hidden) showFieldError(form, "town", "");
+  };
+  form.place.addEventListener("change", syncTown);
   syncTown();
+  form.note.addEventListener("input", () => { noteCount.textContent = form.note.value.length; });
+
+  // Check a field when the visitor leaves it, and clear its error as soon as it is fixed.
+  const touched = new Set();
+  for (const name of Object.keys(RULES)) {
+    const input = form[name];
+    input.addEventListener("blur", () => {
+      if (!input.value.trim() && !touched.has(name)) return; // don't nag on an untouched empty field
+      touched.add(name);
+      showFieldError(form, name, fieldError(form, name));
+    });
+    input.addEventListener(input.tagName === "SELECT" ? "change" : "input", () => {
+      if (input.getAttribute("aria-invalid") === "true") {
+        const msg = fieldError(form, name);
+        showFieldError(form, name, msg);
+        if (!msg && !form.querySelector('[aria-invalid="true"]')) alertBox.hidden = true;
+      }
+    });
+  }
 
   form.addEventListener("submit", (ev) => {
     ev.preventDefault();
-    const req = [form.place, form.kn, form.tr, form.english];
-    if (form.place.value === "other") req.push(form.town);
-    let firstBad = null;
-    for (const input of [form.place, form.town, form.kn, form.tr, form.english]) {
-      const bad = req.includes(input) && !input.value.trim();
-      input.setAttribute("aria-invalid", bad ? "true" : "false");
-      input.closest(".field").querySelector(".err").hidden = !bad;
-      if (bad && !firstBad) firstBad = input;
+    const bad = [];
+    for (const name of Object.keys(RULES)) {
+      if (name === "town" && form.place.value !== "other") continue;
+      const msg = fieldError(form, name);
+      showFieldError(form, name, msg);
+      touched.add(name);
+      if (msg) bad.push(name);
     }
-    if (firstBad) { firstBad.focus(); return; }
+    if (bad.length) {
+      alertBox.innerHTML = `<strong>${bad.length === 1 ? "One field needs" : `${bad.length} fields need`} fixing.</strong> The message under each one says what to change.`;
+      alertBox.className = "form-alert error";
+      alertBox.hidden = false;
+      form[bad[0]].focus();
+      return;
+    }
+    alertBox.hidden = true;
 
     const isOther = form.place.value === "other";
     const entry = {
@@ -495,33 +580,83 @@ export function renderAdd(root, { place: preset } = {}) {
       verified: false,
       contributed: true,
     };
-    const saved = saveContribution(entry);
-    map.refreshPinCounts();
-    const where = isOther ? entry.town : store.places.get(entry.place).name;
-    const json = JSON.stringify(entry, null, 2);
-    const done = root.querySelector("#done");
-    done.innerHTML = `
-      <div class="done" tabindex="-1">
-        <p><strong>${saved ? "Added." : "Could not save on this device."}</strong>
-        ${saved ? (isOther ? `Your word from ${esc(where)} is saved below.` : `It now shows on ${esc(where)}, marked as added by you.`) : "Your browser blocked storage. Copy the word instead."}</p>
-        <div class="actions">
-          ${isOther ? "" : `<a class="btn" href="#/place/${entry.place}">See ${esc(where)}</a>`}
-          <button class="btn ghost" type="button" id="copy">Copy as JSON</button>
-          ${CONFIG.GOOGLE_FORM_URL ? `<a class="btn ghost" href="${esc(CONFIG.GOOGLE_FORM_URL)}" target="_blank" rel="noopener">Send it to the project</a>` : ""}
-        </div>
-      </div>`;
-    done.querySelector(".done").focus();
-    done.querySelector("#copy").addEventListener("click", async (e) => {
-      try { await navigator.clipboard.writeText(json); e.target.textContent = "Copied"; }
-      catch { e.target.textContent = "Copy failed"; }
-    });
-    form.reset();
-    if (preset) form.place.value = preset;
-    syncTown();
+
+    setBusy(submitBtn, true, "Saving…");
+    // Saving is instant, but a short beat lets the visitor see it happen.
+    setTimeout(() => {
+      const saved = saveContribution(entry);
+      setBusy(submitBtn, false);
+      if (!saved) {
+        alertBox.innerHTML = `<strong>Could not save on this device.</strong> Your browser is blocking storage (private mode can do this). Copy the word instead and send it to the project.
+          <div class="actions"><button class="btn ghost" type="button" id="copy-failed">Copy as JSON</button></div>`;
+        alertBox.className = "form-alert error";
+        alertBox.hidden = false;
+        alertBox.focus();
+        alertBox.querySelector("#copy-failed").addEventListener("click", async () => {
+          const ok = await copyText(JSON.stringify(entry, null, 2));
+          toast(ok ? "Copied. Paste it in a message to the project." : "Could not copy. Select the text and copy it yourself.", ok ? "ok" : "error");
+        });
+        return;
+      }
+      map.refreshPinCounts();
+      lastAdded = entry.id;
+      try { sessionStorage.setItem("nk.lastAdded", entry.id); } catch { /* fine without it */ }
+      location.hash = "#/thanks";
+    }, 350);
   });
 
   map.setActive(preset || null);
   map.highlightZone(preset ? store.places.get(preset)?.zone : null);
+}
+
+// ---------- Thank you, after adding a word ----------
+export function renderThanks(root) {
+  let id = lastAdded;
+  if (!id) { try { id = sessionStorage.getItem("nk.lastAdded"); } catch { id = null; } }
+  const e = id ? entryById(id) : null;
+  map.setActive(e?.place || null);
+  map.highlightZone(e?.place ? store.places.get(e.place)?.zone : null);
+
+  if (!e) {
+    root.innerHTML = `<h1>Add a word</h1>` + emptyHtml({
+      title: "Nothing added yet",
+      body: "This page thanks you after you add a word. Add one from your town to see it here.",
+      actions: `<a class="btn" href="#/add">Add a word</a><a class="btn ghost" href="#/">Explore the map</a>`,
+    });
+    return;
+  }
+
+  const place = e.place ? store.places.get(e.place) : null;
+  const where = place ? place.name : e.town;
+  root.innerHTML = `
+    <div class="thanks" tabindex="-1">
+      <p class="thanks-kn" lang="kn" aria-hidden="true">ಧನ್ಯವಾದ!</p>
+      <h1>Thank you${e.contributor ? `, ${esc(e.contributor)}` : ""}!</h1>
+      <p class="lede">Your word from ${esc(where)} is saved${place ? ` and now shows on the ${esc(place.name)} page, marked as added by you` : " on this device"}.</p>
+    </div>
+    <div class="words">${wordCard(e, { showPlace: true })}</div>
+    <div class="next-steps">
+      <h2>What happens next</h2>
+      <ol class="steps">
+        <li>It is saved in this browser, so only you can see it for now.</li>
+        <li>${CONFIG.GOOGLE_FORM_URL ? "Send it to the project so it can be checked by a speaker and added for everyone." : "Copy it and send it to the project so it can be checked by a speaker and added for everyone."}</li>
+      </ol>
+    </div>
+    <div class="actions">
+      ${place ? `<a class="btn" href="#/place/${place.id}">See it on ${esc(place.name)}</a>` : ""}
+      <a class="btn ghost" href="#/add${place ? `?place=${place.id}` : ""}">Add another word</a>
+      <button class="btn ghost" type="button" id="copy">Copy as JSON</button>
+      ${CONFIG.GOOGLE_FORM_URL ? `<a class="btn ghost" href="${esc(CONFIG.GOOGLE_FORM_URL)}" target="_blank" rel="noopener">Send it to the project</a>` : ""}
+    </div>`;
+  wireAudio(root);
+  root.querySelector(".thanks").focus();
+  toast("Word added. Thank you!");
+  root.querySelector("#copy").addEventListener("click", async (ev) => {
+    const b = ev.currentTarget;
+    const ok = await copyText(JSON.stringify(e, null, 2));
+    if (ok) { b.textContent = "Copied ✓"; setTimeout(() => { b.textContent = "Copy as JSON"; }, 2000); }
+    toast(ok ? "Copied to your clipboard." : "Could not copy. Your browser blocked the clipboard.", ok ? "ok" : "error");
+  });
 }
 
 // ---------- How to say it ----------
@@ -640,8 +775,9 @@ export function renderSources(root) {
   root.innerHTML = `
     <h1>Sources</h1>
     <p class="lede">Every word links back to where it came from. Words marked “Not yet checked by a speaker” are waiting for a native speaker to confirm them.</p>
+    ${Object.keys(store.data.sources || {}).length ? "" : emptyHtml({ title: "No sources listed yet" })}
     <ol class="sources">
-      ${Object.entries(store.data.sources).map(([k, url]) => `
+      ${Object.entries(store.data.sources || {}).map(([k, url]) => `
         <li><a href="${esc(url)}" target="_blank" rel="noopener">${esc(SOURCE_NOTES[k] || k)}</a>
         <span class="muted">${counts[k] ? `, ${plural(counts[k], "word", "words")}` : ""}</span></li>`).join("")}
     </ol>

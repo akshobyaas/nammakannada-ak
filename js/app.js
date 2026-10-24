@@ -4,6 +4,7 @@ import { renderMap } from "./map.js";
 import * as views from "./views.js";
 import { renderRecord } from "./recorder.js";
 import { CONFIG } from "./config.js";
+import { loadingHtml } from "./ui.js";
 
 // ---------- Footer: year and contact ----------
 document.getElementById("year").textContent = String(new Date().getFullYear());
@@ -65,7 +66,7 @@ window.matchMedia("(max-width: 860px)").addEventListener("change", () => setMenu
 const cta = document.getElementById("sticky-cta");
 const ctaLink = document.getElementById("cta-main");
 function syncCta(section, id) {
-  const hide = section === "add" || section === "record";
+  const hide = section === "add" || section === "thanks" || section === "record";
   cta.hidden = hide;
   document.body.classList.toggle("has-cta", !hide);
   const place = section === "place" ? store.places.get(id) : null;
@@ -105,6 +106,8 @@ function route({ fromUser = false } = {}) {
       setNav("sources"); views.renderSources(view); break;
     case "guide":
       setNav("guide"); views.renderGuide(view); break;
+    case "thanks":
+      setNav("add"); views.renderThanks(view); break;
     case "record":
       setNav(null); renderRecord(view); break;
     default:
@@ -118,14 +121,38 @@ function route({ fromUser = false } = {}) {
   }
 }
 
+let started = false;
 async function start() {
+  view.innerHTML = loadingHtml("Loading words from across Karnataka…");
+  document.getElementById("map").innerHTML = `<div class="map-loading">${loadingHtml("Drawing the map…")}</div>`;
+  const slow = setTimeout(() => {
+    const s = view.querySelector(".state.loading span:last-child");
+    if (s) s.textContent = "Still loading… a slow connection can take a few seconds.";
+  }, 6000);
   try {
     await loadData();
   } catch (err) {
-    view.innerHTML = `<h1>The words did not load</h1>
-      <p class="lede">${views.esc(err.message)}. Open this site through a local server, for example <code>npx serve</code>, not by double-clicking index.html.</p>`;
+    clearTimeout(slow);
+    const offline = navigator.onLine === false;
+    const local = location.protocol === "file:";
+    document.getElementById("map").innerHTML = "";
+    view.innerHTML = `
+      <div class="state error" role="alert">
+        <p class="state-kn" lang="kn" aria-hidden="true">ಅಯ್ಯೋ!</p>
+        <h2>The words did not load</h2>
+        <p>${offline
+          ? "You seem to be offline. Check your internet connection and try again."
+          : local
+            ? "This site has to be opened through a web server, not by double-clicking index.html. Run <code>npx serve</code> in the project folder."
+            : `Something went wrong while loading the dictionary (${views.esc(err.message)}).`}</p>
+        <div class="actions"><button class="btn" type="button" id="retry">Try again</button></div>
+      </div>`;
+    view.querySelector("#retry").addEventListener("click", start);
     return;
   }
+  clearTimeout(slow);
+  if (started) { route(); return; }
+  started = true;
 
   renderMap(document.getElementById("map"), {
     onSelect: (id) => { location.hash = `#/place/${id}`; },

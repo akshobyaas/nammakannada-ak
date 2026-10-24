@@ -3,6 +3,8 @@
 // 2. Otherwise, the browser's built-in Kannada voice reads the Kannada spelling.
 //    Edge on Windows and Chrome on Android usually have one; desktop Chrome often does not.
 
+import { toast } from "./ui.js";
+
 let knVoice = null;
 let ready = null;
 
@@ -31,44 +33,60 @@ export const hasVoice = () => !!knVoice;
 let current = null;
 
 function speak(text, button) {
-  speechSynthesis.cancel();
+  stopCurrent();
   const u = new SpeechSynthesisUtterance(text);
   u.lang = knVoice.lang;
   try { u.voice = knVoice; } catch { /* lang alone still selects a Kannada voice */ }
   u.rate = 0.85;
-  button.classList.add("playing");
-  u.onend = u.onerror = () => button.classList.remove("playing");
+  setState(button, "playing");
+  u.onend = () => setState(button, null);
+  u.onerror = (ev) => setState(button, ev.error === "interrupted" || ev.error === "canceled" ? null : "error");
   speechSynthesis.speak(u);
 }
 
-function playFile(src, button) {
-  if (current) current.pause();
-  const a = new Audio(src);
-  current = a;
-  button.classList.add("playing");
-  a.onended = () => button.classList.remove("playing");
-  a.play().catch(() => {
-    button.classList.remove("playing");
-    button.textContent = "Recording missing";
-    button.disabled = true;
-  });
+// Loading -> playing -> idle, or an error flash if the clip cannot play.
+function setState(button, state) {
+  button.classList.remove("loading", "playing", "error");
+  button.removeAttribute("aria-busy");
+  if (state === "loading") { button.classList.add("loading"); button.setAttribute("aria-busy", "true"); }
+  if (state === "playing") button.classList.add("playing");
+  if (state === "error") {
+    button.classList.add("error");
+    setTimeout(() => button.classList.remove("error"), 1600);
+    toast("Could not play this sound. Check your connection and try again.", "error");
+  }
 }
 
-// Play several clips one after another (for entries with variant forms).
-function playClips(list, button) {
-  if (current) current.pause();
+function stopCurrent() {
+  if (current) { current.pause(); current.dispatchEvent(new Event("stopped")); }
   window.speechSynthesis?.cancel();
-  let i = 0;
-  button.classList.add("playing");
+}
+
+// Play one or more clips one after another (for entries with variant forms).
+function playClips(list, button) {
+  stopCurrent();
+  let i = 0, stopped = false;
+  setState(button, "loading");
   const next = () => {
-    if (i >= list.length) { button.classList.remove("playing"); return; }
+    if (stopped) return;
+    if (i >= list.length) { setState(button, null); return; }
     const a = new Audio(list[i++]);
     current = a;
-    a.onended = () => setTimeout(next, 250);
-    a.play().catch(() => button.classList.remove("playing"));
+    a.addEventListener("stopped", () => { stopped = true; setState(button, null); }, { once: true });
+    a.addEventListener("waiting", () => setState(button, "loading"));
+    a.addEventListener("playing", () => setState(button, "playing"));
+    a.addEventListener("ended", () => setTimeout(next, 250));
+    a.addEventListener("error", () => { stopped = true; setState(button, "error"); }, { once: true });
+    a.play().catch((err) => {
+      if (stopped || err?.name === "AbortError") return;
+      stopped = true;
+      setState(button, "error");
+    });
   };
   next();
 }
+
+const playFile = (src, button) => playClips([src], button);
 
 // Wire every sound button inside root. Buttons for the computer voice are hidden
 // when this browser has no Kannada voice.

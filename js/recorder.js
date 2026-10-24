@@ -2,6 +2,7 @@
 import { store, entriesFor } from "./store.js";
 import { esc } from "./views.js";
 import * as map from "./map.js";
+import { toast, emptyHtml, setBusy } from "./ui.js";
 
 function pickType() {
   const types = ["audio/webm;codecs=opus", "audio/webm", "audio/mp4", "audio/ogg;codecs=opus"];
@@ -21,8 +22,11 @@ export function renderRecord(root) {
   map.highlightZone(null);
   const type = pickType();
   if (!type || !navigator.mediaDevices?.getUserMedia) {
-    root.innerHTML = `<h1>Record words</h1>
-      <p class="lede">This browser cannot record audio. Open the site in Chrome or Edge.</p>`;
+    root.innerHTML = `<h1>Record words</h1>` + emptyHtml({
+      title: "This browser cannot record audio",
+      body: "Open the site in Chrome or Edge on a computer or phone with a microphone.",
+      actions: `<a class="btn" href="#/">Back to the map</a>`,
+    });
     return;
   }
 
@@ -65,8 +69,11 @@ export function renderRecord(root) {
 
     recBtn.addEventListener("click", async () => {
       if (recorder && recorder.state === "recording") { recorder.stop(); return; }
+      const setStatus = (text, kind = "") => { status.textContent = text; status.dataset.kind = kind; };
       try {
+        if (!stream) { setBusy(recBtn, true, "Asking for the microphone…"); setStatus("Allow the microphone when your browser asks."); }
         const s = await getMic();
+        setBusy(recBtn, false);
         const chunks = [];
         recorder = new MediaRecorder(s, { mimeType: type.mime });
         recorder.ondataavailable = (ev) => ev.data.size && chunks.push(ev.data);
@@ -77,18 +84,25 @@ export function renderRecord(root) {
           recBtn.textContent = "Record again";
           recBtn.classList.remove("live");
           playBtn.disabled = saveBtn.disabled = false;
-          status.textContent = `Recorded ${(blob.size / 1024).toFixed(0)} KB. Play it to check.`;
+          if (blob.size < 1000) { setStatus("Nothing was recorded. Check the microphone and try again.", "error"); playBtn.disabled = saveBtn.disabled = true; return; }
+          setStatus(`Recorded ${(blob.size / 1024).toFixed(0)} KB. Play it to check.`, "ok");
         };
         recorder.start();
         recBtn.textContent = "Stop";
         recBtn.classList.add("live");
-        status.textContent = "Recording…";
-      } catch {
-        status.textContent = "Microphone blocked. Allow microphone access in the address bar and try again.";
+        setStatus("Recording… press Stop when you are done.", "live");
+      } catch (err) {
+        setBusy(recBtn, false);
+        setStatus(err?.name === "NotFoundError"
+          ? "No microphone found. Plug one in and try again."
+          : "Microphone blocked. Allow microphone access in the address bar and try again.", "error");
       }
     });
 
-    playBtn.addEventListener("click", () => url && new Audio(url).play());
+    playBtn.addEventListener("click", () => {
+      if (!url) return;
+      new Audio(url).play().catch(() => toast("Could not play the recording. Record it again.", "error"));
+    });
 
     saveBtn.addEventListener("click", () => {
       if (!url) return;
@@ -97,6 +111,8 @@ export function renderRecord(root) {
       a.download = `${id}.${type.ext}`;
       a.click();
       status.textContent = `Saved as ${id}.${type.ext}. Move it into the audio folder.`;
+      status.dataset.kind = "ok";
+      toast(`Saved ${id}.${type.ext} to your downloads.`);
     });
   });
 }
