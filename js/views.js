@@ -445,6 +445,7 @@ const SOUND_CHANGES = [
   ["Dharwad", "An a is added after words, and akka becomes yakka.", ["dwd-03", "dwd-05"]],
   ["Havyaka (Sirsi)", "o and e at the start of a word become wa and ye: ole is said wale.", ["sir-14"]],
   ["Kundapura", "Long verb endings are cut short: hoguttene becomes hote.", ["kun-01"]],
+  ["Halakki (Ankola)", "An r before D turns into y, so eraDu becomes eyDu. Middle vowels drop: bāgilu becomes bāgla.", ["hlk-11", "hlk-04"]],
 ];
 
 function guideExample(ref) {
@@ -519,7 +520,7 @@ const SOURCE_NOTES = {
   mandya_thesis: "University of Mysore thesis on a Mandya dialect",
   mysuru_blog: "Mysuru Kannada as the prestige spoken variety",
   sarvam_voice: "Sarvam AI Bulbul: AI voice clips",
-  aarva_karnaata: "@aarva_karnaata on Instagram: Bagalkote Kannada words and phrases",
+  aarva_karnaata: "@aarva_karnaata on Instagram: Bagalkote and Halakki Kannada words and phrases",
   kannada_gothilla: "@kannada.gothilla on Instagram: Bengaluru slang",
   alar_voice: "Alar voice corpus: dictionary audio clips (GPL-2.0, generated with Google TTS)",
 };

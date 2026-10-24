@@ -193,6 +193,17 @@
    "needs_native_input": false
   },
   {
+   "id": "halakki",
+   "name": "Ankola (Halakki)",
+   "name_kn": "ಹಾಲಕ್ಕಿ ಕನ್ನಡ",
+   "zone": "coast",
+   "lat": 14.6612,
+   "lng": 74.3032,
+   "about": "Halakki Kannada, also called Acchagannada, is spoken by the Halakki community along the Uttara Kannada coast, in Karwar, Ankola, Kumta and Honnavar, by about 1.5 lakh people. They are mainly farmers, and the name may come from hālu (milk) + akki (rice), for a people who kept cattle and grew paddy.",
+   "source": "aarva_karnaata",
+   "needs_native_input": false
+  },
+  {
    "id": "belagavi",
    "name": "Belagavi",
    "name_kn": "ಬೆಳಗಾವಿ",
@@ -1925,6 +1936,424 @@
    "voice": {
     "dialect": "audio/ai/blr-14-dialect.mp3"
    }
+  },
+  {
+   "id": "hlk-01",
+   "place": "halakki",
+   "type": "grammar",
+   "english": "(in order) to drink",
+   "standard": {
+    "kn": "ಕುಡಿಯುವುದಕ್ಕೆ",
+    "tr": "kuDiyuvudakke"
+   },
+   "dialect": {
+    "kn": "ಕುಡೂಕೆ",
+    "tr": "kuDūke",
+    "kn_check": true
+   },
+   "note": "The long -uvudakke ending shrinks to -ūke. Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "hlk-02",
+   "place": "halakki",
+   "type": "grammar",
+   "english": "(in order) to stay",
+   "standard": {
+    "kn": "ಇರುವುದಕ್ಕೆ",
+    "tr": "iruvudakke"
+   },
+   "dialect": {
+    "kn": "ಇರೂಕೆ",
+    "tr": "irūke",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "hlk-03",
+   "place": "halakki",
+   "type": "grammar",
+   "english": "(in order) to do",
+   "standard": {
+    "kn": "ಮಾಡುವುದಕ್ಕೆ",
+    "tr": "māDuvudakke"
+   },
+   "dialect": {
+    "kn": "ಮಾಡೂಕೆ",
+    "tr": "māDūke",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "hlk-04",
+   "place": "halakki",
+   "type": "sound",
+   "english": "door",
+   "standard": {
+    "kn": "ಬಾಗಿಲು",
+    "tr": "bāgilu"
+   },
+   "dialect": {
+    "kn": "ಬಾಗ್ಲ",
+    "tr": "bāgla",
+    "kn_check": true
+   },
+   "note": "The middle vowel drops and the ending becomes a. Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "hlk-05",
+   "place": "halakki",
+   "type": "sound",
+   "english": "elephant's trunk",
+   "standard": {
+    "kn": "ಸೊಂಡಿಲು",
+    "tr": "sonDilu"
+   },
+   "dialect": {
+    "kn": "ಸೊಂಡ್ಲ",
+    "tr": "sonDla",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "hlk-06",
+   "place": "halakki",
+   "type": "sound",
+   "english": "month",
+   "standard": {
+    "kn": "ತಿಂಗಳು",
+    "tr": "tingaLu"
+   },
+   "dialect": {
+    "kn": "ತಿಂಗ್ಳ",
+    "tr": "tingLa",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "hlk-07",
+   "place": "halakki",
+   "type": "word",
+   "english": "to cry",
+   "standard": {
+    "kn": "ಅಳು",
+    "tr": "aLu"
+   },
+   "dialect": {
+    "kn": "ತೀಡು",
+    "tr": "tīDu",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "hlk-08",
+   "place": "halakki",
+   "type": "word",
+   "english": "sand",
+   "standard": {
+    "kn": "ಮರಳು",
+    "tr": "maraLu"
+   },
+   "dialect": {
+    "kn": "ಹೊಯ್ಗಿ",
+    "tr": "hoygi",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "hlk-09",
+   "place": "halakki",
+   "type": "word",
+   "english": "wild mango",
+   "standard": {
+    "kn": "ಕಾಡು ಮಾವು",
+    "tr": "kāDu māvu"
+   },
+   "dialect": {
+    "kn": "ಅಮ್ಟೆ",
+    "tr": "amTe",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "hlk-10",
+   "place": "halakki",
+   "type": "word",
+   "english": "snake",
+   "standard": {
+    "kn": "ಹಾವು",
+    "tr": "hāvu"
+   },
+   "dialect": {
+    "kn": "ಕೇರೆ",
+    "tr": "kēre",
+    "kn_check": true
+   },
+   "note": "In standard Kannada ಕೇರೆ is one kind of snake, the rat snake. Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "hlk-11",
+   "place": "halakki",
+   "type": "sound",
+   "english": "two",
+   "standard": {
+    "kn": "ಎರಡು",
+    "tr": "eraDu"
+   },
+   "dialect": {
+    "kn": "ಎಯ್ಡು",
+    "tr": "eyDu",
+    "kn_check": true
+   },
+   "note": "An r before D turns into y. Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "hlk-12",
+   "place": "halakki",
+   "type": "word",
+   "english": "bitter",
+   "standard": {
+    "kn": "ಕಹಿ",
+    "tr": "kahi"
+   },
+   "dialect": {
+    "kn": "ಕಯ್ಯ",
+    "tr": "kayya",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "hlk-13",
+   "place": "halakki",
+   "type": "word",
+   "english": "man",
+   "standard": {
+    "kn": "ಗಂಡಸು",
+    "tr": "ganDasu"
+   },
+   "dialect": {
+    "kn": "ಗನ್ಸು",
+    "tr": "gansu",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "hlk-14",
+   "place": "halakki",
+   "type": "word",
+   "english": "sky",
+   "standard": {
+    "kn": "ಬಾನು",
+    "tr": "bānu"
+   },
+   "dialect": {
+    "kn": "ಬೋನ",
+    "tr": "bōna",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "hlk-15",
+   "place": "halakki",
+   "type": "phrase",
+   "english": "he ate the sugarcane mother gave",
+   "standard": {
+    "kn": "ಅಮ್ಮ ಕೊಟ್ಟ ಕಬ್ಬು ಅವನು ತಿಂದುಬಿಟ್ಟ",
+    "tr": "amma koTTa kabbu avanu tindubiTTa"
+   },
+   "dialect": {
+    "kn": "ಅವ್ವಿ ಕೊಟ್ಟ ಕಬ್ಬು ಅಂವ ತಿಂದಿ ಹಾಕಿದ",
+    "tr": "avvi koTTa kabbu amva tindi hākida",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "hlk-16",
+   "place": "halakki",
+   "type": "phrase",
+   "english": "after we married, we were both happy",
+   "standard": {
+    "kn": "ಮದುವೆಯಾದ ಮೇಲೆ ನಾವಿಬ್ಬರು ಸುಖವಾಗಿದ್ದೆವು",
+    "tr": "maduveyāda mēle nāvibbaru sukhavāgiddevu"
+   },
+   "dialect": {
+    "kn": "ಮದಿವೆಯಾದ್ ಮೇಲೆ ನಾವಿಬ್ರು ಸುಕವಾಗಿದ್ರು",
+    "tr": "madiveyād mēle nāvibru sukavāgidru",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "hlk-17",
+   "place": "halakki",
+   "type": "phrase",
+   "english": "he jumped into the well",
+   "standard": {
+    "kn": "ಅವನು ಬಾವಿಗೆ ಹಾರಿದನು",
+    "tr": "avanu bāvige hāridanu"
+   },
+   "dialect": {
+    "kn": "ಅವಾ ಬಾವೀಲಿ ದೂಡು ಹಾಕಿದ",
+    "tr": "avā bāvīli dūDu hākida",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "hlk-18",
+   "place": "halakki",
+   "type": "phrase",
+   "english": "whatever we say, you never forget",
+   "standard": {
+    "kn": "ನಾವು ಏನನ್ನಾದರೂ ಹೇಳಿದರೆ ನೀವು ಮರೆಯುವುದೇ ಇಲ್ಲ",
+    "tr": "nāvu ēnannādarū hēLidare nīvu mareyuvudē illa"
+   },
+   "dialect": {
+    "kn": "ನಾವು ಏನಾದ್ರೂ ಹೇಳಿದ್ರೆ ನೀವು ಮರೂದೇ ಇಲ್ಲ",
+    "tr": "nāvu ēnādrū hēLidre nīvu marūdē illa",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "hlk-19",
+   "place": "halakki",
+   "type": "phrase",
+   "english": "my town is Kumta",
+   "standard": {
+    "kn": "ನನ್ನ ಊರು ಕುಮಟ",
+    "tr": "nanna ūru kumaTa"
+   },
+   "dialect": {
+    "kn": "ನನಗ್ ಕುಮ್ಟೆ ಆಯ್ತು",
+    "tr": "nanag kumTe āytu",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "hlk-20",
+   "place": "halakki",
+   "type": "phrase",
+   "english": "I don't know why you're laughing",
+   "standard": {
+    "kn": "ನೀನು ಏತಕ್ಕೆ ನಗುತ್ತಿರುವೆ ಎಂಬುದು ನನಗೆ ಗೊತ್ತಿಲ್ಲ",
+    "tr": "nīnu ētakke naguttiruve embudu nanage gottilla"
+   },
+   "dialect": {
+    "kn": "ನೀ ಎಂತಕ ನೆಗ್ಗೆಯಾಡ್ತೆ ನಂಗೊತ್ತಿಲ್ಲ",
+    "tr": "nī entaka neggeyāDte nangottilla",
+    "kn_check": true
+   },
+   "note": "ಎಂತಕ (why) is close to Havyaka ಎಂತಕೆ. Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "hlk-21",
+   "place": "halakki",
+   "type": "phrase",
+   "english": "my second daughter is at her husband's house",
+   "standard": {
+    "kn": "ನನ್ನ ಎರಡನೆಯ ಮಗಳು ಗಂಡನ ಮನೆಯಲ್ಲಿದ್ದಾಳೆ",
+    "tr": "nanna eraDaneya magaLu ganDana maneyalliddāLe"
+   },
+   "dialect": {
+    "kn": "ನಂದು ಎಯ್ಡನೆ ಮಗ್ಳು ಗಂಡನ್ ಮನೇಲ್ ಅದೆ",
+    "tr": "nandu eyDane magLu ganDan manēl ade",
+    "kn_check": true
+   },
+   "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
+  },
+  {
+   "id": "hlk-22",
+   "place": "halakki",
+   "type": "phrase",
+   "english": "snakes are afraid of the eagle",
+   "standard": {
+    "kn": "ಗರುಡವನ್ನು ಕಂಡರೆ ಹಾವು ಹೆದರುತ್ತದೆ",
+    "tr": "garuDavannu kanDare hāvu hedaruttade"
+   },
+   "dialect": {
+    "kn": "ಗಯ್ಡನ್ ಕಂಡ್ರೆ ಹಾವು ಹೆದರ್ತದೆ",
+    "tr": "gayDan kanDre hāvu hedartade",
+    "kn_check": true
+   },
+   "note": "ಗರುಡ becomes ಗಯ್ಡ: the same r-to-y change as ಎರಡು to ಎಯ್ಡು. Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
+   "source": "aarva_karnaata",
+   "confidence": "informal",
+   "verified": false
   }
  ],
  "compare_sets": [
@@ -1975,6 +2404,22 @@
     "mdy-01",
     "blr-13",
     "blr-04"
+   ]
+  },
+  {
+   "id": "cmp-man",
+   "english": "man",
+   "entries": [
+    "bgk-06",
+    "hlk-13"
+   ]
+  },
+  {
+   "id": "cmp-door",
+   "english": "door",
+   "entries": [
+    "bgk-10",
+    "hlk-04"
    ]
   }
  ]
