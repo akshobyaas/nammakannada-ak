@@ -22,7 +22,8 @@
   "mandya_quora": "https://www.quora.com/What-are-some-words-in-local-slang-to-address-people-in-Bengaluru",
   "mandya_thesis": "https://indcat.inflibnet.ac.in/index.php/thesesrequest?id=th_866",
   "mysuru_blog": "https://speakfluentli.com/kannada/blog/bangalore-tech-kannada",
-  "alar_voice": "https://github.com/Aditya-ds-1806/Alar-voice-corpus"
+  "alar_voice": "https://github.com/Aditya-ds-1806/Alar-voice-corpus",
+  "sarvam_voice": "https://www.sarvam.ai/text-to-speech"
  },
  "zones": [
   {
@@ -255,6 +256,10 @@
     "standard": [
      "audio/alar/125762.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/sir-01-dialect.mp3",
+    "standard": "audio/ai/sir-01-standard.mp3"
    }
   },
   {
@@ -280,6 +285,10 @@
     "standard": [
      "audio/alar/155282.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/sir-02-dialect.mp3",
+    "standard": "audio/ai/sir-02-standard.mp3"
    }
   },
   {
@@ -303,6 +312,10 @@
     "standard": [
      "audio/alar/28484.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/sir-03-dialect.mp3",
+    "standard": "audio/ai/sir-03-standard.mp3"
    }
   },
   {
@@ -326,6 +339,10 @@
     "dialect": [
      "audio/alar/106961.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/sir-04-dialect.mp3",
+    "standard": "audio/ai/sir-04-standard.mp3"
    }
   },
   {
@@ -344,7 +361,11 @@
    "note": "Also hogti, hovthe.",
    "source": "havyaka",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/sir-05-dialect.mp3",
+    "standard": "audio/ai/sir-05-standard.mp3"
+   }
   },
   {
    "id": "sir-06",
@@ -361,7 +382,11 @@
    },
    "source": "havyaka",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/sir-06-dialect.mp3",
+    "standard": "audio/ai/sir-06-standard.mp3"
+   }
   },
   {
    "id": "sir-07",
@@ -384,6 +409,10 @@
     "standard": [
      "audio/alar/20013.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/sir-07-dialect.mp3",
+    "standard": "audio/ai/sir-07-standard.mp3"
    }
   },
   {
@@ -403,7 +432,11 @@
    "note": "Uttara Kannada Havyakas say banju; Dakshina Kannada Havyakas say baindu. Women are referred to with 'adu' (neuter) in parts of Uttara Kannada.",
    "source": "havyaka",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/sir-08-dialect.mp3",
+    "standard": "audio/ai/sir-08-standard.mp3"
+   }
   },
   {
    "id": "sir-09",
@@ -427,6 +460,10 @@
     "dialect": [
      "audio/alar/47020.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/sir-09-dialect.mp3",
+    "standard": "audio/ai/sir-09-standard.mp3"
    }
   },
   {
@@ -454,6 +491,10 @@
     "standard": [
      "audio/alar/117905.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/sir-10-dialect.mp3",
+    "standard": "audio/ai/sir-10-standard.mp3"
    }
   },
   {
@@ -477,6 +518,10 @@
     "standard": [
      "audio/alar/87367.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/sir-11-dialect.mp3",
+    "standard": "audio/ai/sir-11-standard.mp3"
    }
   },
   {
@@ -502,6 +547,10 @@
     "standard": [
      "audio/alar/91026.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/sir-12-dialect.mp3",
+    "standard": "audio/ai/sir-12-standard.mp3"
    }
   },
   {
@@ -527,6 +576,10 @@
     "standard": [
      "audio/alar/86926.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/sir-13-dialect.mp3",
+    "standard": "audio/ai/sir-13-standard.mp3"
    }
   },
   {
@@ -552,6 +605,9 @@
      "audio/alar/27379.mp3",
      "audio/alar/29078.mp3"
     ]
+   },
+   "voice": {
+    "standard": "audio/ai/sir-14-standard.mp3"
    }
   },
   {
@@ -576,6 +632,9 @@
      "audio/alar/10000.mp3",
      "audio/alar/129917.mp3"
     ]
+   },
+   "voice": {
+    "standard": "audio/ai/sir-15-standard.mp3"
    }
   },
   {
@@ -594,7 +653,11 @@
    "note": "Shortening words is the most striking feature of Kundapura Kannada.",
    "source": "kundapura_prajavani",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/kun-01-dialect.mp3",
+    "standard": "audio/ai/kun-01-standard.mp3"
+   }
   },
   {
    "id": "kun-02",
@@ -620,6 +683,10 @@
     "standard": [
      "audio/alar/39394.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/kun-02-dialect.mp3",
+    "standard": "audio/ai/kun-02-standard.mp3"
    }
   },
   {
@@ -646,6 +713,10 @@
     "standard": [
      "audio/alar/58776.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/kun-03-dialect.mp3",
+    "standard": "audio/ai/kun-03-standard.mp3"
    }
   },
   {
@@ -664,7 +735,11 @@
    },
    "source": "kundapura_blog",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/kun-04-dialect.mp3",
+    "standard": "audio/ai/kun-04-standard.mp3"
+   }
   },
   {
    "id": "kun-05",
@@ -682,7 +757,11 @@
    },
    "source": "kundapura_blog",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/kun-05-dialect.mp3",
+    "standard": "audio/ai/kun-05-standard.mp3"
+   }
   },
   {
    "id": "kun-06",
@@ -701,7 +780,11 @@
    "note": "Source spells it 'adilla'.",
    "source": "kundapura_blog",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/kun-06-dialect.mp3",
+    "standard": "audio/ai/kun-06-standard.mp3"
+   }
   },
   {
    "id": "kun-07",
@@ -725,6 +808,10 @@
     "dialect": [
      "audio/alar/106944.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/kun-07-dialect.mp3",
+    "standard": "audio/ai/kun-07-standard.mp3"
    }
   },
   {
@@ -743,7 +830,11 @@
    },
    "source": "kundapura_blog",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/kun-08-dialect.mp3",
+    "standard": "audio/ai/kun-08-standard.mp3"
+   }
   },
   {
    "id": "kun-09",
@@ -761,7 +852,11 @@
    },
    "source": "kundapura_blog",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/kun-09-dialect.mp3",
+    "standard": "audio/ai/kun-09-standard.mp3"
+   }
   },
   {
    "id": "dwd-01",
@@ -785,6 +880,10 @@
     "standard": [
      "audio/alar/117080.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/dwd-01-dialect.mp3",
+    "standard": "audio/ai/dwd-01-standard.mp3"
    }
   },
   {
@@ -809,6 +908,10 @@
     "standard": [
      "audio/alar/112371.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/dwd-02-dialect.mp3",
+    "standard": "audio/ai/dwd-02-standard.mp3"
    }
   },
   {
@@ -828,7 +931,11 @@
    "note": "An 'a' is added after words.",
    "source": "ciil_dharwad",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/dwd-03-dialect.mp3",
+    "standard": "audio/ai/dwd-03-standard.mp3"
+   }
   },
   {
    "id": "dwd-04",
@@ -855,6 +962,10 @@
     "standard": [
      "audio/alar/112857.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/dwd-04-dialect.mp3",
+    "standard": "audio/ai/dwd-04-standard.mp3"
    }
   },
   {
@@ -879,6 +990,10 @@
     "standard": [
      "audio/alar/1750.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/dwd-05-dialect.mp3",
+    "standard": "audio/ai/dwd-05-standard.mp3"
    }
   },
   {
@@ -906,6 +1021,10 @@
     "standard": [
      "audio/alar/51159.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/bgm-01-dialect.mp3",
+    "standard": "audio/ai/bgm-01-standard.mp3"
    }
   },
   {
@@ -933,6 +1052,10 @@
     "standard": [
      "audio/alar/63305.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/bgm-02-dialect.mp3",
+    "standard": "audio/ai/bgm-02-standard.mp3"
    }
   },
   {
@@ -957,6 +1080,10 @@
     "dialect": [
      "audio/alar/53459.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/bgm-03-dialect.mp3",
+    "standard": "audio/ai/bgm-03-standard.mp3"
    }
   },
   {
@@ -982,6 +1109,10 @@
      "audio/alar/28968.mp3",
      "audio/alar/91379.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/bgm-04-dialect.mp3",
+    "standard": "audio/ai/bgm-04-standard.mp3"
    }
   },
   {
@@ -1009,6 +1140,10 @@
     "standard": [
      "audio/alar/46693.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/bdr-01-dialect.mp3",
+    "standard": "audio/ai/bdr-01-standard.mp3"
    }
   },
   {
@@ -1024,7 +1159,10 @@
    },
    "source": "bengaluru",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/blr-01-dialect.mp3"
+   }
   },
   {
    "id": "blr-02",
@@ -1047,6 +1185,10 @@
     "standard": [
      "audio/alar/75688.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/blr-02-dialect.mp3",
+    "standard": "audio/ai/blr-02-standard.mp3"
    }
   },
   {
@@ -1062,7 +1204,10 @@
    },
    "source": "bengaluru",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/blr-03-dialect.mp3"
+   }
   },
   {
    "id": "blr-04",
@@ -1082,6 +1227,9 @@
     "dialect": [
      "audio/alar/137701.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/blr-04-dialect.mp3"
    }
   },
   {
@@ -1102,6 +1250,9 @@
     "dialect": [
      "audio/alar/63233.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/blr-05-dialect.mp3"
    }
   },
   {
@@ -1123,6 +1274,9 @@
     "dialect": [
      "audio/alar/112997.mp3"
     ]
+   },
+   "voice": {
+    "dialect": "audio/ai/blr-06-dialect.mp3"
    }
   },
   {
@@ -1138,7 +1292,10 @@
    },
    "source": "bengaluru",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/blr-07-dialect.mp3"
+   }
   },
   {
    "id": "blr-08",
@@ -1153,7 +1310,10 @@
    },
    "source": "bengaluru",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/blr-08-dialect.mp3"
+   }
   },
   {
    "id": "blr-09",
@@ -1169,7 +1329,10 @@
    "note": "Classic Kanglish.",
    "source": "bengaluru",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/blr-09-dialect.mp3"
+   }
   },
   {
    "id": "blr-10",
@@ -1185,7 +1348,10 @@
    "note": "Popularised by a Bengaluru radio station.",
    "source": "bengaluru",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/blr-10-dialect.mp3"
+   }
   },
   {
    "id": "blr-11",
@@ -1199,7 +1365,10 @@
    },
    "source": "kanglish",
    "confidence": "reference",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/blr-11-dialect.mp3"
+   }
   },
   {
    "id": "mdy-01",
@@ -1217,7 +1386,11 @@
    "note": "Mandya speech described as having a rural touch with native words.",
    "source": "mandya_quora",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/mdy-01-dialect.mp3",
+    "standard": "audio/ai/mdy-01-standard.mp3"
+   }
   }
  ],
  "compare_sets": [
