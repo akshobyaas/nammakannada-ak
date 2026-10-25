@@ -134,6 +134,10 @@ function metaFor(section, id) {
     case "thanks": return ["Thank you for adding a word", "Your word has been added to Namma Kannada on this device."];
     case "sources": return ["Sources and credits",
       "Where every word on Namma Kannada comes from: dictionaries, research, articles and native speakers, plus credits for the voices and the map."];
+    case "privacy": return ["Privacy policy (draft)",
+      "How Namma Kannada handles your data: no tracking cookies, cookie-free Vercel analytics, and words you add stay on your own device."];
+    case "terms": return ["Terms of use (draft)",
+      "The terms for using Namma Kannada: an educational project, unchecked dialect entries, sensitive content, and how contributed words are used."];
     case "record": return ["Record Kannada words",
       "Record each word in your own voice so the site can play the real local accent of each place."];
     default: return ["Page not found", "This page does not exist on Namma Kannada."];
@@ -170,6 +174,10 @@ function route({ fromUser = false } = {}) {
       setNav("guide"); views.renderGuide(view); break;
     case "thanks":
       setNav("add"); views.renderThanks(view); break;
+    case "privacy":
+      setNav(null); views.renderPrivacy(view); break;
+    case "terms":
+      setNav(null); views.renderTerms(view); break;
     case "record":
       setNav(null); renderRecord(view); break;
     default:

@@ -790,6 +790,122 @@ export function renderSources(root) {
   map.highlightZone(null);
 }
 
+// ---------- Privacy policy and terms (drafts for the owner to review) ----------
+const LEGAL_UPDATED = "25 October 2026";
+const REPO_URL = "https://github.com/akshobyaas/nammakannada-ak";
+
+function draftNote() {
+  return `<div class="draft-note" role="note">
+    <strong>Draft for review.</strong> This page was drafted to describe how the site works today. It is not legal advice
+    and has not been checked by a lawyer. Lines marked <span class="review">Review</span> need a decision from the site owner.
+  </div>`;
+}
+
+function contactLine() {
+  const c = CONFIG.CONTACT || {};
+  if (c.email) return `email <a href="mailto:${esc(c.email)}">${esc(c.email)}</a>`;
+  return `open an issue on the project's <a href="${REPO_URL}/issues" target="_blank" rel="noopener">GitHub page</a>`;
+}
+
+export function renderPrivacy(root) {
+  const form = !!CONFIG.GOOGLE_FORM_URL;
+  root.innerHTML = `
+    <article class="legal">
+      <h1>Privacy policy</h1>
+      <p class="muted">Last updated ${LEGAL_UPDATED}</p>
+      ${draftNote()}
+      <p class="lede">Namma Kannada is a free, non-commercial project that documents how Kannada is spoken across Karnataka. It collects as little as possible.</p>
+
+      <h2>The short version</h2>
+      <ul>
+        <li>No accounts, no ads, and no tracking cookies.</li>
+        <li>Words you add and recordings you make stay on your own device unless you choose to send them.</li>
+        <li>We count visits with Vercel Web Analytics, which does not use cookies and does not store your IP address.</li>
+        <li>We never sell or share personal data.</li>
+      </ul>
+
+      <h2>What happens when you visit</h2>
+      <p>The site is hosted by Vercel. Like any web host, Vercel's servers receive your IP address and browser details to deliver the pages to you. See <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Vercel's privacy policy</a>.</p>
+      <p>All fonts, sounds and data are served from this site itself. Your browser does not contact Google Fonts or any other third party while you browse.</p>
+
+      <h2>Analytics</h2>
+      <p>We use <a href="https://vercel.com/docs/analytics/privacy-policy" target="_blank" rel="noopener">Vercel Web Analytics</a> to see how many people visit and which parts they use. For each page view it records the page address, the referring site, an approximate location (country, region, city), and your device type, operating system and browser.</p>
+      <p>It does not use cookies. Visitors are told apart by a hash made from the request rather than a cookie, Vercel discards visitor sessions after 24 hours, and data points are not tied to your IP address. Blocking the script with a content blocker does not affect how the site works.</p>
+
+      <h2>Words you add</h2>
+      <p>When you use <a href="#/add">Add a word</a>, what you type, including your name if you give one, is saved only in your browser's local storage on this device. It is not sent to us. You can remove it at any time by clearing this site's data in your browser settings.</p>
+      ${form
+        ? `<p>If you press “Send it to the project”, you are taken to a Google Form. What you submit there is stored by Google and shared with the project owner, under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a>. We use it only to review your word and, if you agree, publish it with credit.</p>`
+        : `<p>“Copy as JSON” copies your word so you can send it to the project yourself. Whatever you send is used only to review the word and, with your agreement, publish it with credit.</p>`}
+
+      <h2>Recordings</h2>
+      <p>The <a href="#/record">Record words</a> page asks for your microphone only when you press Record. Recordings stay in your browser and are saved to your own downloads folder. Nothing is uploaded.</p>
+
+      <h2>Cookies and storage</h2>
+      <p>The site sets no cookies. It uses your browser's local storage only for the words you add, which is needed for that feature to work. Because there are no tracking cookies, there is no cookie banner.</p>
+
+      <h2>Links to other sites</h2>
+      <p>Word sources link to sites such as Instagram, Wikipedia and news websites. They have their own privacy policies, which apply once you follow a link.</p>
+
+      <h2>Children</h2>
+      <p>The site is suitable for all ages and does not knowingly collect personal data from anyone. <span class="review">Review</span> Some entries document caste terms, insults or violence as part of the language record; these are labelled or hidden behind a tap.</p>
+
+      <h2>Your rights and contact</h2>
+      <p>Because we hold no personal data on our servers, there is usually nothing to access or delete. If you sent us a word and want it removed or your name taken off, ${contactLine()}.</p>
+      <p><span class="review">Review</span> Add the name of the person responsible for the site and, if you want one, a contact email in <code>js/config.js</code>.</p>
+
+      <h2>Changes</h2>
+      <p>If this policy changes, the new version will be posted here with a new date.</p>
+    </article>`;
+  map.setActive(null);
+  map.highlightZone(null);
+}
+
+export function renderTerms(root) {
+  root.innerHTML = `
+    <article class="legal">
+      <h1>Terms of use</h1>
+      <p class="muted">Last updated ${LEGAL_UPDATED}</p>
+      ${draftNote()}
+      <p class="lede">By using Namma Kannada you agree to these terms. If you do not agree, please do not use the site.</p>
+
+      <h2>What this site is</h2>
+      <p>Namma Kannada is a free, non-commercial educational project, built for the Kannada Digital Innovation Hackathon 2026, that records how spoken Kannada varies across Karnataka.</p>
+
+      <h2>Accuracy</h2>
+      <p>Words come from published dictionaries, research, articles, social media posts and native speakers. Each one links to its source. Most have <strong>not yet been checked by a speaker</strong> and are marked that way. Spellings, meanings and pronunciations may be wrong. Please do not rely on the site for anything where accuracy matters.</p>
+      <p>Computer voices (Sarvam AI's Bulbul and the Alar voice corpus) read words in a standard accent and can mispronounce them. They are not recordings of local speakers.</p>
+
+      <h2>Sensitive content</h2>
+      <p>Language includes words about caste, community and violence, and insults. Some are included because they are part of how people actually speak. They are documented, not endorsed. Such entries are labelled, and the strongest are hidden until you tap to show them.</p>
+
+      <h2>Words you contribute</h2>
+      <ul>
+        <li>Only send words and stories you know first-hand or have the right to share.</li>
+        <li>Do not include other people's personal details, or anything hateful, abusive or meant to harm a group.</li>
+        <li>By sending a word to the project, you allow it to be published on the site and in its open dataset, credited with the name you give, or without a name if you leave it blank.</li>
+        <li>We may edit, correct or decline any contribution.</li>
+      </ul>
+
+      <h2>Content and credits</h2>
+      <ul>
+        <li>Short dialect examples are quoted from the sources listed on the <a href="#/sources">Sources</a> page for documentation. Those sources keep their own rights.</li>
+        <li>Map boundaries come from <a href="https://github.com/udit-001/india-maps-data" target="_blank" rel="noopener">india-maps-data</a>. Some sound clips come from the <a href="https://github.com/Aditya-ds-1806/Alar-voice-corpus" target="_blank" rel="noopener">Alar voice corpus</a> (GPL-2.0).</li>
+        <li>Fonts (Gluten, Fredoka, Baloo Tamma 2) are used under the SIL Open Font License.</li>
+        <li><span class="review">Review</span> Choose a licence for the site's own code and dataset, for example MIT for the code and CC BY-SA 4.0 for the data, and state it here and in the GitHub repo.</li>
+      </ul>
+
+      <h2>No warranty</h2>
+      <p>The site is provided “as is”, without any warranty. To the extent the law allows, the project and its creator are not liable for any loss arising from use of the site or reliance on its content.</p>
+
+      <h2>Changes and contact</h2>
+      <p>These terms may change; the date above shows the latest version. For questions, ${contactLine()}.</p>
+      <p><span class="review">Review</span> Add the governing law (for example, the laws of India) if you want one stated.</p>
+    </article>`;
+  map.setActive(null);
+  map.highlightZone(null);
+}
+
 export function renderNotFound(root) {
   root.innerHTML = `
     <div class="notfound">

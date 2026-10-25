@@ -47,8 +47,8 @@
   <link rel="preload" href="fonts/baloo-tamma-2-kannada-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="modulepreload" href="js/map-data.js">
   <link rel="modulepreload" href="js/views.js">
-  <link rel="stylesheet" href="css/fonts.css?v=10">
-  <link rel="stylesheet" href="css/style.css?v=10">
+  <link rel="stylesheet" href="css/fonts.css?v=11">
+  <link rel="stylesheet" href="css/style.css?v=11">
 </head>
 <body>
   <a class="skip" href="#panel">Skip to content</a>
@@ -97,7 +97,9 @@
         <p class="foot-line">
           © <span id="year">2026</span> Namma Kannada ·
           Built for the Kannada Digital Innovation Hackathon ·
-          <a href="#/sources">Sources and credits</a>
+          <a href="#/sources">Sources and credits</a> ·
+          <a href="#/privacy">Privacy</a> ·
+          <a href="#/terms">Terms</a>
         </p>
       </footer>
     </section>
@@ -110,6 +112,13 @@
   </div>
 
   <noscript><p class="noscript">Namma Kannada needs JavaScript to show the map and words.</p></noscript>
-  <script type="module" src="js/app.js?v=10"></script>
+  <script type="module" src="js/app.js?v=11"></script>
+
+  <!-- Vercel Web Analytics: cookie-free visit counts. Turn it on in the Vercel project's Analytics tab;
+       until then this script returns 404 and nothing is recorded. -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

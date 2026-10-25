@@ -517,6 +517,24 @@ table.guide thead th { background: var(--ink); color: var(--yellow); border-top:
 .contact .lbl { min-width: 5.5rem; font-weight: 800; color: var(--yellow-pale); }
 .contact a { color: var(--white); font-weight: 700; }
 
+/* ---------- Privacy and terms ---------- */
+.legal { max-width: 44rem; }
+.legal h2 { font-size: var(--s1); margin: 30px 0 8px; }
+.legal p, .legal li { max-width: 42em; }
+.legal ul { padding-left: 1.2em; }
+.legal li { margin-bottom: 6px; }
+.legal a { color: var(--yellow); }
+.draft-note {
+  margin: 14px 0 20px; padding: 12px 16px;
+  background: var(--yellow); color: var(--ink);
+  border: var(--line); border-radius: var(--r); box-shadow: var(--shadow-sm);
+}
+.review {
+  display: inline-block; padding: 0 8px; margin-right: 4px; border-radius: 3px;
+  background: var(--ink); color: var(--yellow); font-weight: 800; font-size: 0.8em; letter-spacing: 0.03em; text-transform: uppercase;
+}
+.draft-note .review { font-size: 0.75em; }
+
 /* ---------- 404 ---------- */
 .notfound { padding: 10px 0 20px; }
 .nf-code {
