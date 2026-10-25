@@ -1976,7 +1976,11 @@
    "note": "The long -uvudakke ending shrinks to -ūke. Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/hlk-01-dialect.mp3",
+    "standard": "audio/ai/hlk-01-standard.mp3"
+   }
   },
   {
    "id": "hlk-02",
@@ -1995,7 +1999,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/hlk-02-dialect.mp3",
+    "standard": "audio/ai/hlk-02-standard.mp3"
+   }
   },
   {
    "id": "hlk-03",
@@ -2014,7 +2022,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/hlk-03-dialect.mp3",
+    "standard": "audio/ai/hlk-03-standard.mp3"
+   }
   },
   {
    "id": "hlk-04",
@@ -2033,7 +2045,11 @@
    "note": "The middle vowel drops and the ending becomes a. Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/hlk-04-dialect.mp3",
+    "standard": "audio/ai/hlk-04-standard.mp3"
+   }
   },
   {
    "id": "hlk-05",
@@ -2052,7 +2068,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/hlk-05-dialect.mp3",
+    "standard": "audio/ai/hlk-05-standard.mp3"
+   }
   },
   {
    "id": "hlk-06",
@@ -2071,7 +2091,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/hlk-06-dialect.mp3",
+    "standard": "audio/ai/hlk-06-standard.mp3"
+   }
   },
   {
    "id": "hlk-07",
@@ -2090,7 +2114,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/hlk-07-dialect.mp3",
+    "standard": "audio/ai/hlk-07-standard.mp3"
+   }
   },
   {
    "id": "hlk-08",
@@ -2109,7 +2137,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/hlk-08-dialect.mp3",
+    "standard": "audio/ai/hlk-08-standard.mp3"
+   }
   },
   {
    "id": "hlk-09",
@@ -2128,7 +2160,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/hlk-09-dialect.mp3",
+    "standard": "audio/ai/hlk-09-standard.mp3"
+   }
   },
   {
    "id": "hlk-10",
@@ -2147,7 +2183,11 @@
    "note": "In standard Kannada ಕೇರೆ is one kind of snake, the rat snake. Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/hlk-10-dialect.mp3",
+    "standard": "audio/ai/hlk-10-standard.mp3"
+   }
   },
   {
    "id": "hlk-11",
@@ -2166,7 +2206,11 @@
    "note": "An r before D turns into y. Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/hlk-11-dialect.mp3",
+    "standard": "audio/ai/hlk-11-standard.mp3"
+   }
   },
   {
    "id": "hlk-12",
@@ -2185,7 +2229,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/hlk-12-dialect.mp3",
+    "standard": "audio/ai/hlk-12-standard.mp3"
+   }
   },
   {
    "id": "hlk-13",
@@ -2204,7 +2252,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/hlk-13-dialect.mp3",
+    "standard": "audio/ai/hlk-13-standard.mp3"
+   }
   },
   {
    "id": "hlk-14",
@@ -2223,7 +2275,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/hlk-14-dialect.mp3",
+    "standard": "audio/ai/hlk-14-standard.mp3"
+   }
   },
   {
    "id": "hlk-15",
@@ -2242,7 +2298,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/hlk-15-dialect.mp3",
+    "standard": "audio/ai/hlk-15-standard.mp3"
+   }
   },
   {
    "id": "hlk-16",
@@ -2261,7 +2321,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/hlk-16-dialect.mp3",
+    "standard": "audio/ai/hlk-16-standard.mp3"
+   }
   },
   {
    "id": "hlk-17",
@@ -2280,7 +2344,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/hlk-17-dialect.mp3",
+    "standard": "audio/ai/hlk-17-standard.mp3"
+   }
   },
   {
    "id": "hlk-18",
@@ -2299,7 +2367,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/hlk-18-dialect.mp3",
+    "standard": "audio/ai/hlk-18-standard.mp3"
+   }
   },
   {
    "id": "hlk-19",
@@ -2318,7 +2390,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/hlk-19-dialect.mp3",
+    "standard": "audio/ai/hlk-19-standard.mp3"
+   }
   },
   {
    "id": "hlk-20",
@@ -2337,7 +2413,11 @@
    "note": "ಎಂತಕ (why) is close to Havyaka ಎಂತಕೆ. Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/hlk-20-dialect.mp3",
+    "standard": "audio/ai/hlk-20-standard.mp3"
+   }
   },
   {
    "id": "hlk-21",
@@ -2356,7 +2436,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/hlk-21-dialect.mp3",
+    "standard": "audio/ai/hlk-21-standard.mp3"
+   }
   },
   {
    "id": "hlk-22",
@@ -2375,7 +2459,11 @@
    "note": "ಗರುಡ becomes ಗಯ್ಡ: the same r-to-y change as ಎರಡು to ಎಯ್ಡು. Transcribed from an @aarva_karnaata Instagram post on Halakki Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/hlk-22-dialect.mp3",
+    "standard": "audio/ai/hlk-22-standard.mp3"
+   }
   },
   {
    "id": "mal-01",
@@ -2394,7 +2482,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/mal-01-dialect.mp3",
+    "standard": "audio/ai/mal-01-standard.mp3"
+   }
   },
   {
    "id": "mal-02",
@@ -2413,7 +2505,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/mal-02-dialect.mp3",
+    "standard": "audio/ai/mal-02-standard.mp3"
+   }
   },
   {
    "id": "mal-03",
@@ -2432,7 +2528,11 @@
    "note": "Kānu is also the Malnad word for a protected forest grove. Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/mal-03-dialect.mp3",
+    "standard": "audio/ai/mal-03-standard.mp3"
+   }
   },
   {
    "id": "mal-04",
@@ -2451,7 +2551,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/mal-04-dialect.mp3",
+    "standard": "audio/ai/mal-04-standard.mp3"
+   }
   },
   {
    "id": "mal-05",
@@ -2470,7 +2574,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/mal-05-dialect.mp3",
+    "standard": "audio/ai/mal-05-standard.mp3"
+   }
   },
   {
    "id": "mal-06",
@@ -2489,7 +2597,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/mal-06-dialect.mp3",
+    "standard": "audio/ai/mal-06-standard.mp3"
+   }
   },
   {
    "id": "mal-07",
@@ -2508,7 +2620,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/mal-07-dialect.mp3",
+    "standard": "audio/ai/mal-07-standard.mp3"
+   }
   },
   {
    "id": "mal-08",
@@ -2527,7 +2643,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/mal-08-dialect.mp3",
+    "standard": "audio/ai/mal-08-standard.mp3"
+   }
   },
   {
    "id": "mal-09",
@@ -2546,7 +2666,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/mal-09-dialect.mp3",
+    "standard": "audio/ai/mal-09-standard.mp3"
+   }
   },
   {
    "id": "mal-10",
@@ -2569,6 +2693,10 @@
    "sensitive": {
     "kind": "insult",
     "why": "A mild insult."
+   },
+   "voice": {
+    "dialect": "audio/ai/mal-10-dialect.mp3",
+    "standard": "audio/ai/mal-10-standard.mp3"
    }
   },
   {
@@ -2588,7 +2716,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/mal-11-dialect.mp3",
+    "standard": "audio/ai/mal-11-standard.mp3"
+   }
   },
   {
    "id": "mal-12",
@@ -2607,7 +2739,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/mal-12-dialect.mp3",
+    "standard": "audio/ai/mal-12-standard.mp3"
+   }
   },
   {
    "id": "mal-13",
@@ -2626,7 +2762,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/mal-13-dialect.mp3",
+    "standard": "audio/ai/mal-13-standard.mp3"
+   }
   },
   {
    "id": "mal-14",
@@ -2645,7 +2785,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/mal-14-dialect.mp3",
+    "standard": "audio/ai/mal-14-standard.mp3"
+   }
   },
   {
    "id": "mal-15",
@@ -2664,7 +2808,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/mal-15-dialect.mp3",
+    "standard": "audio/ai/mal-15-standard.mp3"
+   }
   },
   {
    "id": "mal-16",
@@ -2683,7 +2831,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/mal-16-dialect.mp3",
+    "standard": "audio/ai/mal-16-standard.mp3"
+   }
   },
   {
    "id": "mal-17",
@@ -2702,7 +2854,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/mal-17-dialect.mp3",
+    "standard": "audio/ai/mal-17-standard.mp3"
+   }
   },
   {
    "id": "mal-18",
@@ -2721,7 +2877,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/mal-18-dialect.mp3",
+    "standard": "audio/ai/mal-18-standard.mp3"
+   }
   },
   {
    "id": "mal-19",
@@ -2740,7 +2900,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/mal-19-dialect.mp3",
+    "standard": "audio/ai/mal-19-standard.mp3"
+   }
   },
   {
    "id": "mal-20",
@@ -2759,7 +2923,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/mal-20-dialect.mp3",
+    "standard": "audio/ai/mal-20-standard.mp3"
+   }
   },
   {
    "id": "mal-21",
@@ -2778,7 +2946,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/mal-21-dialect.mp3",
+    "standard": "audio/ai/mal-21-standard.mp3"
+   }
   },
   {
    "id": "mal-22",
@@ -2797,7 +2969,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/mal-22-dialect.mp3",
+    "standard": "audio/ai/mal-22-standard.mp3"
+   }
   },
   {
    "id": "mal-23",
@@ -2816,7 +2992,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/mal-23-dialect.mp3",
+    "standard": "audio/ai/mal-23-standard.mp3"
+   }
   },
   {
    "id": "mal-24",
@@ -2835,7 +3015,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Malenadu Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/mal-24-dialect.mp3",
+    "standard": "audio/ai/mal-24-standard.mp3"
+   }
   },
   {
    "id": "are-01",
@@ -2854,7 +3038,11 @@
    "note": "The final u is dropped. Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/are-01-dialect.mp3",
+    "standard": "audio/ai/are-01-standard.mp3"
+   }
   },
   {
    "id": "are-02",
@@ -2873,7 +3061,11 @@
    "note": "She is adu, the same word as 'it', as in Havyaka. Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/are-02-dialect.mp3",
+    "standard": "audio/ai/are-02-standard.mp3"
+   }
   },
   {
    "id": "are-03",
@@ -2892,7 +3084,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/are-03-dialect.mp3",
+    "standard": "audio/ai/are-03-standard.mp3"
+   }
   },
   {
    "id": "are-04",
@@ -2911,7 +3107,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/are-04-dialect.mp3",
+    "standard": "audio/ai/are-04-standard.mp3"
+   }
   },
   {
    "id": "are-05",
@@ -2930,7 +3130,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/are-05-dialect.mp3",
+    "standard": "audio/ai/are-05-standard.mp3"
+   }
   },
   {
    "id": "are-06",
@@ -2954,6 +3158,10 @@
     "kind": "community",
     "level": "label",
     "why": "Gowda here means the village headman, which is also a community title."
+   },
+   "voice": {
+    "dialect": "audio/ai/are-06-dialect.mp3",
+    "standard": "audio/ai/are-06-standard.mp3"
    }
   },
   {
@@ -2973,7 +3181,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/are-07-dialect.mp3",
+    "standard": "audio/ai/are-07-standard.mp3"
+   }
   },
   {
    "id": "are-08",
@@ -2992,7 +3204,11 @@
    "note": "Like 'the shoemaker's children go barefoot'. Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/are-08-dialect.mp3",
+    "standard": "audio/ai/are-08-standard.mp3"
+   }
   },
   {
    "id": "klb-01",
@@ -3011,7 +3227,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/klb-01-dialect.mp3",
+    "standard": "audio/ai/klb-01-standard.mp3"
+   }
   },
   {
    "id": "klb-02",
@@ -3030,7 +3250,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/klb-02-dialect.mp3",
+    "standard": "audio/ai/klb-02-standard.mp3"
+   }
   },
   {
    "id": "klb-03",
@@ -3049,7 +3273,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/klb-03-dialect.mp3",
+    "standard": "audio/ai/klb-03-standard.mp3"
+   }
   },
   {
    "id": "klb-04",
@@ -3068,7 +3296,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/klb-04-dialect.mp3",
+    "standard": "audio/ai/klb-04-standard.mp3"
+   }
   },
   {
    "id": "klb-05",
@@ -3087,7 +3319,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/klb-05-dialect.mp3",
+    "standard": "audio/ai/klb-05-standard.mp3"
+   }
   },
   {
    "id": "klb-06",
@@ -3106,7 +3342,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/klb-06-dialect.mp3",
+    "standard": "audio/ai/klb-06-standard.mp3"
+   }
   },
   {
    "id": "klb-07",
@@ -3125,7 +3365,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/klb-07-dialect.mp3",
+    "standard": "audio/ai/klb-07-standard.mp3"
+   }
   },
   {
    "id": "klb-08",
@@ -3144,7 +3388,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/klb-08-dialect.mp3",
+    "standard": "audio/ai/klb-08-standard.mp3"
+   }
   },
   {
    "id": "klb-09",
@@ -3163,7 +3411,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/klb-09-dialect.mp3",
+    "standard": "audio/ai/klb-09-standard.mp3"
+   }
   },
   {
    "id": "klb-10",
@@ -3182,7 +3434,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/klb-10-dialect.mp3",
+    "standard": "audio/ai/klb-10-standard.mp3"
+   }
   },
   {
    "id": "klb-11",
@@ -3201,7 +3457,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/klb-11-dialect.mp3",
+    "standard": "audio/ai/klb-11-standard.mp3"
+   }
   },
   {
    "id": "klb-12",
@@ -3220,7 +3480,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/klb-12-dialect.mp3",
+    "standard": "audio/ai/klb-12-standard.mp3"
+   }
   },
   {
    "id": "dwd-06",
@@ -3239,7 +3503,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/dwd-06-dialect.mp3",
+    "standard": "audio/ai/dwd-06-standard.mp3"
+   }
   },
   {
    "id": "dwd-07",
@@ -3258,7 +3526,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/dwd-07-dialect.mp3",
+    "standard": "audio/ai/dwd-07-standard.mp3"
+   }
   },
   {
    "id": "dwd-08",
@@ -3277,7 +3549,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/dwd-08-dialect.mp3",
+    "standard": "audio/ai/dwd-08-standard.mp3"
+   }
   },
   {
    "id": "dwd-09",
@@ -3296,7 +3572,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/dwd-09-dialect.mp3",
+    "standard": "audio/ai/dwd-09-standard.mp3"
+   }
   },
   {
    "id": "dwd-10",
@@ -3315,7 +3595,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/dwd-10-dialect.mp3",
+    "standard": "audio/ai/dwd-10-standard.mp3"
+   }
   },
   {
    "id": "dwd-11",
@@ -3334,7 +3618,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/dwd-11-dialect.mp3",
+    "standard": "audio/ai/dwd-11-standard.mp3"
+   }
   },
   {
    "id": "dwd-12",
@@ -3353,7 +3641,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/dwd-12-dialect.mp3",
+    "standard": "audio/ai/dwd-12-standard.mp3"
+   }
   },
   {
    "id": "dwd-13",
@@ -3372,7 +3664,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/dwd-13-dialect.mp3",
+    "standard": "audio/ai/dwd-13-standard.mp3"
+   }
   },
   {
    "id": "dwd-14",
@@ -3391,7 +3687,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/dwd-14-dialect.mp3",
+    "standard": "audio/ai/dwd-14-standard.mp3"
+   }
   },
   {
    "id": "dwd-15",
@@ -3414,6 +3714,10 @@
    "sensitive": {
     "kind": "insult",
     "why": "A mild insult."
+   },
+   "voice": {
+    "dialect": "audio/ai/dwd-15-dialect.mp3",
+    "standard": "audio/ai/dwd-15-standard.mp3"
    }
   },
   {
@@ -3433,7 +3737,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/dwd-16-dialect.mp3",
+    "standard": "audio/ai/dwd-16-standard.mp3"
+   }
   },
   {
    "id": "dwd-17",
@@ -3452,7 +3760,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/dwd-17-dialect.mp3",
+    "standard": "audio/ai/dwd-17-standard.mp3"
+   }
   },
   {
    "id": "dwd-18",
@@ -3471,7 +3783,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/dwd-18-dialect.mp3",
+    "standard": "audio/ai/dwd-18-standard.mp3"
+   }
   },
   {
    "id": "dwd-19",
@@ -3490,7 +3806,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/dwd-19-dialect.mp3",
+    "standard": "audio/ai/dwd-19-standard.mp3"
+   }
   },
   {
    "id": "dwd-20",
@@ -3509,7 +3829,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/dwd-20-dialect.mp3",
+    "standard": "audio/ai/dwd-20-standard.mp3"
+   }
   },
   {
    "id": "dwd-21",
@@ -3528,7 +3852,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/dwd-21-dialect.mp3",
+    "standard": "audio/ai/dwd-21-standard.mp3"
+   }
   },
   {
    "id": "kun-10",
@@ -3547,7 +3875,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/kun-10-dialect.mp3",
+    "standard": "audio/ai/kun-10-standard.mp3"
+   }
   },
   {
    "id": "kun-11",
@@ -3566,7 +3898,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/kun-11-dialect.mp3",
+    "standard": "audio/ai/kun-11-standard.mp3"
+   }
   },
   {
    "id": "kun-12",
@@ -3585,7 +3921,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/kun-12-dialect.mp3",
+    "standard": "audio/ai/kun-12-standard.mp3"
+   }
   },
   {
    "id": "kun-13",
@@ -3604,7 +3944,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/kun-13-dialect.mp3",
+    "standard": "audio/ai/kun-13-standard.mp3"
+   }
   },
   {
    "id": "kun-14",
@@ -3623,7 +3967,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/kun-14-dialect.mp3",
+    "standard": "audio/ai/kun-14-standard.mp3"
+   }
   },
   {
    "id": "kun-15",
@@ -3642,7 +3990,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/kun-15-dialect.mp3",
+    "standard": "audio/ai/kun-15-standard.mp3"
+   }
   },
   {
    "id": "kun-16",
@@ -3661,7 +4013,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/kun-16-dialect.mp3",
+    "standard": "audio/ai/kun-16-standard.mp3"
+   }
   },
   {
    "id": "kun-17",
@@ -3680,7 +4036,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/kun-17-dialect.mp3",
+    "standard": "audio/ai/kun-17-standard.mp3"
+   }
   },
   {
    "id": "kun-18",
@@ -3699,7 +4059,11 @@
    "note": "Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/kun-18-dialect.mp3",
+    "standard": "audio/ai/kun-18-standard.mp3"
+   }
   },
   {
    "id": "kun-19",
@@ -3718,7 +4082,11 @@
    "note": "Something sweet in a place you can't reach. Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/kun-19-dialect.mp3",
+    "standard": "audio/ai/kun-19-standard.mp3"
+   }
   },
   {
    "id": "kun-20",
@@ -3737,7 +4105,11 @@
    "note": "Said of someone too choosy for their situation. Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/kun-20-dialect.mp3",
+    "standard": "audio/ai/kun-20-standard.mp3"
+   }
   },
   {
    "id": "sir-16",
@@ -3756,7 +4128,11 @@
    "note": "A woman is often referred to as adu, 'it'. Transcribed from an @aarva_karnaata Instagram post on Havigannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/sir-16-dialect.mp3",
+    "standard": "audio/ai/sir-16-standard.mp3"
+   }
   },
   {
    "id": "sir-17",
@@ -3775,7 +4151,11 @@
    "note": "All that running around, for nothing. Transcribed from an @aarva_karnaata Instagram post on Havigannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/sir-17-dialect.mp3",
+    "standard": "audio/ai/sir-17-standard.mp3"
+   }
   },
   {
    "id": "sir-18",
@@ -3794,7 +4174,11 @@
    "note": "Hubbe (Pubba) is a monsoon star season. Abbe, 'mother', is an Old Kannada word. Transcribed from an @aarva_karnaata Instagram post on Havigannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/sir-18-dialect.mp3",
+    "standard": "audio/ai/sir-18-standard.mp3"
+   }
   },
   {
    "id": "sir-19",
@@ -3813,7 +4197,11 @@
    "note": "Walk before you run. Transcribed from an @aarva_karnaata Instagram post on Havigannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/sir-19-dialect.mp3",
+    "standard": "audio/ai/sir-19-standard.mp3"
+   }
   },
   {
    "id": "are-09",
@@ -3836,6 +4224,10 @@
    "sensitive": {
     "kind": "caste",
     "why": "This proverb refers to caste. It is shown as recorded, as a record of how the language has been used."
+   },
+   "voice": {
+    "dialect": "audio/ai/are-09-dialect.mp3",
+    "standard": "audio/ai/are-09-standard.mp3"
    }
   },
   {
@@ -3859,6 +4251,10 @@
    "sensitive": {
     "kind": "community",
     "why": "This saying names a community (Achari, traditionally carpenters and smiths) and comments on its women."
+   },
+   "voice": {
+    "dialect": "audio/ai/are-10-dialect.mp3",
+    "standard": "audio/ai/are-10-standard.mp3"
    }
   },
   {
@@ -3882,6 +4278,10 @@
    "sensitive": {
     "kind": "violence",
     "why": "Describes an injury."
+   },
+   "voice": {
+    "dialect": "audio/ai/klb-13-dialect.mp3",
+    "standard": "audio/ai/klb-13-standard.mp3"
    }
   },
   {
@@ -3901,7 +4301,11 @@
    "note": "Vowel change: i becomes e. Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/are-11-dialect.mp3",
+    "standard": "audio/ai/are-11-standard.mp3"
+   }
   },
   {
    "id": "are-12",
@@ -3920,7 +4324,11 @@
    "note": "Vowel change: i becomes e. Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/are-12-dialect.mp3",
+    "standard": "audio/ai/are-12-standard.mp3"
+   }
   },
   {
    "id": "are-13",
@@ -3939,7 +4347,11 @@
    "note": "Consonant change: g becomes k. Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/are-13-dialect.mp3",
+    "standard": "audio/ai/are-13-standard.mp3"
+   }
   },
   {
    "id": "are-14",
@@ -3958,7 +4370,11 @@
    "note": "Consonant change: g becomes k. Transcribed from an @aarva_karnaata Instagram post on Arebhashe.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/are-14-dialect.mp3",
+    "standard": "audio/ai/are-14-standard.mp3"
+   }
   },
   {
    "id": "klb-14",
@@ -3977,7 +4393,11 @@
    "note": "A starting e becomes ya. Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/klb-14-dialect.mp3",
+    "standard": "audio/ai/klb-14-standard.mp3"
+   }
   },
   {
    "id": "klb-15",
@@ -3996,7 +4416,11 @@
    "note": "A starting o becomes va. Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/klb-15-dialect.mp3",
+    "standard": "audio/ai/klb-15-standard.mp3"
+   }
   },
   {
    "id": "klb-16",
@@ -4015,7 +4439,11 @@
    "note": "Long ē becomes yā. Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/klb-16-dialect.mp3",
+    "standard": "audio/ai/klb-16-standard.mp3"
+   }
   },
   {
    "id": "klb-17",
@@ -4034,7 +4462,11 @@
    "note": "Long ō becomes wā. Transcribed from an @aarva_karnaata Instagram post on Kalaburagi Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/klb-17-dialect.mp3",
+    "standard": "audio/ai/klb-17-standard.mp3"
+   }
   },
   {
    "id": "kun-21",
@@ -4053,7 +4485,11 @@
    "note": "A final e becomes i. Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/kun-21-dialect.mp3",
+    "standard": "audio/ai/kun-21-standard.mp3"
+   }
   },
   {
    "id": "kun-22",
@@ -4072,7 +4508,11 @@
    "note": "A final e becomes i. Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/kun-22-dialect.mp3",
+    "standard": "audio/ai/kun-22-standard.mp3"
+   }
   },
   {
    "id": "kun-23",
@@ -4091,7 +4531,11 @@
    "note": "Long ē becomes yā. Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/kun-23-dialect.mp3",
+    "standard": "audio/ai/kun-23-standard.mp3"
+   }
   },
   {
    "id": "kun-24",
@@ -4110,7 +4554,11 @@
    "note": "Long ē becomes yā, and the final e becomes i. Transcribed from an @aarva_karnaata Instagram post on Kundagannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/kun-24-dialect.mp3",
+    "standard": "audio/ai/kun-24-standard.mp3"
+   }
   },
   {
    "id": "sir-20",
@@ -4129,7 +4577,11 @@
    "note": "In three-syllable words, the last consonant is doubled. Transcribed from an @aarva_karnaata Instagram post on Havigannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/sir-20-dialect.mp3",
+    "standard": "audio/ai/sir-20-standard.mp3"
+   }
   },
   {
    "id": "sir-21",
@@ -4148,7 +4600,11 @@
    "note": "In three-syllable words, the last consonant is doubled. Transcribed from an @aarva_karnaata Instagram post on Havigannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/sir-21-dialect.mp3",
+    "standard": "audio/ai/sir-21-standard.mp3"
+   }
   },
   {
    "id": "sir-22",
@@ -4167,7 +4623,11 @@
    "note": "After ch and j, a becomes e. Transcribed from an @aarva_karnaata Instagram post on Havigannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/sir-22-dialect.mp3",
+    "standard": "audio/ai/sir-22-standard.mp3"
+   }
   },
   {
    "id": "sir-23",
@@ -4186,7 +4646,11 @@
    "note": "After ch and j, a becomes e. Transcribed from an @aarva_karnaata Instagram post on Havigannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/sir-23-dialect.mp3",
+    "standard": "audio/ai/sir-23-standard.mp3"
+   }
   },
   {
    "id": "dwd-22",
@@ -4205,7 +4669,11 @@
    "note": "A final a becomes yā. Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/dwd-22-dialect.mp3",
+    "standard": "audio/ai/dwd-22-standard.mp3"
+   }
   },
   {
    "id": "dwd-23",
@@ -4224,7 +4692,11 @@
    "note": "A final e becomes i. Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/dwd-23-dialect.mp3",
+    "standard": "audio/ai/dwd-23-standard.mp3"
+   }
   },
   {
    "id": "dwd-24",
@@ -4243,7 +4715,11 @@
    "note": "Long ē becomes yā. Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/dwd-24-dialect.mp3",
+    "standard": "audio/ai/dwd-24-standard.mp3"
+   }
   },
   {
    "id": "dwd-25",
@@ -4262,7 +4738,11 @@
    "note": "Long ō becomes wā. Transcribed from an @aarva_karnaata Instagram post on Dharwad Kannada.",
    "source": "aarva_karnaata",
    "confidence": "informal",
-   "verified": false
+   "verified": false,
+   "voice": {
+    "dialect": "audio/ai/dwd-25-dialect.mp3",
+    "standard": "audio/ai/dwd-25-standard.mp3"
+   }
   }
  ],
  "compare_sets": [
