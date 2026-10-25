@@ -79,12 +79,74 @@ document.addEventListener("focusin", (e) => {
 });
 document.addEventListener("focusout", () => cta.classList.remove("typing"));
 
+// ---------- Page title and description for each view ----------
+const SITE = "Namma Kannada";
+const DEFAULT_DESC = document.querySelector('meta[name="description"]').content;
+
+function clip(text, max = 158) {
+  const t = String(text || "").replace(/\s+/g, " ").trim();
+  if (t.length <= max) return t;
+  const cut = t.slice(0, max - 1);
+  const end = Math.max(cut.lastIndexOf(". "), cut.lastIndexOf("; "));
+  return end > 80 ? cut.slice(0, end + 1) : cut.slice(0, cut.lastIndexOf(" ")) + "…";
+}
+
+function setMeta(title, desc = DEFAULT_DESC) {
+  const full = title ? `${title} · ${SITE}` : `${SITE} · Kannada dialects of Karnataka on an interactive map`;
+  const d = clip(desc);
+  document.title = full;
+  const set = (sel, val) => document.querySelector(sel)?.setAttribute("content", val);
+  set('meta[name="description"]', d);
+  set('meta[property="og:title"]', full);
+  set('meta[property="og:description"]', d);
+  set('meta[name="twitter:title"]', full);
+  set('meta[name="twitter:description"]', d);
+}
+
+function metaFor(section, id) {
+  const count = (placeId) => store.entries.filter((e) => e.place === placeId).length;
+  switch (section) {
+    case undefined: return [null, DEFAULT_DESC];
+    case "zone": {
+      const z = store.zones.get(id);
+      if (!z) return ["Page not found", "This page does not exist on Namma Kannada."];
+      const places = [...store.places.values()].filter((p) => p.zone === id);
+      const n = places.reduce((s, p) => s + count(p.id), 0);
+      return [`${z.name} Kannada: dialects and words`,
+        `How Kannada is spoken in ${z.name}: ${n} words and phrases from ${places.length} places, with sound, pronunciation and sources.`];
+    }
+    case "place": {
+      const p = store.places.get(id);
+      if (!p) return ["Page not found", "This page does not exist on Namma Kannada."];
+      const n = count(p.id);
+      return n
+        ? [`${p.name} Kannada: ${n === 1 ? "a local word" : `${n} local words and phrases`}`, p.about || `Words and phrases from ${p.name}, with sound and sources.`]
+        : [`${p.name} Kannada`, `No words from ${p.name} yet. Know how people talk in ${p.name}? Add the first word or phrase the way it is said at home.`];
+    }
+    case "compare": return ["Compare Kannada dialects side by side",
+      "The same phrase across Karnataka, from Sirsi and Kundapura to Dharwad and Kalaburagi, next to standard Kannada, with sound."];
+    case "guide": return ["How to pronounce Kannada words",
+      "A simple guide to reading Kannada in English letters: vowels, curled-tongue sounds, doubled letters, and the sound changes of each region."];
+    case "quiz": return ["Guess the region: a Kannada dialect quiz",
+      "Hear a Kannada word and guess where in Karnataka it is spoken. A quick quiz built from real regional words and phrases."];
+    case "add": return ["Add a word from your town",
+      "Know how people talk in your town? Add a Kannada word or phrase the way it is said at home, with its meaning and the story behind it."];
+    case "thanks": return ["Thank you for adding a word", "Your word has been added to Namma Kannada on this device."];
+    case "sources": return ["Sources and credits",
+      "Where every word on Namma Kannada comes from: dictionaries, research, articles and native speakers, plus credits for the voices and the map."];
+    case "record": return ["Record Kannada words",
+      "Record each word in your own voice so the site can play the real local accent of each place."];
+    default: return ["Page not found", "This page does not exist on Namma Kannada."];
+  }
+}
+
 function route({ fromUser = false } = {}) {
   const { parts, params } = parseHash();
   const [section, id] = parts;
   q.value = "";
   setMenu(false);
   syncCta(section, id);
+  setMeta(...metaFor(section, id));
 
   switch (section) {
     case undefined:
@@ -178,7 +240,10 @@ async function start() {
   q.addEventListener("input", () => {
     clearTimeout(searchTimer);
     searchTimer = setTimeout(() => {
-      if (q.value.trim()) views.renderSearch(view, q.value);
+      if (q.value.trim()) {
+        views.renderSearch(view, q.value);
+        setMeta(`“${q.value.trim()}” in Kannada dialects`, `Kannada words and phrases matching “${q.value.trim()}”, from places across Karnataka.`);
+      }
       else route();
     }, 120);
   });

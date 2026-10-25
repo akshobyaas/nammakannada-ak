@@ -3,12 +3,52 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Namma Kannada</title>
-  <meta name="description" content="Explore how spoken Kannada changes across Karnataka: regional words, phrases and sounds on an interactive map, with sources.">
+  <title>Namma Kannada · Kannada dialects of Karnataka on an interactive map</title>
+  <meta name="description" content="Hear how spoken Kannada changes across Karnataka. Explore regional words, phrases and sounds from 20 places on a map, with pronunciation and sources.">
+  <link rel="canonical" href="https://nammakannada-ak.vercel.app/">
   <meta name="theme-color" content="#C8102E">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FFD21F' stroke='black' stroke-width='4'/%3E%3Ctext x='32' y='46' font-size='38' text-anchor='middle' fill='%23E8202A' font-family='sans-serif'%3E%E0%B2%95%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="css/fonts.css?v=9">
-  <link rel="stylesheet" href="css/style.css?v=9">
+  <meta name="author" content="Namma Kannada">
+
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Link previews: Open Graph (WhatsApp, Facebook, LinkedIn) and X/Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Namma Kannada">
+  <meta property="og:title" content="Namma Kannada · Kannada dialects of Karnataka on an interactive map">
+  <meta property="og:description" content="Hear how spoken Kannada changes across Karnataka. Explore regional words, phrases and sounds from 20 places on a map, with pronunciation and sources.">
+  <meta property="og:url" content="https://nammakannada-ak.vercel.app/">
+  <meta property="og:image" content="https://nammakannada-ak.vercel.app/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Namma Kannada: a map of Karnataka with dialect places marked, and the words One language, hundreds of voices">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:locale:alternate" content="kn_IN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Namma Kannada · Kannada dialects of Karnataka on an interactive map">
+  <meta name="twitter:description" content="Hear how spoken Kannada changes across Karnataka. Explore regional words, phrases and sounds from 20 places on a map, with pronunciation and sources.">
+  <meta name="twitter:image" content="https://nammakannada-ak.vercel.app/og-image.png">
+  <meta name="twitter:image:alt" content="Namma Kannada: a map of Karnataka with dialect places marked, and the words One language, hundreds of voices">
+
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "WebSite", "name": "Namma Kannada", "alternateName": "ನಮ್ಮ ಕನ್ನಡ",
+    "url": "https://nammakannada-ak.vercel.app/", "inLanguage": ["en", "kn"],
+    "description": "Hear how spoken Kannada changes across Karnataka. Explore regional words, phrases and sounds from 20 places on a map, with pronunciation and sources."}
+  </script>
+
+  <!-- Fonts used above the fold: start downloading before the CSS asks for them -->
+  <link rel="preload" href="fonts/gluten-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/fredoka-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/baloo-tamma-2-kannada-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="modulepreload" href="js/map-data.js">
+  <link rel="modulepreload" href="js/views.js">
+  <link rel="stylesheet" href="css/fonts.css?v=10">
+  <link rel="stylesheet" href="css/style.css?v=10">
 </head>
 <body>
   <a class="skip" href="#panel">Skip to content</a>
@@ -70,6 +110,6 @@
   </div>
 
   <noscript><p class="noscript">Namma Kannada needs JavaScript to show the map and words.</p></noscript>
-  <script type="module" src="js/app.js?v=9"></script>
+  <script type="module" src="js/app.js?v=10"></script>
 </body>
 </html>

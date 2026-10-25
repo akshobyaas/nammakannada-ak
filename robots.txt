@@ -1,0 +1,6 @@
+# Namma Kannada
+User-agent: *
+Allow: /
+Disallow: /scripts/
+
+Sitemap: https://nammakannada-ak.vercel.app/sitemap.xml
