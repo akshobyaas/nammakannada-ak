@@ -7,7 +7,7 @@ export const CONFIG = {
   // Contact details shown in the footer. Leave a field empty to hide it;
   // the whole Contact block stays hidden until at least one is filled in.
   CONTACT: {
-    email: "",    // e.g. the address people should write to
+    email: "asakshobya@gmail.com",
     phone: "",    // with country code, e.g. +91 ...
     address: "",  // postal address; use \n for line breaks
     links: [      // [{ label: "GitHub", url: "https://..." }]

@@ -110,7 +110,7 @@ scripts/              voice generation and map build tools (not deployed)
 
 ## Privacy and security
 
-No accounts, no cookies, no third-party requests: fonts, sound and data are all served from the site itself. Words visitors add stay in their own browser. Visits are counted with cookie-free Vercel Web Analytics. The site sends a strict Content-Security-Policy, HSTS and the other standard security headers. See the Privacy and Terms pages on the site (drafts).
+No accounts, no cookies, no third-party requests: fonts, sound and data are all served from the site itself. Words visitors add stay in their own browser. Visits are counted with cookie-free Vercel Web Analytics. The site sends a strict Content-Security-Policy, HSTS and the other standard security headers. See the Privacy and Terms pages on the site.
 
 ## Limitations and next steps
 
@@ -126,3 +126,9 @@ Every entry links to its source; the Sources page in the app lists them all, inc
 - Map boundaries: [india-maps-data](https://github.com/udit-001/india-maps-data) (2011 census districts). Regions are approximate cultural zones, not official divisions.
 - Voices: [Sarvam AI Bulbul](https://www.sarvam.ai/text-to-speech) and the [Alar voice corpus](https://github.com/Aditya-ds-1806/Alar-voice-corpus) (GPL-2.0).
 - Fonts: Gluten, Fredoka and Baloo Tamma 2, under the SIL Open Font License.
+
+## Licence and contact
+
+Code: [MIT](LICENSE). Dataset (`data/dialects.json`): [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Quoted examples, Alar clips and fonts keep their own licences.
+
+Made by Akshobya A S · asakshobya@gmail.com

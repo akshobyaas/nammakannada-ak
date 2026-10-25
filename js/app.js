@@ -134,9 +134,9 @@ function metaFor(section, id) {
     case "thanks": return ["Thank you for adding a word", "Your word has been added to Namma Kannada on this device."];
     case "sources": return ["Sources and credits",
       "Where every word on Namma Kannada comes from: dictionaries, research, articles and native speakers, plus credits for the voices and the map."];
-    case "privacy": return ["Privacy policy (draft)",
+    case "privacy": return ["Privacy policy",
       "How Namma Kannada handles your data: no tracking cookies, cookie-free Vercel analytics, and words you add stay on your own device."];
-    case "terms": return ["Terms of use (draft)",
+    case "terms": return ["Terms of use",
       "The terms for using Namma Kannada: an educational project, unchecked dialect entries, sensitive content, and how contributed words are used."];
     case "record": return ["Record Kannada words",
       "Record each word in your own voice so the site can play the real local accent of each place."];

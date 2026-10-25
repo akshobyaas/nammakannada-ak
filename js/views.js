@@ -796,8 +796,7 @@ const REPO_URL = "https://github.com/akshobyaas/nammakannada-ak";
 
 function draftNote() {
   return `<div class="draft-note" role="note">
-    <strong>Draft for review.</strong> This page was drafted to describe how the site works today. It is not legal advice
-    and has not been checked by a lawyer. Lines marked <span class="review">Review</span> need a decision from the site owner.
+    <strong>Plain-language summary.</strong> This page describes how this student project works. It was not written or checked by a lawyer.
   </div>`;
 }
 
@@ -848,11 +847,11 @@ export function renderPrivacy(root) {
       <p>Word sources link to sites such as Instagram, Wikipedia and news websites. They have their own privacy policies, which apply once you follow a link.</p>
 
       <h2>Children</h2>
-      <p>The site is suitable for all ages and does not knowingly collect personal data from anyone. <span class="review">Review</span> Some entries document caste terms, insults or violence as part of the language record; these are labelled or hidden behind a tap.</p>
+      <p>The site is suitable for all ages and does not knowingly collect personal data from anyone. Some entries document caste terms, insults or violence as part of the language record; these are labelled or hidden behind a tap.</p>
 
       <h2>Your rights and contact</h2>
+      <p>Namma Kannada is run by Akshobya A S, a student in Mysuru, Karnataka.</p>
       <p>Because we hold no personal data on our servers, there is usually nothing to access or delete. If you sent us a word and want it removed or your name taken off, ${contactLine()}.</p>
-      <p><span class="review">Review</span> Add the name of the person responsible for the site and, if you want one, a contact email in <code>js/config.js</code>.</p>
 
       <h2>Changes</h2>
       <p>If this policy changes, the new version will be posted here with a new date.</p>
@@ -867,6 +866,7 @@ export function renderTerms(root) {
       <h1>Terms of use</h1>
       <p class="muted">Last updated ${LEGAL_UPDATED}</p>
       ${draftNote()}
+      <p>Namma Kannada is run by Akshobya A S.</p>
       <p class="lede">By using Namma Kannada you agree to these terms. If you do not agree, please do not use the site.</p>
 
       <h2>What this site is</h2>
@@ -892,7 +892,7 @@ export function renderTerms(root) {
         <li>Short dialect examples are quoted from the sources listed on the <a href="#/sources">Sources</a> page for documentation. Those sources keep their own rights.</li>
         <li>Map boundaries come from <a href="https://github.com/udit-001/india-maps-data" target="_blank" rel="noopener">india-maps-data</a>. Some sound clips come from the <a href="https://github.com/Aditya-ds-1806/Alar-voice-corpus" target="_blank" rel="noopener">Alar voice corpus</a> (GPL-2.0).</li>
         <li>Fonts (Gluten, Fredoka, Baloo Tamma 2) are used under the SIL Open Font License.</li>
-        <li><span class="review">Review</span> Choose a licence for the site's own code and dataset, for example MIT for the code and CC BY-SA 4.0 for the data, and state it here and in the GitHub repo.</li>
+        <li>The site's own code is released under the <a href="https://github.com/akshobyaas/nammakannada-ak/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a>. The dataset in <code>data/dialects.json</code>, as compiled here, is shared under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>: you may reuse it with credit, under the same licence. Quoted material, the Alar clips and the fonts keep their own licences listed above.</li>
       </ul>
 
       <h2>No warranty</h2>
@@ -900,7 +900,7 @@ export function renderTerms(root) {
 
       <h2>Changes and contact</h2>
       <p>These terms may change; the date above shows the latest version. For questions, ${contactLine()}.</p>
-      <p><span class="review">Review</span> Add the governing law (for example, the laws of India) if you want one stated.</p>
+      <p>These terms are governed by the laws of India.</p>
     </article>`;
   map.setActive(null);
   map.highlightZone(null);
