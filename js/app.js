@@ -214,7 +214,7 @@ async function start() {
           ? "You seem to be offline. Check your internet connection and try again."
           : local
             ? "This site has to be opened through a web server, not by double-clicking index.html. Run <code>npx serve</code> in the project folder."
-            : `Something went wrong while loading the dictionary (${views.esc(err.message)}).`}</p>
+            : "Something went wrong while loading the words. Please try again in a moment."}</p>
         <div class="actions"><button class="btn" type="button" id="retry">Try again</button></div>
       </div>`;
     view.querySelector("#retry").addEventListener("click", start);

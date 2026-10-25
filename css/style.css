@@ -545,6 +545,7 @@ table.guide thead th { background: var(--ink); color: var(--yellow); border-top:
 }
 .notfound h1 span[lang="kn"] { font-family: var(--f-kn); }
 /* Standalone 404.html (served by the host for unknown paths) */
+.nf-foot { margin: 0 auto 32px; padding: 18px 16px 0; }
 .nf-page { min-height: calc(100vh - 86px); display: grid; place-items: center; padding: 32px 16px 60px; }
 .nf-page .notfound { max-width: 40rem; }
 .nf-page .notfound h1 {

@@ -10,8 +10,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
   <!-- Root-relative paths: the host serves this page for any missing URL, at any depth -->
-  <link rel="stylesheet" href="/css/fonts.css?v=11">
-  <link rel="stylesheet" href="/css/style.css?v=11">
+  <link rel="stylesheet" href="/css/fonts.css?v=12">
+  <link rel="stylesheet" href="/css/style.css?v=12">
 </head>
 <body>
   <header class="top">
@@ -44,24 +44,10 @@
       </div>
     </div>
   </main>
-  <footer class="site-foot" style="margin: 0 auto 32px; padding: 18px 16px 0;">
+  <footer class="site-foot nf-foot">
     <p class="foot-line">© <span id="year">2026</span> Namma Kannada · <a href="/#/sources">Sources and credits</a> · <a href="/#/privacy">Privacy</a> · <a href="/#/terms">Terms</a></p>
   </footer>
 
-  <script>
-    // Same mobile menu as the main site, without loading the app.
-    document.getElementById("year").textContent = String(new Date().getFullYear());
-    (function () {
-      var btn = document.querySelector(".menu-btn"), nav = document.getElementById("nav");
-      function set(open) {
-        nav.classList.toggle("open", open);
-        btn.setAttribute("aria-expanded", String(open));
-        btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-      }
-      btn.addEventListener("click", function () { set(!nav.classList.contains("open")); });
-      document.addEventListener("keydown", function (e) { if (e.key === "Escape") set(false); });
-      document.addEventListener("click", function (e) { if (!e.target.closest(".top")) set(false); });
-    })();
-  </script>
+  <script src="/js/404.js"></script>
 </body>
 </html>

@@ -1,0 +1,11 @@
+# Never deploy secrets or local tooling. The site itself needs only:
+# index.html, 404.html, css/, js/, data/, fonts/, audio/, icons/, and the root icon/SEO files.
+.env
+.env.*
+*.py
+scripts/
+_gen/
+PLAN.md
+README.md
+sarvam-test.*
+node_modules/
