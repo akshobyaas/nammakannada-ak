@@ -5,6 +5,7 @@ import * as views from "./views.js";
 import { renderRecord } from "./recorder.js";
 import { CONFIG } from "./config.js";
 import { loadingHtml } from "./ui.js";
+import { t, isKn, setLang, plural, placeName, zoneName, dt, loadDataKn } from "./i18n.js";
 
 // ---------- Footer: year and contact ----------
 document.getElementById("year").textContent = String(new Date().getFullYear());
@@ -13,11 +14,11 @@ function renderContact() {
   const c = CONFIG.CONTACT || {};
   const esc = views.esc;
   const rows = [];
-  if (c.email) rows.push(`<p><span class="lbl">Email</span><a href="mailto:${esc(c.email)}">${esc(c.email)}</a></p>`);
-  if (c.phone) rows.push(`<p><span class="lbl">Phone</span><a href="tel:${esc(c.phone.replace(/[^+\d]/g, ""))}">${esc(c.phone)}</a></p>`);
-  if (c.address) rows.push(`<p><span class="lbl">Address</span><span>${esc(c.address).replace(/\n/g, "<br>")}</span></p>`);
+  if (c.email) rows.push(`<p><span class="lbl">${t("Email")}</span><a href="mailto:${esc(c.email)}">${esc(c.email)}</a></p>`);
+  if (c.phone) rows.push(`<p><span class="lbl">${t("Phone")}</span><a href="tel:${esc(c.phone.replace(/[^+\d]/g, ""))}">${esc(c.phone)}</a></p>`);
+  if (c.address) rows.push(`<p><span class="lbl">${t("Address")}</span><span>${esc(c.address).replace(/\n/g, "<br>")}</span></p>`);
   const links = (c.links || []).filter((l) => l && l.url);
-  if (links.length) rows.push(`<p><span class="lbl">Online</span>${links.map((l) =>
+  if (links.length) rows.push(`<p><span class="lbl">${t("Online")}</span>${links.map((l) =>
     `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label || l.url)}</a>`).join(" · ")}</p>`);
   const box = document.getElementById("contact");
   document.getElementById("contact-body").innerHTML = rows.join("");
@@ -50,7 +51,7 @@ const nav = document.getElementById("nav");
 function setMenu(open) {
   nav.classList.toggle("open", open);
   menuBtn.setAttribute("aria-expanded", String(open));
-  menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  menuBtn.setAttribute("aria-label", t(open ? "Close menu" : "Open menu"));
 }
 menuBtn.addEventListener("click", () => setMenu(!nav.classList.contains("open")));
 nav.addEventListener("click", (e) => { if (e.target.closest("a")) setMenu(false); });
@@ -60,7 +61,7 @@ document.addEventListener("keydown", (e) => {
 document.addEventListener("click", (e) => {
   if (nav.classList.contains("open") && !e.target.closest(".top")) setMenu(false);
 });
-window.matchMedia("(max-width: 860px)").addEventListener("change", () => setMenu(false));
+window.matchMedia("(max-width: 1180px)").addEventListener("change", () => setMenu(false));
 
 // ---------- Sticky main action on phones ----------
 const cta = document.getElementById("sticky-cta");
@@ -71,7 +72,7 @@ function syncCta(section, id) {
   document.body.classList.toggle("has-cta", !hide);
   const place = section === "place" ? store.places.get(id) : null;
   ctaLink.href = place ? `#/add?place=${place.id}` : "#/add";
-  ctaLink.textContent = place ? `Add a word from ${place.name.replace(/\s*\(.*\)/, "")}` : "Add a word from your town";
+  ctaLink.textContent = place ? t("Add a word from {place}", { place: placeName(place).replace(/\s*\(.*\)/, "") }) : t("Add a word from your town");
 }
 // Hide the bar while typing so it does not sit on top of the phone keyboard
 document.addEventListener("focusin", (e) => {
@@ -91,9 +92,10 @@ function clip(text, max = 158) {
   return end > 80 ? cut.slice(0, end + 1) : cut.slice(0, cut.lastIndexOf(" ")) + "…";
 }
 
-function setMeta(title, desc = DEFAULT_DESC) {
-  const full = title ? `${title} · ${SITE}` : `${SITE} · Kannada dialects of Karnataka on an interactive map`;
-  const d = clip(desc);
+function setMeta(title, desc = t(DEFAULT_DESC)) {
+  const site = t(SITE);
+  const full = title ? `${t(title)} · ${site}` : `${site} · ${t("Kannada dialects of Karnataka on an interactive map")}`;
+  const d = clip(t(desc));
   document.title = full;
   const set = (sel, val) => document.querySelector(sel)?.setAttribute("content", val);
   set('meta[name="description"]', d);
@@ -106,22 +108,23 @@ function setMeta(title, desc = DEFAULT_DESC) {
 function metaFor(section, id) {
   const count = (placeId) => store.entries.filter((e) => e.place === placeId).length;
   switch (section) {
-    case undefined: return [null, DEFAULT_DESC];
+    case undefined: return [null, t(DEFAULT_DESC)];
     case "zone": {
       const z = store.zones.get(id);
       if (!z) return ["Page not found", "This page does not exist on Namma Kannada."];
       const places = [...store.places.values()].filter((p) => p.zone === id);
       const n = places.reduce((s, p) => s + count(p.id), 0);
-      return [`${z.name} Kannada: dialects and words`,
-        `How Kannada is spoken in ${z.name}: ${n} words and phrases from ${places.length} places, with sound, pronunciation and sources.`];
+      return [t("{zone} Kannada: dialects and words", { zone: zoneName(z) }),
+        t("How Kannada is spoken in {zone}: {n} words and phrases from {p} places, with sound, pronunciation and sources.", { zone: zoneName(z), n, p: places.length })];
     }
     case "place": {
       const p = store.places.get(id);
       if (!p) return ["Page not found", "This page does not exist on Namma Kannada."];
       const n = count(p.id);
+      const name = placeName(p);
       return n
-        ? [`${p.name} Kannada: ${n === 1 ? "a local word" : `${n} local words and phrases`}`, p.about || `Words and phrases from ${p.name}, with sound and sources.`]
-        : [`${p.name} Kannada`, `No words from ${p.name} yet. Know how people talk in ${p.name}? Add the first word or phrase the way it is said at home.`];
+        ? [n === 1 ? t("{place} Kannada: a local word", { place: name }) : t("{place} Kannada: {n} local words and phrases", { place: name, n }), dt.about(p) || t("Words and phrases from {place}, with sound and sources.", { place: name })]
+        : [t("{place} Kannada", { place: name }), t("No words from {place} yet. Know how people talk in {place}? Add the first word or phrase the way it is said at home.", { place: name })];
     }
     case "compare": return ["Compare Kannada dialects side by side",
       "The same phrase across Karnataka, from Sirsi and Kundapura to Dharwad and Kalaburagi, next to standard Kannada, with sound."];
@@ -191,16 +194,71 @@ function route({ fromUser = false } = {}) {
   }
 }
 
+// ---------- One-tap language switch: English ⇄ ಕನ್ನಡ ----------
+let drawMapAndLegend = null;
+let syncLegendRef = null;
+const langBtn = document.getElementById("lang-btn");
+
+// Fixed text in index.html carries its English in data-i18n attributes.
+function applyStatic() {
+  document.querySelectorAll("[data-i18n]").forEach((el) => { el.innerHTML = t(el.dataset.i18n); });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => { el.placeholder = t(el.dataset.i18nPlaceholder); });
+  document.querySelectorAll("[data-i18n-aria-label]").forEach((el) => { el.setAttribute("aria-label", t(el.dataset.i18nAriaLabel)); });
+  // The button always offers the other language, written in that language.
+  langBtn.textContent = isKn() ? "English" : "ಕನ್ನಡ";
+  langBtn.lang = isKn() ? "en" : "kn";
+  langBtn.setAttribute("aria-label", isKn() ? "Switch to English" : "ಕನ್ನಡದಲ್ಲಿ ಓದಿ (Switch to Kannada)");
+  langBtn.title = langBtn.getAttribute("aria-label");
+  menuBtn.setAttribute("aria-label", t(nav.classList.contains("open") ? "Close menu" : "Open menu"));
+  renderContact();
+}
+
+// Keep what someone has typed in the Add a word form across the switch.
+function captureForm() {
+  const form = document.getElementById("add");
+  if (!form) return null;
+  const vals = {};
+  for (const el of form.elements) if (el.name) vals[el.name] = el.value;
+  return vals;
+}
+function restoreForm(vals) {
+  const form = document.getElementById("add");
+  if (!form || !vals) return;
+  for (const [k, v] of Object.entries(vals)) if (form.elements[k]) form.elements[k].value = v;
+  form.elements.place?.dispatchEvent(new Event("change"));
+  form.elements.note?.dispatchEvent(new Event("input"));
+}
+
+langBtn.addEventListener("click", () => {
+  setLang(isKn() ? "en" : "kn");
+  applyStatic();
+  if (!store.data) return; // still loading: the page will render in the new language
+  const typed = captureForm();
+  const scrollY = window.scrollY;
+  drawMapAndLegend?.();
+  if (q.value.trim()) {
+    views.renderSearch(view, q.value);
+    setMeta(t("“{q}” in Kannada dialects", { q: q.value.trim() }), t("Kannada words and phrases matching “{q}”, from places across Karnataka.", { q: q.value.trim() }));
+    syncCta(...parseHash().parts);
+  } else {
+    route();
+  }
+  syncLegendRef?.();
+  restoreForm(typed);
+  window.scrollTo({ top: scrollY });
+});
+applyStatic();
+
 let started = false;
 async function start() {
-  view.innerHTML = loadingHtml("Loading words from across Karnataka…");
-  document.getElementById("map").innerHTML = `<div class="map-loading">${loadingHtml("Drawing the map…")}</div>`;
+  view.innerHTML = loadingHtml(t("Loading words from across Karnataka…"));
+  document.getElementById("map").innerHTML = `<div class="map-loading">${loadingHtml(t("Drawing the map…"))}</div>`;
   const slow = setTimeout(() => {
     const s = view.querySelector(".state.loading span:last-child");
-    if (s) s.textContent = "Still loading… a slow connection can take a few seconds.";
+    if (s) s.textContent = t("Still loading… a slow connection can take a few seconds.");
   }, 6000);
   try {
-    await loadData();
+    await Promise.all([loadData(), loadDataKn()]);
   } catch (err) {
     clearTimeout(slow);
     const offline = navigator.onLine === false;
@@ -209,13 +267,13 @@ async function start() {
     view.innerHTML = `
       <div class="state error" role="alert">
         <p class="state-kn" lang="kn" aria-hidden="true">ಅಯ್ಯೋ!</p>
-        <h2>The words did not load</h2>
-        <p>${offline
+        <h2>${t("The words did not load")}</h2>
+        <p>${t(offline
           ? "You seem to be offline. Check your internet connection and try again."
           : local
             ? "This site has to be opened through a web server, not by double-clicking index.html. Run <code>npx serve</code> in the project folder."
-            : "Something went wrong while loading the words. Please try again in a moment."}</p>
-        <div class="actions"><button class="btn" type="button" id="retry">Try again</button></div>
+            : "Something went wrong while loading the words. Please try again in a moment.")}</p>
+        <div class="actions"><button class="btn" type="button" id="retry">${t("Try again")}</button></div>
       </div>`;
     view.querySelector("#retry").addEventListener("click", start);
     return;
@@ -224,14 +282,16 @@ async function start() {
   if (started) { route(); return; }
   started = true;
 
-  renderMap(document.getElementById("map"), {
-    onSelect: (id) => { location.hash = `#/place/${id}`; },
-  });
-
   const legend = document.getElementById("legend");
-  legend.innerHTML = store.data.zones.map((z) =>
-    `<li><button type="button" data-zone="${z.id}" style="--zone:${z.color}" aria-pressed="false"><span class="sw"></span>${views.esc(z.name)}</button></li>`
-  ).join("");
+  drawMapAndLegend = () => {
+    renderMap(document.getElementById("map"), {
+      onSelect: (id) => { location.hash = `#/place/${id}`; },
+    });
+    legend.innerHTML = store.data.zones.map((z) =>
+      `<li><button type="button" data-zone="${z.id}" style="--zone:${z.color}" aria-pressed="false"><span class="sw"></span>${views.esc(zoneName(z))}</button></li>`
+    ).join("");
+  };
+  drawMapAndLegend();
   legend.addEventListener("click", (e) => {
     const b = e.target.closest("button[data-zone]");
     if (!b) return;
@@ -250,7 +310,7 @@ async function start() {
     searchTimer = setTimeout(() => {
       if (q.value.trim()) {
         views.renderSearch(view, q.value);
-        setMeta(`“${q.value.trim()}” in Kannada dialects`, `Kannada words and phrases matching “${q.value.trim()}”, from places across Karnataka.`);
+        setMeta(t("“{q}” in Kannada dialects", { q: q.value.trim() }), t("Kannada words and phrases matching “{q}”, from places across Karnataka.", { q: q.value.trim() }));
       }
       else route();
     }, 120);
@@ -261,6 +321,7 @@ async function start() {
     route({ fromUser: true });
     syncLegend();
   });
+  syncLegendRef = syncLegend;
   route();
   syncLegend();
 }

@@ -4,6 +4,7 @@
 //    Edge on Windows and Chrome on Android usually have one; desktop Chrome often does not.
 
 import { toast } from "./ui.js";
+import { t } from "./i18n.js";
 
 let knVoice = null;
 let ready = null;
@@ -53,7 +54,7 @@ function setState(button, state) {
   if (state === "error") {
     button.classList.add("error");
     setTimeout(() => button.classList.remove("error"), 1600);
-    toast("Could not play this sound. Check your connection and try again.", "error");
+    toast(t("Could not play this sound. Check your connection and try again."), "error");
   }
 }
 

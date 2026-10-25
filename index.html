@@ -47,59 +47,60 @@
   <link rel="preload" href="fonts/baloo-tamma-2-kannada-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="modulepreload" href="js/map-data.js">
   <link rel="modulepreload" href="js/views.js">
-  <link rel="stylesheet" href="css/fonts.css?v=14">
-  <link rel="stylesheet" href="css/style.css?v=14">
+  <link rel="stylesheet" href="css/fonts.css?v=15">
+  <link rel="stylesheet" href="css/style.css?v=15">
 </head>
 <body>
-  <a class="skip" href="#panel">Skip to content</a>
+  <a class="skip" href="#panel" data-i18n="Skip to content">Skip to content</a>
 
   <header class="top">
-    <a class="brand" href="#/" aria-label="Namma Kannada, home">
+    <a class="brand" href="#/" aria-label="Namma Kannada, home" data-i18n-aria-label="Namma Kannada, home">
       <span class="brand-kn" lang="kn">ನಮ್ಮ ಕನ್ನಡ</span>
-      <span class="brand-en">One language, many voices across Karnataka</span>
+      <span class="brand-en" data-i18n="One language, many voices across Karnataka">One language, many voices across Karnataka</span>
     </a>
+    <button class="lang-btn" id="lang-btn" type="button"></button>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
       <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
-      <span class="menu-txt">Menu</span>
+      <span class="menu-txt" data-i18n="Menu">Menu</span>
     </button>
     <nav class="nav" id="nav" aria-label="Main">
-      <a href="#/" data-nav="explore">Explore</a>
-      <a href="#/compare" data-nav="compare">Compare</a>
-      <a href="#/guide" data-nav="guide">How to say it</a>
-      <a href="#/quiz" data-nav="quiz">Guess the region</a>
-      <a href="#/add" data-nav="add">Add a word</a>
-      <a href="#/sources" data-nav="sources">Sources</a>
+      <a href="#/" data-nav="explore" data-i18n="Explore">Explore</a>
+      <a href="#/compare" data-nav="compare" data-i18n="Compare">Compare</a>
+      <a href="#/guide" data-nav="guide" data-i18n="How to say it">How to say it</a>
+      <a href="#/quiz" data-nav="quiz" data-i18n="Guess the region">Guess the region</a>
+      <a href="#/add" data-nav="add" data-i18n="Add a word">Add a word</a>
+      <a href="#/sources" data-nav="sources" data-i18n="Sources">Sources</a>
     </nav>
   </header>
 
   <main class="layout">
-    <section class="map-pane" aria-label="Map of Karnataka">
-      <p class="map-prompt">Tap a pin to hear how people talk there</p>
+    <section class="map-pane" aria-label="Map of Karnataka" data-i18n-aria-label="Map of Karnataka">
+      <p class="map-prompt" data-i18n="Tap a pin to hear how people talk there">Tap a pin to hear how people talk there</p>
       <div id="map" class="map"></div>
-      <ul id="legend" class="legend" aria-label="Regions"></ul>
-      <p class="map-note">Regions are approximate cultural zones. A hollow pin means no words yet.</p>
+      <ul id="legend" class="legend" aria-label="Regions" data-i18n-aria-label="Regions"></ul>
+      <p class="map-note" data-i18n="Regions are approximate cultural zones. A hollow pin means no words yet.">Regions are approximate cultural zones. A hollow pin means no words yet.</p>
     </section>
 
     <section id="panel" class="panel" tabindex="-1">
       <div class="search">
-        <label for="q" class="visually-hidden">Search words</label>
-        <input id="q" type="search" placeholder="Search in Kannada or English, like ಮನೆ or come" autocomplete="off">
+        <label for="q" class="visually-hidden" data-i18n="Search words">Search words</label>
+        <input id="q" type="search" placeholder="Search in Kannada or English, like ಮನೆ or come" data-i18n-placeholder="Search in Kannada or English, like ಮನೆ or come" autocomplete="off">
       </div>
       <div id="view" class="view" aria-live="polite">
-        <div class="state loading" role="status"><span class="spinner" aria-hidden="true"></span><span>Loading words from across Karnataka…</span></div>
+        <div class="state loading" role="status"><span class="spinner" aria-hidden="true"></span><span data-i18n="Loading words from across Karnataka…">Loading words from across Karnataka…</span></div>
       </div>
 
       <footer class="site-foot">
         <section id="contact" class="contact" aria-labelledby="contact-h" hidden>
-          <h2 id="contact-h">Contact</h2>
+          <h2 id="contact-h" data-i18n="Contact">Contact</h2>
           <address id="contact-body"></address>
         </section>
         <p class="foot-line">
-          © <span id="year">2026</span> Namma Kannada ·
-          Built for the Kannada Digital Innovation Hackathon ·
-          <a href="#/sources">Sources and credits</a> ·
-          <a href="#/privacy">Privacy</a> ·
-          <a href="#/terms">Terms</a>
+          © <span id="year">2026</span> <span data-i18n="Namma Kannada">Namma Kannada</span> ·
+          <span data-i18n="Built for the Kannada Digital Innovation Hackathon">Built for the Kannada Digital Innovation Hackathon</span> ·
+          <a href="#/sources" data-i18n="Sources and credits">Sources and credits</a> ·
+          <a href="#/privacy" data-i18n="Privacy">Privacy</a> ·
+          <a href="#/terms" data-i18n="Terms">Terms</a>
         </p>
       </footer>
     </section>
@@ -112,7 +113,7 @@
   </div>
 
   <noscript><p class="noscript">Namma Kannada needs JavaScript to show the map and words.</p></noscript>
-  <script type="module" src="js/app.js?v=14"></script>
+  <script type="module" src="js/app.js?v=15"></script>
 
   <!-- Vercel Web Analytics: cookie-free visit counts. Turn it on in the Vercel project's Analytics tab;
        until then this script returns 404 and nothing is recorded. -->

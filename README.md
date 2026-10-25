@@ -34,6 +34,7 @@ Regions covered include Havyaka Kannada (Sirsi), Kundagannada (Kundapura), Arebh
 - **Search** in Kannada script, English or transliteration.
 - **Add a word.** Visitors add a word from their town, with checks on every field. It is saved on their device, shown on the map as "added by you", and can be copied as JSON or sent through a Google Form (see `js/config.js`).
 - **Sensitive content, handled with care.** Entries about caste, community or violence, and insults, are kept as part of the language record but labelled; the strongest are hidden until you tap to show them, and none appear in the quiz.
+- **ಕನ್ನಡ / English in one tap.** The button in the header switches the whole site, including place introductions, word meanings, notes, Privacy and Terms, between Kannada and English, and remembers the choice. Interface text lives in `js/i18n-kn.js`; translations of the word data live in `data/kn.json`.
 - **Works on phones.** Mobile menu, a sticky "Add a word" button, and layouts tested from 360px wide to desktop.
 
 ## How the sound works

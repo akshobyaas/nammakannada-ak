@@ -1,8 +1,9 @@
 // Shared UI states: loading blocks, empty states, toasts and clipboard copy.
+import { t } from "./i18n.js";
 
 export const spinner = `<span class="spinner" aria-hidden="true"></span>`;
 
-export function loadingHtml(text = "Loading…") {
+export function loadingHtml(text = t("Loading…")) {
   return `<div class="state loading" role="status">${spinner}<span>${text}</span></div>`;
 }
 

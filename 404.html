@@ -10,44 +10,45 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
   <!-- Root-relative paths: the host serves this page for any missing URL, at any depth -->
-  <link rel="stylesheet" href="/css/fonts.css?v=14">
-  <link rel="stylesheet" href="/css/style.css?v=14">
+  <link rel="stylesheet" href="/css/fonts.css?v=15">
+  <link rel="stylesheet" href="/css/style.css?v=15">
 </head>
 <body>
   <header class="top">
     <a class="brand" href="/" aria-label="Namma Kannada, home">
       <span class="brand-kn" lang="kn">ನಮ್ಮ ಕನ್ನಡ</span>
-      <span class="brand-en">One language, many voices across Karnataka</span>
+      <span class="brand-en" data-i18n="One language, many voices across Karnataka">One language, many voices across Karnataka</span>
     </a>
+    <button class="lang-btn" id="lang-btn" type="button"></button>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
       <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
-      <span class="menu-txt">Menu</span>
+      <span class="menu-txt" data-i18n="Menu">Menu</span>
     </button>
     <nav class="nav" id="nav" aria-label="Main">
-      <a href="/#/">Explore</a>
-      <a href="/#/compare">Compare</a>
-      <a href="/#/guide">How to say it</a>
-      <a href="/#/quiz">Guess the region</a>
-      <a href="/#/add">Add a word</a>
-      <a href="/#/sources">Sources</a>
+      <a href="/#/" data-i18n="Explore">Explore</a>
+      <a href="/#/compare" data-i18n="Compare">Compare</a>
+      <a href="/#/guide" data-i18n="How to say it">How to say it</a>
+      <a href="/#/quiz" data-i18n="Guess the region">Guess the region</a>
+      <a href="/#/add" data-i18n="Add a word">Add a word</a>
+      <a href="/#/sources" data-i18n="Sources">Sources</a>
     </nav>
   </header>
 
   <main class="nf-page">
     <div class="notfound">
       <p class="nf-code" aria-hidden="true">404</p>
-      <h1><span lang="kn">ಅಯ್ಯೋ!</span> This page got lost</h1>
-      <p class="lede">There is no page at this address. It may have been moved, or the link has a typo.</p>
+      <h1><span lang="kn">ಅಯ್ಯೋ!</span> <span data-i18n="This page got lost">This page got lost</span></h1>
+      <p class="lede" data-i18n="There is no place or page at this address. It may have been renamed, or the link has a typo.">There is no place or page at this address. It may have been renamed, or the link has a typo.</p>
       <div class="actions">
-        <a class="btn" href="/">Back to the map</a>
-        <a class="btn ghost" href="/#/quiz">Play Guess the region</a>
+        <a class="btn" href="/" data-i18n="Back to the map">Back to the map</a>
+        <a class="btn ghost" href="/#/quiz" data-i18n="Play Guess the region">Play Guess the region</a>
       </div>
     </div>
   </main>
   <footer class="site-foot nf-foot">
-    <p class="foot-line">© <span id="year">2026</span> Namma Kannada · <a href="/#/sources">Sources and credits</a> · <a href="/#/privacy">Privacy</a> · <a href="/#/terms">Terms</a></p>
+    <p class="foot-line">© <span id="year">2026</span> <span data-i18n="Namma Kannada">Namma Kannada</span> · <a href="/#/sources" data-i18n="Sources and credits">Sources and credits</a> · <a href="/#/privacy" data-i18n="Privacy">Privacy</a> · <a href="/#/terms" data-i18n="Terms">Terms</a></p>
   </footer>
 
-  <script src="/js/404.js"></script>
+  <script type="module" src="/js/404.js?v=15"></script>
 </body>
 </html>

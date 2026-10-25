@@ -1,6 +1,8 @@
 // Renders the Karnataka SVG map with place pins.
 import { MAP, projectPoint } from "./map-data.js";
 import { store, entriesFor } from "./store.js";
+import { t, plural, placeName } from "./i18n.js";
+const pinLabel = (place, n) => `${placeName(place)}, ${n ? plural(n, "word", "words") : t("no words yet")}`;
 
 const SVG = "http://www.w3.org/2000/svg";
 let root, pins = new Map();
@@ -18,7 +20,7 @@ export function renderMap(container, { onSelect }) {
   const svg = el("svg", {
     viewBox: `0 0 ${MAP.width} ${MAP.height}`,
     role: "group",
-    "aria-label": "Karnataka with regional dialect places",
+    "aria-label": t("Karnataka with regional dialect places"),
   });
 
   const districts = el("g", { "aria-hidden": "true" });
@@ -26,9 +28,9 @@ export function renderMap(container, { onSelect }) {
     const zone = store.zones.get(d.zone);
     const p = el("path", { d: d.d, class: "district", "data-zone": d.zone });
     p.style.setProperty("--zone", zone?.color || "#888");
-    const t = el("title");
-    t.textContent = `${d.name} district`;
-    p.append(t);
+    const tt = el("title");
+    tt.textContent = t("{name} district", { name: d.name });
+    p.append(tt);
     districts.append(p);
   }
   svg.append(districts);
@@ -47,7 +49,7 @@ export function renderMap(container, { onSelect }) {
       tabindex: "0",
       role: "button",
       "data-place": place.id,
-      "aria-label": `${place.name}, ${count ? count + (count === 1 ? " word" : " words") : "no words yet"}`,
+      "aria-label": pinLabel(place, count),
     });
     g.style.setProperty("--zone", zone.color);
     g.style.setProperty("--delay", `${200 + ZONE_ORDER.indexOf(place.zone) * 140 + (i % 4) * 30}ms`);
@@ -63,7 +65,7 @@ export function renderMap(container, { onSelect }) {
       y: y + 5,
       "text-anchor": left ? "end" : "start",
     });
-    label.textContent = place.name;
+    label.textContent = placeName(place);
     g.append(label);
 
     const choose = () => onSelect(place.id);
@@ -84,7 +86,7 @@ export function refreshPinCounts() {
     const n = entriesFor(id).length;
     const place = store.places.get(id);
     g.classList.toggle("empty", n === 0);
-    g.setAttribute("aria-label", `${place.name}, ${n ? n + (n === 1 ? " word" : " words") : "no words yet"}`);
+    g.setAttribute("aria-label", pinLabel(place, n));
   }
 }
 

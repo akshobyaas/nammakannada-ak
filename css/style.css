@@ -123,6 +123,24 @@ button, input, select, textarea { font: inherit; color: inherit; }
   box-shadow: var(--shadow-sm); border-radius: var(--r);
 }
 
+/* One-tap language switch, always visible */
+.lang-btn {
+  order: 3; flex: none;
+  padding: 7px 14px; min-height: 40px;
+  border: var(--line); border-radius: 999px; box-shadow: var(--shadow-sm);
+  background: var(--white); color: var(--ink); cursor: pointer;
+  font-family: var(--f-ui); font-weight: 800; font-size: 1rem; line-height: 1.1;
+  transition: transform 90ms ease, box-shadow 90ms ease;
+}
+.lang-btn[lang="kn"] { font-family: var(--f-kn); font-size: 1.08rem; }
+.lang-btn:hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--ink); }
+.lang-btn:active { transform: translate(3px, 3px); box-shadow: 0 0 0 var(--ink); }
+.lang-btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.nav { order: 2; margin-left: auto; }
+.brand { order: 1; }
+
+/* Kannada menu labels are longer: drop the tagline so the header stays on one row */
+
 /* Hamburger: only shown on small screens */
 .menu-btn {
   display: none; align-items: center; gap: 8px;
@@ -555,14 +573,14 @@ table.guide thead th { background: var(--ink); color: var(--yellow); border-top:
 
 /* ---------- Responsive ---------- */
 /* Tablet and small laptop: tighter header so logo and nav fit on one or two lines */
-@media (max-width: 1180px) {
+/* Wide laptops: drop the tagline so logo, menu and language button fit on one row */
+@media (max-width: 1440px) {
   .brand-en { display: none; }
-  .nav { gap: 2px 12px; }
-  .nav a { font-size: 0.95rem; }
+  .nav { gap: 2px 14px; }
 }
 
-/* Phones and portrait tablets: one column, hamburger menu, sticky action */
-@media (max-width: 860px) {
+/* Up to small laptops: compact header with the language button and a menu button */
+@media (max-width: 1180px) {
   .top {
     position: sticky; top: 0; z-index: 20;
     flex-direction: row; flex-wrap: nowrap; align-items: center; justify-content: space-between;
@@ -572,12 +590,8 @@ table.guide thead th { background: var(--ink); color: var(--yellow); border-top:
   .brand-kn { font-size: 2.1rem; margin: 0 26px; }
   .brand-kn::before { left: -26px; } .brand-kn::after { right: -26px; }
   .brand-kn::before, .brand-kn::after { width: 18px; }
-  .menu-btn { display: inline-flex; flex: none; }
-  .map-prompt {
-    display: block; margin: 0 auto; padding: 6px 14px; width: fit-content; max-width: 100%;
-    background: var(--yellow); color: var(--ink); font-weight: 800; text-align: center;
-    border: var(--line); border-radius: 999px; box-shadow: var(--shadow-sm);
-  }
+  .menu-btn { display: inline-flex; flex: none; order: 3; }
+  .lang-btn { order: 2; margin-left: auto; margin-right: 10px; min-height: 42px; }
   .nav {
     position: absolute; left: 0; right: 0; top: 100%;
     flex-direction: column; flex-wrap: nowrap; align-items: stretch; gap: 0;
@@ -590,6 +604,21 @@ table.guide thead th { background: var(--ink); color: var(--yellow); border-top:
   .nav a:last-child { border-bottom: 0; }
   .nav a:hover { border-bottom-color: rgba(0,0,0,0.25); }
   .nav a[aria-current="page"] { margin: 6px 0; padding: 10px 12px; border: 3px solid var(--ink); }
+}
+/* Side-by-side layout under the compact sticky header: keep the map below it */
+@media (min-width: 861px) and (max-width: 1180px) {
+  .layout { min-height: calc(100vh - 70px); }
+  .map-pane { top: 70px; height: calc(100vh - 70px); }
+  .panel { scroll-margin-top: 80px; }
+}
+
+/* Phones and portrait tablets: one column, hamburger menu, sticky action */
+@media (max-width: 860px) {
+  .map-prompt {
+    display: block; margin: 0 auto; padding: 6px 14px; width: fit-content; max-width: 100%;
+    background: var(--yellow); color: var(--ink); font-weight: 800; text-align: center;
+    border: var(--line); border-radius: 999px; box-shadow: var(--shadow-sm);
+  }
 
   .layout { grid-template-columns: 1fr; min-height: 0; }
   .map-pane { position: relative; height: auto; padding: 14px 16px; border-right: 0; border-bottom: 4px solid var(--ink); }
@@ -618,6 +647,7 @@ table.guide thead th { background: var(--ink); color: var(--yellow); border-top:
   .brand-kn::before { left: -22px; } .brand-kn::after { right: -22px; }
   .brand-kn::before, .brand-kn::after { width: 15px; transform: scale(0.85); }
   .menu-txt { display: none; }
+  .lang-btn { padding: 6px 11px; margin-right: 8px; font-size: 0.92rem; }
   .menu-btn { padding: 10px; }
   .map { height: 42vh; }
   .legend button { font-size: 0.8rem; padding: 4px 8px; }
