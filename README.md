@@ -1,44 +1,55 @@
 # Namma Kannada (ನಮ್ಮ ಕನ್ನಡ)
 
-An interactive map of how spoken Kannada changes across Karnataka. Pick a place to see its words and phrases next to standard Kannada, with meaning, a cultural note and a link to the source.
+**One language, hundreds of voices.** An interactive map of how spoken Kannada changes across Karnataka: regional words, phrases, sounds and sayings, each with its meaning, the standard Kannada form, a pronunciation guide, a voice clip, a cultural note and a link to its source.
 
-Built for the Kannada Digital Innovation Hackathon 2026, problem statement 4: Regional Language Explorer.
+**Live site:** https://nammakannada-ak.vercel.app
+
+Built for the Kannada Digital Innovation Hackathon 2026, problem statement 4: *Namma Kannada – Regional Language Explorer*.
+
+![Namma Kannada: the dialect map of Karnataka](og-image.png)
+
+## Why
+
+Information about Kannada dialects exists, but it is scattered across dictionaries, Wikipedia, research papers, blogs and Instagram pages. Namma Kannada brings it onto one map, cites every word, lets you hear it, and lets speakers add words from their own town.
+
+## What's inside
+
+| | |
+|---|---|
+| Words and phrases | 189, every one linked to its source |
+| Places | 20 on the map, across 5 cultural regions (12 with words so far) |
+| Voice | Every entry has an AI voice clip for the dialect form and the standard form (406 clips) |
+| Comparisons | 13 sets showing the same idea across regions |
+
+Regions covered include Havyaka Kannada (Sirsi), Kundagannada (Kundapura), Arebhashe (Sullia), Halakki (Ankola), Malenadu (Thirthahalli), Dharwad, Bagalkote, Belagavi, Kalaburagi, Bidar, Bengaluru and Mandya.
 
 ## Features
 
-- **Map:** 16 places across 5 regions on a district-level map of Karnataka. A hollow pin means no words yet.
-- **Word cards:** dialect form, transliteration, English meaning, standard Kannada, note, source link and whether a native speaker has checked it.
-- **Compare:** the same phrase side by side across regions.
-- **Search:** in Kannada script, English or transliteration.
-- **Guess the region:** a quiz built from the dataset that marks the answer on the map.
-- **Add a word:** visitors add a word from their town. It is saved on their device, can be copied as JSON, and can be sent to you through a Google Form (set `GOOGLE_FORM_URL` in `js/config.js`).
+- **Explore the map.** Tap a region or a place. Each place has an introduction, filters (words, phrases, proverbs, sound changes, grammar, borrowed words) and next/previous navigation.
+- **Word cards.** Dialect form in Kannada script, transliteration, a "say it" respelling, English meaning, standard Kannada, a cultural note, the source and whether a speaker has checked it.
+- **Hear it.** One tap plays the word. Order of preference: a speaker's own recording, then the Sarvam AI Bulbul voice, then the Alar voice corpus, then the browser's Kannada voice.
+- **How to say it.** A pronunciation guide for English readers (vowels, curled-tongue sounds, doubled letters) and the typical sound changes of each region, with playable examples.
+- **Compare.** The same phrase across regions side by side, next to standard Kannada.
+- **Guess the region.** An 8-word quiz that marks the answer on the map. Works with the keyboard (1–4, Enter).
+- **Search** in Kannada script, English or transliteration.
+- **Add a word.** Visitors add a word from their town, with checks on every field. It is saved on their device, shown on the map as "added by you", and can be copied as JSON or sent through a Google Form (see `js/config.js`).
+- **Sensitive content, handled with care.** Entries about caste, community or violence, and insults, are kept as part of the language record but labelled; the strongest are hidden until you tap to show them, and none appear in the quiz.
+- **Works on phones.** Mobile menu, a sticky "Add a word" button, and layouts tested from 360px wide to desktop.
 
-## Sound
+## How the sound works
 
-- **Play recording:** a clip recorded by a Kannada speaker, with the real local accent.
-- **Listen:** a computer voice reading the spelling in a standard accent. Where the [Alar voice corpus](https://github.com/Aditya-ds-1806/Alar-voice-corpus) (GPL-2.0, generated with Google TTS) has the word, its clip in `audio/alar/` plays in any browser; this covers 17 dialect words and 21 standard forms. Otherwise the browser's built-in Kannada voice is used, which Microsoft Edge on Windows and Chrome on Android have; the button is hidden in browsers without one. **Demo in Edge.**
+Clips in `audio/ai/` were generated once with [Sarvam AI's Bulbul](https://www.sarvam.ai/text-to-speech) text-to-speech (`scripts/generate-voice.py`) and are served as plain MP3 files. Visitors never call any API, and no key is in the site. A computer voice reads the spelling in a standard accent, so it gives the shape of a word rather than its local tune. The **Record words** page (`#/record`) lets a native speaker record real clips, which then take priority.
 
-### Natural AI voice for every word (Sarvam AI)
-
-1. Sign up at [dashboard.sarvam.ai](https://dashboard.sarvam.ai) (free credits, no card) and create an API key.
-2. In this folder, run `python scripts/generate-voice.py` and paste the key when asked.
-3. Reload the site. Every word and its standard form now play the Sarvam Bulbul voice.
-
-Try `python scripts/generate-voice.py --limit 2` first to hear it. Change the voice with `--speaker roopa` (or anand, vijay, shruti...) and add `--force` to remake existing clips. Clips go to `audio/ai/`.
-
-### Real recordings
-
-To add recordings, open `#/record` in the site (also linked from Sources), record and save each word, move the files into `audio/`, then run:
+To regenerate or add voices, put your key in `.env` (never committed) and run:
 
 ```bash
-node scripts/link-audio.mjs
+python scripts/generate-voice.py            # all entries without a clip
+python scripts/generate-voice.py --limit 2  # try a couple first
 ```
 
-It matches files to entries by name (`kun-02.webm` → entry `kun-02`) and adds the `audio` field.
+## Run it locally
 
-## Run it
-
-The site is plain HTML, CSS and JavaScript with no build step. It loads `data/dialects.json`, so it needs a local server; double-clicking `index.html` will not work.
+Plain HTML, CSS and JavaScript, with no build step and no dependencies. The site loads `data/dialects.json`, so it needs a local server; double-clicking `index.html` will not work.
 
 ```bash
 npx serve .
@@ -46,12 +57,11 @@ npx serve .
 python -m http.server 8000
 ```
 
-Then open the address it prints.
-
 ## Deploy
 
-- **Vercel:** import the GitHub repo and deploy with no settings, or run `npx vercel` in this folder.
-- **GitHub Pages:** Settings → Pages → deploy from the `main` branch, root folder.
+Deployed on **Vercel**: import the GitHub repo, no settings needed. `vercel.json` adds the security headers and caching, and `.vercelignore` keeps `.env`, scripts and notes out of the deploy. Vercel also serves `404.html` for unknown addresses.
+
+Other static hosts can serve the site, but the security headers, the 404 page and the root-relative icon paths assume Vercel at the domain root.
 
 ## Add or fix words
 
@@ -59,45 +69,60 @@ Everything lives in `data/dialects.json`.
 
 ```json
 {
-  "id": "mys-01",
-  "place": "mysuru",
+  "id": "sir-01",
+  "place": "sirsi",
   "type": "word",
-  "english": "what",
-  "standard": { "kn": "ಏನು", "tr": "enu" },
-  "dialect": { "kn": "…", "tr": "…" },
+  "english": "why",
+  "standard": { "kn": "ಯಾಕೆ", "tr": "yaake" },
+  "dialect": { "kn": "ಎಂತಕೆ", "tr": "entakke" },
   "note": "Optional cultural note",
-  "source": "native",
-  "confidence": "reference",
-  "verified": true,
-  "audio": "audio/mys-01.mp3"
+  "source": "havyaka",
+  "verified": false,
+  "voice": { "dialect": "audio/ai/sir-01-dialect.mp3", "standard": "audio/ai/sir-01-standard.mp3" }
 }
 ```
 
-- `place` must match a place `id` in the same file.
+- `place` must match a place `id`; `source` must be a key in `sources`.
 - `type` is one of `word`, `phrase`, `grammar`, `sound`, `loanword`.
-- `source` is a key in `sources`. For words you know first-hand, add `"native": "Native speaker (project author)"` to `sources`.
 - Set `verified` to `true` once a native speaker has confirmed the entry.
-- `audio` is optional. Put the MP3 in `audio/` and a Play button appears.
+- Optional `sensitive: { "kind": "caste" | "community" | "violence" | "vulgar" | "insult", "why": "…" }` labels an entry; add `"level": "label"` to label it without hiding it.
 - Add a group to `compare_sets` to show entries side by side in Compare.
 
 ## Project structure
 
 ```
-index.html          page shell
-css/style.css       all styles
-js/app.js           startup and routing
-js/views.js         the panel views
-js/map.js           SVG map and pins
-js/map-data.js      generated district shapes (do not edit)
-js/store.js         data loading, search, saved contributions
-js/config.js        settings
-data/dialects.json  the dataset
-audio/              pronunciation clips
-scripts/build-map.mjs  regenerates js/map-data.js from GeoJSON
+index.html            page shell, SEO and link-preview tags
+404.html              page for unknown addresses
+css/                  styles and self-hosted fonts
+js/app.js             startup, routing, page titles, mobile menu
+js/views.js           the pages (map panel, place, compare, guide, quiz, add, privacy, terms…)
+js/map.js             SVG map and pins (js/map-data.js is generated)
+js/store.js           data loading, search, words saved on this device
+js/speech.js          sound playback
+js/pronounce.js       Kannada → "say it" respelling
+js/recorder.js        the Record words page
+js/ui.js              loading, empty states, messages
+js/config.js          Google Form link, contact details, quiz length
+data/dialects.json    the dataset
+audio/                voice clips
+scripts/              voice generation and map build tools (not deployed)
 ```
+
+## Privacy and security
+
+No accounts, no cookies, no third-party requests: fonts, sound and data are all served from the site itself. Words visitors add stay in their own browser. Visits are counted with cookie-free Vercel Web Analytics. The site sends a strict Content-Security-Policy, HSTS and the other standard security headers. See the Privacy and Terms pages on the site (drafts).
+
+## Limitations and next steps
+
+- Most entries come from published or online sources and are marked "Not yet checked by a speaker". The next step is review by native speakers from each region.
+- Eight places on the map have no words yet, including Mysuru, Udupi, Mangaluru and Shivamogga.
+- Voices are AI-generated in a standard accent; real recordings from local speakers would carry the true regional tune.
+- Contributions are saved on the visitor's device; a moderated review queue would let them reach everyone.
 
 ## Data and credits
 
-Every entry links to its source. See the Sources page in the app for the full list. Entries marked "Not yet checked by a speaker" come from published references, blogs or forums and still need a native speaker to confirm them.
+Every entry links to its source; the Sources page in the app lists them all, including the Instagram pages [@aarva_karnaata](https://www.instagram.com/aarva_karnaata/) and [@kannada.gothilla](https://www.instagram.com/kannada.gothilla/), Wikipedia, CIIL, Prajavani, Deccan Herald and others.
 
-Map boundaries: [india-maps-data](https://github.com/udit-001/india-maps-data) (2011 census districts). Regions are approximate cultural zones, not official divisions.
+- Map boundaries: [india-maps-data](https://github.com/udit-001/india-maps-data) (2011 census districts). Regions are approximate cultural zones, not official divisions.
+- Voices: [Sarvam AI Bulbul](https://www.sarvam.ai/text-to-speech) and the [Alar voice corpus](https://github.com/Aditya-ds-1806/Alar-voice-corpus) (GPL-2.0).
+- Fonts: Gluten, Fredoka and Baloo Tamma 2, under the SIL Open Font License.
