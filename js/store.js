@@ -45,7 +45,9 @@ export function sourceLabel(key) {
   const url = sourceUrl(key);
   if (!url) return null;
   try {
-    let host = new URL(url).hostname.replace(/^www\./, "");
+    const u = new URL(url);
+    let host = u.hostname.replace(/^www\./, "");
+    if (host === "instagram.com") return "@" + u.pathname.split("/").filter(Boolean)[0];
     if (host === "web.archive.org") host = "archive.org (Kundapura dictionary)";
     return host;
   } catch {

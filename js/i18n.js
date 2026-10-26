@@ -4,8 +4,9 @@
 import { KN } from "./i18n-kn.js";
 
 const KEY = "nk.lang";
-let lang = "en";
-try { if (localStorage.getItem(KEY) === "kn") lang = "kn"; } catch { /* default to English */ }
+// Kannada first: a first-time visitor sees the site in Kannada; English is one tap away and remembered.
+let lang = "kn";
+try { if (localStorage.getItem(KEY) === "en") lang = "en"; } catch { /* default to Kannada */ }
 document.documentElement.lang = lang;
 
 export const getLang = () => lang;
@@ -51,21 +52,12 @@ export const dt = {
   compare: (set) => (lang === "kn" && DATA?.compare?.[set.id]) || set.english,
   why: (text) => (lang === "kn" && DATA?.why?.[text]) || text || "",
   meaning: (e) => (lang === "kn" && !e.contributed && DATA?.meaning?.[e.english]) || e.english,
+  // The "Transcribed from an @… Instagram post" credit is dropped: the card's Source link already names the post.
   note(e) {
     const note = e.note || "";
-    if (lang !== "kn" || e.contributed || !note) return note;
-    let body = note, credit = "";
-    const m = note.match(CREDIT);
-    if (m) {
-      body = note.slice(0, m.index).trim();
-      const topic = DATA?.credit_topic?.[m[1]] || m[1];
-      credit = `@aarva_karnaata ಇನ್‌ಸ್ಟಾಗ್ರಾಮ್ ಪೋಸ್ಟ್‌ನಿಂದ (${topic}) ದಾಖಲಿಸಲಾಗಿದೆ.`;
-    } else if (CREDIT_GOTHILLA.test(note)) {
-      body = note.replace(CREDIT_GOTHILLA, "").trim();
-      credit = "@kannada.gothilla ಇನ್‌ಸ್ಟಾಗ್ರಾಮ್ ಪೋಸ್ಟ್‌ನಿಂದ (ಬೆಂಗಳೂರು ಸ್ಲ್ಯಾಂಗ್).";
-    }
-    const kn = body ? DATA?.note?.[body] : "";
-    if (body && !kn) return note; // no translation: keep the whole note in English
-    return [kn, credit].filter(Boolean).join(" ");
+    if (e.contributed || !note) return note;
+    const body = note.replace(CREDIT, "").replace(CREDIT_GOTHILLA, "").trim();
+    if (lang !== "kn" || !body) return body;
+    return DATA?.note?.[body] || body;
   },
 };

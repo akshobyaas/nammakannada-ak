@@ -46,6 +46,12 @@ function setNav(name) {
   });
 }
 
+// ---------- Keep the map exactly below the sticky header ----------
+const header = document.querySelector(".top");
+const syncHead = () => document.documentElement.style.setProperty("--head", `${header.offsetHeight}px`);
+new ResizeObserver(syncHead).observe(header);
+syncHead();
+
 // ---------- Mobile menu ----------
 const menuBtn = document.querySelector(".menu-btn");
 const nav = document.getElementById("nav");

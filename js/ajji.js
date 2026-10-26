@@ -89,7 +89,7 @@ export function renderAjji(root) {
   const places = [...store.places.values()].sort((a, b) => placeName(a).localeCompare(placeName(b), isKn() ? "kn" : "en"));
   root.innerHTML = `
     <div class="ajji-hero">
-      <p class="ajji-kicker" lang="kn">ಅಜ್ಜಿ ಮಾತು</p>
+      <p class="ajji-kicker" lang="kn">${isKn() ? "ಹೊಸತು!" : "ಅಜ್ಜಿ ಮಾತು"}</p>
       <h1>${t("Ajji's words")}</h1>
       <p class="lede">${t("Every family has an elder whose Kannada is not in any dictionary. Hand them your phone for two minutes and save it.")}</p>
     </div>

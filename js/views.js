@@ -86,13 +86,12 @@ export function wordCard(e, { showPlace = false } = {}) {
       ${sayLine(e.dialect?.kn)}
       <p class="meaning">${esc(dt.meaning(e))}</p>
       ${std}
-      ${e.note ? `<p class="note">${esc(dt.note(e))}</p>` : ""}
+      ${dt.note(e) ? `<p class="note">${esc(dt.note(e))}</p>` : ""}
     </div>
     <footer>
       ${flag}
       ${checkHtml(e)}
       ${src ? `<a href="${esc(src)}" target="_blank" rel="noopener">${t("Source:")} ${esc(sourceLabel(e.source))}</a>` : ""}
-      ${e.confidence === "informal" ? `<span>${t("Social media or blog source")}</span>` : ""}
     </footer>
   </article>`;
 }
@@ -404,7 +403,7 @@ export function renderQuiz(root, { restart = false } = {}) {
       res.innerHTML = `
         <p class="result ${right ? "right" : "wrong"}"><strong>${t(right ? "Right." : "Not quite.")}</strong>
         ${t("This is from {place}.", { place: esc(placeName(place)) })}${e.standard?.tr ? " " + t("In standard Kannada it is {w}.", { w: esc(isKn() && e.standard.kn ? e.standard.kn : e.standard.tr) }) : ""}</p>
-        ${e.note ? `<p class="note">${esc(dt.note(e))}</p>` : ""}
+        ${dt.note(e) ? `<p class="note">${esc(dt.note(e))}</p>` : ""}
         <div class="actions"><button class="btn" type="button" id="next">${t(quiz.i + 1 < quiz.questions.length ? "Next word" : "See your score")}</button></div>`;
       const next = res.querySelector("#next");
       next.focus();
