@@ -1,6 +1,14 @@
 // Kannada text for the interface. Keys are the English text used in the code (see js/i18n.js).
 // Anything missing here simply shows in English.
 export const KN = {
+  "{book}, p. {page}": "{book}, ಪು. {page}",
+  "Malenada Nudikosha": "ಮಲೆನಾಡ ನುಡಿಕೋಶ",
+  "Malenada Nudikosha, ed. Venakshi S. D., Karnataka Folklore University, 2014 (read on Bharatavani): Malenadu words checked against it, with page numbers": "ಮಲೆನಾಡ ನುಡಿಕೋಶ, ಸಂ. ವೇಣಾಕ್ಷಿ ಎಸ್. ಡಿ., ಕರ್ನಾಟಕ ಜಾನಪದ ವಿಶ್ವವಿದ್ಯಾಲಯ, 2014 (ಭಾರತವಾಣಿಯಲ್ಲಿ ಓದಿದ್ದು): ಮಲೆನಾಡಿನ ಪದಗಳನ್ನು ಇದರೊಂದಿಗೆ ಹೋಲಿಸಲಾಗಿದೆ, ಪುಟ ಸಂಖ್ಯೆಗಳೊಂದಿಗೆ",
+  "spelled with a final ṇ": "ಕೊನೆಯಲ್ಲಿ ‘ಣ’ ಸೇರಿದ ಕಾಗುಣಿತ",
+  "narrower: the raw smell of fish or meat": "ಅರ್ಥ ಇನ್ನೂ ನಿರ್ದಿಷ್ಟ: ಮೀನು ಅಥವಾ ಮಾಂಸದ ಹಸಿವಾಸನೆ",
+  "spelled with a long ī": "ದೀರ್ಘ ‘ಸೀ’ ಕಾಗುಣಿತ",
+  "headword is ಎವ್ಣೆ; ಎವೆ is its gloss": "ಮುಖ್ಯಪದ ಎವ್ಣೆ; ಎವೆ ಅದರ ಅರ್ಥ",
+  "the dictionary says throat, not neck": "ನಿಘಂಟಿನ ಪ್ರಕಾರ ಕುತ್ತಿಗೆಯಲ್ಲ, ಗಂಟಲು",
   // ---------- Header, footer, map ----------
   "Namma Kannada": "ನಮ್ಮ ಕನ್ನಡ",
   "Skip to content": "ವಿಷಯಕ್ಕೆ ನೇರ ಹೋಗಿ",

@@ -28,6 +28,7 @@ Regions covered include Havyaka Kannada (Sirsi), Kundagannada (Kundapura), Arebh
 - **Ajji's words (ಅಜ್ಜಿ ಮಾತು): record an elder's real Kannada.** Hand your phone to a grandparent. They see a big picture (rain, a door, a snake, two apples) and one generic question, *ಇದಕ್ಕೆ ನಿಮ್ಮೂರಲ್ಲಿ ಏನಂತಾರೆ?*, never the word itself. Written prompts pull people towards textbook Kannada; pictures don't, which is how field linguists elicit dialect. Afterwards you play the answers back, type what was said, see how other regions say the same thing, and share or download a zip of the recordings with an `answers.json` (town, age band, consent, meaning, what was said). Recordings never leave the phone unless you share them.
 - **Explore the map.** Tap a region or a place. Each place has an introduction, filters (words, phrases, proverbs, sound changes, grammar, borrowed words) and next/previous navigation.
 - **Word cards.** Dialect form in Kannada script, transliteration, a "say it" respelling, English meaning, standard Kannada, a cultural note, the source and whether a speaker has checked it.
+- **Checked against a printed dictionary.** 15 of the 16 Malenadu words are matched to the *Malenada Nudikosha* (Karnataka Folklore University, 2014). Each card shows the page, the headword and gloss as printed, and says plainly where the book differs from the card (for example ಮ್ಯಾಣೆ: the dictionary says throat, not neck). ಹೆಪ್ರ "fool" is not in it.
 - **Hear it.** One tap plays the word. Order of preference: a speaker's own recording, then the Sarvam AI Bulbul voice, then the Alar voice corpus, then the browser's Kannada voice.
 - **How to say it.** A pronunciation guide for English readers (vowels, curled-tongue sounds, doubled letters) and the typical sound changes of each region, with playable examples.
 - **Compare.** The same phrase across regions side by side, next to standard Kannada.
@@ -118,7 +119,7 @@ No accounts, no cookies, no third-party requests: fonts, sound and data are all 
 
 ## Limitations and next steps
 
-- Most entries come from published or online sources and are marked "Not yet checked by a speaker". The next step is review by native speakers from each region.
+- Most entries come from published or online sources and are marked "Not yet checked by a speaker". A dictionary match is shown separately and does not count as a speaker check. The next step is review by native speakers from each region.
 - Eight places on the map have no words yet, including Mysuru, Udupi, Mangaluru and Shivamogga.
 - Voices are AI-generated in a standard accent; real recordings from local speakers would carry the true regional tune.
 - Contributions are saved on the visitor's device; a moderated review queue would let them reach everyone.
@@ -126,6 +127,8 @@ No accounts, no cookies, no third-party requests: fonts, sound and data are all 
 ## Data and credits
 
 Every entry links to its source; the Sources page in the app lists them all, including the Instagram pages [@aarva_karnaata](https://www.instagram.com/aarva_karnaata/) and [@kannada.gothilla](https://www.instagram.com/kannada.gothilla/), Wikipedia, CIIL, Prajavani, Deccan Herald and others.
+
+- Dictionary check: *Malenada Nudikosha*, ed. Venakshi S. D., Karnataka Folklore University, Gotagodi, 2014, read on [Bharatavani](https://bharatavani.in/). The book is all rights reserved, so only page numbers and short headword–gloss citations are in this repo; the book itself is not.
 
 - Map boundaries: [india-maps-data](https://github.com/udit-001/india-maps-data) (2011 census districts). Regions are approximate cultural zones, not official divisions.
 - Voices: [Sarvam AI Bulbul](https://www.sarvam.ai/text-to-speech) and the [Alar voice corpus](https://github.com/Aditya-ds-1806/Alar-voice-corpus) (GPL-2.0).

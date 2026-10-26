@@ -45,6 +45,15 @@ function dialectHtml(e, { asButton = false } = {}) {
   return `<p class="dialect latin">${esc(e.dialect?.tr)}</p>`;
 }
 
+// Where a printed dictionary lists the word: page, headword and gloss as printed, and how it differs.
+const DICT_NAME = { malenada_nudikosha: "Malenada Nudikosha" };
+function dictHtml(e) {
+  const d = e.dict;
+  if (!d || !DICT_NAME[d.ref]) return "";
+  const diff = d.differs ? ` <span class="dict-diff">${esc(t(d.differs))}</span>` : "";
+  return `<p class="dict"><a href="#/sources">${t("{book}, p. {page}", { book: t(DICT_NAME[d.ref]), page: d.page })}</a>: <span lang="kn">${esc(d.headword)} = ${esc(d.gloss)}</span>${diff}</p>`;
+}
+
 function checkHtml(e) {
   if (e.contributed) return `<span class="check mine">${t("Added by you on this device")}</span>`;
   if (e.verified) return `<span class="check ok">${t("Checked by a native speaker")}</span>`;
@@ -87,6 +96,7 @@ export function wordCard(e, { showPlace = false } = {}) {
       <p class="meaning">${esc(dt.meaning(e))}</p>
       ${std}
       ${dt.note(e) ? `<p class="note">${esc(dt.note(e))}</p>` : ""}
+      ${dictHtml(e)}
     </div>
     <footer>
       ${flag}
@@ -772,12 +782,16 @@ const SOURCE_NOTES = {
   sarvam_voice: "Sarvam AI Bulbul: AI voice clips",
   aarva_karnaata: "@aarva_karnaata on Instagram: dialect posts on Bagalkote, Halakki, Malenadu, Arebhashe, Dharwad, Kalaburagi, Kundapura and Havyaka Kannada",
   kannada_gothilla: "@kannada.gothilla on Instagram: Bengaluru slang",
+  malenada_nudikosha: "Malenada Nudikosha, ed. Venakshi S. D., Karnataka Folklore University, 2014 (read on Bharatavani): Malenadu words checked against it, with page numbers",
   alar_voice: "Alar voice corpus: dictionary audio clips (GPL-2.0, generated with Google TTS)",
 };
 
 export function renderSources(root) {
   const counts = {};
-  for (const e of store.entries) counts[e.source] = (counts[e.source] || 0) + 1;
+  for (const e of store.entries) {
+    counts[e.source] = (counts[e.source] || 0) + 1;
+    if (e.dict) counts[e.dict.ref] = (counts[e.dict.ref] || 0) + 1;
+  }
   root.innerHTML = `
     <h1>${t("Sources")}</h1>
     <p class="lede">${t("Every word links back to where it came from. Words marked “Not yet checked by a speaker” are waiting for a native speaker to confirm them.")}</p>

@@ -25,7 +25,8 @@
   "alar_voice": "https://github.com/Aditya-ds-1806/Alar-voice-corpus",
   "sarvam_voice": "https://www.sarvam.ai/text-to-speech",
   "aarva_karnaata": "https://www.instagram.com/aarva_karnaata/",
-  "kannada_gothilla": "https://www.instagram.com/kannada.gothilla/"
+  "kannada_gothilla": "https://www.instagram.com/kannada.gothilla/",
+  "malenada_nudikosha": "https://bharatavani.in/"
  },
  "zones": [
   {
@@ -2486,6 +2487,13 @@
    "voice": {
     "dialect": "audio/ai/mal-01-dialect.mp3",
     "standard": "audio/ai/mal-01-standard.mp3"
+   },
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 3,
+    "headword": "ಅಂವ್ಣ",
+    "gloss": "ಅವನು",
+    "differs": "spelled with a final ṇ"
    }
   },
   {
@@ -2509,6 +2517,12 @@
    "voice": {
     "dialect": "audio/ai/mal-02-dialect.mp3",
     "standard": "audio/ai/mal-02-standard.mp3"
+   },
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 8,
+    "headword": "ಅದೆ",
+    "gloss": "೧. ಇದೆ ೨. ಸರಿ, ಹೌದು"
    }
   },
   {
@@ -2532,6 +2546,12 @@
    "voice": {
     "dialect": "audio/ai/mal-03-dialect.mp3",
     "standard": "audio/ai/mal-03-standard.mp3"
+   },
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 56,
+    "headword": "ಕಾನು",
+    "gloss": "ಕಾನನ, ಅಡವಿ, ಕಾಡು, ಮಲೆ"
    }
   },
   {
@@ -2555,6 +2575,12 @@
    "voice": {
     "dialect": "audio/ai/mal-04-dialect.mp3",
     "standard": "audio/ai/mal-04-standard.mp3"
+   },
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 106,
+    "headword": "ಚಪ್ಪೆ",
+    "gloss": "ಸಪ್ಪೆ, ಉಪ್ಪಿಲ್ಲದಿರುವುದು, ರುಚಿಯಿಲದಿರುವುದು"
    }
   },
   {
@@ -2578,6 +2604,12 @@
    "voice": {
     "dialect": "audio/ai/mal-05-dialect.mp3",
     "standard": "audio/ai/mal-05-standard.mp3"
+   },
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 70,
+    "headword": "ಕೇಣು",
+    "gloss": "ಕಿವಿಗೊಡು, ಆಲಿಸು, …"
    }
   },
   {
@@ -2601,6 +2633,12 @@
    "voice": {
     "dialect": "audio/ai/mal-06-dialect.mp3",
     "standard": "audio/ai/mal-06-standard.mp3"
+   },
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 130,
+    "headword": "ತಲ್ಲಿ",
+    "gloss": "ತನ್ನಿ, ತೆಗೆದುಕೊಂಡು ಬನ್ನಿ"
    }
   },
   {
@@ -2624,6 +2662,12 @@
    "voice": {
     "dialect": "audio/ai/mal-07-dialect.mp3",
     "standard": "audio/ai/mal-07-standard.mp3"
+   },
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 144,
+    "headword": "ದಿಮ್ಮನೆ",
+    "gloss": "ಸುಮ್ಮನೆ, ತೆಪ್ಪಗೆ"
    }
   },
   {
@@ -2647,6 +2691,12 @@
    "voice": {
     "dialect": "audio/ai/mal-08-dialect.mp3",
     "standard": "audio/ai/mal-08-standard.mp3"
+   },
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 153,
+    "headword": "ನಿಣುಕು",
+    "gloss": "ಇಣುಕು, ಹಣಿಕಿ ನೋಡು"
    }
   },
   {
@@ -2670,6 +2720,13 @@
    "voice": {
     "dialect": "audio/ai/mal-09-dialect.mp3",
     "standard": "audio/ai/mal-09-standard.mp3"
+   },
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 88,
+    "headword": "ಗವ್ಲು",
+    "gloss": "ಗೌಲು, ಮೀನು/ಮಾಂಸಾಹಾರದ ಹಸಿವಾಸನೆ",
+    "differs": "narrower: the raw smell of fish or meat"
    }
   },
   {
@@ -2720,6 +2777,13 @@
    "voice": {
     "dialect": "audio/ai/mal-11-dialect.mp3",
     "standard": "audio/ai/mal-11-standard.mp3"
+   },
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 220,
+    "headword": "ಸೀಯ್ಯಾಳ",
+    "gloss": "ಎಳನೀರು, ಎಳೆಯ ತೆಂಗಿನ ಕಾಯಿಯ ನೀರು",
+    "differs": "spelled with a long ī"
    }
   },
   {
@@ -2743,6 +2807,13 @@
    "voice": {
     "dialect": "audio/ai/mal-12-dialect.mp3",
     "standard": "audio/ai/mal-12-standard.mp3"
+   },
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 29,
+    "headword": "ಎವ್ಣೆ",
+    "gloss": "ಎವೆ, ಕಣ್ಣಿನ ರೆಪ್ಪೆ",
+    "differs": "headword is ಎವ್ಣೆ; ಎವೆ is its gloss"
    }
   },
   {
@@ -2766,6 +2837,13 @@
    "voice": {
     "dialect": "audio/ai/mal-13-dialect.mp3",
     "standard": "audio/ai/mal-13-standard.mp3"
+   },
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 200,
+    "headword": "ಮ್ಯಾಣೆ",
+    "gloss": "ಗಂಟಲು",
+    "differs": "the dictionary says throat, not neck"
    }
   },
   {
@@ -2789,6 +2867,12 @@
    "voice": {
     "dialect": "audio/ai/mal-14-dialect.mp3",
     "standard": "audio/ai/mal-14-standard.mp3"
+   },
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 193,
+    "headword": "ಮಿಣಿ",
+    "gloss": "ಹಗ್ಗ"
    }
   },
   {
@@ -2812,6 +2896,12 @@
    "voice": {
     "dialect": "audio/ai/mal-15-dialect.mp3",
     "standard": "audio/ai/mal-15-standard.mp3"
+   },
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 230,
+    "headword": "ಹರೆ",
+    "gloss": "ಗೆಲ್ಲು, ಟಿಸಿಲು, ಟೊಂಗೆ, ಶಾಖೆ"
    }
   },
   {
@@ -2835,6 +2925,12 @@
    "voice": {
     "dialect": "audio/ai/mal-16-dialect.mp3",
     "standard": "audio/ai/mal-16-standard.mp3"
+   },
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 190,
+    "headword": "ಮಾಡು",
+    "gloss": "೧. ನಿರ್ವಹಿಸು ೨. ಸೂರು, ಛಾವಣಿ"
    }
   },
   {
