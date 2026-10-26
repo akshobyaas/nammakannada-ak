@@ -154,6 +154,14 @@ export function renderExplore(root, { zone } = {}) {
         <a class="btn ghost" href="#/compare">${t("Compare regions side by side")}</a>
       </div>
       <p class="muted">${t("{words} from {n} of {total} places so far, each linked to its source.", { words: plural(total, "word", "words"), n: withWords, total: store.places.size })}</p>
+      <a class="ajji-promo" href="#/ajji">
+        <span class="ajji-promo-pic" aria-hidden="true">👵🏽🎙️</span>
+        <span class="ajji-promo-text">
+          <strong>${t("New: Ajji's words")}</strong>
+          <span>${t("Hand your phone to a grandparent. They see pictures, not words, and answer the way they really talk. Save your family's Kannada in two minutes.")}</span>
+        </span>
+        <span class="ajji-promo-go" aria-hidden="true">➜</span>
+      </a>
       ${intro ? compareBlock(intro) : ""}
       <h2>${t("Places")}</h2>`;
   } else {
@@ -838,7 +846,7 @@ export function renderPrivacy(root) {
         : `<p>“Copy as JSON” copies your word so you can send it to the project yourself. Whatever you send is used only to review the word and, with your agreement, publish it with credit.</p>`}
 
       <h2>Recordings</h2>
-      <p>The <a href="#/record">Record words</a> page asks for your microphone only when you press Record. Recordings stay in your browser and are saved to your own downloads folder. Nothing is uploaded.</p>
+      <p>The <a href="#/record">Record words</a> and <a href="#/ajji">Ajji's words</a> pages ask for your microphone only when you start recording. Recordings stay in your browser tab and are only saved to your device, or shared through your phone's share menu, when you choose to. Nothing is uploaded to this site. Ajji's words asks you to confirm the speaker has agreed to be recorded before it starts.</p>
 
       <h2>Cookies and storage</h2>
       <p>The site sets no cookies. It uses your browser's local storage only for the words you add and to remember the language you chose, which those features need to work. Because there are no tracking cookies, there is no cookie banner.</p>
@@ -971,7 +979,7 @@ function privacyKn(form) {
         : `<p>“JSON ಆಗಿ ನಕಲಿಸಿ” ನಿಮ್ಮ ಪದವನ್ನು ನಕಲಿಸುತ್ತದೆ, ಅದನ್ನು ನೀವೇ ಯೋಜನೆಗೆ ಕಳುಹಿಸಬಹುದು. ನೀವು ಕಳುಹಿಸಿದ್ದನ್ನು ಪದವನ್ನು ಪರಿಶೀಲಿಸಲು ಮತ್ತು ನಿಮ್ಮ ಒಪ್ಪಿಗೆಯೊಂದಿಗೆ ಶ್ರೇಯ ನೀಡಿ ಪ್ರಕಟಿಸಲು ಮಾತ್ರ ಬಳಸುತ್ತೇವೆ.</p>`}
 
       <h2>ಧ್ವನಿಮುದ್ರಣಗಳು</h2>
-      <p><a href="#/record">ಪದಗಳನ್ನು ಧ್ವನಿಮುದ್ರಿಸಿ</a> ಪುಟ ನೀವು ಧ್ವನಿಮುದ್ರಿಸು ಒತ್ತಿದಾಗ ಮಾತ್ರ ಮೈಕ್ರೊಫೋನ್ ಕೇಳುತ್ತದೆ. ಧ್ವನಿಮುದ್ರಣಗಳು ನಿಮ್ಮ ಬ್ರೌಸರ್‌ನಲ್ಲೇ ಇದ್ದು ನಿಮ್ಮದೇ ಡೌನ್‌ಲೋಡ್ಸ್ ಫೋಲ್ಡರ್‌ಗೆ ಉಳಿಯುತ್ತವೆ. ಯಾವುದೂ ಅಪ್‌ಲೋಡ್ ಆಗುವುದಿಲ್ಲ.</p>
+      <p><a href="#/record">ಪದಗಳನ್ನು ಧ್ವನಿಮುದ್ರಿಸಿ</a> ಮತ್ತು <a href="#/ajji">ಅಜ್ಜಿ ಮಾತು</a> ಪುಟಗಳು ನೀವು ಧ್ವನಿಮುದ್ರಣ ಶುರುಮಾಡಿದಾಗ ಮಾತ್ರ ಮೈಕ್ರೊಫೋನ್ ಕೇಳುತ್ತವೆ. ಧ್ವನಿಮುದ್ರಣಗಳು ನಿಮ್ಮ ಬ್ರೌಸರ್ ಟ್ಯಾಬ್‌ನಲ್ಲೇ ಇದ್ದು, ನೀವು ಆರಿಸಿದಾಗ ಮಾತ್ರ ನಿಮ್ಮ ಸಾಧನಕ್ಕೆ ಉಳಿಯುತ್ತವೆ ಅಥವಾ ಫೋನಿನ ಹಂಚಿಕೆ ಮೆನು ಮೂಲಕ ಹಂಚಲ್ಪಡುತ್ತವೆ. ಈ ತಾಣಕ್ಕೆ ಏನೂ ಅಪ್‌ಲೋಡ್ ಆಗುವುದಿಲ್ಲ. ಅಜ್ಜಿ ಮಾತು ಶುರುವಾಗುವ ಮುನ್ನ, ಮಾತುಗಾರರು ಧ್ವನಿಮುದ್ರಣಕ್ಕೆ ಒಪ್ಪಿದ್ದಾರೆ ಎಂದು ದೃಢೀಕರಿಸಲು ಕೇಳುತ್ತದೆ.</p>
 
       <h2>ಕುಕೀಗಳು ಮತ್ತು ಸಂಗ್ರಹಣೆ</h2>
       <p>ಈ ತಾಣ ಯಾವುದೇ ಕುಕೀ ಇಡುವುದಿಲ್ಲ. ನೀವು ಸೇರಿಸುವ ಪದಗಳಿಗೆ ಮತ್ತು ನೀವು ಆರಿಸಿದ ಭಾಷೆಯನ್ನು ನೆನಪಿಡಲು ಮಾತ್ರ ಬ್ರೌಸರ್‌ನ ಲೋಕಲ್ ಸ್ಟೋರೇಜ್ ಬಳಸುತ್ತದೆ. ಟ್ರ್ಯಾಕಿಂಗ್ ಕುಕೀಗಳಿಲ್ಲದ್ದರಿಂದ ಕುಕೀ ಬ್ಯಾನರ್ ಇಲ್ಲ.</p>

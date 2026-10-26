@@ -25,6 +25,7 @@ Regions covered include Havyaka Kannada (Sirsi), Kundagannada (Kundapura), Arebh
 
 ## Features
 
+- **Ajji's words (ಅಜ್ಜಿ ಮಾತು): record an elder's real Kannada.** Hand your phone to a grandparent. They see a big picture (rain, a door, a snake, two apples) and one generic question, *ಇದಕ್ಕೆ ನಿಮ್ಮೂರಲ್ಲಿ ಏನಂತಾರೆ?*, never the word itself. Written prompts pull people towards textbook Kannada; pictures don't, which is how field linguists elicit dialect. Afterwards you play the answers back, type what was said, see how other regions say the same thing, and share or download a zip of the recordings with an `answers.json` (town, age band, consent, meaning, what was said). Recordings never leave the phone unless you share them.
 - **Explore the map.** Tap a region or a place. Each place has an introduction, filters (words, phrases, proverbs, sound changes, grammar, borrowed words) and next/previous navigation.
 - **Word cards.** Dialect form in Kannada script, transliteration, a "say it" respelling, English meaning, standard Kannada, a cultural note, the source and whether a speaker has checked it.
 - **Hear it.** One tap plays the word. Order of preference: a speaker's own recording, then the Sarvam AI Bulbul voice, then the Alar voice corpus, then the browser's Kannada voice.
@@ -102,6 +103,8 @@ js/store.js           data loading, search, words saved on this device
 js/speech.js          sound playback
 js/pronounce.js       Kannada → "say it" respelling
 js/recorder.js        the Record words page
+js/ajji.js            Ajji's words: picture-prompt recording for elders
+js/zip.js             tiny zip writer for downloading a session
 js/ui.js              loading, empty states, messages
 js/config.js          Google Form link, contact details, quiz length
 data/dialects.json    the dataset
