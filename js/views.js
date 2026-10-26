@@ -46,7 +46,7 @@ function dialectHtml(e, { asButton = false } = {}) {
 }
 
 // Where a printed dictionary lists the word: page, headword and gloss as printed, and how it differs.
-const DICT_NAME = { malenada_nudikosha: "Malenada Nudikosha", kannada_janapada_nighantu: "Kannada Janapada Nighantu" };
+const DICT_NAME = { malenada_nudikosha: "Malenada Nudikosha", kannada_janapada_nighantu: "Kannada Janapada Nighantu", solega_dictionary: "Solega-English Dictionary" };
 function dictHtml(e) {
   const d = e.dict;
   if (!d || !DICT_NAME[d.ref]) return "";
@@ -787,6 +787,7 @@ const SOURCE_NOTES = {
   kannada_gothilla: "@kannada.gothilla on Instagram: Bengaluru slang",
   malenada_nudikosha: "Malenada Nudikosha, ed. Venakshi S. D., Karnataka Folklore University, 2014 (read on Bharatavani): Malenadu words checked against it, with page numbers",
   padakanaja: "Kannada Janapada Nighantu (Karnataka Folklore University, 2014) on Padakanaja, the Government of Karnataka's dictionary portal: district-tagged folk words, cited by entry number",
+  solega_dictionary: "Solega-English Dictionary, compiled by Aung Si (2020): words of the Solega people of B R Hills, cited by page",
   alar_voice: "Alar voice corpus: dictionary audio clips (GPL-2.0, generated with Google TTS)",
 };
 

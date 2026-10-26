@@ -16,10 +16,10 @@ Information about Kannada dialects exists, but it is scattered across dictionari
 
 | | |
 |---|---|
-| Words and phrases | 457, every one linked to its source |
-| Places | 20 on the map, across 5 cultural regions (all 20 have words; 19 have at least 20) |
-| Voice | AI voice clips for the dialect and standard forms of 189 entries (406 clips); the 268 dictionary words added since are waiting for theirs |
-| Comparisons | 35 sets showing the same idea across regions |
+| Words and phrases | 482, every one linked to its source |
+| Places | 21 on the map, across 5 cultural regions (every place has words; all but Sullia have at least 20) |
+| Voice | AI voice clips for the dialect and standard forms of 189 entries (406 clips); the 293 dictionary words added since are waiting for theirs |
+| Comparisons | 39 sets showing the same idea across regions |
 
 Regions covered include Havyaka Kannada (Sirsi), Kundagannada (Kundapura), Arebhashe (Sullia), Halakki (Ankola), Malenadu (Thirthahalli), Dharwad, Bagalkote, Belagavi, Kalaburagi, Bidar, Bengaluru and Mandya.
 
@@ -122,6 +122,7 @@ No accounts, no cookies, no third-party requests: fonts, sound and data are all 
 
 - Most entries come from published or online sources and are marked "Not yet checked by a speaker". A dictionary match is shown separately and does not count as a speaker check. The next step is review by native speakers from each region.
 - Dictionary words are tagged by district, not town, so the pin stands for its district: Mysuru and Nanjangud share Mysuru-district words, Gundlupet has Chamarajanagar's, Mangaluru has Dakshina Kannada's. Udupi's entries are mostly fish names, because that is what the dictionary lists for Udupi.
+- B R Hills shows Solega, a language of its own closely related to Kannada, with 25 words from Aung Si's *Solega-English Dictionary* (2020), cited by page. It is labelled as a neighbouring language, not a Kannada dialect.
 - Sullia (Arebhashe) has 14 words. Dakshina Kannada entries in the dictionary are not Arebhashe, so they were not added there; Arebhashe needs its own source or recordings from speakers.
 - Voices are AI-generated in a standard accent; real recordings from local speakers would carry the true regional tune.
 - Contributions are saved on the visitor's device; a moderated review queue would let them reach everyone.

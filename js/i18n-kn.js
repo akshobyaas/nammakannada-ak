@@ -1,6 +1,8 @@
 // Kannada text for the interface. Keys are the English text used in the code (see js/i18n.js).
 // Anything missing here simply shows in English.
 export const KN = {
+  "Solega-English Dictionary": "ಸೋಲಿಗ-ಇಂಗ್ಲಿಷ್ ನಿಘಂಟು",
+  "Solega-English Dictionary, compiled by Aung Si (2020): words of the Solega people of B R Hills, cited by page": "ಸೋಲಿಗ-ಇಂಗ್ಲಿಷ್ ನಿಘಂಟು, ಸಂಕಲನ: ಆಂಗ್ ಸಿ (2020): ಬಿಳಿಗಿರಿರಂಗನ ಬೆಟ್ಟದ ಸೋಲಿಗರ ಪದಗಳು, ಪುಟ ಸಂಖ್ಯೆಯೊಂದಿಗೆ",
   "{book}, entry {n}": "{book}, ನಮೂದು {n}",
   "Kannada Janapada Nighantu": "ಕನ್ನಡ ಜಾನಪದ ನಿಘಂಟು",
   "Kannada Janapada Nighantu (Karnataka Folklore University, 2014) on Padakanaja, the Government of Karnataka's dictionary portal: district-tagged folk words, cited by entry number": "ಕನ್ನಡ ಜಾನಪದ ನಿಘಂಟು (ಕರ್ನಾಟಕ ಜಾನಪದ ವಿಶ್ವವಿದ್ಯಾಲಯ, 2014), ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ‘ಪದಕಣಜ’ ತಾಣದಲ್ಲಿ: ಜಿಲ್ಲೆಯ ಗುರುತಿರುವ ಜಾನಪದ ಪದಗಳು, ನಮೂದು ಸಂಖ್ಯೆಯೊಂದಿಗೆ",
@@ -318,7 +320,7 @@ export const KN = {
 
   // ---------- Page titles and descriptions ----------
   "Kannada dialects of Karnataka on an interactive map": "ಸಂವಾದಾತ್ಮಕ ನಕ್ಷೆಯಲ್ಲಿ ಕರ್ನಾಟಕದ ಕನ್ನಡ ಉಪಭಾಷೆಗಳು",
-  "Hear how spoken Kannada changes across Karnataka. Explore regional words, phrases and sounds from 20 places on a map, with pronunciation and sources.": "ಕರ್ನಾಟಕದಾದ್ಯಂತ ಆಡುಮಾತಿನ ಕನ್ನಡ ಹೇಗೆ ಬದಲಾಗುತ್ತದೆ ಎಂದು ಕೇಳಿ. ನಕ್ಷೆಯಲ್ಲಿ 20 ಸ್ಥಳಗಳ ಪ್ರಾದೇಶಿಕ ಪದಗಳು, ನುಡಿಗಟ್ಟುಗಳು ಮತ್ತು ಧ್ವನಿಗಳನ್ನು ಉಚ್ಚಾರ ಮತ್ತು ಮೂಲಗಳೊಂದಿಗೆ ನೋಡಿ.",
+  "Hear how spoken Kannada changes across Karnataka. Explore regional words, phrases and sounds from 21 places on a map, with pronunciation and sources.": "ಕರ್ನಾಟಕದಾದ್ಯಂತ ಆಡುಮಾತಿನ ಕನ್ನಡ ಹೇಗೆ ಬದಲಾಗುತ್ತದೆ ಎಂದು ಕೇಳಿ. ನಕ್ಷೆಯಲ್ಲಿ 21 ಸ್ಥಳಗಳ ಪ್ರಾದೇಶಿಕ ಪದಗಳು, ನುಡಿಗಟ್ಟುಗಳು ಮತ್ತು ಧ್ವನಿಗಳನ್ನು ಉಚ್ಚಾರ ಮತ್ತು ಮೂಲಗಳೊಂದಿಗೆ ನೋಡಿ.",
   "{zone} Kannada: dialects and words": "{zone} ಕನ್ನಡ: ಉಪಭಾಷೆಗಳು ಮತ್ತು ಪದಗಳು",
   "How Kannada is spoken in {zone}: {n} words and phrases from {p} places, with sound, pronunciation and sources.": "{zone}: ಇಲ್ಲಿ ಕನ್ನಡ ಹೇಗೆ ಮಾತನಾಡಲ್ಪಡುತ್ತದೆ — {p} ಸ್ಥಳಗಳಿಂದ {n} ಪದಗಳು ಮತ್ತು ನುಡಿಗಟ್ಟುಗಳು, ಧ್ವನಿ, ಉಚ್ಚಾರ ಮತ್ತು ಮೂಲಗಳೊಂದಿಗೆ.",
   "{place} Kannada: a local word": "{place} ಕನ್ನಡ: ಒಂದು ಸ್ಥಳೀಯ ಪದ",

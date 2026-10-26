@@ -27,7 +27,8 @@
   "aarva_karnaata": "https://www.instagram.com/aarva_karnaata/",
   "kannada_gothilla": "https://www.instagram.com/kannada.gothilla/",
   "malenada_nudikosha": "https://bharatavani.in/",
-  "padakanaja": "https://padakanaja.karnataka.gov.in/dictionary"
+  "padakanaja": "https://padakanaja.karnataka.gov.in/dictionary",
+  "solega_dictionary": "https://kups.ub.uni-koeln.de/52074"
  },
  "zones": [
   {
@@ -280,6 +281,17 @@
    "lng": 77.5199,
    "about": "Dakhni Urdu has influenced local Kannada here more than anywhere else.",
    "source": "tnm_north",
+   "needs_native_input": true
+  },
+  {
+   "id": "brhills",
+   "name": "B R Hills (Solega)",
+   "name_kn": "ಬಿಳಿಗಿರಿರಂಗನ ಬೆಟ್ಟ (ಸೋಲಿಗ)",
+   "zone": "south",
+   "lat": 11.99,
+   "lng": 77.14,
+   "about": "The Solega (Soliga) people of the Biligiri Rangaswamy Hills in Chamarajanagar district speak a language of their own, closely related to Kannada. These words come from Aung Si's Solega-English Dictionary, so they show a neighbouring language rather than a dialect of Kannada.",
+   "source": "solega_dictionary",
    "needs_native_input": true
   }
  ],
@@ -11270,6 +11282,586 @@
     "gloss": "ದಪ್ಪ ತುಟಿಯ ದೊಡ್ಡ ಮೀನು",
     "region": "ಉಡುಪಿ ಜಿಲ್ಲೆ"
    }
+  },
+  {
+   "id": "sol-01",
+   "place": "brhills",
+   "type": "word",
+   "english": "waterfall",
+   "standard": {
+    "kn": "ಜಲಪಾತ",
+    "tr": "jalapāta"
+   },
+   "dialect": {
+    "kn": "ಅಬ್ಬಿ",
+    "tr": "abbi"
+   },
+   "source": "solega_dictionary",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "solega_dictionary",
+    "page": 90,
+    "headword": "abbi",
+    "gloss": "waterfall"
+   }
+  },
+  {
+   "id": "sol-02",
+   "place": "brhills",
+   "type": "word",
+   "english": "smooth pebbles in a stream bed",
+   "standard": {
+    "kn": "ನುಣುಪು ಕಲ್ಲು",
+    "tr": "nuNupu kallu"
+   },
+   "dialect": {
+    "kn": "ಅಡಲು",
+    "tr": "aḍalu"
+   },
+   "source": "solega_dictionary",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "solega_dictionary",
+    "page": 83,
+    "headword": "aḍalu",
+    "gloss": "pebbles"
+   }
+  },
+  {
+   "id": "sol-03",
+   "place": "brhills",
+   "type": "word",
+   "english": "leech",
+   "standard": {
+    "kn": "ಜಿಗಣೆ",
+    "tr": "jigaNe"
+   },
+   "dialect": {
+    "kn": "ಅಂಟೆ ಹುಳ",
+    "tr": "aṇṭe huḷa"
+   },
+   "source": "solega_dictionary",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "solega_dictionary",
+    "page": 86,
+    "headword": "aṇṭe huḷa",
+    "gloss": "leech"
+   }
+  },
+  {
+   "id": "sol-04",
+   "place": "brhills",
+   "type": "sound",
+   "english": "raindrop",
+   "standard": {
+    "kn": "ಮಳೆಹನಿ",
+    "tr": "maLehani"
+   },
+   "dialect": {
+    "kn": "ಅನಿ",
+    "tr": "ani"
+   },
+   "source": "solega_dictionary",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "solega_dictionary",
+    "page": 88,
+    "headword": "ani",
+    "gloss": "drop of water, raindrop"
+   }
+  },
+  {
+   "id": "sol-05",
+   "place": "brhills",
+   "type": "word",
+   "english": "heat (of a fire)",
+   "standard": {
+    "kn": "ಕಾವು",
+    "tr": "kāvu"
+   },
+   "dialect": {
+    "kn": "ಅಬೆ",
+    "tr": "abe"
+   },
+   "source": "solega_dictionary",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "solega_dictionary",
+    "page": 90,
+    "headword": "abe",
+    "gloss": "heat"
+   }
+  },
+  {
+   "id": "sol-06",
+   "place": "brhills",
+   "type": "word",
+   "english": "cookhouse, a separate hut for cooking",
+   "standard": {
+    "kn": "ಅಡುಗೆ ಮನೆ",
+    "tr": "aDuge mane"
+   },
+   "dialect": {
+    "kn": "ಅಡಿಗೆ ಮೆನೆ",
+    "tr": "aḍige mene"
+   },
+   "note": "Solega families cook in a small hut built beside the house.",
+   "source": "solega_dictionary",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "solega_dictionary",
+    "page": 84,
+    "headword": "aḍige mene",
+    "gloss": "cookhouse"
+   }
+  },
+  {
+   "id": "sol-07",
+   "place": "brhills",
+   "type": "word",
+   "english": "plate made of leaves",
+   "standard": {
+    "kn": "ಎಲೆಯ ತಟ್ಟೆ",
+    "tr": "eleya taTTe"
+   },
+   "dialect": {
+    "kn": "ಅರುಗಾನ",
+    "tr": "aruga:na"
+   },
+   "source": "solega_dictionary",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "solega_dictionary",
+    "page": 93,
+    "headword": "aruga:na",
+    "gloss": "leaf plate"
+   }
+  },
+  {
+   "id": "sol-08",
+   "place": "brhills",
+   "type": "word",
+   "english": "narrow-necked pot that keeps water cool",
+   "standard": {
+    "kn": "ಮಡಕೆ",
+    "tr": "maDake"
+   },
+   "dialect": {
+    "kn": "ಅರವಿ",
+    "tr": "aravi"
+   },
+   "source": "solega_dictionary",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "solega_dictionary",
+    "page": 93,
+    "headword": "aravi",
+    "gloss": "narrow-necked water pot"
+   }
+  },
+  {
+   "id": "sol-09",
+   "place": "brhills",
+   "type": "word",
+   "english": "salty ragi porridge given to the sick",
+   "standard": {
+    "kn": "ರಾಗಿ ಅಂಬಲಿ",
+    "tr": "rāgi ambali"
+   },
+   "dialect": {
+    "kn": "ಅಂಬಲಿ ರಾಗಿ",
+    "tr": "ambali ra:gi"
+   },
+   "source": "solega_dictionary",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "solega_dictionary",
+    "page": 90,
+    "headword": "ambali ra:gi",
+    "gloss": "salty ragi porridge for the sick"
+   }
+  },
+  {
+   "id": "sol-10",
+   "place": "brhills",
+   "type": "word",
+   "english": "mother",
+   "standard": {
+    "kn": "ಅಮ್ಮ",
+    "tr": "amma"
+   },
+   "dialect": {
+    "kn": "ಅವ್ವ",
+    "tr": "avva"
+   },
+   "source": "solega_dictionary",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "solega_dictionary",
+    "page": 96,
+    "headword": "avva",
+    "gloss": "mother"
+   }
+  },
+  {
+   "id": "sol-11",
+   "place": "brhills",
+   "type": "word",
+   "english": "grandmother",
+   "standard": {
+    "kn": "ಅಜ್ಜಿ",
+    "tr": "ajji"
+   },
+   "dialect": {
+    "kn": "ಅಮ್ಮ",
+    "tr": "amma"
+   },
+   "note": "In Solega, amma means grandmother; mother is avva.",
+   "source": "solega_dictionary",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "solega_dictionary",
+    "page": 91,
+    "headword": "amma",
+    "gloss": "grandmother"
+   }
+  },
+  {
+   "id": "sol-12",
+   "place": "brhills",
+   "type": "word",
+   "english": "to swim",
+   "standard": {
+    "kn": "ಈಜು",
+    "tr": "īju"
+   },
+   "dialect": {
+    "kn": "ಅಡುಮು",
+    "tr": "aḍumu"
+   },
+   "source": "solega_dictionary",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "solega_dictionary",
+    "page": 84,
+    "headword": "aḍumu",
+    "gloss": "swim"
+   }
+  },
+  {
+   "id": "sol-13",
+   "place": "brhills",
+   "type": "word",
+   "english": "to hug",
+   "standard": {
+    "kn": "ಅಪ್ಪಿಕೊ",
+    "tr": "appiko"
+   },
+   "dialect": {
+    "kn": "ಅಪ್ಪು",
+    "tr": "appu"
+   },
+   "source": "solega_dictionary",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "solega_dictionary",
+    "page": 90,
+    "headword": "appu",
+    "gloss": "hug"
+   }
+  },
+  {
+   "id": "sol-14",
+   "place": "brhills",
+   "type": "word",
+   "english": "to be afraid",
+   "standard": {
+    "kn": "ಹೆದರು",
+    "tr": "hedaru"
+   },
+   "dialect": {
+    "kn": "ಅಂಜು",
+    "tr": "anju"
+   },
+   "source": "solega_dictionary",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "solega_dictionary",
+    "page": 89,
+    "headword": "anju",
+    "gloss": "be afraid"
+   }
+  },
+  {
+   "id": "sol-15",
+   "place": "brhills",
+   "type": "word",
+   "english": "to harvest honey",
+   "standard": {
+    "kn": "ಜೇನು ಕೀಳು",
+    "tr": "jēnu kīLu"
+   },
+   "dialect": {
+    "kn": "ಅಳಿ",
+    "tr": "aḷi"
+   },
+   "note": "Gathering wild honey from the forest is at the heart of Solega life.",
+   "source": "solega_dictionary",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "solega_dictionary",
+    "page": 94,
+    "headword": "aḷi",
+    "gloss": "harvest honey"
+   }
+  },
+  {
+   "id": "sol-16",
+   "place": "brhills",
+   "type": "word",
+   "english": "bees collecting water (not nectar) for the hive",
+   "standard": {
+    "kn": "ಜೇನು ನೀರು ತರುವುದು",
+    "tr": "jēnu nīru taruvudu"
+   },
+   "dialect": {
+    "kn": "ಆನ",
+    "tr": "a:na"
+   },
+   "note": "A word for something so specific shows how closely the Solega watch bees.",
+   "source": "solega_dictionary",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "solega_dictionary",
+    "page": 100,
+    "headword": "a:na",
+    "gloss": "bees collecting water"
+   }
+  },
+  {
+   "id": "sol-17",
+   "place": "brhills",
+   "type": "sound",
+   "english": "to yawn",
+   "standard": {
+    "kn": "ಆಕಳಿಸು",
+    "tr": "ākaLisu"
+   },
+   "dialect": {
+    "kn": "ಆಗುಳಿಸು",
+    "tr": "a:guḷisu"
+   },
+   "source": "solega_dictionary",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "solega_dictionary",
+    "page": 98,
+    "headword": "a:guḷisu",
+    "gloss": "yawn"
+   }
+  },
+  {
+   "id": "sol-18",
+   "place": "brhills",
+   "type": "phrase",
+   "english": "over and over again",
+   "standard": {
+    "kn": "ಮತ್ತೆ ಮತ್ತೆ",
+    "tr": "matte matte"
+   },
+   "dialect": {
+    "kn": "ಅರಳು ಮರಳು",
+    "tr": "araḷu maraḷu"
+   },
+   "source": "solega_dictionary",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "solega_dictionary",
+    "page": 92,
+    "headword": "araḷu maraḷu",
+    "gloss": "over and over again"
+   }
+  },
+  {
+   "id": "sol-19",
+   "place": "brhills",
+   "type": "word",
+   "english": "over there",
+   "standard": {
+    "kn": "ಅಲ್ಲಿ",
+    "tr": "alli"
+   },
+   "dialect": {
+    "kn": "ಅತ್ತಕ್ಕ",
+    "tr": "attakka"
+   },
+   "source": "solega_dictionary",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "solega_dictionary",
+    "page": 86,
+    "headword": "attakka",
+    "gloss": "over there"
+   }
+  },
+  {
+   "id": "sol-20",
+   "place": "brhills",
+   "type": "phrase",
+   "english": "get lost! (said in anger)",
+   "standard": {
+    "kn": "ತೊಲಗು",
+    "tr": "tolagu"
+   },
+   "dialect": {
+    "kn": "ಅಡಗು ಓಗು",
+    "tr": "aḍagu o:gu"
+   },
+   "source": "solega_dictionary",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "solega_dictionary",
+    "page": 83,
+    "headword": "aḍagu o:gu",
+    "gloss": "get lost!"
+   }
+  },
+  {
+   "id": "sol-21",
+   "place": "brhills",
+   "type": "sound",
+   "english": "green",
+   "standard": {
+    "kn": "ಹಸಿರು",
+    "tr": "hasiru"
+   },
+   "dialect": {
+    "kn": "ಅಸರು",
+    "tr": "asaru"
+   },
+   "source": "solega_dictionary",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "solega_dictionary",
+    "page": 97,
+    "headword": "asaru",
+    "gloss": "green"
+   }
+  },
+  {
+   "id": "sol-22",
+   "place": "brhills",
+   "type": "word",
+   "english": "the monsoon, \"the green time\"",
+   "standard": {
+    "kn": "ಮಳೆಗಾಲ",
+    "tr": "maLegāla"
+   },
+   "dialect": {
+    "kn": "ಅಸರುಗಾಲ",
+    "tr": "asaruga:la"
+   },
+   "note": "Literally \"the green time\", when the deciduous forest comes into leaf.",
+   "source": "solega_dictionary",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "solega_dictionary",
+    "page": 97,
+    "headword": "asaruga:la",
+    "gloss": "the monsoon"
+   }
+  },
+  {
+   "id": "sol-23",
+   "place": "brhills",
+   "type": "word",
+   "english": "cooking plantain",
+   "standard": {
+    "kn": "ಬಾಳೆಕಾಯಿ",
+    "tr": "bāLekāyi"
+   },
+   "dialect": {
+    "kn": "ಅಡಿಗೆಬಾಳೆ",
+    "tr": "aḍigeba:ḷe"
+   },
+   "source": "solega_dictionary",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "solega_dictionary",
+    "page": 84,
+    "headword": "aḍigeba:ḷe",
+    "gloss": "cooking plantain"
+   }
+  },
+  {
+   "id": "sol-24",
+   "place": "brhills",
+   "type": "phrase",
+   "english": "to stretch after waking up",
+   "standard": {
+    "kn": "ಮೈ ಮುರಿ",
+    "tr": "mai muri"
+   },
+   "dialect": {
+    "kn": "ಆಲೆಸ ಮುರಿ",
+    "tr": "a:lesa muri"
+   },
+   "source": "solega_dictionary",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "solega_dictionary",
+    "page": 103,
+    "headword": "a:lesa muri",
+    "gloss": "stretch on waking"
+   }
+  },
+  {
+   "id": "sol-25",
+   "place": "brhills",
+   "type": "word",
+   "english": "to rest",
+   "standard": {
+    "kn": "ವಿಶ್ರಮಿಸು",
+    "tr": "vishramisu"
+   },
+   "dialect": {
+    "kn": "ಆರ್ಸು",
+    "tr": "a:rsu"
+   },
+   "source": "solega_dictionary",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "solega_dictionary",
+    "page": 101,
+    "headword": "a:rsu",
+    "gloss": "rest"
+   }
   }
  ],
  "compare_sets": [
@@ -11570,6 +12162,38 @@
    "entries": [
     "pkn-157",
     "pkn-219"
+   ]
+  },
+  {
+   "id": "cmp-leech",
+   "english": "leech",
+   "entries": [
+    "mnk-07",
+    "sol-03"
+   ]
+  },
+  {
+   "id": "cmp-again",
+   "english": "over and over again",
+   "entries": [
+    "pkn-66",
+    "sol-18"
+   ]
+  },
+  {
+   "id": "cmp-mother",
+   "english": "mother",
+   "entries": [
+    "pkn-185",
+    "sol-10"
+   ]
+  },
+  {
+   "id": "cmp-green",
+   "english": "green",
+   "entries": [
+    "pkn-07",
+    "sol-21"
    ]
   }
  ]
