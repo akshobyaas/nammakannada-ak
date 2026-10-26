@@ -802,8 +802,7 @@ export function renderSources(root) {
     ${Object.keys(store.data.sources || {}).length ? "" : emptyHtml({ title: t("No sources listed yet") })}
     <ol class="sources">
       ${Object.entries(store.data.sources || {}).map(([k, url]) => `
-        <li><a href="${esc(url)}" target="_blank" rel="noopener">${esc(t(SOURCE_NOTES[k] || k))}</a>
-        <span class="muted">${counts[k] ? `, ${plural(counts[k], "word", "words")}` : ""}</span></li>`).join("")}
+        <li><a href="${esc(url)}" target="_blank" rel="noopener">${esc(t(SOURCE_NOTES[k] || k))}</a><span class="muted">${counts[k] ? `, ${plural(counts[k], "word", "words")}` : ""}</span></li>`).join("")}
     </ol>
     ${isKn() ? SOURCES_TAIL_KN : `<h2>Sound</h2>
     <p>“Recording” plays a clip recorded by a Kannada speaker. “Listen” is a computer voice reading the spelling in a standard accent, so it gives the shape of a word but not its local tune. Clips made with <a href="https://www.sarvam.ai/text-to-speech" target="_blank" rel="noopener">Sarvam AI’s Bulbul</a> voice are used first; where there is none and the <a href="https://github.com/Aditya-ds-1806/Alar-voice-corpus" target="_blank" rel="noopener">Alar voice corpus</a> has the word, its clip is used. Both play in any browser. Otherwise the browser’s own Kannada voice is used: Microsoft Edge on Windows and Chrome on Android have one, other browsers may not, and the button is hidden there.</p>

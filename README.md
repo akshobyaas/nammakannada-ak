@@ -16,10 +16,10 @@ Information about Kannada dialects exists, but it is scattered across dictionari
 
 | | |
 |---|---|
-| Words and phrases | 274, every one linked to its source |
-| Places | 20 on the map, across 5 cultural regions (19 with words so far) |
-| Voice | AI voice clips for the dialect and standard forms of 189 entries (406 clips); the 85 dictionary words added last are waiting for theirs |
-| Comparisons | 23 sets showing the same idea across regions |
+| Words and phrases | 457, every one linked to its source |
+| Places | 20 on the map, across 5 cultural regions (all 20 have words; 19 have at least 20) |
+| Voice | AI voice clips for the dialect and standard forms of 189 entries (406 clips); the 268 dictionary words added since are waiting for theirs |
+| Comparisons | 35 sets showing the same idea across regions |
 
 Regions covered include Havyaka Kannada (Sirsi), Kundagannada (Kundapura), Arebhashe (Sullia), Halakki (Ankola), Malenadu (Thirthahalli), Dharwad, Bagalkote, Belagavi, Kalaburagi, Bidar, Bengaluru and Mandya.
 
@@ -29,7 +29,7 @@ Regions covered include Havyaka Kannada (Sirsi), Kundagannada (Kundapura), Arebh
 - **Explore the map.** Tap a region or a place. Each place has an introduction, filters (words, phrases, proverbs, sound changes, grammar, borrowed words) and next/previous navigation.
 - **Word cards.** Dialect form in Kannada script, transliteration, a "say it" respelling, English meaning, standard Kannada, a cultural note, the source and whether a speaker has checked it.
 - **Checked against a printed dictionary.** 35 everyday Malenadu words (leech, evening, door, have you eaten? …) come from the *Malenada Nudikosha*, each read off the page image and cited by page. 15 of the 16 earlier Malenadu words are also matched to the *Malenada Nudikosha* (Karnataka Folklore University, 2014). Each card shows the page, the headword and gloss as printed, and says plainly where the book differs from the card (for example ಮ್ಯಾಣೆ: the dictionary says throat, not neck). ಹೆಪ್ರ "fool" is not in it.
-- **District words from the Kannada Janapada Nighantu.** 50 folk words tagged by district in the Karnataka Folklore University's dictionary on [Padakanaja](https://padakanaja.karnataka.gov.in/dictionary), the Government of Karnataka's portal, fill the empty pins: Mysuru, Gundlupet (Chamarajanagar district), Kolar, Chikkamagaluru, Shivamogga, Udupi, Mangaluru (Dakshina Kannada), Bidar and Mandya. Each card cites the entry number and district.
+- **District words from the Kannada Janapada Nighantu.** 233 folk words tagged by district in the Karnataka Folklore University's dictionary on [Padakanaja](https://padakanaja.karnataka.gov.in/dictionary), the Government of Karnataka's portal, bring every place except Sullia to at least 20 words: Mysuru, Nanjangud, Gundlupet (Chamarajanagar district), Mandya, Bengaluru, Kolar, Chikkamagaluru, Shivamogga, Udupi, Mangaluru (Dakshina Kannada), Belagavi, Kalaburagi and Bidar. The dictionary as published on Padakanaja has 7,714 entries, all beginning with a vowel (ಅ to ಔ), so every word from it starts with a vowel too. Each card cites the entry number and district.
 - **Hear it.** One tap plays the word. Order of preference: a speaker's own recording, then the Sarvam AI Bulbul voice, then the Alar voice corpus, then the browser's Kannada voice.
 - **How to say it.** A pronunciation guide for English readers (vowels, curled-tongue sounds, doubled letters) and the typical sound changes of each region, with playable examples.
 - **Compare.** The same phrase across regions side by side, next to standard Kannada.
@@ -121,7 +121,8 @@ No accounts, no cookies, no third-party requests: fonts, sound and data are all 
 ## Limitations and next steps
 
 - Most entries come from published or online sources and are marked "Not yet checked by a speaker". A dictionary match is shown separately and does not count as a speaker check. The next step is review by native speakers from each region.
-- Nanjangud has no words yet, and Udupi has only three. Dictionary words are tagged by district, not town, so the pin is the district's main town.
+- Dictionary words are tagged by district, not town, so the pin stands for its district: Mysuru and Nanjangud share Mysuru-district words, Gundlupet has Chamarajanagar's, Mangaluru has Dakshina Kannada's. Udupi's entries are mostly fish names, because that is what the dictionary lists for Udupi.
+- Sullia (Arebhashe) has 14 words. Dakshina Kannada entries in the dictionary are not Arebhashe, so they were not added there; Arebhashe needs its own source or recordings from speakers.
 - Voices are AI-generated in a standard accent; real recordings from local speakers would carry the true regional tune.
 - Contributions are saved on the visitor's device; a moderated review queue would let them reach everyone.
 
