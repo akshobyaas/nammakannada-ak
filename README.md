@@ -16,10 +16,10 @@ Information about Kannada dialects exists, but it is scattered across dictionari
 
 | | |
 |---|---|
-| Words and phrases | 189, every one linked to its source |
+| Words and phrases | 224, every one linked to its source |
 | Places | 20 on the map, across 5 cultural regions (12 with words so far) |
-| Voice | Every entry has an AI voice clip for the dialect form and the standard form (406 clips) |
-| Comparisons | 13 sets showing the same idea across regions |
+| Voice | AI voice clips for the dialect and standard forms of 189 entries (406 clips); the 35 dictionary words added last are waiting for theirs |
+| Comparisons | 19 sets showing the same idea across regions |
 
 Regions covered include Havyaka Kannada (Sirsi), Kundagannada (Kundapura), Arebhashe (Sullia), Halakki (Ankola), Malenadu (Thirthahalli), Dharwad, Bagalkote, Belagavi, Kalaburagi, Bidar, Bengaluru and Mandya.
 
@@ -28,7 +28,7 @@ Regions covered include Havyaka Kannada (Sirsi), Kundagannada (Kundapura), Arebh
 - **Ajji's words (ಅಜ್ಜಿ ಮಾತು): record an elder's real Kannada.** Hand your phone to a grandparent. They see a big picture (rain, a door, a snake, two apples) and one generic question, *ಇದಕ್ಕೆ ನಿಮ್ಮೂರಲ್ಲಿ ಏನಂತಾರೆ?*, never the word itself. Written prompts pull people towards textbook Kannada; pictures don't, which is how field linguists elicit dialect. Afterwards you play the answers back, type what was said, see how other regions say the same thing, and share or download a zip of the recordings with an `answers.json` (town, age band, consent, meaning, what was said). Recordings never leave the phone unless you share them.
 - **Explore the map.** Tap a region or a place. Each place has an introduction, filters (words, phrases, proverbs, sound changes, grammar, borrowed words) and next/previous navigation.
 - **Word cards.** Dialect form in Kannada script, transliteration, a "say it" respelling, English meaning, standard Kannada, a cultural note, the source and whether a speaker has checked it.
-- **Checked against a printed dictionary.** 15 of the 16 Malenadu words are matched to the *Malenada Nudikosha* (Karnataka Folklore University, 2014). Each card shows the page, the headword and gloss as printed, and says plainly where the book differs from the card (for example ಮ್ಯಾಣೆ: the dictionary says throat, not neck). ಹೆಪ್ರ "fool" is not in it.
+- **Checked against a printed dictionary.** 35 everyday Malenadu words (leech, evening, door, have you eaten? …) come from the *Malenada Nudikosha*, each read off the page image and cited by page. 15 of the 16 earlier Malenadu words are also matched to the *Malenada Nudikosha* (Karnataka Folklore University, 2014). Each card shows the page, the headword and gloss as printed, and says plainly where the book differs from the card (for example ಮ್ಯಾಣೆ: the dictionary says throat, not neck). ಹೆಪ್ರ "fool" is not in it.
 - **Hear it.** One tap plays the word. Order of preference: a speaker's own recording, then the Sarvam AI Bulbul voice, then the Alar voice corpus, then the browser's Kannada voice.
 - **How to say it.** A pronunciation guide for English readers (vowels, curled-tongue sounds, doubled letters) and the typical sound changes of each region, with playable examples.
 - **Compare.** The same phrase across regions side by side, next to standard Kannada.

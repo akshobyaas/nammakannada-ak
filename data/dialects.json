@@ -4839,6 +4839,820 @@
     "dialect": "audio/ai/dwd-25-dialect.mp3",
     "standard": "audio/ai/dwd-25-standard.mp3"
    }
+  },
+  {
+   "id": "mnk-01",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "what",
+   "standard": {
+    "kn": "ಏನು",
+    "tr": "ēnu"
+   },
+   "dialect": {
+    "kn": "ಎಂತ",
+    "tr": "enta"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 28,
+    "headword": "ಎಂತ",
+    "gloss": "ಏನು"
+   }
+  },
+  {
+   "id": "mnk-02",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "why",
+   "standard": {
+    "kn": "ಯಾಕೆ",
+    "tr": "yāke"
+   },
+   "dialect": {
+    "kn": "ಎಂತಕೆ",
+    "tr": "entake"
+   },
+   "note": "Havyaka speakers in Sirsi use almost the same word, entakke.",
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 28,
+    "headword": "ಎಂತಕೆ",
+    "gloss": "ಯಾಕೆ"
+   }
+  },
+  {
+   "id": "mnk-03",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "how",
+   "standard": {
+    "kn": "ಹೇಗೆ",
+    "tr": "hēge"
+   },
+   "dialect": {
+    "kn": "ಎಂತು",
+    "tr": "entu"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 28,
+    "headword": "ಎಂತು",
+    "gloss": "ಹೇಗೆ, ಯಾವ ರೀತಿ"
+   }
+  },
+  {
+   "id": "mnk-04",
+   "place": "thirthahalli",
+   "type": "sound",
+   "english": "don't want, no",
+   "standard": {
+    "kn": "ಬೇಡ",
+    "tr": "bēDa"
+   },
+   "dialect": {
+    "kn": "ಬ್ಯಾಡ",
+    "tr": "byāDa"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 184,
+    "headword": "ಬ್ಯಾಡ",
+    "gloss": "ಬೇಡ"
+   }
+  },
+  {
+   "id": "mnk-05",
+   "place": "thirthahalli",
+   "type": "sound",
+   "english": "on top, above",
+   "standard": {
+    "kn": "ಮೇಲೆ",
+    "tr": "mēle"
+   },
+   "dialect": {
+    "kn": "ಮ್ಯಾಲೆ",
+    "tr": "myāle"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 200,
+    "headword": "ಮ್ಯಾಲೆ",
+    "gloss": "ಮೇಲೆ"
+   }
+  },
+  {
+   "id": "mnk-06",
+   "place": "thirthahalli",
+   "type": "sound",
+   "english": "crow",
+   "standard": {
+    "kn": "ಕಾಗೆ",
+    "tr": "kāge"
+   },
+   "dialect": {
+    "kn": "ಕಾಗಿ",
+    "tr": "kāgi"
+   },
+   "note": "The dictionary calls the crow the cuckoo's foster mother: cuckoos lay their eggs in crows' nests.",
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 55,
+    "headword": "ಕಾಗಿ",
+    "gloss": "ಕಾಗೆ, ಕೋಗಿಲೆಯ ಸಾಕುತಾಯಿ"
+   }
+  },
+  {
+   "id": "mnk-07",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "leech",
+   "standard": {
+    "kn": "ಜಿಗಣೆ",
+    "tr": "jigaNe"
+   },
+   "dialect": {
+    "kn": "ಇಂಬ್ಳ",
+    "tr": "imbLa"
+   },
+   "note": "Leeches come out in the Malnad forests with the monsoon; anyone who walks there in the rains knows this word.",
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 17,
+    "headword": "ಇಂಬ್ಳ",
+    "gloss": "ಜಿಗಣೆ, …"
+   }
+  },
+  {
+   "id": "mnk-08",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "evening",
+   "standard": {
+    "kn": "ಸಂಜೆ",
+    "tr": "sanje"
+   },
+   "dialect": {
+    "kn": "ಬೈಗು",
+    "tr": "baigu"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 183,
+    "headword": "ಬೈಗು",
+    "gloss": "ಸಂಜೆ"
+   }
+  },
+  {
+   "id": "mnk-09",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "morning, early morning",
+   "standard": {
+    "kn": "ಬೆಳಿಗ್ಗೆ",
+    "tr": "beLigge"
+   },
+   "dialect": {
+    "kn": "ಹೊತಾರೆ",
+    "tr": "hotāre"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 246,
+    "headword": "ಹೊತಾರೆ",
+    "gloss": "ಬೆಳಿಗ್ಗೆ, …"
+   }
+  },
+  {
+   "id": "mnk-10",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "head",
+   "standard": {
+    "kn": "ತಲೆ",
+    "tr": "tale"
+   },
+   "dialect": {
+    "kn": "ಮಂಡೆ",
+    "tr": "maNDe"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 186,
+    "headword": "ಮಂಡೆ",
+    "gloss": "ತಲೆ, ಶಿರ"
+   }
+  },
+  {
+   "id": "mnk-11",
+   "place": "thirthahalli",
+   "type": "sound",
+   "english": "wife",
+   "standard": {
+    "kn": "ಹೆಂಡತಿ",
+    "tr": "heNDati"
+   },
+   "dialect": {
+    "kn": "ಹಿಂಡ್ತಿ",
+    "tr": "hinDti"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 235,
+    "headword": "ಹಿಂಡ್ತಿ",
+    "gloss": "ಹೆಂಡತಿ, ಮಡದಿ"
+   }
+  },
+  {
+   "id": "mnk-12",
+   "place": "thirthahalli",
+   "type": "sound",
+   "english": "plantation, garden",
+   "standard": {
+    "kn": "ತೋಟ",
+    "tr": "tōTa"
+   },
+   "dialect": {
+    "kn": "ತ್ವಾಟ",
+    "tr": "twāTa"
+   },
+   "note": "In the Malnad, a tōTa usually means an areca or coffee plantation.",
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 133,
+    "headword": "ತ್ವಾಟ",
+    "gloss": "ತೋಟ"
+   }
+  },
+  {
+   "id": "mnk-13",
+   "place": "thirthahalli",
+   "type": "sound",
+   "english": "sunshine, heat of the sun",
+   "standard": {
+    "kn": "ಬಿಸಿಲು",
+    "tr": "bisilu"
+   },
+   "dialect": {
+    "kn": "ಬಿಸ್ಲು",
+    "tr": "bislu"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 178,
+    "headword": "ಬಿಸ್ಲು",
+    "gloss": "ಬಿಸಿಲು, ತಾಪ"
+   }
+  },
+  {
+   "id": "mnk-14",
+   "place": "thirthahalli",
+   "type": "sound",
+   "english": "cold, shivering",
+   "standard": {
+    "kn": "ಚಳಿ",
+    "tr": "chaLi"
+   },
+   "dialect": {
+    "kn": "ಸಳಿ",
+    "tr": "saLi"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 216,
+    "headword": "ಸಳಿ",
+    "gloss": "ಚಳಿ, ನಡುಕ"
+   }
+  },
+  {
+   "id": "mnk-15",
+   "place": "thirthahalli",
+   "type": "sound",
+   "english": "housefly",
+   "standard": {
+    "kn": "ನೊಣ",
+    "tr": "noNa"
+   },
+   "dialect": {
+    "kn": "ನ್ವಣ",
+    "tr": "nwaNa"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 158,
+    "headword": "ನ್ವಣ",
+    "gloss": "ನೊಣ, ನೊಳ"
+   }
+  },
+  {
+   "id": "mnk-16",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "ant",
+   "standard": {
+    "kn": "ಇರುವೆ",
+    "tr": "iruve"
+   },
+   "dialect": {
+    "kn": "ಇರ",
+    "tr": "ira"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 20,
+    "headword": "ಇರ",
+    "gloss": "ಇರುವೆ"
+   }
+  },
+  {
+   "id": "mnk-17",
+   "place": "thirthahalli",
+   "type": "sound",
+   "english": "well (for water)",
+   "standard": {
+    "kn": "ಬಾವಿ",
+    "tr": "bāvi"
+   },
+   "dialect": {
+    "kn": "ಬಾಂವಿ",
+    "tr": "bāmvi"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 173,
+    "headword": "ಬಾಂವಿ",
+    "gloss": "ಬಾವಿ, ಕೂಪ, …"
+   }
+  },
+  {
+   "id": "mnk-18",
+   "place": "thirthahalli",
+   "type": "sound",
+   "english": "buttermilk",
+   "standard": {
+    "kn": "ಮಜ್ಜಿಗೆ",
+    "tr": "majjige"
+   },
+   "dialect": {
+    "kn": "ಮಜ್ಗಿ",
+    "tr": "majgi"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 186,
+    "headword": "ಮಜ್ಗಿ",
+    "gloss": "ಮಜ್ಜಿಗೆ, ಕಡೆದ ಮೊಸರು"
+   }
+  },
+  {
+   "id": "mnk-19",
+   "place": "thirthahalli",
+   "type": "sound",
+   "english": "front yard",
+   "standard": {
+    "kn": "ಅಂಗಳ",
+    "tr": "angaLa"
+   },
+   "dialect": {
+    "kn": "ಅಂಗ್ಳ",
+    "tr": "angLa"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 1,
+    "headword": "ಅಂಗ್ಳ",
+    "gloss": "ಅಂಗಳ, …"
+   }
+  },
+  {
+   "id": "mnk-20",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "to lie down, sleep",
+   "standard": {
+    "kn": "ಮಲಗು",
+    "tr": "malagu"
+   },
+   "dialect": {
+    "kn": "ಮನುಗು",
+    "tr": "manugu"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 188,
+    "headword": "ಮನುಗು",
+    "gloss": "ಮಲಗು, ನಿದ್ದೆಮಾಡು"
+   }
+  },
+  {
+   "id": "mnk-21",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "take (it back)",
+   "standard": {
+    "kn": "ತೆಗೆದುಕೊ",
+    "tr": "tegeduko"
+   },
+   "dialect": {
+    "kn": "ಇಸ್ಕ",
+    "tr": "iska"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 21,
+    "headword": "ಇಸ್ಕ",
+    "gloss": "ತೆಗೆದುಕೊ, ಹಿಂದಕ್ಕೆ ಪಡೆ"
+   }
+  },
+  {
+   "id": "mnk-22",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "elder brother",
+   "standard": {
+    "kn": "ಅಣ್ಣ",
+    "tr": "aNNa"
+   },
+   "dialect": {
+    "kn": "ಅಣಯ್ಯ",
+    "tr": "aNayya"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 7,
+    "headword": "ಅಣಯ್ಯ",
+    "gloss": "ಅಣ್ಣ, ಹಿರಿಯ ಸೋದರ"
+   }
+  },
+  {
+   "id": "mnk-23",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "grandfather",
+   "standard": {
+    "kn": "ಅಜ್ಜ",
+    "tr": "ajja"
+   },
+   "dialect": {
+    "kn": "ಅಜ್ಜಯ್ಯ",
+    "tr": "ajjayya"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 5,
+    "headword": "ಅಜ್ಜಯ್ಯ",
+    "gloss": "ಅಜ್ಜ"
+   }
+  },
+  {
+   "id": "mnk-24",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "a little",
+   "standard": {
+    "kn": "ಸ್ವಲ್ಪ",
+    "tr": "swalpa"
+   },
+   "dialect": {
+    "kn": "ಒಂಚೂರು",
+    "tr": "onchūru"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 33,
+    "headword": "ಒಂಚೂರು",
+    "gloss": "ಸ್ವಲ್ಪ, ಅತ್ಯಲ್ಪ, ಸ್ವಲ್ಪಭಾಗ"
+   }
+  },
+  {
+   "id": "mnk-25",
+   "place": "thirthahalli",
+   "type": "phrase",
+   "english": "have you eaten?",
+   "standard": {
+    "kn": "ಊಟ ಮಾಡಿದೆಯಾ?",
+    "tr": "ūTa māDideyā?"
+   },
+   "dialect": {
+    "kn": "ಉಂಡ್ಯಾ",
+    "tr": "unDyā"
+   },
+   "note": "Often asked as a greeting, the way \"how are you?\" is used elsewhere.",
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 22,
+    "headword": "ಉಂಡ್ಯಾ",
+    "gloss": "ಊಟ ಮಾಡಿದೆಯಾ?"
+   }
+  },
+  {
+   "id": "mnk-26",
+   "place": "thirthahalli",
+   "type": "sound",
+   "english": "ear",
+   "standard": {
+    "kn": "ಕಿವಿ",
+    "tr": "kivi"
+   },
+   "dialect": {
+    "kn": "ಕಿವ್ಣಿ",
+    "tr": "kivNi"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 60,
+    "headword": "ಕಿವ್ಣಿ",
+    "gloss": "ಕಿವಿ, ಶ್ರವಣೇಂದ್ರಿಯ"
+   }
+  },
+  {
+   "id": "mnk-27",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "dog, puppy",
+   "standard": {
+    "kn": "ನಾಯಿ",
+    "tr": "nāyi"
+   },
+   "dialect": {
+    "kn": "ಕುನ್ನಿ",
+    "tr": "kunni"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 64,
+    "headword": "ಕುನ್ನಿ",
+    "gloss": "೧. ನಾಯಿ, ನಾಯಮರಿ …"
+   }
+  },
+  {
+   "id": "mnk-28",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "cooked rice, a meal",
+   "standard": {
+    "kn": "ಅನ್ನ",
+    "tr": "anna"
+   },
+   "dialect": {
+    "kn": "ಬೋನ",
+    "tr": "bōna"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 184,
+    "headword": "ಬೋನ",
+    "gloss": "ಅನ್ನ"
+   }
+  },
+  {
+   "id": "mnk-29",
+   "place": "thirthahalli",
+   "type": "sound",
+   "english": "areca nut",
+   "standard": {
+    "kn": "ಅಡಿಕೆ",
+    "tr": "aDike"
+   },
+   "dialect": {
+    "kn": "ಅಡಕೆ",
+    "tr": "aDake"
+   },
+   "note": "Areca is the main crop of the Malnad; the dictionary has dozens of words for its parts, tools and diseases.",
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 6,
+    "headword": "ಅಡಕೆ",
+    "gloss": "ಅಡಿಕೆ, ಕೌಂಗು"
+   }
+  },
+  {
+   "id": "mnk-30",
+   "place": "thirthahalli",
+   "type": "sound",
+   "english": "umbrella",
+   "standard": {
+    "kn": "ಕೊಡೆ",
+    "tr": "koDe"
+   },
+   "dialect": {
+    "kn": "ಕ್ವಡೆ",
+    "tr": "kwaDe"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 81,
+    "headword": "ಕ್ವಡೆ",
+    "gloss": "ಕೊಡೆ, ಛತ್ರಿ"
+   }
+  },
+  {
+   "id": "mnk-31",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "thick curry, the gravy left after the vegetables",
+   "standard": {
+    "kn": "ಸಾರು",
+    "tr": "sāru"
+   },
+   "dialect": {
+    "kn": "ಗಸಿ",
+    "tr": "gasi"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 88,
+    "headword": "ಗಸಿ",
+    "gloss": "ಸಾರು, …"
+   }
+  },
+  {
+   "id": "mnk-32",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "give",
+   "standard": {
+    "kn": "ಕೊಡು",
+    "tr": "koDu"
+   },
+   "dialect": {
+    "kn": "ತಾ",
+    "tr": "tā"
+   },
+   "note": "In standard Kannada tā means \"bring\"; here the dictionary gives \"give\".",
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 132,
+    "headword": "ತಾ",
+    "gloss": "ಕೊಡು"
+   }
+  },
+  {
+   "id": "mnk-33",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "look!",
+   "standard": {
+    "kn": "ನೋಡು",
+    "tr": "nōDu"
+   },
+   "dialect": {
+    "kn": "ಅಕಾ",
+    "tr": "akā"
+   },
+   "note": "Kundapura Kannada uses the same word.",
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 4,
+    "headword": "ಅಕಾ",
+    "gloss": "ನೋಡು, ಗಮನಿಸು"
+   }
+  },
+  {
+   "id": "mnk-34",
+   "place": "thirthahalli",
+   "type": "word",
+   "english": "dry land that holds water only when it rains",
+   "standard": {
+    "kn": "ಒಣಭೂಮಿ",
+    "tr": "oNabhūmi"
+   },
+   "dialect": {
+    "kn": "ಮಕ್ಕಿ",
+    "tr": "makki"
+   },
+   "note": "A farming word: Malnad land is named by how it holds water.",
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 186,
+    "headword": "ಮಕ್ಕಿ",
+    "gloss": "ಮಳೆ ಬಂದರೆ ಮಾತ್ರ ನೀರಿದ್ದು …"
+   }
+  },
+  {
+   "id": "mnk-35",
+   "place": "thirthahalli",
+   "type": "sound",
+   "english": "door",
+   "standard": {
+    "kn": "ಬಾಗಿಲು",
+    "tr": "bāgilu"
+   },
+   "dialect": {
+    "kn": "ಬಾಕ್ಲು",
+    "tr": "bāklu"
+   },
+   "source": "malenada_nudikosha",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "malenada_nudikosha",
+    "page": 173,
+    "headword": "ಬಾಕ್ಲು",
+    "gloss": "ಬಾಗಿಲು"
+   }
   }
  ],
  "compare_sets": [
@@ -4904,7 +5718,8 @@
    "english": "door",
    "entries": [
     "bgk-10",
-    "hlk-04"
+    "hlk-04",
+    "mnk-35"
    ]
   },
   {
@@ -4920,7 +5735,8 @@
    "english": "don't want",
    "entries": [
     "dwd-02",
-    "dwd-09"
+    "dwd-09",
+    "mnk-04"
    ]
   },
   {
@@ -4946,7 +5762,8 @@
    "entries": [
     "kun-02",
     "are-14",
-    "dwd-23"
+    "dwd-23",
+    "mnk-06"
    ]
   },
   {
@@ -4954,7 +5771,56 @@
    "english": "on top, above",
    "entries": [
     "kun-23",
-    "dwd-24"
+    "dwd-24",
+    "mnk-05"
+   ]
+  },
+  {
+   "id": "cmp-why",
+   "english": "why",
+   "entries": [
+    "sir-01",
+    "mnk-02"
+   ]
+  },
+  {
+   "id": "cmp-how",
+   "english": "how",
+   "entries": [
+    "sir-02",
+    "mnk-03"
+   ]
+  },
+  {
+   "id": "cmp-head",
+   "english": "head",
+   "entries": [
+    "klb-04",
+    "mnk-10"
+   ]
+  },
+  {
+   "id": "cmp-morning",
+   "english": "morning",
+   "entries": [
+    "bgk-09",
+    "mnk-09"
+   ]
+  },
+  {
+   "id": "cmp-sleep",
+   "english": "to sleep",
+   "entries": [
+    "sir-10",
+    "mnk-20"
+   ]
+  },
+  {
+   "id": "cmp-look",
+   "english": "look!",
+   "entries": [
+    "kun-14",
+    "mnk-33"
    ]
   }
  ]
