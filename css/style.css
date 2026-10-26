@@ -712,7 +712,11 @@ body.ajji-open { overflow: hidden; }
   }
 
   .layout { grid-template-columns: 1fr; min-height: 0; }
-  .map-pane { position: relative; height: auto; padding: 14px 16px; border-right: 0; border-bottom: 4px solid var(--ink); }
+  /* On phones the map only earns its screen space where it is used: home, regions, places and the quiz */
+  body[data-page="compare"] .map-pane, body[data-page="guide"] .map-pane, body[data-page="add"] .map-pane,
+  body[data-page="thanks"] .map-pane, body[data-page="ajji"] .map-pane, body[data-page="sources"] .map-pane,
+  body[data-page="privacy"] .map-pane, body[data-page="terms"] .map-pane, body[data-page="record"] .map-pane { display: none; }
+  .map-pane { position: relative; top: auto; height: auto; padding: 14px 16px; border-right: 0; border-bottom: 4px solid var(--ink); }
   .map { flex: none; height: 50vh; max-height: 460px; min-height: 280px; }
   .panel { padding: 18px 16px 48px; scroll-margin-top: 72px; }
   .options { grid-template-columns: 1fr; }

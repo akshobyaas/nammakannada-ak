@@ -161,6 +161,7 @@ function route({ fromUser = false } = {}) {
   const [section, id] = parts;
   q.value = "";
   setMenu(false);
+  document.body.dataset.page = section || "home";
   syncCta(section, id);
   setMeta(...metaFor(section, id));
 

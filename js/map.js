@@ -29,7 +29,8 @@ export function renderMap(container, { onSelect }) {
     const p = el("path", { d: d.d, class: "district", "data-zone": d.zone });
     p.style.setProperty("--zone", zone?.color || "#888");
     const tt = el("title");
-    tt.textContent = t("{name} district", { name: d.name });
+    const dk = t("district:" + d.name);
+    tt.textContent = t("{name} district", { name: dk.startsWith("district:") ? d.name : dk });
     p.append(tt);
     districts.append(p);
   }
