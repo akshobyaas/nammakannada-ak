@@ -46,12 +46,15 @@ function dialectHtml(e, { asButton = false } = {}) {
 }
 
 // Where a printed dictionary lists the word: page, headword and gloss as printed, and how it differs.
-const DICT_NAME = { malenada_nudikosha: "Malenada Nudikosha" };
+const DICT_NAME = { malenada_nudikosha: "Malenada Nudikosha", kannada_janapada_nighantu: "Kannada Janapada Nighantu" };
 function dictHtml(e) {
   const d = e.dict;
   if (!d || !DICT_NAME[d.ref]) return "";
+  const book = t(DICT_NAME[d.ref]);
+  const where = d.page != null ? t("{book}, p. {page}", { book, page: d.page }) : t("{book}, entry {n}", { book, n: d.entry });
+  const region = d.region ? ` <span class="dict-region" lang="kn">(${esc(d.region)})</span>` : "";
   const diff = d.differs ? ` <span class="dict-diff">${esc(t(d.differs))}</span>` : "";
-  return `<p class="dict"><a href="#/sources">${t("{book}, p. {page}", { book: t(DICT_NAME[d.ref]), page: d.page })}</a>: <span lang="kn">${esc(d.headword)} = ${esc(d.gloss)}</span>${diff}</p>`;
+  return `<p class="dict"><a href="#/sources">${where}</a>: <span lang="kn">${esc(d.headword)} = ${esc(d.gloss)}</span>${region}${diff}</p>`;
 }
 
 function checkHtml(e) {
@@ -783,6 +786,7 @@ const SOURCE_NOTES = {
   aarva_karnaata: "@aarva_karnaata on Instagram: dialect posts on Bagalkote, Halakki, Malenadu, Arebhashe, Dharwad, Kalaburagi, Kundapura and Havyaka Kannada",
   kannada_gothilla: "@kannada.gothilla on Instagram: Bengaluru slang",
   malenada_nudikosha: "Malenada Nudikosha, ed. Venakshi S. D., Karnataka Folklore University, 2014 (read on Bharatavani): Malenadu words checked against it, with page numbers",
+  padakanaja: "Kannada Janapada Nighantu (Karnataka Folklore University, 2014) on Padakanaja, the Government of Karnataka's dictionary portal: district-tagged folk words, cited by entry number",
   alar_voice: "Alar voice corpus: dictionary audio clips (GPL-2.0, generated with Google TTS)",
 };
 

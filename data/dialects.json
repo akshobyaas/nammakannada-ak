@@ -26,7 +26,8 @@
   "sarvam_voice": "https://www.sarvam.ai/text-to-speech",
   "aarva_karnaata": "https://www.instagram.com/aarva_karnaata/",
   "kannada_gothilla": "https://www.instagram.com/kannada.gothilla/",
-  "malenada_nudikosha": "https://bharatavani.in/"
+  "malenada_nudikosha": "https://bharatavani.in/",
+  "padakanaja": "https://padakanaja.karnataka.gov.in/dictionary"
  },
  "zones": [
   {
@@ -101,7 +102,7 @@
    "zone": "south",
    "lat": 11.81,
    "lng": 76.69,
-   "about": "A town in Chamarajanagar district near the Bandipur forest. No words collected yet.",
+   "about": "A town in Chamarajanagar district near the Bandipur forest. Words here come from district entries in the Kannada Janapada Nighantu.",
    "source": null,
    "needs_native_input": true
   },
@@ -134,7 +135,7 @@
    "zone": "malnad",
    "lat": 13.3153,
    "lng": 75.7754,
-   "about": "Coffee country of Malnad. No words collected yet.",
+   "about": "Coffee country of Malnad. Words here come from district entries in the Kannada Janapada Nighantu.",
    "source": null,
    "needs_native_input": true
   },
@@ -5653,6 +5654,1217 @@
     "headword": "ಬಾಕ್ಲು",
     "gloss": "ಬಾಗಿಲು"
    }
+  },
+  {
+   "id": "pkn-01",
+   "place": "mysuru",
+   "type": "word",
+   "english": "mud, slush in a wet field",
+   "standard": {
+    "kn": "ಕೆಸರು",
+    "tr": "kesaru"
+   },
+   "dialect": {
+    "kn": "ಅಟ್ಲುಗೊರೆ",
+    "tr": "aTlugore"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 1021,
+    "headword": "ಅಟ್ಲುಗೊರೆ",
+    "gloss": "ಕೆಸರು",
+    "region": "ಮೈಸೂರು ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-02",
+   "place": "mysuru",
+   "type": "phrase",
+   "english": "put off, postpone",
+   "standard": {
+    "kn": "ಮುಂದಕ್ಕೆ ಹಾಕು",
+    "tr": "mundakke hāku"
+   },
+   "dialect": {
+    "kn": "ಅದ್ದೂಕೆ ಹಾಕು",
+    "tr": "addūke hāku"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 1751,
+    "headword": "ಅದ್ದೂಕೆ ಹಾಕು",
+    "gloss": "ಮುಂದಕ್ಕೆ ಹಾಕು",
+    "region": "ಮೈಸೂರು ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-03",
+   "place": "mysuru",
+   "type": "phrase",
+   "english": "once in a blue moon, rarely",
+   "standard": {
+    "kn": "ಅಪರೂಪಕ್ಕೆ",
+    "tr": "aparūpakke"
+   },
+   "dialect": {
+    "kn": "ಅಮಾಸೆ ಹುಣ್ಣಿಮೆ",
+    "tr": "amāse huNNime"
+   },
+   "note": "Literally \"new moon, full moon\", as if it happened only on those two days of the month.",
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 1965,
+    "headword": "ಅಮಾಸೆ ಹುಣ್ಣಿಮೆ",
+    "gloss": "ಅಪರೂಪಕ್ಕೆ; ವಿರಳವಾಗಿ",
+    "region": "ಮೈಸೂರು ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-04",
+   "place": "mysuru",
+   "type": "word",
+   "english": "just like his father",
+   "standard": {
+    "kn": "ಅಪ್ಪನಂತೆ",
+    "tr": "appanante"
+   },
+   "dialect": {
+    "kn": "ಅಪ್ಪಂದ",
+    "tr": "appanda"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 1853,
+    "headword": "ಅಪ್ಪಂದ",
+    "gloss": "ಥೇಟ್ ಆದರಂತೆಯೇ",
+    "region": "ಮೈಸೂರು ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-05",
+   "place": "mysuru",
+   "type": "sound",
+   "english": "peep",
+   "standard": {
+    "kn": "ಇಣುಕು",
+    "tr": "iNuku"
+   },
+   "dialect": {
+    "kn": "ಅಣುಕು",
+    "tr": "aNuku"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 1636,
+    "headword": "ಅಣುಕು",
+    "gloss": "ಹಣಕು; ಇಣುಕಿನೋಡು",
+    "region": "ಮೈಸೂರು ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-06",
+   "place": "mysuru",
+   "type": "word",
+   "english": "broom",
+   "standard": {
+    "kn": "ಪೊರಕೆ",
+    "tr": "porake"
+   },
+   "dialect": {
+    "kn": "ಇಡಗಲು",
+    "tr": "iDagalu"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 3657,
+    "headword": "ಇಡಗಲು/ಇಡಗೋಲು",
+    "gloss": "ಹಿಡುಗಲು; ಕಸಪೊರಕೆ",
+    "region": "ಮೈಸೂರು ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-07",
+   "place": "gundlupet",
+   "type": "sound",
+   "english": "lush green",
+   "standard": {
+    "kn": "ಹಚ್ಚ ಹಸಿರು",
+    "tr": "hachcha hasiru"
+   },
+   "dialect": {
+    "kn": "ಅಚ್ಚಸ್ರು",
+    "tr": "achchasru"
+   },
+   "note": "The h at the start of words drops away, as it often does in Old Mysuru Kannada.",
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 812,
+    "headword": "ಅಚ್ಚಸ್ರು",
+    "gloss": "ಹಚ್ಚ ಹಸಿರು",
+    "region": "ಚಾಮರಾಜನಗರ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-08",
+   "place": "gundlupet",
+   "type": "word",
+   "english": "Sunday",
+   "standard": {
+    "kn": "ಭಾನುವಾರ",
+    "tr": "bhānuvāra"
+   },
+   "dialect": {
+    "kn": "ಐತ್ವಾರ",
+    "tr": "aitvāra"
+   },
+   "note": "From Ādityavāra, the Sun's day.",
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 6526,
+    "headword": "ಐತ್ವಾರ",
+    "gloss": "ಆದಿತ್ಯವಾರ; ಭಾನುವಾರ",
+    "region": "ಚಾಮರಾಜನಗರ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-09",
+   "place": "gundlupet",
+   "type": "sound",
+   "english": "sour buttermilk",
+   "standard": {
+    "kn": "ಹುಳಿ ಮಜ್ಜಿಗೆ",
+    "tr": "huLi majjige"
+   },
+   "dialect": {
+    "kn": "ಉಳ್ಮಜ್ಗ",
+    "tr": "uLmajga"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 5449,
+    "headword": "ಉಳ್ಮಜ್ಗ",
+    "gloss": "ಹುಳಿಮಜ್ಜಿಗೆ",
+    "region": "ಚಾಮರಾಜನಗರ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-10",
+   "place": "gundlupet",
+   "type": "word",
+   "english": "this much, so much",
+   "standard": {
+    "kn": "ಇಷ್ಟೊಂದು",
+    "tr": "iShTondu"
+   },
+   "dialect": {
+    "kn": "ಈಪಾಟಿ",
+    "tr": "īpāTi"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 4172,
+    "headword": "ಈಪಾಟಿ",
+    "gloss": "ಇಷ್ಟು ಹೆಚ್ಚು; ಇಷ್ಟೊಂದು",
+    "region": "ಚಾಮರಾಜನಗರ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-11",
+   "place": "gundlupet",
+   "type": "phrase",
+   "english": "good times and bad",
+   "standard": {
+    "kn": "ಕಷ್ಟಸುಖ",
+    "tr": "kaShTasukha"
+   },
+   "dialect": {
+    "kn": "ಉಪ್ಪುಸಪ್ಪೆ",
+    "tr": "uppusappe"
+   },
+   "note": "Literally \"salty and bland\".",
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 5038,
+    "headword": "ಉಪ್ಪುಸಪ್ಪೆ",
+    "gloss": "ಕಷ್ಟಸುಖ",
+    "region": "ಚಾಮರಾಜನಗರ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-12",
+   "place": "gundlupet",
+   "type": "word",
+   "english": "ant",
+   "standard": {
+    "kn": "ಇರುವೆ",
+    "tr": "iruve"
+   },
+   "dialect": {
+    "kn": "ಇರಬ",
+    "tr": "iraba"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 3828,
+    "headword": "ಇರ/ಇರಬ/ಎರ",
+    "gloss": "ಇರುವೆ",
+    "region": "ಚಾಮರಾಜನಗರ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-13",
+   "place": "kolar",
+   "type": "loanword",
+   "english": "banana",
+   "standard": {
+    "kn": "ಬಾಳೆಹಣ್ಣು",
+    "tr": "bāLehaNNu"
+   },
+   "dialect": {
+    "kn": "ಅರಟಿಕಾಯಿ",
+    "tr": "araTikāyi"
+   },
+   "note": "Kolar borders Andhra Pradesh; araṭi is the Telugu word for banana.",
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 2108,
+    "headword": "ಅರಟಿಕಾಯಿ",
+    "gloss": "ಬಾಳೆಹಣ್ಣು",
+    "region": "ಕೋಲಾರ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-14",
+   "place": "kolar",
+   "type": "loanword",
+   "english": "pickle",
+   "standard": {
+    "kn": "ಉಪ್ಪಿನಕಾಯಿ",
+    "tr": "uppinakāyi"
+   },
+   "dialect": {
+    "kn": "ಊರ್ಗಾಯಿ",
+    "tr": "ūrgāyi"
+   },
+   "note": "Close to the Telugu ūragāya.",
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 5636,
+    "headword": "ಊರ್ಗಾಯಿ",
+    "gloss": "ಉಪ್ಪಿನಕಾಯಿ",
+    "region": "ಕೋಲಾರ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-15",
+   "place": "kolar",
+   "type": "word",
+   "english": "ant",
+   "standard": {
+    "kn": "ಇರುವೆ",
+    "tr": "iruve"
+   },
+   "dialect": {
+    "kn": "ಇರ್ಬು",
+    "tr": "irbu"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 3895,
+    "headword": "ಇರ್ಬು",
+    "gloss": "ಇರುವೆ",
+    "region": "ಕೋಲಾರ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-16",
+   "place": "kolar",
+   "type": "word",
+   "english": "squirrel",
+   "standard": {
+    "kn": "ಅಳಿಲು",
+    "tr": "aLilu"
+   },
+   "dialect": {
+    "kn": "ಉಡ್ಮು",
+    "tr": "uDmu"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 4710,
+    "headword": "ಉಡ್ಮು",
+    "gloss": "ಅಳಿಲು",
+    "region": "ಕೋಲಾರ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-17",
+   "place": "kolar",
+   "type": "word",
+   "english": "mushroom",
+   "standard": {
+    "kn": "ಅಣಬೆ",
+    "tr": "aNabe"
+   },
+   "dialect": {
+    "kn": "ಅಲಿಂಬೆ",
+    "tr": "alimbe"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 2519,
+    "headword": "ಅಲಿಂಬೆ",
+    "gloss": "ಅಣಬೆ",
+    "region": "ಕೋಲಾರ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-18",
+   "place": "kolar",
+   "type": "word",
+   "english": "the home you were born in; a married woman's parents' home",
+   "standard": {
+    "kn": "ತವರು",
+    "tr": "tavaru"
+   },
+   "dialect": {
+    "kn": "ಉಡಿದಮನೆ",
+    "tr": "uDidamane"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 4637,
+    "headword": "ಉಡಿದಮನೆ",
+    "gloss": "ಹುಟ್ಟಿದ ಮನೆ; ತವರು",
+    "region": "ಕೋಲಾರ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-19",
+   "place": "chikkamagaluru",
+   "type": "word",
+   "english": "papaya",
+   "standard": {
+    "kn": "ಪರಂಗಿ ಹಣ್ಣು",
+    "tr": "parangi haNNu"
+   },
+   "dialect": {
+    "kn": "ಔಡ್ಲುಹಣ್ಣು",
+    "tr": "auDluhaNNu"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 7705,
+    "headword": "ಔಡ್ಲುಹಣ್ಣು",
+    "gloss": "ಪರಂಗಿಹಣ್ಣು",
+    "region": "ಚಿಕ್ಕಮಗಳೂರು ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-20",
+   "place": "chikkamagaluru",
+   "type": "word",
+   "english": "firewood",
+   "standard": {
+    "kn": "ಸೌದೆ",
+    "tr": "saude"
+   },
+   "dialect": {
+    "kn": "ಅಡುಗಟ್ಟು",
+    "tr": "aDugaTTu"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 1309,
+    "headword": "ಅಡುಗಟ್ಟು",
+    "gloss": "ಸೌದೆ",
+    "region": "ಚಿಕ್ಕಮಗಳೂರು ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-21",
+   "place": "chikkamagaluru",
+   "type": "word",
+   "english": "smoke",
+   "standard": {
+    "kn": "ಹೊಗೆ",
+    "tr": "hoge"
+   },
+   "dialect": {
+    "kn": "ಊದರ",
+    "tr": "ūdara"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 5536,
+    "headword": "ಊದರ",
+    "gloss": "ಹೊಗೆ",
+    "region": "ಚಿಕ್ಕಮಗಳೂರು ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-22",
+   "place": "chikkamagaluru",
+   "type": "word",
+   "english": "wild boar",
+   "standard": {
+    "kn": "ಕಾಡುಹಂದಿ",
+    "tr": "kāDuhandi"
+   },
+   "dialect": {
+    "kn": "ಎಕ್ಕಲ",
+    "tr": "ekkala"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 5727,
+    "headword": "ಎಕ್ಕಲ",
+    "gloss": "ಕಾಡುಹಂದಿ",
+    "region": "ಚಿಕ್ಕಮಗಳೂರು ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-23",
+   "place": "chikkamagaluru",
+   "type": "word",
+   "english": "big leech",
+   "standard": {
+    "kn": "ದೊಡ್ಡ ಜಿಗಣೆ",
+    "tr": "doDDa jigaNe"
+   },
+   "dialect": {
+    "kn": "ಎಮ್ಮೆಜಿಗಣೆ",
+    "tr": "emmejigaNe"
+   },
+   "note": "Literally \"buffalo leech\".",
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 6103,
+    "headword": "ಎಮ್ಮೆಜಿಗಣೆ",
+    "gloss": "ದೊಡ್ಡಜಿಗಣೆ",
+    "region": "ಚಿಕ್ಕಮಗಳೂರು ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-24",
+   "place": "chikkamagaluru",
+   "type": "word",
+   "english": "shortcut, footpath",
+   "standard": {
+    "kn": "ಕಾಲುದಾರಿ",
+    "tr": "kāludāri"
+   },
+   "dialect": {
+    "kn": "ಒಳದಾರಿ",
+    "tr": "oLadāri"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 7423,
+    "headword": "ಒಳದಾರಿ",
+    "gloss": "ಕಾಲುದಾರಿ; ಹತ್ತಿರದ ದಾರಿ",
+    "region": "ಚಿಕ್ಕಮಗಳೂರು ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-25",
+   "place": "shivamogga",
+   "type": "word",
+   "english": "sparrow",
+   "standard": {
+    "kn": "ಗುಬ್ಬಚ್ಚಿ",
+    "tr": "gubbachchi"
+   },
+   "dialect": {
+    "kn": "ಅಕ್ಕಳಿ",
+    "tr": "akkaLi"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 477,
+    "headword": "ಅಕ್ಕಳಿ",
+    "gloss": "ಗುಬ್ಬಚ್ಚಿ",
+    "region": "ಶಿವಮೊಗ್ಗ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-26",
+   "place": "shivamogga",
+   "type": "word",
+   "english": "papaya",
+   "standard": {
+    "kn": "ಪರಂಗಿ ಹಣ್ಣು",
+    "tr": "parangi haNNu"
+   },
+   "dialect": {
+    "kn": "ಅಕ್ಕತಂಗೇರಣ್ಣು",
+    "tr": "akkatangēraNNu"
+   },
+   "note": "Literally \"the sisters' fruit\".",
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 452,
+    "headword": "ಅಕ್ಕತಂಗೇರಣ್ಣು",
+    "gloss": "ಪರಂಗಿ ಹಣ್ಣು",
+    "region": "ಶಿವಮೊಗ್ಗ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-27",
+   "place": "shivamogga",
+   "type": "word",
+   "english": "crawling on all fours, like a baby",
+   "standard": {
+    "kn": "ಅಂಬೆಗಾಲು",
+    "tr": "ambegālu"
+   },
+   "dialect": {
+    "kn": "ಅಂಬಳಿಕೆ",
+    "tr": "ambaLike"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 353,
+    "headword": "ಅಂಬಳಿಕೆ",
+    "gloss": "ಅಂಬೆಗಾಲು",
+    "region": "ಶಿವಮೊಗ್ಗ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-28",
+   "place": "shivamogga",
+   "type": "word",
+   "english": "stale (food)",
+   "standard": {
+    "kn": "ಹಳಸಲು",
+    "tr": "haLasalu"
+   },
+   "dialect": {
+    "kn": "ಅಣಿಸಿ",
+    "tr": "aNisi"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 1632,
+    "headword": "ಅಣಿಸಿ",
+    "gloss": "ಹಳಸಲು",
+    "region": "ಶಿವಮೊಗ್ಗ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-29",
+   "place": "shivamogga",
+   "type": "word",
+   "english": "this way, in this direction",
+   "standard": {
+    "kn": "ಈ ಕಡೆಗೆ",
+    "tr": "ī kaDege"
+   },
+   "dialect": {
+    "kn": "ಈಮಕ್ಕೆ",
+    "tr": "īmakke"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 4179,
+    "headword": "ಈಮಕ್ಕೆ",
+    "gloss": "ಈ ಕಡೆಗೆ; ಈ ದಿಕ್ಕಿಗೆ",
+    "region": "ಶಿವಮೊಗ್ಗ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-30",
+   "place": "shivamogga",
+   "type": "word",
+   "english": "summer",
+   "standard": {
+    "kn": "ಬೇಸಿಗೆ",
+    "tr": "bēsige"
+   },
+   "dialect": {
+    "kn": "ಅರೆಗ್ಗಾಲ",
+    "tr": "areggāla"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 2357,
+    "headword": "ಅರೆಗ್ಗಾಲ",
+    "gloss": "ಬೇಸಿಗೆ ಕಾಲ",
+    "region": "ಶಿವಮೊಗ್ಗ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-31",
+   "place": "udupi",
+   "type": "word",
+   "english": "hog plum",
+   "standard": {
+    "kn": "ಅಮಟೆಕಾಯಿ",
+    "tr": "amaTekāyi"
+   },
+   "dialect": {
+    "kn": "ಅಮ್ಡಿ",
+    "tr": "amDi"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 1995,
+    "headword": "ಅಮ್ಡಿ",
+    "gloss": "ಅಮಟೆಕಾಯಿ",
+    "region": "ಉಡುಪಿ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-32",
+   "place": "udupi",
+   "type": "word",
+   "english": "ebb tide, water flowing back to the sea",
+   "standard": {
+    "kn": "ಇಳಿತ",
+    "tr": "iLita"
+   },
+   "dialect": {
+    "kn": "ಇಳ್ತ",
+    "tr": "iLta"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 4073,
+    "headword": "ಇಳ್ತ/ಇಳಿತ",
+    "gloss": "ಸಮುದ್ರದ ಕಡೆಗೆ ನೀರು ಹರಿಯುವುದು",
+    "region": "ಉಡುಪಿ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-33",
+   "place": "udupi",
+   "type": "word",
+   "english": "a fly whose bite stings",
+   "standard": {
+    "kn": "ಉರಿಕೊಡುವ ನೊಣ",
+    "tr": "urikoDuva noNa"
+   },
+   "dialect": {
+    "kn": "ಉರ್ನೆಳ",
+    "tr": "urneLa"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 5289,
+    "headword": "ಉರ್‍ನೆಳ",
+    "gloss": "ಉರಿಕೊಡುವ ನೊಣ",
+    "region": "ಉಡುಪಿ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-34",
+   "place": "mangaluru",
+   "type": "word",
+   "english": "cockroach",
+   "standard": {
+    "kn": "ಜಿರಳೆ",
+    "tr": "jiraLe"
+   },
+   "dialect": {
+    "kn": "ಅಕ್ಕಳೆ",
+    "tr": "akkaLe"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 479,
+    "headword": "ಅಕ್ಕಳೆ",
+    "gloss": "ಜಿರಳೆ",
+    "region": "ದಕ್ಷಿಣ ಕನ್ನಡ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-35",
+   "place": "mangaluru",
+   "type": "word",
+   "english": "hearth, stove",
+   "standard": {
+    "kn": "ಒಲೆ",
+    "tr": "ole"
+   },
+   "dialect": {
+    "kn": "ಅಗುಡೆ",
+    "tr": "aguDe"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 705,
+    "headword": "ಅಗುಡೆ",
+    "gloss": "ಅಗ್ಗಿಷ್ಟಿಕೆ; ಒಲೆ",
+    "region": "ದಕ್ಷಿಣ ಕನ್ನಡ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-36",
+   "place": "mangaluru",
+   "type": "word",
+   "english": "kitchen",
+   "standard": {
+    "kn": "ಅಡುಗೆ ಮನೆ",
+    "tr": "aDuge mane"
+   },
+   "dialect": {
+    "kn": "ಅಡ್ಪಿಲ್",
+    "tr": "aDpil"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 1545,
+    "headword": "ಅಡ್ಪಿಲ್",
+    "gloss": "ಅಡಿಗೆ ಮನೆ",
+    "region": "ದಕ್ಷಿಣ ಕನ್ನಡ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-37",
+   "place": "mangaluru",
+   "type": "word",
+   "english": "a great flood",
+   "standard": {
+    "kn": "ದೊಡ್ಡ ಪ್ರವಾಹ",
+    "tr": "doDDa pravāha"
+   },
+   "dialect": {
+    "kn": "ಅಡಾಣಿಬೊಳ್ಳ",
+    "tr": "aDāNiboLLa"
+   },
+   "note": "BoLLa is the word for a flood in Tulu, the coast's other language.",
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 1196,
+    "headword": "ಅಡಾಣಿಬೊಳ್ಳ",
+    "gloss": "ದೊಡ್ಡ ಪ್ರವಾಹ",
+    "region": "ದಕ್ಷಿಣ ಕನ್ನಡ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-38",
+   "place": "mangaluru",
+   "type": "word",
+   "english": "tiredness",
+   "standard": {
+    "kn": "ಆಯಾಸ",
+    "tr": "āyāsa"
+   },
+   "dialect": {
+    "kn": "ಅಂಗತಾಪ",
+    "tr": "angatāpa"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 53,
+    "headword": "ಅಂಗತಾಪ",
+    "gloss": "ಆಯಾಸ",
+    "region": "ದಕ್ಷಿಣ ಕನ್ನಡ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-39",
+   "place": "mangaluru",
+   "type": "word",
+   "english": "grandfather (respectful)",
+   "standard": {
+    "kn": "ಅಜ್ಜ",
+    "tr": "ajja"
+   },
+   "dialect": {
+    "kn": "ಅಜ್ಜೇರ್",
+    "tr": "ajjēr"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 914,
+    "headword": "ಅಜ್ಜೇರ್",
+    "gloss": "ಅಜ್ಜನವರು",
+    "region": "ದಕ್ಷಿಣ ಕನ್ನಡ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-40",
+   "place": "bidar",
+   "type": "word",
+   "english": "all",
+   "standard": {
+    "kn": "ಎಲ್ಲಾ",
+    "tr": "ellā"
+   },
+   "dialect": {
+    "kn": "ಓಸು",
+    "tr": "ōsu"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 7675,
+    "headword": "ಓಸು",
+    "gloss": "ಎಲ್ಲಾ",
+    "region": "ಬೀದರ್ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-41",
+   "place": "bidar",
+   "type": "word",
+   "english": "call out, shout",
+   "standard": {
+    "kn": "ಕೂಗು",
+    "tr": "kūgu"
+   },
+   "dialect": {
+    "kn": "ಒಳ್ಳು",
+    "tr": "oLLu"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 7481,
+    "headword": "ಒಳ್ಳು",
+    "gloss": "ಕರೆ; ಕೂಗು",
+    "region": "ಬೀದರ್ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-42",
+   "place": "bidar",
+   "type": "loanword",
+   "english": "tall, high",
+   "standard": {
+    "kn": "ಎತ್ತರ",
+    "tr": "ettara"
+   },
+   "dialect": {
+    "kn": "ಊಚ",
+    "tr": "ūcha"
+   },
+   "note": "Like ūñchā in Hindi and the Dakhni Urdu spoken around Bidar.",
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 5501,
+    "headword": "ಊಚ",
+    "gloss": "ಉದ್ದ; ಎತ್ತರ",
+    "region": "ಬೀದರ್ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-43",
+   "place": "bidar",
+   "type": "word",
+   "english": "sunrise; the east",
+   "standard": {
+    "kn": "ಪೂರ್ವ",
+    "tr": "pūrva"
+   },
+   "dialect": {
+    "kn": "ಉದ್ಯಾ",
+    "tr": "udyā"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 4914,
+    "headword": "ಉದ್ಯಾ",
+    "gloss": "ಉದಯ; ಪೂರ್ವ",
+    "region": "ಬೀದರ್ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-44",
+   "place": "bidar",
+   "type": "word",
+   "english": "wild brinjal",
+   "standard": {
+    "kn": "ಕಾಡುಬದನೆ",
+    "tr": "kāDubadane"
+   },
+   "dialect": {
+    "kn": "ಆಡಿಬದ್ನಿ",
+    "tr": "āDibadni"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 2992,
+    "headword": "ಆಡಿಬದ್ನಿ",
+    "gloss": "ಕಾಡುಬದನೆ; ಮುಳ್ಳುಬದನೆ",
+    "region": "ಬೀದರ್ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-45",
+   "place": "mandya",
+   "type": "word",
+   "english": "kabaddi",
+   "standard": {
+    "kn": "ಕಬಡ್ಡಿ",
+    "tr": "kabaDDi"
+   },
+   "dialect": {
+    "kn": "ಅಡೀರ್ಗುಡಿಗುಡಿ",
+    "tr": "aDīrguDiguDi"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 1301,
+    "headword": "ಅಡೀರ್‌ಗುಡಿಗುಡಿ",
+    "gloss": "ಕಬಡ್ಡಿ ಆಟ",
+    "region": "ಮಂಡ್ಯ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-46",
+   "place": "mandya",
+   "type": "sound",
+   "english": "dew",
+   "standard": {
+    "kn": "ಇಬ್ಬನಿ",
+    "tr": "ibbani"
+   },
+   "dialect": {
+    "kn": "ಇಬ್ಣಿ",
+    "tr": "ibNi"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 3799,
+    "headword": "ಇಬ್ಣಿ",
+    "gloss": "ಇಬ್ಬನಿ",
+    "region": "ಮಂಡ್ಯ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-47",
+   "place": "mandya",
+   "type": "word",
+   "english": "take (a pot) off the stove",
+   "standard": {
+    "kn": "ಇಳಿಸು",
+    "tr": "iLisu"
+   },
+   "dialect": {
+    "kn": "ಇಳ್ಕು",
+    "tr": "iLku"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 4070,
+    "headword": "ಇಳ್ಕು",
+    "gloss": "ಇಳಿಸು",
+    "region": "ಮಂಡ್ಯ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-48",
+   "place": "mandya",
+   "type": "word",
+   "english": "garden lizard",
+   "standard": {
+    "kn": "ಓತಿಕ್ಯಾತ",
+    "tr": "ōtikyāta"
+   },
+   "dialect": {
+    "kn": "ಅಂತೆಗೊದ್ದ",
+    "tr": "antegodda"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 293,
+    "headword": "ಅಂತೆಗೊದ್ದ",
+    "gloss": "ಓತಿಕ್ಯಾತ",
+    "region": "ಮಂಡ್ಯ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-49",
+   "place": "mandya",
+   "type": "word",
+   "english": "rain",
+   "standard": {
+    "kn": "ಮಳೆ",
+    "tr": "maLe"
+   },
+   "dialect": {
+    "kn": "ಅಂಬರದಗ್ಗಣಿ",
+    "tr": "ambaradaggaNi"
+   },
+   "note": "Ambara is the sky and aggaNi is water for worship, so rain is \"the sky's holy water\".",
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 340,
+    "headword": "ಅಂಬರದಗ್ಗಣಿ",
+    "gloss": "ಮಳೆ",
+    "region": "ಮಂಡ್ಯ ಜಿಲ್ಲೆ"
+   }
+  },
+  {
+   "id": "pkn-50",
+   "place": "mandya",
+   "type": "word",
+   "english": "full, stuffed (after eating)",
+   "standard": {
+    "kn": "ಭರ್ತಿ",
+    "tr": "bharti"
+   },
+   "dialect": {
+    "kn": "ಇಟರೆ",
+    "tr": "iTare"
+   },
+   "source": "padakanaja",
+   "confidence": "reference",
+   "verified": false,
+   "dict": {
+    "ref": "kannada_janapada_nighantu",
+    "entry": 3617,
+    "headword": "ಇಟರೆ",
+    "gloss": "ಭರ್ತಿ",
+    "region": "ಮಂಡ್ಯ ಜಿಲ್ಲೆ"
+   }
   }
  ],
  "compare_sets": [
@@ -5821,6 +7033,39 @@
    "entries": [
     "kun-14",
     "mnk-33"
+   ]
+  },
+  {
+   "id": "cmp-ant",
+   "english": "ant",
+   "entries": [
+    "mnk-16",
+    "pkn-12",
+    "pkn-15"
+   ]
+  },
+  {
+   "id": "cmp-peep",
+   "english": "peep",
+   "entries": [
+    "mal-08",
+    "pkn-05"
+   ]
+  },
+  {
+   "id": "cmp-papaya",
+   "english": "papaya",
+   "entries": [
+    "pkn-19",
+    "pkn-26"
+   ]
+  },
+  {
+   "id": "cmp-grandfather",
+   "english": "grandfather",
+   "entries": [
+    "mnk-23",
+    "pkn-39"
    ]
   }
  ]

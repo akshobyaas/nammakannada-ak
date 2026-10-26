@@ -1,6 +1,9 @@
 // Kannada text for the interface. Keys are the English text used in the code (see js/i18n.js).
 // Anything missing here simply shows in English.
 export const KN = {
+  "{book}, entry {n}": "{book}, ನಮೂದು {n}",
+  "Kannada Janapada Nighantu": "ಕನ್ನಡ ಜಾನಪದ ನಿಘಂಟು",
+  "Kannada Janapada Nighantu (Karnataka Folklore University, 2014) on Padakanaja, the Government of Karnataka's dictionary portal: district-tagged folk words, cited by entry number": "ಕನ್ನಡ ಜಾನಪದ ನಿಘಂಟು (ಕರ್ನಾಟಕ ಜಾನಪದ ವಿಶ್ವವಿದ್ಯಾಲಯ, 2014), ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ‘ಪದಕಣಜ’ ತಾಣದಲ್ಲಿ: ಜಿಲ್ಲೆಯ ಗುರುತಿರುವ ಜಾನಪದ ಪದಗಳು, ನಮೂದು ಸಂಖ್ಯೆಯೊಂದಿಗೆ",
   "{book}, p. {page}": "{book}, ಪು. {page}",
   "Malenada Nudikosha": "ಮಲೆನಾಡ ನುಡಿಕೋಶ",
   "Malenada Nudikosha, ed. Venakshi S. D., Karnataka Folklore University, 2014 (read on Bharatavani): Malenadu words checked against it, with page numbers": "ಮಲೆನಾಡ ನುಡಿಕೋಶ, ಸಂ. ವೇಣಾಕ್ಷಿ ಎಸ್. ಡಿ., ಕರ್ನಾಟಕ ಜಾನಪದ ವಿಶ್ವವಿದ್ಯಾಲಯ, 2014 (ಭಾರತವಾಣಿಯಲ್ಲಿ ಓದಿದ್ದು): ಮಲೆನಾಡಿನ ಪದಗಳನ್ನು ಇದರೊಂದಿಗೆ ಹೋಲಿಸಲಾಗಿದೆ, ಪುಟ ಸಂಖ್ಯೆಗಳೊಂದಿಗೆ",

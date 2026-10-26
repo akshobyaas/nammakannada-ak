@@ -290,6 +290,7 @@ button.dialect:hover { color: var(--red); }
 .note { margin: 10px 0 0; max-width: 42em; }
 .dict { margin: 10px 0 0; max-width: 42em; font-size: .92em; padding: 6px 10px; border-left: 3px solid var(--zone, var(--ink)); background: rgba(0,0,0,.04); border-radius: 0 8px 8px 0; overflow-wrap: anywhere; }
 .dict a { font-weight: 700; }
+.dict-region { white-space: nowrap; font-weight: 700; }
 .dict-diff { display: block; margin-top: 2px; color: var(--red); font-weight: 700; }
 .word footer {
   margin-top: 14px; padding-top: 10px; border-top: 2px dashed rgba(0,0,0,0.3);
