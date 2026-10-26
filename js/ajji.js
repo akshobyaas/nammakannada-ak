@@ -303,6 +303,33 @@ function openRecorder(root, start = 0) {
   draw();
 }
 
+// ---------- Sharing ----------
+// Browsers only share some file types (Chrome: audio as .weba/.m4a/.ogg, text as .txt; not .json or .zip),
+// and the MIME type must be the plain base type. So share audio with those extensions plus a .txt summary.
+function canShareFiles() {
+  try { return !!navigator.canShare?.({ files: [new File(["x"], "test.txt", { type: "text/plain" })] }); }
+  catch { return false; }
+}
+function shareType(mime) {
+  const base = mime.split(";")[0];
+  if (base === "audio/webm") return { type: "audio/webm", ext: "weba" };
+  if (base === "audio/mp4") return { type: "audio/mp4", ext: "m4a" };
+  if (base === "audio/ogg") return { type: "audio/ogg", ext: "ogg" };
+  return { type: base, ext: "audio" };
+}
+function summaryText(manifest) {
+  const lines = [
+    `Namma Kannada · Ajji's words`,
+    `Town: ${manifest.town}`,
+    manifest.speaker_age ? `Age: ${manifest.speaker_age}` : "",
+    `Recorded: ${manifest.recorded_at.slice(0, 16).replace("T", " ")} UTC`,
+    `Consent given: yes · Method: picture prompt, no written word shown`,
+    "",
+    ...manifest.answers.map((a) => `${a.file.replace(/\.[^.]+$/, "")}  ${a.meaning} (${a.standard_kannada})  →  ${a.what_they_said || "?"}`),
+  ];
+  return lines.filter((l, i) => l || i === 5).join("\n");
+}
+
 // ---------- Review: listen, write down, compare, share ----------
 function othersFor(p) {
   return allEntries()
@@ -349,8 +376,8 @@ function renderReview(root) {
         </section>`).join("")}
     </div>
     <div class="actions">
-      ${navigator.canShare ? `<button class="btn" type="button" id="ajji-share">${t("Share with the project")}</button>` : ""}
-      <button class="btn ${navigator.canShare ? "ghost" : ""}" type="button" id="ajji-zip">${t("Download all (.zip)")}</button>
+      ${canShareFiles() ? `<button class="btn" type="button" id="ajji-share">${t("Share with the project")}</button>` : ""}
+      <button class="btn ${canShareFiles() ? "ghost" : ""}" type="button" id="ajji-zip">${t("Download all (.zip)")}</button>
       <button class="btn ghost" type="button" id="ajji-more">${t("Record more")}</button>
       <button class="btn ghost" type="button" id="ajji-new">${t("New speaker")}</button>
     </div>
@@ -389,6 +416,7 @@ function renderReview(root) {
     const zip = await makeZip([
       ...list.map(({ p, name }) => ({ name, data: session.clips[p.id].blob })),
       { name: `${base}/answers.json`, data: JSON.stringify(manifest, null, 2) },
+      { name: `${base}/answers.txt`, data: summaryText(manifest) },
     ]);
     setBusy(b, false);
     const a = document.createElement("a");
@@ -401,12 +429,19 @@ function renderReview(root) {
 
   root.querySelector("#ajji-share")?.addEventListener("click", async () => {
     const { list, manifest } = files();
-    const shareFiles = [
-      ...list.map(({ p, name }) => new File([session.clips[p.id].blob], name.split("/")[1], { type: session.type.mime })),
-      new File([JSON.stringify(manifest, null, 2)], "answers.json", { type: "application/json" }),
+    const st = shareType(session.type.mime);
+    const audio = list.map(({ p, name }) =>
+      new File([session.clips[p.id].blob], name.split("/")[1].replace(/\.[^.]+$/, `.${st.ext}`), { type: st.type }));
+    const summary = summaryText(manifest);
+    const txt = new File([summary], `${slug(manifest.town)}-answers.txt`, { type: "text/plain" });
+    const title = "Namma Kannada · Ajji's words";
+    // Try recordings + summary; if the browser refuses, try recordings alone with the summary as the message.
+    const attempts = [
+      { files: [...audio, txt], title, text: `${manifest.town}: ${list.length}` },
+      { files: audio, title, text: summary },
     ];
-    const data = { files: shareFiles, title: "Namma Kannada · Ajji's words", text: `${manifest.town}: ${list.length} recordings` };
-    if (!navigator.canShare(data)) { toast(t("This browser can't share files. Use Download instead."), "error"); return; }
+    const data = attempts.find((d) => { try { return navigator.canShare(d); } catch { return false; } });
+    if (!data) { toast(t("This browser can't share these recordings. Use Download instead."), "error"); return; }
     try { await navigator.share(data); toast(t("Shared. Thank you!")); }
     catch (err) { if (err?.name !== "AbortError") toast(t("Sharing didn't work. Use Download instead."), "error"); }
   });

@@ -425,4 +425,5 @@ export const KN = {
   "district:Mandya": "ಮಂಡ್ಯ",
   "district:Mysuru": "ಮೈಸೂರು",
   "district:Vijayapura": "ವಿಜಯಪುರ",
+  "This browser can't share these recordings. Use Download instead.": "ಈ ಬ್ರೌಸರ್ ಈ ಧ್ವನಿಮುದ್ರಣಗಳನ್ನು ಹಂಚಲಾರದು. ಬದಲಿಗೆ ಡೌನ್‌ಲೋಡ್ ಬಳಸಿ.",
 };
