@@ -35,7 +35,7 @@ Regions covered include Havyaka Kannada (Sirsi), Kundagannada (Kundapura), Arebh
 - **Compare.** The same phrase across regions side by side, next to standard Kannada.
 - **Guess the region.** An 8-word quiz that marks the answer on the map. Works with the keyboard (1–4, Enter).
 - **Search** in Kannada script, English or transliteration.
-- **Add a word.** Visitors add a word from their town, with checks on every field. It is saved on their device, shown on the map as "added by you", and can be copied as JSON or sent through a Google Form (see `js/config.js`).
+- **Add a word, for everyone.** Visitors add a word from their town, with checks on every field and an optional 8-second voice clip. Once they tick "show my word on the map", it appears straight away for every visitor, marked "added by a visitor · not yet checked". Ajji's words can put a whole session on the map the same way. If the server can't be reached, the word is kept on the visitor's device instead.
 - **Sensitive content, handled with care.** Entries about caste, community or violence, and insults, are kept as part of the language record but labelled; the strongest are hidden until you tap to show them, and none appear in the quiz.
 - **ಕನ್ನಡ / English in one tap.** The button in the header switches the whole site, including place introductions, word meanings, notes, Privacy and Terms, between Kannada and English, and remembers the choice. Interface text lives in `js/i18n-kn.js`; translations of the word data live in `data/kn.json`.
 - **Works on phones.** Mobile menu, a sticky "Add a word" button, and layouts tested from 360px wide to desktop.
@@ -66,6 +66,16 @@ python -m http.server 8000
 Deployed on **Vercel**: import the GitHub repo, no settings needed. `vercel.json` adds the security headers and caching, and `.vercelignore` keeps `.env`, scripts and notes out of the deploy. Vercel also serves `404.html` for unknown addresses.
 
 Other static hosts can serve the site, but the security headers, the 404 page and the root-relative icon paths assume Vercel at the domain root.
+
+## Visitor words: setup
+
+Words visitors add are stored in Upstash Redis through two small Vercel functions (`api/words.js`, `api/audio.js`), with no extra packages. To switch it on:
+
+1. In Vercel, open the project, go to **Storage**, create an **Upstash for Redis** database (the free plan is enough) and connect it to this project. This adds `KV_REST_API_URL` and `KV_REST_API_TOKEN`.
+2. In **Settings → Environment Variables**, add `ADMIN_KEY` with a long random value only you know.
+3. Redeploy. Until the database is connected, the API answers "not configured" and the site falls back to saving words on the visitor's device.
+
+Safeguards: a consent tick, length limits, Kannada script required, links and a short list of abusive words refused, at most 30 words per visitor per hour and 2,000 a day overall, and recordings capped at 400 KB. IP addresses are not stored; a salted hash is kept for an hour for the rate limit. Remove anything at `/#/admin` with your `ADMIN_KEY`.
 
 ## Add or fix words
 

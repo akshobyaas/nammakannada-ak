@@ -1,7 +1,7 @@
 // Ajji Mode (#/ajji): hand the phone to an elder and record how they really say everyday words.
 // The prompt is a picture plus one generic question, never the word itself: written prompts pull
 // people towards standard Kannada, pictures don't. This is how field linguists elicit dialect.
-import { store, allEntries } from "./store.js";
+import { store, allEntries, postPublic, blobToBase64 } from "./store.js";
 import { esc } from "./views.js";
 import * as map from "./map.js";
 import { t, isKn, placeName } from "./i18n.js";
@@ -375,9 +375,13 @@ function renderReview(root) {
           </div>
         </section>`).join("")}
     </div>
+    <div class="ajji-publish">
+      <button class="btn" type="button" id="ajji-publish">${t("Put these on the map for everyone")}</button>
+      <p class="muted">${t("Only if they agreed to be heard on the website. Each answer needs what they said written in Kannada; the rest are skipped.")}</p>
+    </div>
     <div class="actions">
-      ${canShareFiles() ? `<button class="btn" type="button" id="ajji-share">${t("Share with the project")}</button>` : ""}
-      <button class="btn ${canShareFiles() ? "ghost" : ""}" type="button" id="ajji-zip">${t("Download all (.zip)")}</button>
+      ${canShareFiles() ? `<button class="btn ghost" type="button" id="ajji-share">${t("Share with the project")}</button>` : ""}
+      <button class="btn ghost" type="button" id="ajji-zip">${t("Download all (.zip)")}</button>
       <button class="btn ghost" type="button" id="ajji-more">${t("Record more")}</button>
       <button class="btn ghost" type="button" id="ajji-new">${t("New speaker")}</button>
     </div>
@@ -444,6 +448,36 @@ function renderReview(root) {
     if (!data) { toast(t("This browser can't share these recordings. Use Download instead."), "error"); return; }
     try { await navigator.share(data); toast(t("Shared. Thank you!")); }
     catch (err) { if (err?.name !== "AbortError") toast(t("Sharing didn't work. Use Download instead."), "error"); }
+  });
+
+  root.querySelector("#ajji-publish").addEventListener("click", async (ev) => {
+    const b = ev.currentTarget;
+    const ready = done.filter((p) => /[\u0C80-\u0CFF]/.test(session.clips[p.id].note || "") && !session.clips[p.id].posted);
+    if (!ready.length) {
+      const already = done.some((p) => session.clips[p.id].posted);
+      toast(t(already ? "These are already on the map." : "Write what they said, in Kannada, under each answer first."), already ? "info" : "error");
+      return;
+    }
+    setBusy(b, true, t("Adding…"));
+    let ok = 0; let failed = null;
+    for (const p of ready) {
+      const c = session.clips[p.id];
+      const res = await postPublic({
+        place: session.placeId, town: session.placeId ? "" : session.town,
+        kn: c.note.trim(), tr: "", english: p.en, std: p.kn,
+        note: `Recorded in Ajji's words: the answer to a picture of "${p.en}".`,
+        age: session.age || "", consent: true, origin: "ajji",
+        audio: await blobToBase64(c.blob), audioType: session.type.mime,
+      });
+      if (res.ok) { c.posted = res.entry.id; ok++; } else { failed = res; break; }
+    }
+    setBusy(b, false);
+    map.refreshPinCounts();
+    if (ok) toast(t("{n} added to the map. Thank you!", { n: ok }));
+    if (failed) toast(t(failed.status === 429 ? "That's a lot of words in a short time. Please try again in an hour."
+      : failed.status === 400 ? "Some answers couldn't be added. Check what was written and try again."
+      : "Couldn't reach the server. Download the recordings instead."), "error");
+    if (ok && !failed) b.textContent = t("Added to the map ✓");
   });
 
   root.querySelector("#ajji-more").addEventListener("click", async () => {

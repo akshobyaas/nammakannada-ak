@@ -1,7 +1,7 @@
 // Panel views. Each returns an HTML string or wires up its own DOM.
 import {
   store, allEntries, entriesFor, entryById, zoneOf,
-  sourceUrl, sourceLabel, readContributions, saveContribution, search,
+  sourceUrl, sourceLabel, readContributions, saveContribution, search, postPublic, blobToBase64, deletePublic, loadPublic,
 } from "./store.js";
 import { CONFIG } from "./config.js";
 import * as map from "./map.js";
@@ -58,6 +58,7 @@ function dictHtml(e) {
 }
 
 function checkHtml(e) {
+  if (e.public) return `<span class="check mine">${e.contributor ? t("Added by {name} · not yet checked", { name: esc(e.contributor) }) : t("Added by a visitor · not yet checked")}</span>`;
   if (e.contributed) return `<span class="check mine">${t("Added by you on this device")}</span>`;
   if (e.verified) return `<span class="check ok">${t("Checked by a native speaker")}</span>`;
   return `<span class="check">${t("Not yet checked by a speaker")}</span>`;
@@ -471,7 +472,61 @@ const RULES = {
     [(v) => LATIN.test(v), "Write the meaning in English, like “I will come”."],
   ],
   std: [[(v) => !v || KN.test(v), "Use Kannada script for the standard form, like ಬರುತ್ತೇನೆ, or leave it empty."]],
+  consent: [[(v, f) => f.consent.checked, "Tick this box to put your word on the map."]],
 };
+
+// Words this device sent to the shared list, so "Words you added" can show them.
+const MINE_KEY = "nk.mine.public";
+function minePublicIds() { try { return JSON.parse(localStorage.getItem(MINE_KEY) || "[]"); } catch { return []; } }
+function rememberMine(id) { try { localStorage.setItem(MINE_KEY, JSON.stringify([...minePublicIds(), id].slice(-200))); } catch { /* fine */ } }
+
+// A short voice clip (up to 8 seconds) for the Add a word form.
+function recType() {
+  const types = ["audio/webm;codecs=opus", "audio/webm", "audio/mp4", "audio/ogg;codecs=opus"];
+  return types.find((x) => window.MediaRecorder && MediaRecorder.isTypeSupported(x)) || null;
+}
+function wireClip(root) {
+  const box = root.querySelector("#clip");
+  if (!box) return { get: () => null };
+  const mime = recType();
+  if (!mime || !navigator.mediaDevices?.getUserMedia) { box.hidden = true; return { get: () => null }; }
+  let clip = null; let rec = null; let timer = null; let stream = null;
+  const btn = box.querySelector("#clip-rec");
+  const tools = box.querySelector("#clip-tools");
+  const status = box.querySelector("#clip-status");
+  const stop = () => { if (rec && rec.state === "recording") rec.stop(); };
+  btn.addEventListener("click", async () => {
+    if (rec && rec.state === "recording") { stop(); return; }
+    try { stream = await navigator.mediaDevices.getUserMedia({ audio: true }); }
+    catch { status.textContent = t("Microphone blocked. Allow microphone access in the address bar and try again."); return; }
+    const chunks = [];
+    rec = new MediaRecorder(stream, { mimeType: mime });
+    rec.ondataavailable = (ev) => ev.data.size && chunks.push(ev.data);
+    rec.onstop = () => {
+      clearTimeout(timer);
+      stream.getTracks().forEach((tr) => tr.stop());
+      const blob = new Blob(chunks, { type: mime });
+      btn.classList.remove("on");
+      btn.textContent = t("Record again");
+      if (blob.size < 1500) { status.textContent = t("That was too short. Try again."); return; }
+      if (clip) URL.revokeObjectURL(clip.url);
+      clip = { blob, url: URL.createObjectURL(blob), type: mime };
+      tools.hidden = false;
+      status.textContent = t("Recorded. Play it back to check.");
+    };
+    rec.start();
+    btn.classList.add("on");
+    btn.textContent = t("Stop");
+    status.textContent = t("Recording… say the word once, clearly (8 seconds at most).");
+    timer = setTimeout(stop, 8000);
+  });
+  box.querySelector("#clip-play").addEventListener("click", () => clip && new Audio(clip.url).play().catch(() => {}));
+  box.querySelector("#clip-del").addEventListener("click", () => {
+    if (clip) URL.revokeObjectURL(clip.url);
+    clip = null; tools.hidden = true; btn.textContent = t("Record how you say it"); status.textContent = "";
+  });
+  return { get: () => clip };
+}
 
 function fieldError(form, name) {
   const v = (form[name]?.value || "").trim();
@@ -492,7 +547,8 @@ let lastAdded = null; // id of the word just added, for the thank-you page
 
 export function renderAdd(root, { place: preset } = {}) {
   const places = [...store.places.values()].sort((a, b) => placeName(a).localeCompare(placeName(b), isKn() ? "kn" : "en"));
-  const mine = readContributions();
+  const mineIds = new Set(minePublicIds());
+  const mine = [...store.publicEntries.filter((e) => mineIds.has(e.id)), ...readContributions()];
   const field = (name, label, input, hint = "") => `
     <div class="field">
       <label for="f-${name}">${label}</label>
@@ -523,7 +579,23 @@ export function renderAdd(root, { place: preset } = {}) {
       ${field("english", t("What it means in English"), `<input id="f-en" name="english" maxlength="120" required placeholder="I will come" ${desc("english")}>`)}
       ${field("std", `${t("Standard Kannada for the same thing")} <span class="muted">${t("(optional)")}</span>`, `<input id="f-std" name="std" lang="kn" maxlength="80" placeholder="ಬರುತ್ತೇನೆ" ${desc("std")}>`)}
       ${field("note", `${t("An example or story behind it")} <span class="muted">${t("(optional)")}</span>`, `<textarea id="f-note" name="note" maxlength="500" placeholder="${t("My grandmother says this when...")}" ${desc("note", true)}></textarea>`, t("{n} of 500 characters", { n: `<span id="note-count">0</span>` }))}
-      ${field("name", `${t("Your name")} <span class="muted">${t("(optional)")}</span>`, `<input id="f-name" name="name" maxlength="60" autocomplete="name" ${desc("name", true)}>`, t("Shown as the contributor if the word is added to the site."))}
+      ${field("name", `${t("Your name")} <span class="muted">${t("(optional)")}</span>`, `<input id="f-name" name="name" maxlength="60" autocomplete="name" ${desc("name", true)}>`, t("Shown on the card as the person who added it."))}
+      <div class="field clip" id="clip">
+        <span class="label">${t("Your voice")} <span class="muted">${t("(optional)")}</span></span>
+        <div class="clip-row">
+          <button type="button" class="btn ghost" id="clip-rec">${t("Record how you say it")}</button>
+          <span id="clip-tools" hidden>
+            <button type="button" class="play small" id="clip-play">▶ <span>${t("Listen")}</span></button>
+            <button type="button" class="linkish" id="clip-del">${t("Remove")}</button>
+          </span>
+        </div>
+        <p class="hint" id="clip-status" aria-live="polite"></p>
+      </div>
+      <div class="field">
+        <label class="check-row"><input type="checkbox" name="consent" id="f-consent" ${desc("consent", true)}> <span>${t("Show my word (and recording, if any) on the map for everyone.")}</span></label>
+        <p class="hint" id="hint-consent">${t("It appears straight away, marked “not yet checked”. Don't add anything private or hurtful.")}</p>
+        <p class="err" id="err-consent" hidden></p>
+      </div>
       <div class="actions"><button class="btn" type="submit" id="add-submit">${t("Add this word")}</button></div>
     </form>
     <h2>${t("Words you added on this device")}</h2>
@@ -532,6 +604,7 @@ export function renderAdd(root, { place: preset } = {}) {
       : `<p class="muted empty-line">${t("Nothing yet. Words you add appear here and on the map, marked as added by you.")}</p>`}
   `;
   wireAudio(root);
+  const clipCtl = wireClip(root);
 
   const form = root.querySelector("#add");
   const alertBox = root.querySelector("#form-alert");
@@ -599,34 +672,99 @@ export function renderAdd(root, { place: preset } = {}) {
       verified: false,
       contributed: true,
     };
+    const showAlert = (html) => {
+      alertBox.innerHTML = html;
+      alertBox.className = "form-alert error";
+      alertBox.hidden = false;
+      alertBox.focus();
+    };
+    const done = (id) => {
+      map.refreshPinCounts();
+      lastAdded = id;
+      try { sessionStorage.setItem("nk.lastAdded", id); } catch { /* fine without it */ }
+      location.hash = "#/thanks";
+    };
 
-    setBusy(submitBtn, true, t("Saving…"));
-    // Saving is instant, but a short beat lets the visitor see it happen.
-    setTimeout(() => {
-      const saved = saveContribution(entry);
+    setBusy(submitBtn, true, t("Adding…"));
+    (async () => {
+      const clip = clipCtl.get();
+      const res = await postPublic({
+        place: entry.place, town: entry.town, kn: entry.dialect.kn, tr: entry.dialect.tr,
+        english: entry.english, std: entry.standard?.kn || "", note: entry.note || "", name: entry.contributor || "",
+        consent: form.consent.checked, origin: "add",
+        ...(clip ? { audio: await blobToBase64(clip.blob), audioType: clip.type } : {}),
+      });
       setBusy(submitBtn, false);
-      if (!saved) {
-        alertBox.innerHTML = `<strong>${t("Could not save on this device.")}</strong> ${t("Your browser is blocking storage (private mode can do this). Copy the word instead and send it to the project.")}
-          <div class="actions"><button class="btn ghost" type="button" id="copy-failed">${t("Copy as JSON")}</button></div>`;
-        alertBox.className = "form-alert error";
-        alertBox.hidden = false;
-        alertBox.focus();
-        alertBox.querySelector("#copy-failed").addEventListener("click", async () => {
-          const ok = await copyText(JSON.stringify(entry, null, 2));
-          toast(t(ok ? "Copied. Paste it in a message to the project." : "Could not copy. Select the text and copy it yourself."), ok ? "ok" : "error");
-        });
+      if (res.ok) { rememberMine(res.entry.id); done(res.entry.id); return; }
+      if (res.status === 400 && res.field) {
+        const msg = {
+          links: t("Please leave out links, emails and @names."),
+          blocked: t("This has a word we don't allow on the site. Please change it."),
+          audio: t("That recording couldn't be used. Record it again or remove it."),
+        }[res.field] || t("Please check this field.");
+        const name = { links: "note", blocked: "kn", audio: "kn" }[res.field] || res.field;
+        showFieldError(form, name, msg);
+        showAlert(`<strong>${t("One field needs fixing.")}</strong> ${esc(msg)}`);
         return;
       }
-      map.refreshPinCounts();
-      lastAdded = entry.id;
-      try { sessionStorage.setItem("nk.lastAdded", entry.id); } catch { /* fine without it */ }
-      location.hash = "#/thanks";
-    }, 350);
+      if (res.status === 429) { showAlert(`<strong>${t("That's a lot of words in a short time.")}</strong> ${t("Please try again in an hour.")}`); return; }
+      if (res.status === 413) { showAlert(`<strong>${t("The recording is too long.")}</strong> ${t("Record it again, a little shorter.")}`); return; }
+      // The shared list can't be reached (offline, or not set up yet): keep the word on this device.
+      if (saveContribution(entry)) {
+        toast(t("Couldn't reach the server, so your word is saved on this device for now."), "info");
+        done(entry.id);
+        return;
+      }
+      showAlert(`<strong>${t("Could not save the word.")}</strong> ${t("Check your connection and try again, or copy it and send it to the project.")}
+        <div class="actions"><button class="btn ghost" type="button" id="copy-failed">${t("Copy as JSON")}</button></div>`);
+      alertBox.querySelector("#copy-failed").addEventListener("click", async () => {
+        const ok = await copyText(JSON.stringify(entry, null, 2));
+        toast(t(ok ? "Copied. Paste it in a message to the project." : "Could not copy. Select the text and copy it yourself."), ok ? "ok" : "error");
+      });
+    })();
   });
 
   map.setActive(preset || null);
   map.highlightZone(preset ? store.places.get(preset)?.zone : null);
 }
+
+// ---------- Admin: remove visitor words (needs the ADMIN_KEY set in Vercel) ----------
+export async function renderAdmin(root) {
+  let key = "";
+  try { key = sessionStorage.getItem("nk.admin") || ""; } catch { /* fine */ }
+  root.innerHTML = loadingHtmlSafe();
+  await loadPublic(6000);
+  const list = store.publicEntries;
+  root.innerHTML = `
+    <h1>${t("Visitor words")}</h1>
+    <p class="lede">${t("Words added by visitors appear on the map straight away. Remove anything wrong, spam or hurtful here.")}</p>
+    ${store.publicReady ? "" : `<p class="form-alert error">${t("The shared word list can't be reached. Check that the database is connected in Vercel.")}</p>`}
+    <form class="form" id="admin-key">
+      <div class="field"><label for="f-admin">${t("Admin key")}</label>
+        <input id="f-admin" type="password" autocomplete="off" value="${esc(key)}"></div>
+    </form>
+    <p class="muted">${plural(list.length, "word", "words")}</p>
+    <div id="admin-list">${list.map((e) => `
+      <div class="admin-row" data-id="${esc(e.id)}">
+        <p><strong lang="kn">${esc(e.dialect?.kn)}</strong> ${esc(e.dialect?.tr || "")} · ${esc(e.english)}
+          <span class="muted">· ${esc(e.place ? placeName(store.places.get(e.place)) || e.place : e.town || "")}${e.contributor ? ` · ${esc(e.contributor)}` : ""}${e.audio ? " · 🔊" : ""} · ${esc((e.createdAt || "").slice(0, 10))}</span></p>
+        <button type="button" class="btn ghost" data-del="${esc(e.id)}">${t("Remove")}</button>
+      </div>`).join("")}</div>`;
+  const keyInput = root.querySelector("#f-admin");
+  keyInput.addEventListener("input", () => { try { sessionStorage.setItem("nk.admin", keyInput.value); } catch { /* fine */ } });
+  root.querySelector("#admin-key").addEventListener("submit", (ev) => ev.preventDefault());
+  root.querySelectorAll("[data-del]").forEach((b) => b.addEventListener("click", async () => {
+    if (!keyInput.value) { toast(t("Enter the admin key first."), "error"); keyInput.focus(); return; }
+    setBusy(b, true, t("Removing…"));
+    const status = await deletePublic(b.dataset.del, keyInput.value).catch(() => 0);
+    if (status === 200) { b.closest(".admin-row").remove(); map.refreshPinCounts(); toast(t("Removed.")); return; }
+    setBusy(b, false);
+    toast(t(status === 401 ? "Wrong admin key." : "Could not remove it. Try again."), "error");
+  }));
+  map.setActive(null);
+  map.highlightZone(null);
+}
+const loadingHtmlSafe = () => `<p class="muted">${t("Loading…")}</p>`;
 
 // ---------- Thank you, after adding a word ----------
 export function renderThanks(root) {
@@ -651,14 +789,18 @@ export function renderThanks(root) {
     <div class="thanks" tabindex="-1">
       <p class="thanks-kn" lang="kn" aria-hidden="true">ಧನ್ಯವಾದ!</p>
       <h1>${e.contributor ? t("Thank you, {name}!", { name: esc(e.contributor) }) : t("Thank you!")}</h1>
-      <p class="lede">${place ? t("Your word from {place} is saved and now shows on the {place} page, marked as added by you.", { place: esc(where) }) : t("Your word from {place} is saved on this device.", { place: esc(where) })}</p>
+      <p class="lede">${e.public
+        ? (place ? t("Your word from {place} is now on the {place} page for everyone to see.", { place: esc(where) }) : t("Your word from {place} is now saved for everyone. Places not on the map show up in search.", { place: esc(where) }))
+        : (place ? t("Your word from {place} is saved and now shows on the {place} page, marked as added by you.", { place: esc(where) }) : t("Your word from {place} is saved on this device.", { place: esc(where) }))}</p>
     </div>
     <div class="words">${wordCard(e, { showPlace: true })}</div>
     <div class="next-steps">
       <h2>${t("What happens next")}</h2>
       <ol class="steps">
-        <li>${t("It is saved in this browser, so only you can see it for now.")}</li>
-        <li>${t(CONFIG.GOOGLE_FORM_URL ? "Send it to the project so it can be checked by a speaker and added for everyone." : "Copy it and send it to the project so it can be checked by a speaker and added for everyone.")}</li>
+        ${e.public ? `<li>${t("Anyone who opens the site can see and hear it now, marked “not yet checked”.")}</li>
+        <li>${t("Words that are wrong or hurtful are removed by the project.")}</li>`
+        : `<li>${t("It is saved in this browser, so only you can see it for now.")}</li>
+        <li>${t(CONFIG.GOOGLE_FORM_URL ? "Send it to the project so it can be checked by a speaker and added for everyone." : "Copy it and send it to the project so it can be checked by a speaker and added for everyone.")}</li>`}
       </ol>
     </div>
     <div class="actions">
@@ -815,7 +957,7 @@ export function renderSources(root) {
 }
 
 // ---------- Privacy policy and terms (drafts for the owner to review) ----------
-const LEGAL_UPDATED = "25 October 2026";
+const LEGAL_UPDATED = "26 October 2026";
 const REPO_URL = "https://github.com/akshobyaas/nammakannada-ak";
 
 function draftNote() {
@@ -843,7 +985,7 @@ export function renderPrivacy(root) {
       <h2>The short version</h2>
       <ul>
         <li>No accounts, no ads, and no tracking cookies.</li>
-        <li>Words you add and recordings you make stay on your own device unless you choose to send them.</li>
+        <li>Words you add, with your name and voice if you give them, are shown publicly on the site. Recordings in Ajji's words stay on your device unless you choose to put them on the map or share them.</li>
         <li>We count visits with Vercel Web Analytics, which does not use cookies and does not store your IP address.</li>
         <li>We never sell or share personal data.</li>
       </ul>
@@ -857,13 +999,13 @@ export function renderPrivacy(root) {
       <p>It does not use cookies. Visitors are told apart by a hash made from the request rather than a cookie, Vercel discards visitor sessions after 24 hours, and data points are not tied to your IP address. Blocking the script with a content blocker does not affect how the site works.</p>
 
       <h2>Words you add</h2>
-      <p>When you use <a href="#/add">Add a word</a>, what you type, including your name if you give one, is saved only in your browser's local storage on this device. It is not sent to us. You can remove it at any time by clearing this site's data in your browser settings.</p>
+      <p>When you use <a href="#/add">Add a word</a> and tick the box to show it, what you type (including your name, if you give one) and your recording, if you make one, are sent to the site and shown publicly on the map, marked “not yet checked”. They are stored with our database provider, <a href="https://upstash.com/trust/privacy.pdf" target="_blank" rel="noopener">Upstash</a>, connected through Vercel. We do not store your IP address; a scrambled form of it is kept for one hour to stop the same visitor sending too many words. To have a word removed, email us. If the site can't be reached, the word is kept only in your browser's local storage on this device.</p>
       ${form
         ? `<p>If you press “Send it to the project”, you are taken to a Google Form. What you submit there is stored by Google and shared with the project owner, under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a>. We use it only to review your word and, if you agree, publish it with credit.</p>`
         : `<p>“Copy as JSON” copies your word so you can send it to the project yourself. Whatever you send is used only to review the word and, with your agreement, publish it with credit.</p>`}
 
       <h2>Recordings</h2>
-      <p>The <a href="#/record">Record words</a> and <a href="#/ajji">Ajji's words</a> pages ask for your microphone only when you start recording. Recordings stay in your browser tab and are only saved to your device, or shared through your phone's share menu, when you choose to. Nothing is uploaded to this site. Ajji's words asks you to confirm the speaker has agreed to be recorded before it starts.</p>
+      <p>The <a href="#/record">Record words</a> and <a href="#/ajji">Ajji's words</a> pages ask for your microphone only when you start recording. Recordings stay in your browser tab until you choose what to do with them: save them to your device, share them through your phone's share menu, or press “Put these on the map for everyone”, which uploads each answer that has what was said written down, and shows it publicly as described above. Ajji's words asks you to confirm the speaker has agreed to be recorded before it starts; only put recordings on the map if they also agreed to be heard on the website.</p>
 
       <h2>Cookies and storage</h2>
       <p>The site sets no cookies. It uses your browser's local storage only for the words you add and to remember the language you chose, which those features need to work. Because there are no tracking cookies, there is no cookie banner.</p>
@@ -969,14 +1111,14 @@ function privacyKn(form) {
   return `
     <article class="legal">
       <h1>ಗೌಪ್ಯತಾ ನೀತಿ</h1>
-      <p class="muted">ಕೊನೆಯ ಪರಿಷ್ಕರಣೆ: 25 ಅಕ್ಟೋಬರ್ 2026</p>
+      <p class="muted">ಕೊನೆಯ ಪರಿಷ್ಕರಣೆ: 26 ಅಕ್ಟೋಬರ್ 2026</p>
       ${LEGAL_NOTE_KN}
       <p class="lede">ನಮ್ಮ ಕನ್ನಡ ಉಚಿತ, ವಾಣಿಜ್ಯೇತರ ಯೋಜನೆ; ಕರ್ನಾಟಕದಾದ್ಯಂತ ಕನ್ನಡ ಹೇಗೆ ಮಾತನಾಡಲ್ಪಡುತ್ತದೆ ಎಂಬುದನ್ನು ದಾಖಲಿಸುತ್ತದೆ. ಇದು ಸಾಧ್ಯವಾದಷ್ಟು ಕಡಿಮೆ ಮಾಹಿತಿಯನ್ನು ಸಂಗ್ರಹಿಸುತ್ತದೆ.</p>
 
       <h2>ಸಂಕ್ಷಿಪ್ತವಾಗಿ</h2>
       <ul>
         <li>ಖಾತೆಗಳಿಲ್ಲ, ಜಾಹೀರಾತುಗಳಿಲ್ಲ, ಟ್ರ್ಯಾಕಿಂಗ್ ಕುಕೀಗಳಿಲ್ಲ.</li>
-        <li>ನೀವು ಸೇರಿಸುವ ಪದಗಳು ಮತ್ತು ಧ್ವನಿಮುದ್ರಣಗಳು ನೀವಾಗಿ ಕಳುಹಿಸದ ಹೊರತು ನಿಮ್ಮ ಸಾಧನದಲ್ಲೇ ಇರುತ್ತವೆ.</li>
+        <li>ನೀವು ಸೇರಿಸುವ ಪದಗಳು (ನೀವು ಕೊಟ್ಟರೆ ಹೆಸರು ಮತ್ತು ಧ್ವನಿಯೂ ಸೇರಿ) ತಾಣದಲ್ಲಿ ಎಲ್ಲರಿಗೂ ಕಾಣುತ್ತವೆ. ಅಜ್ಜಿ ಮಾತಿನ ಧ್ವನಿಮುದ್ರಣಗಳು ನೀವು ನಕ್ಷೆಗೆ ಸೇರಿಸದ ಅಥವಾ ಹಂಚದ ಹೊರತು ನಿಮ್ಮ ಸಾಧನದಲ್ಲೇ ಇರುತ್ತವೆ.</li>
         <li>ಭೇಟಿಗಳನ್ನು ವರ್ಸೆಲ್ ವೆಬ್ ಅನಾಲಿಟಿಕ್ಸ್ ಮೂಲಕ ಎಣಿಸುತ್ತೇವೆ; ಅದು ಕುಕೀ ಬಳಸುವುದಿಲ್ಲ, ನಿಮ್ಮ ಐಪಿ ವಿಳಾಸವನ್ನು ಉಳಿಸುವುದಿಲ್ಲ.</li>
         <li>ವೈಯಕ್ತಿಕ ಮಾಹಿತಿಯನ್ನು ನಾವು ಎಂದಿಗೂ ಮಾರುವುದಿಲ್ಲ ಅಥವಾ ಹಂಚುವುದಿಲ್ಲ.</li>
       </ul>
@@ -990,13 +1132,13 @@ function privacyKn(form) {
       <p>ಇದು ಕುಕೀ ಬಳಸುವುದಿಲ್ಲ. ಸಂದರ್ಶಕರನ್ನು ಕುಕೀಯ ಬದಲು ವಿನಂತಿಯಿಂದ ಮಾಡಿದ ಹ್ಯಾಶ್ ಮೂಲಕ ಗುರುತಿಸಲಾಗುತ್ತದೆ; ವರ್ಸೆಲ್ ಸಂದರ್ಶಕರ ಸೆಷನ್‌ಗಳನ್ನು 24 ಗಂಟೆಗಳ ನಂತರ ಅಳಿಸುತ್ತದೆ, ಮತ್ತು ಮಾಹಿತಿ ನಿಮ್ಮ ಐಪಿ ವಿಳಾಸಕ್ಕೆ ಜೋಡಣೆಯಾಗಿರುವುದಿಲ್ಲ. ಕಂಟೆಂಟ್ ಬ್ಲಾಕರ್‌ನಿಂದ ಈ ಸ್ಕ್ರಿಪ್ಟ್ ತಡೆದರೂ ತಾಣ ಸರಿಯಾಗಿ ಕೆಲಸ ಮಾಡುತ್ತದೆ.</p>
 
       <h2>ನೀವು ಸೇರಿಸುವ ಪದಗಳು</h2>
-      <p><a href="#/add">ಪದ ಸೇರಿಸಿ</a> ಬಳಸಿದಾಗ, ನೀವು ಟೈಪ್ ಮಾಡಿದ್ದು (ನೀವು ಕೊಟ್ಟರೆ ನಿಮ್ಮ ಹೆಸರೂ ಸೇರಿ) ಈ ಸಾಧನದ ಬ್ರೌಸರ್‌ನ ಲೋಕಲ್ ಸ್ಟೋರೇಜ್‌ನಲ್ಲಿ ಮಾತ್ರ ಉಳಿಯುತ್ತದೆ. ಅದು ನಮಗೆ ಬರುವುದಿಲ್ಲ. ಬ್ರೌಸರ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಈ ತಾಣದ ಮಾಹಿತಿಯನ್ನು ಅಳಿಸಿ ಯಾವಾಗ ಬೇಕಾದರೂ ತೆಗೆದುಹಾಕಬಹುದು.</p>
+      <p><a href="#/add">ಪದ ಸೇರಿಸಿ</a> ಬಳಸಿ, ಅದನ್ನು ತೋರಿಸುವ ಗುರುತು ಹಾಕಿದಾಗ, ನೀವು ಟೈಪ್ ಮಾಡಿದ್ದು (ನೀವು ಕೊಟ್ಟರೆ ಹೆಸರೂ ಸೇರಿ) ಮತ್ತು ನೀವು ಮಾಡಿದರೆ ಧ್ವನಿಮುದ್ರಣ ತಾಣಕ್ಕೆ ಹೋಗಿ, “ಇನ್ನೂ ಪರಿಶೀಲಿಸಿಲ್ಲ” ಎಂಬ ಗುರುತಿನೊಂದಿಗೆ ನಕ್ಷೆಯಲ್ಲಿ ಎಲ್ಲರಿಗೂ ಕಾಣುತ್ತದೆ. ಇವು ನಮ್ಮ ಡೇಟಾಬೇಸ್ ಸೇವೆ ${A("https://upstash.com/trust/privacy.pdf", "ಅಪ್‌ಸ್ಟ್ಯಾಶ್")}ನಲ್ಲಿ (ವರ್ಸೆಲ್ ಮೂಲಕ) ಉಳಿಯುತ್ತವೆ. ನಿಮ್ಮ ಐಪಿ ವಿಳಾಸವನ್ನು ಉಳಿಸುವುದಿಲ್ಲ; ಒಬ್ಬರೇ ಅತಿ ಹೆಚ್ಚು ಪದ ಕಳುಹಿಸುವುದನ್ನು ತಡೆಯಲು ಅದರ ಗೂಢ ರೂಪವನ್ನು ಒಂದು ಗಂಟೆ ಇಡುತ್ತೇವೆ. ಪದವನ್ನು ತೆಗೆಸಲು ನಮಗೆ ಇಮೇಲ್ ಮಾಡಿ. ತಾಣ ಸಿಗದಿದ್ದರೆ, ಪದ ಈ ಸಾಧನದ ಬ್ರೌಸರ್‌ನಲ್ಲಿ ಮಾತ್ರ ಉಳಿಯುತ್ತದೆ.</p>
       ${form
         ? `<p>“ಯೋಜನೆಗೆ ಕಳುಹಿಸಿ” ಒತ್ತಿದರೆ ನೀವು ಗೂಗಲ್ ಫಾರ್ಮ್‌ಗೆ ಹೋಗುತ್ತೀರಿ. ಅಲ್ಲಿ ಸಲ್ಲಿಸಿದ್ದು ${A("https://policies.google.com/privacy", "ಗೂಗಲ್‌ನ ಗೌಪ್ಯತಾ ನೀತಿ")}ಯಂತೆ ಗೂಗಲ್‌ನಲ್ಲಿ ಉಳಿದು ಯೋಜನೆಯ ಮಾಲೀಕರಿಗೆ ಹಂಚಲ್ಪಡುತ್ತದೆ. ನಿಮ್ಮ ಪದವನ್ನು ಪರಿಶೀಲಿಸಲು ಮತ್ತು ನೀವು ಒಪ್ಪಿದರೆ ಶ್ರೇಯದೊಂದಿಗೆ ಪ್ರಕಟಿಸಲು ಮಾತ್ರ ಅದನ್ನು ಬಳಸುತ್ತೇವೆ.</p>`
         : `<p>“JSON ಆಗಿ ನಕಲಿಸಿ” ನಿಮ್ಮ ಪದವನ್ನು ನಕಲಿಸುತ್ತದೆ, ಅದನ್ನು ನೀವೇ ಯೋಜನೆಗೆ ಕಳುಹಿಸಬಹುದು. ನೀವು ಕಳುಹಿಸಿದ್ದನ್ನು ಪದವನ್ನು ಪರಿಶೀಲಿಸಲು ಮತ್ತು ನಿಮ್ಮ ಒಪ್ಪಿಗೆಯೊಂದಿಗೆ ಶ್ರೇಯ ನೀಡಿ ಪ್ರಕಟಿಸಲು ಮಾತ್ರ ಬಳಸುತ್ತೇವೆ.</p>`}
 
       <h2>ಧ್ವನಿಮುದ್ರಣಗಳು</h2>
-      <p><a href="#/record">ಪದಗಳನ್ನು ಧ್ವನಿಮುದ್ರಿಸಿ</a> ಮತ್ತು <a href="#/ajji">ಅಜ್ಜಿ ಮಾತು</a> ಪುಟಗಳು ನೀವು ಧ್ವನಿಮುದ್ರಣ ಶುರುಮಾಡಿದಾಗ ಮಾತ್ರ ಮೈಕ್ರೊಫೋನ್ ಕೇಳುತ್ತವೆ. ಧ್ವನಿಮುದ್ರಣಗಳು ನಿಮ್ಮ ಬ್ರೌಸರ್ ಟ್ಯಾಬ್‌ನಲ್ಲೇ ಇದ್ದು, ನೀವು ಆರಿಸಿದಾಗ ಮಾತ್ರ ನಿಮ್ಮ ಸಾಧನಕ್ಕೆ ಉಳಿಯುತ್ತವೆ ಅಥವಾ ಫೋನಿನ ಹಂಚಿಕೆ ಮೆನು ಮೂಲಕ ಹಂಚಲ್ಪಡುತ್ತವೆ. ಈ ತಾಣಕ್ಕೆ ಏನೂ ಅಪ್‌ಲೋಡ್ ಆಗುವುದಿಲ್ಲ. ಅಜ್ಜಿ ಮಾತು ಶುರುವಾಗುವ ಮುನ್ನ, ಮಾತುಗಾರರು ಧ್ವನಿಮುದ್ರಣಕ್ಕೆ ಒಪ್ಪಿದ್ದಾರೆ ಎಂದು ದೃಢೀಕರಿಸಲು ಕೇಳುತ್ತದೆ.</p>
+      <p><a href="#/record">ಪದಗಳನ್ನು ಧ್ವನಿಮುದ್ರಿಸಿ</a> ಮತ್ತು <a href="#/ajji">ಅಜ್ಜಿ ಮಾತು</a> ಪುಟಗಳು ನೀವು ಧ್ವನಿಮುದ್ರಣ ಶುರುಮಾಡಿದಾಗ ಮಾತ್ರ ಮೈಕ್ರೊಫೋನ್ ಕೇಳುತ್ತವೆ. ಧ್ವನಿಮುದ್ರಣಗಳು ನೀವು ಏನು ಮಾಡಬೇಕೆಂದು ಆರಿಸುವವರೆಗೆ ಬ್ರೌಸರ್ ಟ್ಯಾಬ್‌ನಲ್ಲೇ ಇರುತ್ತವೆ: ಸಾಧನಕ್ಕೆ ಉಳಿಸಬಹುದು, ಫೋನಿನ ಹಂಚಿಕೆ ಮೆನು ಮೂಲಕ ಹಂಚಬಹುದು, ಅಥವಾ “ಎಲ್ಲರಿಗಾಗಿ ನಕ್ಷೆಗೆ ಸೇರಿಸಿ” ಒತ್ತಬಹುದು; ಆಗ ಅವರು ಹೇಳಿದ್ದು ಬರೆದಿರುವ ಪ್ರತಿ ಉತ್ತರ ಅಪ್‌ಲೋಡ್ ಆಗಿ ಮೇಲೆ ಹೇಳಿದಂತೆ ಎಲ್ಲರಿಗೂ ಕಾಣುತ್ತದೆ. ಅಜ್ಜಿ ಮಾತು ಶುರುವಾಗುವ ಮುನ್ನ ಮಾತುಗಾರರು ಧ್ವನಿಮುದ್ರಣಕ್ಕೆ ಒಪ್ಪಿದ್ದಾರೆ ಎಂದು ದೃಢೀಕರಿಸಲು ಕೇಳುತ್ತದೆ; ತಾಣದಲ್ಲಿ ಕೇಳಿಸಲು ಅವರು ಒಪ್ಪಿದ್ದರೆ ಮಾತ್ರ ನಕ್ಷೆಗೆ ಸೇರಿಸಿ.</p>
 
       <h2>ಕುಕೀಗಳು ಮತ್ತು ಸಂಗ್ರಹಣೆ</h2>
       <p>ಈ ತಾಣ ಯಾವುದೇ ಕುಕೀ ಇಡುವುದಿಲ್ಲ. ನೀವು ಸೇರಿಸುವ ಪದಗಳಿಗೆ ಮತ್ತು ನೀವು ಆರಿಸಿದ ಭಾಷೆಯನ್ನು ನೆನಪಿಡಲು ಮಾತ್ರ ಬ್ರೌಸರ್‌ನ ಲೋಕಲ್ ಸ್ಟೋರೇಜ್ ಬಳಸುತ್ತದೆ. ಟ್ರ್ಯಾಕಿಂಗ್ ಕುಕೀಗಳಿಲ್ಲದ್ದರಿಂದ ಕುಕೀ ಬ್ಯಾನರ್ ಇಲ್ಲ.</p>
@@ -1020,7 +1162,7 @@ function termsKn() {
   return `
     <article class="legal">
       <h1>ಬಳಕೆಯ ನಿಯಮಗಳು</h1>
-      <p class="muted">ಕೊನೆಯ ಪರಿಷ್ಕರಣೆ: 25 ಅಕ್ಟೋಬರ್ 2026</p>
+      <p class="muted">ಕೊನೆಯ ಪರಿಷ್ಕರಣೆ: 26 ಅಕ್ಟೋಬರ್ 2026</p>
       ${LEGAL_NOTE_KN}
       <p>ನಮ್ಮ ಕನ್ನಡವನ್ನು ಅಕ್ಷೋಭ್ಯ ಎ ಎಸ್ ನಡೆಸುತ್ತಿದ್ದಾರೆ.</p>
       <p class="lede">ನಮ್ಮ ಕನ್ನಡವನ್ನು ಬಳಸುವ ಮೂಲಕ ನೀವು ಈ ನಿಯಮಗಳಿಗೆ ಒಪ್ಪುತ್ತೀರಿ. ಒಪ್ಪದಿದ್ದರೆ ದಯವಿಟ್ಟು ಈ ತಾಣವನ್ನು ಬಳಸಬೇಡಿ.</p>

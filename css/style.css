@@ -719,7 +719,7 @@ body.ajji-open { overflow: hidden; }
   /* On phones the map only earns its screen space where it is used: home, regions, places and the quiz */
   body[data-page="compare"] .map-pane, body[data-page="guide"] .map-pane, body[data-page="add"] .map-pane,
   body[data-page="thanks"] .map-pane, body[data-page="ajji"] .map-pane, body[data-page="sources"] .map-pane,
-  body[data-page="privacy"] .map-pane, body[data-page="terms"] .map-pane, body[data-page="record"] .map-pane { display: none; }
+  body[data-page="privacy"] .map-pane, body[data-page="terms"] .map-pane, body[data-page="record"] .map-pane, body[data-page="admin"] .map-pane { display: none; }
   .map-pane { position: relative; top: auto; height: auto; padding: 14px 16px; border-right: 0; border-bottom: 4px solid var(--ink); }
   .map { flex: none; height: 50vh; max-height: 460px; min-height: 280px; }
   .panel { padding: 18px 16px 48px; scroll-margin-top: 72px; }
@@ -764,3 +764,15 @@ body.ajji-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* Add a word: optional voice clip */
+.clip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.clip-row #clip-tools { display: inline-flex; align-items: center; gap: 12px; }
+.clip-row #clip-tools[hidden] { display: none; }
+#clip-rec.on { background: var(--red); color: var(--white); border-color: var(--ink); }
+.linkish { background: none; border: 0; padding: 4px 2px; font: inherit; font-weight: 700; color: var(--ink); text-decoration: underline; cursor: pointer; }
+.ajji-publish { margin: 18px 0 6px; padding: 14px 16px; border: 3px solid var(--ink); border-radius: 14px; background: var(--white); }
+.ajji-publish .muted { margin: 8px 0 0; }
+/* Admin: remove visitor words */
+.admin-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 2px dashed rgba(0,0,0,.2); }
+.admin-row p { margin: 0; overflow-wrap: anywhere; }

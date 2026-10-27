@@ -1,5 +1,5 @@
 // Namma Kannada: entry point and router.
-import { loadData, store } from "./store.js";
+import { loadData, loadPublic, store } from "./store.js";
 import { renderMap } from "./map.js";
 import * as views from "./views.js";
 import { renderRecord } from "./recorder.js";
@@ -148,6 +148,7 @@ function metaFor(section, id) {
       "How Namma Kannada handles your data: no tracking cookies, cookie-free Vercel analytics, and words you add stay on your own device."];
     case "terms": return ["Terms of use",
       "The terms for using Namma Kannada: an educational project, unchecked dialect entries, sensitive content, and how contributed words are used."];
+    case "admin": return ["Visitor words", "Remove visitor words from Namma Kannada."];
     case "ajji": return ["Ajji's words: record an elder's Kannada",
       "Hand your phone to a grandparent: they see a picture, not a word, and answer the way they really talk. Save your family's dialect in two minutes."];
     case "record": return ["Record Kannada words",
@@ -195,6 +196,8 @@ function route({ fromUser = false } = {}) {
       setNav(null); renderRecord(view); break;
     case "ajji":
       setNav("ajji"); renderAjji(view); break;
+    case "admin":
+      setNav(null); views.renderAdmin(view); break;
     default:
       setNav(null); views.renderNotFound(view);
   }
@@ -270,7 +273,7 @@ async function start() {
     if (s) s.textContent = t("Still loading… a slow connection can take a few seconds.");
   }, 6000);
   try {
-    await Promise.all([loadData(), loadDataKn()]);
+    await Promise.all([loadData(), loadDataKn(), loadPublic()]);
   } catch (err) {
     clearTimeout(slow);
     const offline = navigator.onLine === false;

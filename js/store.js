@@ -7,6 +7,8 @@ export const store = {
   places: new Map(),
   zones: new Map(),
   entries: [],
+  publicEntries: [], // words visitors added, from /api/words
+  publicReady: false, // false when the shared word store can't be reached
 };
 
 export async function loadData() {
@@ -21,7 +23,59 @@ export async function loadData() {
 }
 
 export function allEntries() {
-  return [...store.entries, ...readContributions()];
+  return [...store.entries, ...store.publicEntries, ...readContributions()];
+}
+
+// ---------- Words visitors added (shared with everyone) ----------
+// Never blocks the site: if the API is missing or slow, the site works with the built-in words.
+export async function loadPublic(timeoutMs = 3500) {
+  const ctl = new AbortController();
+  const timer = setTimeout(() => ctl.abort(), timeoutMs);
+  try {
+    const res = await fetch("/api/words", { signal: ctl.signal, headers: { Accept: "application/json" } });
+    const json = res.ok ? await res.json() : null;
+    store.publicEntries = Array.isArray(json?.words) ? json.words.filter((e) => e && e.id && e.dialect) : [];
+    store.publicReady = !!json;
+  } catch {
+    store.publicReady = false;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+// Returns { ok: true, entry } or { ok: false, status, error, field }.
+export async function postPublic(payload) {
+  try {
+    const res = await fetch("/api/words", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(payload),
+    });
+    const json = await res.json().catch(() => ({}));
+    if (res.ok && json.entry) {
+      store.publicEntries.unshift(json.entry);
+      store.publicReady = true;
+      return { ok: true, entry: json.entry };
+    }
+    return { ok: false, status: res.status, error: json.error, field: json.field };
+  } catch {
+    return { ok: false, status: 0, error: "network" };
+  }
+}
+
+export async function deletePublic(id, key) {
+  const res = await fetch(`/api/words?id=${encodeURIComponent(id)}`, { method: "DELETE", headers: { "X-Admin-Key": key } });
+  if (res.ok) store.publicEntries = store.publicEntries.filter((e) => e.id !== id);
+  return res.status;
+}
+
+export function blobToBase64(blob) {
+  return new Promise((resolve, reject) => {
+    const r = new FileReader();
+    r.onload = () => resolve(String(r.result).split(",")[1] || "");
+    r.onerror = reject;
+    r.readAsDataURL(blob);
+  });
 }
 
 export function entriesFor(placeId) {
