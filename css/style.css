@@ -579,14 +579,20 @@ table.guide thead th { background: var(--ink); color: var(--yellow); border-top:
 
 /* ---------- Ajji's words ---------- */
 .ajji-promo {
-  display: flex; align-items: center; gap: 14px; margin: 18px 0 6px; padding: 14px 16px;
+  display: flex; align-items: center; gap: 14px; margin: 18px 0 28px; padding: 14px 16px;
   background: var(--white); color: var(--ink); text-decoration: none;
   border: var(--line); border-radius: var(--r); box-shadow: var(--shadow);
   transition: transform 90ms ease, box-shadow 90ms ease;
 }
 .ajji-promo:hover { transform: translate(-1px, -1px); box-shadow: 8px 8px 0 var(--ink); }
 .ajji-promo-pic { font-size: 2.2rem; flex: none; }
-.ajji-promo-text { display: grid; gap: 2px; }
+.ajji-promo-text { display: grid; gap: 2px; flex: 1; min-width: 0; }
+/* Phones: picture and arrow on top, text across the full width */
+@media (max-width: 600px) {
+  .ajji-promo { flex-wrap: wrap; gap: 6px 12px; }
+  .ajji-promo-pic { font-size: 1.7rem; }
+  .ajji-promo-text { order: 2; flex: 1 1 100%; }
+}
 .ajji-promo-text strong { font-family: var(--f-display); font-weight: 800; font-size: 1.25rem; color: var(--red); }
 .ajji-promo-go { margin-left: auto; font-size: 1.6rem; font-weight: 800; flex: none; }
 
