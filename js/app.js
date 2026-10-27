@@ -130,7 +130,8 @@ function metaFor(section, id) {
       const n = count(p.id);
       const name = placeName(p);
       return n
-        ? [n === 1 ? t("{place} Kannada: a local word", { place: name }) : t("{place} Kannada: {n} local words and phrases", { place: name, n }), dt.about(p) || t("Words and phrases from {place}, with sound and sources.", { place: name })]
+        ? [p.id === "brhills" ? t("{place}: {n} Solega words", { place: name, n })
+          : n === 1 ? t("{place} Kannada: a local word", { place: name }) : t("{place} Kannada: {n} local words and phrases", { place: name, n }), dt.about(p) || t("Words and phrases from {place}, with sound and sources.", { place: name })]
         : [t("{place} Kannada", { place: name }), t("No words from {place} yet. Know how people talk in {place}? Add the first word or phrase the way it is said at home.", { place: name })];
     }
     case "compare": return ["Compare Kannada dialects side by side",

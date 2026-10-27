@@ -1,6 +1,7 @@
 // Kannada text for the interface. Keys are the English text used in the code (see js/i18n.js).
 // Anything missing here simply shows in English.
 export const KN = {
+  "{place}: {n} Solega words": "{place}: {n} ಸೋಲಿಗ ಪದಗಳು",
   "Added by {name} · not yet checked": "{name} ಸೇರಿಸಿದ್ದು · ಇನ್ನೂ ಪರಿಶೀಲಿಸಿಲ್ಲ",
   "Added by a visitor · not yet checked": "ಸಂದರ್ಶಕರು ಸೇರಿಸಿದ್ದು · ಇನ್ನೂ ಪರಿಶೀಲಿಸಿಲ್ಲ",
   "Tick this box to put your word on the map.": "ನಿಮ್ಮ ಪದ ನಕ್ಷೆಗೆ ಸೇರಲು ಈ ಚೌಕದಲ್ಲಿ ಗುರುತು ಹಾಕಿ.",
