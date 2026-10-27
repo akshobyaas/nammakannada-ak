@@ -3,8 +3,15 @@
 // it sets KV_REST_API_URL and KV_REST_API_TOKEN). No SDK, no dependencies.
 const crypto = require("crypto");
 
-const URL_ = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL || "";
-const TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN || "";
+// Vercel may add a custom prefix (e.g. STORAGE_KV_REST_API_URL), so also accept any *_REST_API_URL pair.
+function findEnv(suffix) {
+  const direct = process.env[`KV_${suffix}`] || process.env[`UPSTASH_REDIS_${suffix}`];
+  if (direct) return direct;
+  const key = Object.keys(process.env).find((k) => k.endsWith(`_${suffix}`) && !k.includes("READ_ONLY"));
+  return key ? process.env[key] : "";
+}
+const URL_ = findEnv("REST_API_URL") || findEnv("REST_URL");
+const TOKEN = findEnv("REST_API_TOKEN") || findEnv("REST_TOKEN");
 
 const configured = () => Boolean(URL_ && TOKEN);
 
